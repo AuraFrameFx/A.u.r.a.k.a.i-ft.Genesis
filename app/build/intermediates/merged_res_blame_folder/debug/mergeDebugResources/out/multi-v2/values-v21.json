@@ -1,8 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "dev.aurakai.auraframefx.app-mergeDebugResources-1:/values-v21/values-v21.xml",
+            "outputFile": "dev.aurakai.auraframefx.app-mergeDebugResources-84:/values-v21/values-v21.xml",
             "map": [
+                {
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.2.0-rc-2\\transforms\\25d5e70c5722001712273df9dc1e34fc\\workspace\\transformed\\credentials-play-services-auth-1.2.0-rc01\\res\\values-v21\\values-v21.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "9",
+                        "endColumns": "12",
+                        "endOffsets": "543"
+                    },
+                    "to": {
+                        "startLines": "272",
+                        "startColumns": "4",
+                        "startOffsets": "19537",
+                        "endLines": "279",
+                        "endColumns": "12",
+                        "endOffsets": "20025"
+                    }
+                },
                 {
                     "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.2.0-rc-2\\transforms\\cfc8220acc99d3b4b79aaf85ff8fb6dd\\workspace\\transformed\\appcompat-1.7.1\\res\\values-v21\\values-v21.xml",
                     "from": {
@@ -23,7 +42,26 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.2.0-rc-2\\transforms\\67ad12808fd37028e3206ee77fabb3b0\\workspace\\transformed\\jetified-core-1.5.0\\res\\values-v21\\values.xml",
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.2.0-rc-2\\transforms\\9b6b391480368011ca0c8e4c3afc49fb\\workspace\\transformed\\leakcanary-android-core-2.14\\res\\values-v21\\values-v21.xml",
+                    "from": {
+                        "startLines": "2,6",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,313",
+                        "endLines": "5,9",
+                        "endColumns": "10,10",
+                        "endOffsets": "308,535"
+                    },
+                    "to": {
+                        "startLines": "306,310",
+                        "startColumns": "4,4",
+                        "startOffsets": "21510,21768",
+                        "endLines": "309,313",
+                        "endColumns": "10,10",
+                        "endOffsets": "21763,21990"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.2.0-rc-2\\transforms\\4370f6c8ca74a1b9f3fa313b3290fcd1\\workspace\\transformed\\core-1.5.0\\res\\values-v21\\values.xml",
                     "from": {
                         "startLines": "4,13",
                         "startColumns": "0,0",
@@ -58,44 +96,6 @@
                         "endLines": "2,7,8,9,268,269,270,271,300,305",
                         "endColumns": "117,63,66,63,115,125,125,127,12,12",
                         "endOffsets": "168,618,685,749,19152,19278,19404,19532,21153,21505"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.2.0-rc-2\\transforms\\c7cf6d1d7911b176fcdc8e316a26bc68\\workspace\\transformed\\jetified-credentials-play-services-auth-1.2.0-rc01\\res\\values-v21\\values-v21.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "9",
-                        "endColumns": "12",
-                        "endOffsets": "543"
-                    },
-                    "to": {
-                        "startLines": "272",
-                        "startColumns": "4",
-                        "startOffsets": "19537",
-                        "endLines": "279",
-                        "endColumns": "12",
-                        "endOffsets": "20025"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.2.0-rc-2\\transforms\\52f5442af52153eb4c808a66dc5c8617\\workspace\\transformed\\jetified-leakcanary-android-core-2.14\\res\\values-v21\\values-v21.xml",
-                    "from": {
-                        "startLines": "2,6",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,313",
-                        "endLines": "5,9",
-                        "endColumns": "10,10",
-                        "endOffsets": "308,535"
-                    },
-                    "to": {
-                        "startLines": "306,310",
-                        "startColumns": "4,4",
-                        "startOffsets": "21510,21768",
-                        "endLines": "309,313",
-                        "endColumns": "10,10",
-                        "endOffsets": "21763,21990"
                     }
                 },
                 {
