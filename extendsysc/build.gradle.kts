@@ -43,7 +43,7 @@ dependencies {
 
     // Hilt
     implementation(libs.hilt.android)
-    implementation(libs.hilt.compiler) // <-- FIXED
+    ksp(libs.hilt.compiler)
 
     // Multidex support (needed for androidTest APK when method count > 64K)
 }
