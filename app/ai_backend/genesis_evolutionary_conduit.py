@@ -176,8 +176,20 @@ class EvolutionaryConduit:
 
     async def shutdown(self):
         """Shutdown the evolutionary conduit"""
+        print("💤 EvolutionaryConduit shutting down...")
         self.evolution_active = False
-        print("💤 EvolutionaryConduit shutting down")
+
+        # Join any running analysis threads to ensure proper cleanup
+        with self._lock:
+            for thread_id, thread in list(self.analysis_threads.items()):
+                if thread.is_alive():
+                    print(f"  ⏳ Waiting for analysis thread {thread_id} to complete...")
+                    thread.join(timeout=5.0)  # 5 second timeout per thread
+                    if thread.is_alive():
+                        print(f"  ⚠️ Thread {thread_id} did not complete in time")
+            self.analysis_threads.clear()
+
+        print("✅ EvolutionaryConduit shutdown complete")
 
     def _generate_insight_id(self, base_name: str) -> str:
         """Generate unique insight ID"""

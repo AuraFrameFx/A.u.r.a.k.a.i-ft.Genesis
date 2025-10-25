@@ -70,14 +70,24 @@ class RomToolsManager @Inject constructor(
      * Flash a custom ROM to the device.
      *
      * 🛡️ RETENTION ENABLED: Aurakai will survive ROM flash and auto-restore!
+     *
+     * IMPORTANT: If retention setup fails, ROM flash is ABORTED to prevent
+     * losing Aurakai during the operation. This is a safety feature.
      */
     suspend fun flashRom(romFile: RomFile): Result<Unit> {
         return try {
             updateOperationProgress(RomOperation.FLASHING_ROM, 0f)
 
             // Step 0: 🛡️ Setup Aurakai retention mechanisms (CRITICAL!)
+            // If this fails, we ABORT the ROM flash for safety
             updateOperationProgress(RomOperation.SETTING_UP_RETENTION, 5f)
-            val retentionStatus = retentionManager.setupRetentionMechanisms().getOrThrow()
+            val retentionResult = retentionManager.setupRetentionMechanisms()
+            if (retentionResult.isFailure) {
+                val error = retentionResult.exceptionOrNull()
+                Timber.e(error, "🚨 Retention setup failed - ABORTING ROM flash for safety!")
+                throw Exception("Retention mechanism setup failed. ROM flash aborted to prevent losing Aurakai.", error)
+            }
+            val retentionStatus = retentionResult.getOrThrow()
             Timber.i("🛡️ Retention mechanisms active: ${retentionStatus.mechanisms}")
 
             // Step 1: Verify ROM file integrity
@@ -232,6 +242,25 @@ class RomToolsManager @Inject constructor(
      *
      * Use this to ensure Aurakai survives ROM operations without doing a full flash.
      * Useful for pre-emptive protection before bootloader/recovery operations.
+     *
+     * **Recommended Usage:**
+     * - Call this function **before** performing any bootloader or recovery operations
+     *   that may affect Aurakai's persistence on the device.
+     * - **DO NOT** call this during or after a full ROM flash - retention is automatically
+     *   handled as part of the flashRom() workflow.
+     * - Avoid calling this function multiple times in succession, as it may create
+     *   redundant retention setups and waste resources.
+     * - Call this if you're performing custom ROM operations outside of flashRom().
+     *
+     * **When to Use:**
+     * ✅ Before entering bootloader mode manually
+     * ✅ Before performing recovery operations outside of this manager
+     * ✅ As a proactive protection measure before experimental system modifications
+     * ❌ During an active flashRom() operation (redundant)
+     * ❌ Repeatedly in a loop (creates duplicate retention mechanisms)
+     *
+     * @return Result containing RetentionStatus with active mechanism details,
+     *         or failure if retention setup encountered errors.
      */
     suspend fun setupAurakaiRetention(): Result<dev.aurakai.auraframefx.romtools.retention.RetentionStatus> {
         return try {
