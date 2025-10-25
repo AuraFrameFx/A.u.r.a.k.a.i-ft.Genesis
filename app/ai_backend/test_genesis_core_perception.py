@@ -57,9 +57,11 @@ class TestGenesisCorePerceptionChanges:
         """Test that initialize() uses get_current_awareness() instead of get_consciousness_state()"""
         from genesis_core import GenesisCore
         
-        with patch('genesis_core.consciousness_matrix', mock_components["matrix"]), \
-             patch('genesis_core.genesis_connector', mock_components["connector"]), \
-             patch('genesis_core.EthicalGovernor', return_value=mock_components["governor"]):
+        with patch('genesis_core.ConsciousnessMatrix', return_value=mock_components["matrix"]), \
+             patch('genesis_core.GenesisConnector', return_value=mock_components["connector"]), \
+             patch('genesis_core.EthicalGovernor', return_value=mock_components["governor"]), \
+             patch('genesis_core.EvolutionaryConduit', return_value=MagicMock()), \
+             patch('genesis_core.GenesisProfile', return_value=MagicMock()):
             
             core = GenesisCore()
             await core.initialize()
