@@ -1,7 +1,5 @@
-﻿plugins {
-    id("com.android.library") version "9.0.0-alpha11"
-    id("com.google.devtools.ksp") version "2.3.0"
-
+plugins {
+    id("genesis.library")
 }
 android {
     namespace = "dev.aurakai.auraframefx.extendsysd"
