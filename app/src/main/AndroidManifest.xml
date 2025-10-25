@@ -30,7 +30,7 @@
 
     <!-- Application -->
     <application
-        android:name="dev.aurakai.auraframefx.AurakaiApplication"
+        android:name=".AurakaiApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/Theme.dev.aurakai.auraframefx">
