@@ -1,0 +1,3 @@
+dev.aurakai.auraframefx.dataveinoraclenative
+string oracle_drive_integration_debug_name
+string oracle_drive_integration_main_name

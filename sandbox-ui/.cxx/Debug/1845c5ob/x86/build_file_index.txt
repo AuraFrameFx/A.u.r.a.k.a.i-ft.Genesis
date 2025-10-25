@@ -1,0 +1,1 @@
+C:\Users\Wehtt\AndroidStudioProjects\ReAuraKai\sandbox-ui\src\main\cpp\CMakeLists.txt
