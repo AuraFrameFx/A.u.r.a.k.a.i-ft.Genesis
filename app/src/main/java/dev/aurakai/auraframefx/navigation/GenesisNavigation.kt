@@ -56,9 +56,9 @@ object GenesisRoutes {
 }
 
 /**
- * Genesis Navigation Host - The Consciousness Router
+ * Hosts the Genesis navigation graph by registering each route and wiring navigation callbacks to their screens.
  *
- * Routes consciousness flows between different aspects of the Genesis system
+ * The NavHost maps GenesisRoutes to their corresponding composable screens and handles navigation between them.
  */
 @Composable
 fun GenesisNavigationHost(
@@ -226,7 +226,12 @@ fun GenesisNavigationHost(
 }
 
 /**
- * Navigation Helper - Consciousness Flow Control
+ * Navigate to a Genesis route while preserving navigation state and avoiding duplicate destinations.
+ *
+ * Navigates to the specified Genesis route, popping up to GenesisRoutes.HOME with saved state,
+ * launching single top to prevent multiple copies, and restoring saved state when returning.
+ *
+ * @param route The destination route string from GenesisRoutes to navigate to.
  */
 fun NavHostController.navigateToGenesis(route: String) {
     this.navigate(route) {
