@@ -21,7 +21,6 @@ dependencies {
     implementation(libs.androidx.ui.test)
     implementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.test.manifest)
-    implementation(project(":build-logic"))
     implementation(libs.hilt.android)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

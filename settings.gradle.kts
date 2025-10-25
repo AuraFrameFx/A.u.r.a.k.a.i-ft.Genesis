@@ -84,7 +84,8 @@ rootProject.name = "AuraKai"
 include(":app")
 include(":core-module")
 includeBuild("build-logic")
-// Feature modulesincludeBuild("build-logic")
+
+// Feature modules
 include(":feature-module")
 include(":datavein-oracle-native")
 include(":oracle-drive-integration")

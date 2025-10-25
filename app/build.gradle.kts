@@ -56,7 +56,6 @@ dependencies {
     implementation(libs.androidx.ui.test)
     implementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.test.manifest)
-    implementation(project(":build-logic"))
     implementation(project(":core-module"))
     implementation(project(":feature-module"))
     implementation(project(":romtools"))
