@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "dev.aurakai.auraframefx.app-mergeDebugResources-1:/values-w360dp-port-v13/values-w360dp-port-v13.xml",
+            "outputFile": "dev.aurakai.auraframefx.app-mergeDebugResources-84:/values-w360dp-port-v13/values-w360dp-port-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.2.0-rc-2\\transforms\\aacc59ee1507aae2cd5f83f1f761203b\\workspace\\transformed\\material-1.13.0\\res\\values-w360dp-port-v13\\values-w360dp-port-v13.xml",

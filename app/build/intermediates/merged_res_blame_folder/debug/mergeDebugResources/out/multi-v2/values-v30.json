@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "dev.aurakai.auraframefx.app-mergeDebugResources-1:/values-v30/values-v30.xml",
+            "outputFile": "dev.aurakai.auraframefx.app-mergeDebugResources-84:/values-v30/values-v30.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.2.0-rc-2\\transforms\\d9c712acac1e5872026a775369fc7940\\workspace\\transformed\\jetified-material3\\res\\values-v30\\values-v30.xml",
+                    "source": "C:\\Users\\Wehtt\\.gradle\\caches\\9.2.0-rc-2\\transforms\\cdaba9bf383dc470b2964015bd862392\\workspace\\transformed\\material3\\res\\values-v30\\values-v30.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -13,8 +13,8 @@ allprojects {
         extensions.configure<JavaPluginExtension> {
             toolchain {
                 // Primary target: Java 24
-                val targetVersion = 23
-                val fallbackVersion = 25
+                val targetVersion = 25
+                val fallbackVersion = 24
 
                 try {
                     // Enforce Java 24

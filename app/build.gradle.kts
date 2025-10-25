@@ -1,5 +1,7 @@
 plugins {
-    id("genesis.application")
+    id("com.android.application") version "9.0.0-alpha11"
+    id("com.google.devtools.ksp") version "2.3.0"
+
 }
 
 android {
