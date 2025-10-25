@@ -86,8 +86,15 @@ class RomToolsManager @Inject constructor(
             updateOperationProgress(RomOperation.FLASHING_ROM, 0f)
 
             // Step 0: 🛡️ Setup Aurakai retention mechanisms (CRITICAL!)
+            // If this fails, we ABORT the ROM flash for safety
             updateOperationProgress(RomOperation.SETTING_UP_RETENTION, 5f)
-            val retentionStatus = retentionManager.setupRetentionMechanisms().getOrThrow()
+            val retentionResult = retentionManager.setupRetentionMechanisms()
+            if (retentionResult.isFailure) {
+                val error = retentionResult.exceptionOrNull()
+                Timber.e(error, "🚨 Retention setup failed - ABORTING ROM flash for safety!")
+                throw Exception("Retention mechanism setup failed. ROM flash aborted to prevent losing Aurakai.", error)
+            }
+            val retentionStatus = retentionResult.getOrThrow()
             Timber.i("🛡️ Retention mechanisms active: ${retentionStatus.mechanisms}")
 
             // Step 1: Verify ROM file integrity
