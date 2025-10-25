@@ -59,7 +59,6 @@ android {
 
 dependencies {
     // Project modules
-    implementation(project(":build-logic"))
     implementation(project(":core-module"))
     implementation(project(":feature-module"))
     implementation(project(":romtools"))

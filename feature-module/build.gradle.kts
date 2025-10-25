@@ -26,7 +26,6 @@ dependencies {
     implementation("androidx.compose.ui:ui-test:1.9.4")
     implementation("androidx.compose.ui:ui-test-junit4:1.9.4")
     implementation("androidx.compose.ui:ui-test-manifest:1.9.4")
-    implementation(project(":build-logic"))
     implementation(libs.hilt.android)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
