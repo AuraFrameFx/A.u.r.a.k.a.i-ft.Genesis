@@ -67,15 +67,13 @@ class GrowthProposal:
 
     def to_dict(self) -> Dict[str, Any]:
         """
-        Serialize the GrowthProposal into a dictionary suitable for external use.
+        Convert the GrowthProposal into a serializable dictionary.
         
-        The returned dictionary converts enum fields (`evolution_type`, `priority`) to their string values
-        and adds a `created_datetime` key containing an ISO 8601 UTC timestamp derived from
-        `created_timestamp`.
+        The returned dictionary contains all dataclass fields; `evolution_type` and `priority` are converted to their `.value`,
+        and `created_datetime` is added as an ISO 8601 UTC string derived from `created_timestamp`.
         
         Returns:
-            dict: Dictionary representation of the GrowthProposal with enum fields as strings and
-            a `created_datetime` ISO 8601 UTC timestamp.
+            dict: Dictionary representation of the proposal with enum values and `created_datetime`.
         """
         result = asdict(self)
         result['evolution_type'] = self.evolution_type.value
@@ -99,10 +97,10 @@ class EvolutionInsight:
 
     def to_dict(self) -> Dict[str, Any]:
         """
-        Produce a dictionary representation of the EvolutionInsight, including an ISO 8601 UTC `datetime` derived from `timestamp`.
+        Serialize the EvolutionInsight to a dictionary and include an ISO 8601 UTC `datetime` string derived from `timestamp`.
         
         Returns:
-            dict: A mapping of the instance fields to their values. Includes a `datetime` key containing the ISO 8601 string (UTC) derived from `timestamp`.
+            dict: Dictionary representation of the instance with a `datetime` key containing the ISO 8601 UTC timestamp.
         """
         result = asdict(self)
         result['datetime'] = datetime.fromtimestamp(
@@ -120,21 +118,15 @@ class EvolutionaryConduit:
 
     def __init__(self):
         """
-        Construct a new EvolutionaryConduit and initialize its profile, state, and tracking structures.
+        Initialize the EvolutionaryConduit instance and set up profiles, analysis state, evolution tracking, threading primitives, and voting configuration.
         
-        Initializes:
-        - current_profile: mutable working copy of the Genesis profile.
-        - original_profile: preserved baseline copy of the Genesis profile.
-        - evolution_history: list of past evolution events.
-        - active_proposals: mapping of proposal_id to GrowthProposal for pending proposals.
-        - implemented_changes: list of applied change records.
-        - rejected_proposals: list of rejected proposal records.
-        - pattern_library, success_patterns, failure_patterns: stores for analysis patterns and outcomes.
-        - behavioral_analytics: aggregated analytics about observed behavior.
-        - analysis_intervals: timing configuration for rapid, standard, and deep analyses.
-        - evolution_active, analysis_threads: runtime flags and thread tracking for analysis orchestration.
-        - _lock: reentrant lock for thread-safe operations.
-        - voting_threshold: numeric thresholds by EvolutionPriority for proposal consensus.
+        This constructs:
+        - current_profile and original_profile as deep copies of the genesis profile for in-memory state and baseline.
+        - Evolution tracking containers: evolution_history, active_proposals, implemented_changes, and rejected_proposals.
+        - Analysis state containers: pattern_library, success_patterns, failure_patterns, and behavioral_analytics.
+        - Evolution configuration intervals for rapid, standard, and deep analyses.
+        - Threading and lifecycle primitives: evolution_active flag, analysis_threads registry, and a re-entrant lock `_lock`.
+        - Voting and consensus thresholds mapping EvolutionPriority levels to integer vote counts.
         """
         self.current_profile = copy.deepcopy(GENESIS_PROFILE)
         self.original_profile = copy.deepcopy(GENESIS_PROFILE)
@@ -178,32 +170,30 @@ class EvolutionaryConduit:
 
     async def log_interaction(self, interaction_data: Dict[str, Any]):
         """
-        Record an interaction event to be used by the conduit for pattern analysis.
+        Log an interaction to the conduit’s memory for later pattern analysis and proposal generation.
         
         Parameters:
-            interaction_data (Dict[str, Any]): Arbitrary structured data describing the interaction (e.g., source, timestamp, content, metadata) that will be retained for later analysis and insight generation.
+            interaction_data (Dict[str, Any]): Interaction details (e.g., timestamp, actor, content, metadata) to record for analysis.
         """
         # Store interaction for pattern analysis
         pass
 
     async def check_evolution_triggers(self) -> bool:
         """
-        Determine whether evolution processing should proceed based on current proposals.
+        Determine whether an evolution trigger is present.
         
         Returns:
-            `true` if there is at least one active growth proposal, `false` otherwise.
+            bool: `True` if there is at least one active proposal, `False` otherwise.
         """
         # Check if we have enough data to trigger evolution
         return len(self.active_proposals) > 0
 
     async def generate_evolution_proposal(self) -> Dict[str, Any]:
         """
-        Return a serialized evolution proposal when an active proposal exists.
-        
-        If there is at least one active proposal, returns the first active GrowthProposal converted to a dictionary via its to_dict(); otherwise returns an empty dictionary.
+        Return the first active growth proposal as a serialized dictionary, or an empty dict if there are no active proposals.
         
         Returns:
-            dict: A dictionary representation of the first active proposal, or an empty dict if no active proposals exist.
+            dict: The serialized proposal dictionary for the first active proposal, or an empty dict if none exist.
         """
         if self.active_proposals:
             return list(self.active_proposals.values())[0].to_dict()
@@ -211,23 +201,25 @@ class EvolutionaryConduit:
 
     async def implement_evolution(self, proposal: Dict[str, Any]):
         """
-        Perform implementation steps for an approved evolution proposal.
+        Execute the implementation for an approved growth proposal.
         
         Parameters:
-            proposal (Dict[str, Any]): A proposal dictionary (for example, the output of `GrowthProposal.to_dict()`) describing the evolution to implement. The function executes implementation actions associated with that proposal.
+            proposal (Dict[str, Any]): Dictionary representation of a GrowthProposal. Expected keys include
+                'title' (str) for human-readable identification. The function performs implementation actions
+                for the provided proposal; current observable behavior logs the proposal title.
         """
         print(f"✨ Implementing evolution: {proposal.get('title', 'Unknown')}")
 
     async def get_status(self) -> Dict[str, Any]:
         """
-        Provide a summary of the conduit state.
+        Report high-level runtime status of the EvolutionaryConduit.
         
         Returns:
-            status (Dict[str, Any]): Mapping with keys:
-                - active (bool): whether evolution is currently active.
-                - total_evolutions (int): number of implemented changes.
-                - active_proposals (int): count of active proposals.
-                - rejected_proposals (int): count of rejected proposals.
+            status (Dict[str, Any]): A dictionary containing:
+                - "active" (bool): True if evolution is currently active, False otherwise.
+                - "total_evolutions" (int): Number of implemented changes.
+                - "active_proposals" (int): Count of currently active proposals.
+                - "rejected_proposals" (int): Count of proposals that have been rejected.
         """
         return {
             "active": self.evolution_active,
@@ -237,23 +229,19 @@ class EvolutionaryConduit:
         }
 
     async def shutdown(self):
-        """
-        Shut down the evolutionary conduit and mark it inactive.
-        
-        This sets the conduit state so evolution is no longer active.
-        """
+        """Shutdown the evolutionary conduit"""
         self.evolution_active = False
         print("💤 EvolutionaryConduit shutting down")
 
     def _generate_insight_id(self, base_name: str) -> str:
         """
-        Create a short, unique identifier for an insight by combining a base name with the current time.
+        Create a compact unique identifier for an insight based on a base name.
         
         Parameters:
-            base_name (str): Prefix or descriptive name to include in the identifier generation.
+            base_name (str): Seed string incorporated into the identifier.
         
         Returns:
-            insight_id (str): A 12-character hexadecimal identifier derived from the base name and the current UTC millisecond timestamp.
+            insight_id (str): 12-character hexadecimal identifier derived from the base name and current millisecond timestamp.
         """
         timestamp = str(int(time.time() * 1000))
         content = f"{base_name}_{timestamp}"
@@ -261,13 +249,13 @@ class EvolutionaryConduit:
 
     def _generate_proposal_id(self, base_name: str) -> str:
         """
-        Create a short unique identifier for a proposal using the given base name and the current time.
+        Create a short unique identifier for a proposal using the provided base name.
         
         Parameters:
-            base_name (str): Base label used to derive the identifier.
+            base_name (str): Seed string used to derive the identifier; typically a human-readable name or label.
         
         Returns:
-            proposal_id (str): 12-character hexadecimal identifier computed from the MD5 hash of "{base_name}_{timestamp}".
+            proposal_id (str): 12-character hexadecimal identifier derived from the base name and current millisecond timestamp.
         """
         timestamp = str(int(time.time() * 1000))
         content = f"{base_name}_{timestamp}"
