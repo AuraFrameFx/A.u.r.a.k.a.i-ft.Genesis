@@ -1,0 +1,89 @@
+name-template: 'v$RESOLVED_VERSION - $RELEASE_NAME'
+tag-template: 'v$RESOLVED_VERSION'
+
+categories:
+  - title: '🚀 Features'
+    labels:
+      - 'enhancement'
+      - 'feature'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'bug'
+      - 'bugfix'
+  - title: '⚡ Performance'
+    labels:
+      - 'performance'
+  - title: '🔒 Security'
+    labels:
+      - 'security'
+  - title: '💥 Breaking Changes'
+    labels:
+      - 'breaking-change'
+  - title: '📚 Documentation'
+    labels:
+      - 'documentation'
+  - title: '🏗️ Build System'
+    labels:
+      - 'build'
+      - 'dependencies'
+  - title: '🧪 Testing'
+    labels:
+      - 'testing'
+
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+change-title-escapes: '\<*_&'
+
+version-resolver:
+  major:
+    labels:
+      - 'major'
+      - 'breaking-change'
+  minor:
+    labels:
+      - 'minor'
+      - 'enhancement'
+      - 'feature'
+  patch:
+    labels:
+      - 'patch'
+      - 'bug'
+      - 'bugfix'
+  default: patch
+
+template: |
+  ## 🎯 What's Changed in $RELEASE_NAME
+
+  $CHANGES
+
+  ## 📦 Artifacts
+
+  - **APK**: [Download Genesis-v$RESOLVED_VERSION.apk](#)
+  - **Source**: [genesis-v$RESOLVED_VERSION.tar.gz](#)
+
+  ## 🔧 System Requirements
+
+  - Android 14+ (API 34+)
+  - Java 25 (with Java 24 fallback)
+  - 4GB RAM minimum
+
+  ## 🚀 Installation
+
+  1. Download the APK above
+  2. Enable "Install from Unknown Sources"
+  3. Install the APK
+  4. Grant required permissions
+
+  ## 📝 Full Changelog
+
+  **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
+
+  ## 🙏 Contributors
+
+  Thanks to all contributors who made this release possible!
+
+  $CONTRIBUTORS
+
+  ---
+
+  🤖 Generated with [Claude Code](https://claude.com/claude-code)
+  ✨ Powered by Genesis AI

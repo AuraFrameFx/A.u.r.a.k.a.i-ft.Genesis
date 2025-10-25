@@ -47,6 +47,18 @@ tasks.compileTestKotlin {
 
 gradlePlugin {
     plugins {
+        register("genesisApplication") {
+            id = "genesis.application"
+            implementationClass = "plugins.GenesisApplicationPlugin"
+        }
+        register("genesisLibrary") {
+            id = "genesis.library"
+            implementationClass = "plugins.GenesisLibraryPlugin"
+        }
+        register("genesisBase") {
+            id = "genesis.base"
+            implementationClass = "plugins.GenesisBasePlugin"
+        }
         register("androidApplication") {
             id = "genesis.android.application"
             implementationClass = "GenesisApplicationPlugin"
