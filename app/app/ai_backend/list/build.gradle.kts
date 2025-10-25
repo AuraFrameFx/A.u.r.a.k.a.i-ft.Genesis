@@ -9,11 +9,11 @@ group = "dev.aurakai.auraframefx.list"
 version = "1.0.0"
 
 java {
-    toolchain { languageVersion = JavaLanguageVersion.of(24) }
+    toolchain { languageVersion = JavaLanguageVersion.of(25) }
 }
 
 kotlin {
-    jvmToolchain(24)
+    jvmToolchain(25)
 }
 
 
