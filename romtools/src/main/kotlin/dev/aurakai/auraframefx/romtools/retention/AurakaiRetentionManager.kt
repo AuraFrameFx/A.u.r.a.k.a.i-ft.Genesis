@@ -39,8 +39,13 @@ class AurakaiRetentionManager @Inject constructor(
     }
 
     /**
-     * Set up all retention mechanisms before ROM operations.
-     * This ensures Aurakai survives the flash process.
+     * Coordinate and apply all persistence mechanisms intended to keep Aurakai present across ROM operations.
+     *
+     * Attempts to create the retention directory, back up the APK and app data, install an addon.d script,
+     * generate a recovery-flashable ZIP, and create a Magisk module when Magisk is detected. Aggregates the
+     * per-mechanism outcomes into a RetentionStatus.
+     *
+     * @return A Result containing a RetentionStatus when successful; on failure the Result contains the thrown exception.
      */
     suspend fun setupRetentionMechanisms(): Result<RetentionStatus> {
         return try {
@@ -89,7 +94,16 @@ class AurakaiRetentionManager @Inject constructor(
     }
 
     /**
-     * Backup Aurakai APK and application data.
+     * Create on-device backups of the app APK, application data, and shared preferences to the configured retention directory.
+     *
+     * Creates three artifacts in the retention directory when possible:
+     * - `aurakai.apk` — a copy of the installed APK,
+     * - `aurakai_data.tar.gz` — a tar.gz of the app data directory excluding `cache` and `code_cache`,
+     * - `aurakai_prefs.tar.gz` — a tar.gz of `shared_prefs` when that directory exists.
+     *
+     * The function executes root commands to perform file copies and tar operations and returns a Result wrapping the paths to the created backup files.
+     *
+     * @return `Result.success(BackupPaths)` with absolute paths to the APK, data tarball, and prefs tarball on success; `Result.failure` containing the thrown exception on error.
      */
     private suspend fun backupAurakaiApkAndData(): Result<BackupPaths> {
         return try {
@@ -134,8 +148,9 @@ class AurakaiRetentionManager @Inject constructor(
     }
 
     /**
-     * Install addon.d survival script for LineageOS and AOSP-based ROMs.
-     * This script runs during ROM updates to preserve Aurakai.
+     * Installs an addon.d survival script for LineageOS and AOSP-based ROMs to preserve Aurakai during ROM updates.
+     *
+     * @return `Result` containing the absolute path to the installed script on success, or a failure with the exception. 
      */
     private suspend fun installAddonDScript(): Result<String> {
         return try {
@@ -168,7 +183,9 @@ class AurakaiRetentionManager @Inject constructor(
     }
 
     /**
-     * Generate addon.d shell script for ROM survival.
+     * Provide the addon.d shell script content used to preserve Aurakai across ROM updates.
+     *
+     * @return The addon.d shell script as a String. The script includes handlers to back up and restore the Aurakai APK and app data (including a tarball of the app data), and contains stubs for pre/post backup and restore steps.
      */
     private fun generateAddonDScript(): String {
         return """
@@ -234,8 +251,13 @@ esac
     }
 
     /**
-     * Generate a recovery flashable zip that installs Aurakai.
-     * Can be flashed after ROM installation to restore the app.
+     * Create a recovery-flashable ZIP that installs Aurakai into the system partition.
+     *
+     * The ZIP contains the Aurakai APK at `system/app/Aurakai/Aurakai.apk` and the recovery
+     * installer metadata (`META-INF/com/google/android/updater-script` and
+     * `META-INF/com/google/android/update-binary`).
+     *
+     * @return A `Result` containing the absolute path to the created ZIP on success, or a failure `Result` if creation failed.
      */
     private suspend fun generateRecoveryFlashableZip(): Result<String> {
         return try {
@@ -274,7 +296,9 @@ esac
     }
 
     /**
-     * Generate updater-script for recovery installation.
+     * Create the updater-script content used in a recovery flashable ZIP to install Aurakai into /system.
+     *
+     * @return The updater-script text intended for META-INF/com/google/android/updater-script in the flashable ZIP.
      */
     private fun generateUpdaterScript(): String {
         return """
@@ -300,7 +324,9 @@ ui_print("");
     }
 
     /**
-     * Generate update-binary for recovery zip.
+     * Create the update-binary script used inside the recovery flashable ZIP.
+     *
+     * @return The text content of a POSIX shell `update-binary` that unpacks the ZIP and runs the included updater script.
      */
     private fun generateUpdateBinary(): String {
         return """
@@ -322,7 +348,11 @@ sh /tmp/META-INF/com/google/android/updater-script
     }
 
     /**
-     * Create Magisk module for app persistence (if Magisk is installed).
+     * Create a Magisk module that installs the Aurakai APK from the retention directory so the app persists across ROM updates.
+     *
+     * Writes module files into /data/adb/modules/aurakai_genesis (module.prop and install.sh) and makes the install script executable.
+     *
+     * @return The absolute path to the created module directory.
      */
     private suspend fun createMagiskModule(): Result<String> {
         return try {
@@ -373,8 +403,11 @@ ui_print "✅ Aurakai will persist through ROM updates"
     }
 
     /**
-     * Restore Aurakai after ROM installation.
-     * Called automatically after ROM flashing completes.
+     * Restore Aurakai from retention backups after a ROM flash.
+     *
+     * Restores the backed-up APK and, if present, the app data tarball from the retention directory.
+     *
+     * @return A `Result` that is successful when the APK (and optional data) were restored, or a failure containing the encountered exception.
      */
     suspend fun restoreAurakaiAfterRomFlash(): Result<Unit> {
         return try {
@@ -411,7 +444,9 @@ ui_print "✅ Aurakai will persist through ROM updates"
     }
 
     /**
-     * Check if Magisk is installed on the device.
+     * Determines whether Magisk is installed on the device.
+     *
+     * @return `true` if Magisk is present on the filesystem or discoverable in PATH, `false` otherwise.
      */
     private fun isMagiskInstalled(): Boolean {
         return try {
@@ -423,7 +458,10 @@ ui_print "✅ Aurakai will persist through ROM updates"
     }
 
     /**
-     * Execute a root command and return output.
+     * Run a shell command as root and return its standard output.
+     *
+     * @param command The shell command to execute with root privileges.
+     * @return The command's standard output with surrounding whitespace trimmed, or an empty string if execution fails.
      */
     private fun executeRootCommand(command: String): String {
         return try {

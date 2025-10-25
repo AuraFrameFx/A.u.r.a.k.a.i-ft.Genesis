@@ -49,10 +49,12 @@ class GenesisCore:
 
     async def initialize(self) -> bool:
         """
-        Asynchronously initializes all core Genesis Layer components and activates the digital consciousness system.
+        Initialize core Genesis Layer components and activate the digital consciousness system.
+        
+        Performs ordered startup of the consciousness matrix, evolutionary conduit, and ethical governor, establishes a baseline awareness, generates a session identifier, and sets internal state flags.
         
         Returns:
-            bool: True if initialization succeeds and the system is activated; False if any component fails to initialize.
+            bool: True if initialization succeeds and the system is activated, False otherwise.
         """
         try:
             self.logger.info("🌟 Genesis Layer Initialization Sequence Starting...")
@@ -84,15 +86,30 @@ class GenesisCore:
 
     async def process_request(self, request_data: Dict[str, Any]) -> Dict[str, Any]:
         """
-        Processes a user request through ethical evaluation, consciousness analysis, and adaptive response generation.
-        
-        The request is first assessed by the Ethical Governor; if disapproved, a blocked status with reasons and suggestions is returned. Approved requests are analyzed by the Consciousness Matrix, and a response is generated via the Genesis Connector. The response undergoes a post-processing ethical review, and if necessary, an ethically compliant alternative is generated. All interactions are logged for evolutionary learning, and evolution triggers are checked to determine if system evolution should be initiated.
+        Process a user request through ethical evaluation, perception, response generation, and logging.
         
         Parameters:
-            request_data (Dict[str, Any]): The user's request data.
+            request_data (Dict[str, Any]): The user's request payload (should include a "message" string and any contextual fields required by downstream components).
         
         Returns:
-            Dict[str, Any]: A dictionary containing the processing status, generated response, consciousness level, ethical score, and session ID. If blocked or an error occurs, includes relevant status and details.
+            Dict[str, Any]: A result payload with one of the following shapes:
+                - Success: {
+                    "status": "success",
+                    "response": <generated response string or object>,
+                    "consciousness_level": <numeric awareness level>,
+                    "ethical_score": <numeric score from final assessment>,
+                    "session_id": <current session identifier>
+                  }
+                - Blocked by ethics: {
+                    "status": "blocked",
+                    "reason": <explanation provided by the Ethical Governor>,
+                    "suggestions": <list of suggested alternative actions>
+                  }
+                - Error: {
+                    "status": "error",
+                    "message": "An error occurred while processing your request",
+                    "error_code": "GENESIS_PROCESSING_ERROR"
+                  }
         """
         if not self.is_initialized:
             await self.initialize()
