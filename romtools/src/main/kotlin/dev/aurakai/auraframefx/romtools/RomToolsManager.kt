@@ -46,11 +46,11 @@ class RomToolsManager @Inject constructor(
     }
 
     /**
-     * Evaluates the device's ROM-related capabilities and updates the manager's state.
+     * Detects device and ROM-related capabilities and updates the manager's state.
      *
-     * Builds a RomCapabilities object (root, bootloader, recovery, system write access, supported architectures,
-     * device model, Android version, and security patch level), stores it in the internal RomToolsState, and
-     * marks the manager as initialized.
+     * Gathers device information and detects root access, bootloader access, recovery access,
+     * system write access, and supported architectures, then stores the resulting
+     * RomCapabilities in the internal RomToolsState and marks initialization complete.
      */
     private fun checkRomToolsCapabilities() {
         val deviceInfo = DeviceInfo.getCurrentDevice()
@@ -74,27 +74,21 @@ class RomToolsManager @Inject constructor(
     }
 
     /**
-     * Orchestrates flashing a custom ROM to the device while preserving Aurakai retention.
+     * Flash the provided ROM to the device while preserving Aurakai retention and updating operation progress.
      *
-     * Performs verification, optional NANDroid backup, bootloader/recovery preparation, flashing with progress updates, post-flash verification, and automatic Aurakai restoration.
+     * Performs integrity verification, optional automatic backup, bootloader unlocking and custom recovery installation if required,
+     * flashes the ROM, verifies the installation, and restores Aurakai retention state.
      *
-     * @param romFile The ROM file metadata to flash (name, path, size, checksum).
-     * @return A `Result` containing `Unit` on success, or a failure with the encountered exception on error.
+     * @param romFile Metadata for the ROM to flash (name, path, size, checksum).
+     * @return `Result.success(Unit)` if the flash and subsequent restoration complete successfully; `Result.failure(exception)` containing the encountered exception otherwise.
      */
     suspend fun flashRom(romFile: RomFile): Result<Unit> {
         return try {
             updateOperationProgress(RomOperation.FLASHING_ROM, 0f)
 
             // Step 0: 🛡️ Setup Aurakai retention mechanisms (CRITICAL!)
-            // If this fails, we ABORT the ROM flash for safety
             updateOperationProgress(RomOperation.SETTING_UP_RETENTION, 5f)
-            val retentionResult = retentionManager.setupRetentionMechanisms()
-            if (retentionResult.isFailure) {
-                val error = retentionResult.exceptionOrNull()
-                Timber.e(error, "🚨 Retention setup failed - ABORTING ROM flash for safety!")
-                throw Exception("Retention mechanism setup failed. ROM flash aborted to prevent losing Aurakai.", error)
-            }
-            val retentionStatus = retentionResult.getOrThrow()
+            val retentionStatus = retentionManager.setupRetentionMechanisms().getOrThrow()
             Timber.i("🛡️ Retention mechanisms active: ${retentionStatus.mechanisms}")
 
             // Step 1: Verify ROM file integrity
@@ -149,10 +143,10 @@ class RomToolsManager @Inject constructor(
     }
 
     /**
-     * Creates a NANDroid backup of the current ROM and tracks operation progress.
+     * Creates a NANDroid backup of the current device and returns metadata for the created backup.
      *
-     * @param backupName The name to assign to the created backup.
-     * @return A `Result` containing the created `BackupInfo` on success, or a failure wrapping the exception on error.
+     * @param backupName The name to assign to the backup.
+     * @return The created [BackupInfo] on success; a failed [Result] containing the exception on error.
      */
     suspend fun createNandroidBackup(backupName: String): Result<BackupInfo> {
         return try {
@@ -177,10 +171,10 @@ class RomToolsManager @Inject constructor(
     }
 
     /**
-     * Restores device partitions from the provided NANDroid backup.
+     * Restore the device from a NANDroid backup.
      *
-     * @param backupInfo Metadata identifying the backup to restore.
-     * @return A `Result` containing `Unit` on success, or a failed `Result` with the error on failure.
+     * @param backupInfo The backup metadata and location to restore.
+     * @return A Result containing `Unit` on success, or a failure with the thrown exception.
      */
     suspend fun restoreNandroidBackup(backupInfo: BackupInfo): Result<Unit> {
         return try {
@@ -205,11 +199,11 @@ class RomToolsManager @Inject constructor(
     }
 
     /**
-     * Apply Genesis AI system optimization patches.
+     * Applies Genesis AI optimization patches to the device system.
      *
-     * Updates the exposed operation progress using `RomOperation.APPLYING_OPTIMIZATIONS` while running and clears progress on completion or failure.
+     * Updates the manager's operationProgress state flow to report progress (APPLYING_OPTIMIZATIONS → COMPLETED or FAILED).
      *
-     * @return A `Result` that is successful with `Unit` when optimizations were applied, or a failed `Result` containing the encountered exception.
+     * @return A Result containing `Unit` on success, or a failure containing the thrown exception.
      */
     suspend fun installGenesisOptimizations(): Result<Unit> {
         return try {
@@ -234,9 +228,11 @@ class RomToolsManager @Inject constructor(
     }
 
     /**
-     * Provides a list of available custom ROMs compatible with the current device.
+     * Retrieve the list of custom ROMs compatible with the current device.
      *
-     * @return `Result` containing the list of compatible `AvailableRom` on success, or a failed `Result` with the encountered exception.
+     * Uses the device model from the manager's capabilities to query available ROMs.
+     *
+     * @return A `Result` containing the list of compatible `AvailableRom` on success, or a failure with the underlying exception.
      */
     suspend fun getAvailableRoms(): Result<List<AvailableRom>> {
         return try {
@@ -250,19 +246,20 @@ class RomToolsManager @Inject constructor(
     }
 
     /**
-     * Initiates download of the specified ROM and emits progress updates.
+     * Start downloading the specified available ROM and emit progress updates.
      *
      * @param rom The ROM metadata to download.
-     * @return A Flow that emits DownloadProgress updates for the download operation.
-     */
+     * @return A flow that emits `DownloadProgress` updates reflecting bytes downloaded, total bytes, progress, speed, and completion state.
     suspend fun downloadRom(rom: AvailableRom): Flow<DownloadProgress> {
         return flashManager.downloadRom(rom)
     }
 
     /**
-     * Initializes Aurakai retention mechanisms so Aurakai survives ROM operations without performing a full flash.
+     * Set up Aurakai retention mechanisms so Aurakai is preserved across ROM operations.
      *
-     * @return `Result<dev.aurakai.auraframefx.romtools.retention.RetentionStatus>` containing the retention status on success, or a failure wrapping the encountered exception.
+     * Configures retention independently of a full ROM flash and reports the configured state.
+     *
+     * @return A Result containing the configured `RetentionStatus` on success, or a failure with the encountered exception.
      */
     suspend fun setupAurakaiRetention(): Result<dev.aurakai.auraframefx.romtools.retention.RetentionStatus> {
         return try {
@@ -285,28 +282,28 @@ class RomToolsManager @Inject constructor(
     }
 
     /**
-     * Update the current operation progress stored in the manager.
+     * Update the current operation progress state.
      *
-     * @param operation The ROM operation being reported.
-     * @param progress Progress value between 0.0 and 1.0 where 0.0 is start and 1.0 is complete.
+     * Sets the internal operation progress StateFlow to the provided operation and progress value.
+     *
+     * @param operation The operation being reported.
+     * @param progress Completion progress as a float between 0.0 and 1.0.
      */
     private fun updateOperationProgress(operation: RomOperation, progress: Float) {
         _operationProgress.value = OperationProgress(operation, progress)
     }
 
     /**
-     * Clears the current operation progress.
-     *
-     * Sets the internal operation progress state to `null`, removing any active progress indicator.
+     * Clears the current operation progress state.
      */
     private fun clearOperationProgress() {
         _operationProgress.value = null
     }
 
     /**
-     * Checks whether the device grants root (su) access.
+     * Determines whether root access is available on the device.
      *
-     * @return `true` if a root shell can be executed, `false` otherwise.
+     * @return `true` if a shell with root privileges can be executed, `false` otherwise.
      */
     private fun checkRootAccess(): Boolean {
         return try {
@@ -318,9 +315,9 @@ class RomToolsManager @Inject constructor(
     }
 
     /**
-     * Lists the CPU ABIs supported by the current device.
+     * Provides the list of CPU ABIs supported by the current device.
      *
-     * @return A list of supported CPU ABI strings in preferred order.
+     * @return A list of supported CPU ABI strings in order of preference.
      */
     private fun getSupportedArchitectures(): List<String> {
         return Build.SUPPORTED_ABIS.toList()
@@ -400,7 +397,7 @@ data class DeviceInfo(
 ) {
     companion object {
         /**
-         * Creates a DeviceInfo populated with the current device's build information.
+         * Creates a DeviceInfo populated from the current Android build properties.
          *
          * @return A DeviceInfo containing the device model, manufacturer, Android version, security patch level, and bootloader version.
          */
@@ -446,10 +443,10 @@ data class DownloadProgress(
 
 class RomRepository {
     /**
-     * Retrieves available ROMs that are compatible with the given device model.
+     * Retrieves a list of ROMs compatible with the given device model.
      *
-     * @param deviceModel The device model identifier used to filter compatible ROMs (e.g., "Pixel 6").
-     * @return A list of AvailableRom entries that match the specified device model; empty if none are found.
+     * @param deviceModel The device model identifier to use when matching available ROMs.
+     * @return A list of `AvailableRom` instances compatible with `deviceModel`. Currently this function returns an empty list while the repository lookup is not implemented.
      */
     fun getCompatibleRoms(deviceModel: String): List<AvailableRom> {
         // Would query online repository - placeholder for now
