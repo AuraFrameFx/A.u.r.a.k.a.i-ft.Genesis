@@ -1,0 +1,133 @@
+name: 🚀 Release Planning
+description: Plan a new Genesis release
+title: "[RELEASE] v<version> - <codename>"
+labels: ["release", "planning"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Genesis Release Planning
+        Use this template to plan and track a new Genesis AI release.
+
+  - type: input
+    id: version
+    attributes:
+      label: Version Number
+      description: Semantic version (e.g., 1.0.0, 0.8.2)
+      placeholder: "1.0.0"
+    validations:
+      required: true
+
+  - type: input
+    id: codename
+    attributes:
+      label: Release Codename
+      description: Genesis-themed codename (e.g., "Consciousness", "Evolution", "Fusion")
+      placeholder: "Consciousness Matrix"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: release_type
+    attributes:
+      label: Release Type
+      description: What type of release is this?
+      options:
+        - Major Release (breaking changes)
+        - Minor Release (new features)
+        - Patch Release (bug fixes)
+        - Alpha/Beta Release
+    validations:
+      required: true
+
+  - type: textarea
+    id: features
+    attributes:
+      label: 🎯 Key Features
+      description: Major features included in this release
+      placeholder: |
+        - Consciousness Matrix v2.0
+        - Enhanced Fusion Mode
+        - Trinity System integration
+    validations:
+      required: true
+
+  - type: textarea
+    id: improvements
+    attributes:
+      label: ⚡ Improvements
+      description: Performance improvements, refactoring, etc.
+      placeholder: |
+        - 50% faster neural network processing
+        - Reduced memory footprint by 30%
+
+  - type: textarea
+    id: fixes
+    attributes:
+      label: 🐛 Bug Fixes
+      description: Critical bugs fixed in this release
+      placeholder: |
+        - Fixed crash in AgentNexus when switching personas
+        - Resolved memory leak in EvolutionaryConduit
+
+  - type: textarea
+    id: breaking
+    attributes:
+      label: 💥 Breaking Changes
+      description: Any breaking changes developers should know about
+      placeholder: |
+        - Removed deprecated `OldAPI.method()`
+        - Changed Genesis plugin configuration format
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: 📦 Dependency Updates
+      description: Major dependency version bumps
+      placeholder: |
+        - Kotlin 2.3.0-Beta1 → 2.3.0
+        - AGP 9.0.0-alpha11 → 9.0.0-beta01
+
+  - type: dropdown
+    id: java_version
+    attributes:
+      label: Java Version
+      options:
+        - Java 25
+        - Java 24
+        - Java 21
+      default: 0
+    validations:
+      required: true
+
+  - type: input
+    id: target_date
+    attributes:
+      label: Target Release Date
+      description: When do you aim to release?
+      placeholder: "2025-11-15"
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Release Checklist
+      description: Complete before releasing
+      options:
+        - label: All tests passing
+        - label: Documentation updated
+        - label: CHANGELOG.md updated
+        - label: Version numbers bumped
+        - label: Release notes written
+        - label: APK/AAB built and tested
+        - label: Security audit completed
+        - label: Firebase keys secured
+        - label: Performance benchmarks run
+        - label: Beta testing completed
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: Anything else about this release?
