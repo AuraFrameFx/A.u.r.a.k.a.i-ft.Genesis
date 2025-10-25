@@ -36,8 +36,8 @@ android {
         aidl = true
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_24
-        targetCompatibility = JavaVersion.VERSION_24
+        sourceCompatibility = JavaVersion.VERSION_25
+        targetCompatibility = JavaVersion.VERSION_25
         isCoreLibraryDesugaringEnabled = true
     }
 }
@@ -85,8 +85,8 @@ dependencies {
     implementation(libs.bundles.network)
     implementation(platform(libs.firebase.bom))
     implementation(libs.bundles.firebase)
-    implementation(libs.hilt.compiler)
-    implementation(libs.androidx.room.compiler)
+    ksp(libs.hilt.compiler)
+    ksp(libs.androidx.room.compiler)
     implementation(libs.compose.theme.adapter.x)
     implementation(libs.firebase.auth.ktx)
     compileOnly(files("../Libs/api-82.jar"))

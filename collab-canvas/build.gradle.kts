@@ -58,7 +58,7 @@ dependencies {
     implementation(libs.androidx.datastore.core)
     // DI
     implementation(libs.hilt.android)
-    implementation(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
 
     // Desugaring
     coreLibraryDesugaring(libs.desugar.jdk.libs)
