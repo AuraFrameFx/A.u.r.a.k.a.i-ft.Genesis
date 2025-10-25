@@ -1,19 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.k.a.i-ft.Genesis\collab-canvas\src\main\AndroidManifest.xml:2:1-8:12
-INJECTED from C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.k.a.i-ft.Genesis\collab-canvas\src\main\AndroidManifest.xml:2:1-8:12
+ADDED from C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.k.a.i-ft.Genesis\collab-canvas\src\main\AndroidManifest.xml:2:1-4:12
+INJECTED from C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.k.a.i-ft.Genesis\collab-canvas\src\main\AndroidManifest.xml:2:1-4:12
 	package
 		INJECTED from C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.k.a.i-ft.Genesis\collab-canvas\src\main\AndroidManifest.xml
-	xmlns:android
-		ADDED from C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.k.a.i-ft.Genesis\collab-canvas\src\main\AndroidManifest.xml:2:11-69
-uses-permission#android.permission.INTERNET
-ADDED from C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.k.a.i-ft.Genesis\collab-canvas\src\main\AndroidManifest.xml:5:5-67
-	android:name
-		ADDED from C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.k.a.i-ft.Genesis\collab-canvas\src\main\AndroidManifest.xml:5:22-64
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.k.a.i-ft.Genesis\collab-canvas\src\main\AndroidManifest.xml:6:5-79
-	android:name
-		ADDED from C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.k.a.i-ft.Genesis\collab-canvas\src\main\AndroidManifest.xml:6:22-76
 uses-sdk
 INJECTED from C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.k.a.i-ft.Genesis\collab-canvas\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.k.a.i-ft.Genesis\collab-canvas\src\main\AndroidManifest.xml

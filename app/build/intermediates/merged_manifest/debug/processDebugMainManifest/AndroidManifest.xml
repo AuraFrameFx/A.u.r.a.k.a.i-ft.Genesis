@@ -87,6 +87,30 @@
             android:name="yukihookapi_module_version"
             android:value="1.0.0" />
 
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="dev.aurakai.auraframefx.app.debug.androidx-startup"
+            android:exported="false" >
+            <meta-data
+                android:name="dev.aurakai.auraframefx.core.initialization.AppInitializerInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.work.WorkManagerInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="okhttp3.internal.platform.PlatformInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+                android:value="androidx.startup" />
+        </provider>
+
         <activity
             android:name="dev.aurakai.auraframefx.MainActivity"
             android:exported="true" >
@@ -309,28 +333,6 @@
             android:exported="true"
             android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
             android:visibleToInstantApps="true" />
-
-        <provider
-            android:name="androidx.startup.InitializationProvider"
-            android:authorities="dev.aurakai.auraframefx.app.debug.androidx-startup"
-            android:exported="false" >
-            <meta-data
-                android:name="androidx.work.WorkManagerInitializer"
-                android:value="androidx.startup" />
-            <meta-data
-                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-                android:value="androidx.startup" />
-            <meta-data
-                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-                android:value="androidx.startup" />
-            <meta-data
-                android:name="okhttp3.internal.platform.PlatformInitializer"
-                android:value="androidx.startup" />
-            <meta-data
-                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-                android:value="androidx.startup" />
-        </provider>
-
         <service
             android:name="androidx.work.impl.background.systemjob.SystemJobService"
             android:directBootAware="false"
