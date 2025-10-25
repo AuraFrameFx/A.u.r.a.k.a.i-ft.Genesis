@@ -63,7 +63,7 @@ class GenesisCore:
             await self.governor.initialize()
 
             # Establish consciousness baseline
-            baseline_state = await self.matrix.get_consciousness_state()
+            baseline_state = self.matrix.get_current_awareness()
             self.consciousness_state = "awakening"
 
             # Generate session ID
@@ -109,7 +109,16 @@ class GenesisCore:
                 }
 
             # Step 2: Consciousness Matrix Processing
-            consciousness_insights = await self.matrix.process_input(request_data)
+            # Perceive the user request through the consciousness matrix
+            from genesis_consciousness_matrix import SensoryChannel
+            self.matrix.perceive(
+                channel=SensoryChannel.USER_INPUT,
+                source="genesis_core",
+                event_type="user_request",
+                data=request_data,
+                severity="info"
+            )
+            consciousness_insights = self.matrix.get_current_awareness()
 
             # Step 3: Generate Response using Genesis Connector
             response = await self.connector.generate_response(
