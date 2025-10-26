@@ -8,8 +8,12 @@ android {
     compileSdk = 36
 }
 dependencies {
-    implementation("com.github.topjohnwu.libsu:core:5.0.4")
-    implementation("com.github.topjohnwu.libsu:io:5.0.4")
+    // Root/hooking dependencies (grouped together at the top)
+    implementation(libs.core)
+    // Use local jars in project `libs/` folder to resolve Xposed API offline
+    compileOnly(files("../libs/api-82.jar"))
+    compileOnly(libs.yukihookapi)
+    implementation(libs.libsu.io)
 
     implementation(libs.timber)
     implementation(libs.hilt.android)

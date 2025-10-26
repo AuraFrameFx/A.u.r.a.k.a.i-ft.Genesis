@@ -3,9 +3,11 @@
 agp = "9.0.0-alpha11"
 benchmarkJunit4 = "1.4.1"
 composeThemeAdapterX = "1.1.1"
+core = "5.0.4"
 firebaseAuthKtx = "23.2.1"
 gradle = "9.2.0-RC-3"
 hiltAndroidCompiler = "2.57.2"
+io = "5.0.4"
 kotlin = "2.3.0-Beta1"
 ksp = "2.3.0"
 java = "24"
@@ -104,9 +106,11 @@ androidx-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", versi
 androidx-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "uiTestManifest" }
 androidx-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "ui" }
 compose-theme-adapter-x = { module = "com.google.android.material:compose-theme-adapter-3", version.ref = "composeThemeAdapterX" }
+core = { module = "com.github.topjohnwu.libsu:core", version.ref = "core" }
 firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
 gradle-tooling-api = { module = "org.gradle:gradle-tooling-api", version.ref = "gradle" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroidCompiler" }
+libsu-io = { module = "com.github.topjohnwu.libsu:io", version.ref = "io" }
 symbol-processing-api = { module = "com.google.devtools.ksp:symbol-processing-api", version.ref = "ksp" }
 
 # AndroidX Core
