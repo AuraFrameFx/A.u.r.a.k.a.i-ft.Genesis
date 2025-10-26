@@ -16,7 +16,7 @@ extern "C" /**
 JNIEXPORT jstring
 
 JNICALL
-Java_com_auraframes_fx_MainActivity_stringFromJNI(JNIEnv *env, jobject /* this */) {
+Java_dev_aurakai_auraframefx_MainActivity_stringFromJNI(JNIEnv *env, jobject /* this */) {
     std::string hello = "Hello from Genesis C++ Core";
     return env->NewStringUTF(hello.c_str());
 }

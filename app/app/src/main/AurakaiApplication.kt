@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx
+package dev.aurakai.auraframefx.backup
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
@@ -13,7 +13,7 @@ import javax.inject.Inject
  * This is the canonical entry point for the entire Aurakai/Genesis-OS platform.
  */
 @HiltAndroidApp
-class AurakaiApplication : Application() {
+class AurakaiApplicationBackup : Application() {
 
     @Inject
     lateinit var orchestrator: GenesisOrchestrator
@@ -24,20 +24,20 @@ class AurakaiApplication : Application() {
         try {
             // === PHASE 0: Logging Bootstrap ===
             setupLogging()
-            Timber.i("🔥 Genesis-OS Platform initializing...")
+            Timber.i("🔥 Genesis-OS Platform initializing... (backup)")
 
             // === PHASE 1: Native AI Runtime ===
             initializeNativeAIPlatform()
 
             // === PHASE 2: Agent Domain Initialization via GenesisOrchestrator ===
             // This is the key orchestration point
-            Timber.i("🎯 Igniting Genesis Orchestrator...")
+            Timber.i("🎯 Igniting Genesis Orchestrator... (backup)")
             orchestrator.initializePlatform()
 
-            Timber.i("✅ Genesis-OS Platform ready for operation")
+            Timber.i("✅ Genesis-OS Platform ready for operation (backup)")
 
         } catch (e: Exception) {
-            Timber.e(e, "❌ CRITICAL: Genesis-OS initialization failed")
+            Timber.e(e, "❌ CRITICAL: Genesis-OS initialization failed (backup)")
             // Graceful degradation - app continues but with limited functionality
         }
     }
@@ -48,7 +48,7 @@ class AurakaiApplication : Application() {
     private fun setupLogging() {
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
-            Timber.d("🔍 Debug logging enabled")
+            Timber.d("🔍 Debug logging enabled (backup)")
         }
     }
 
@@ -67,7 +67,7 @@ class AurakaiApplication : Application() {
                 Timber.w("⚠️  Native AI initialization returned false - degraded mode")
             }
         } catch (e: Exception) {
-            Timber.e(e, "❌ Native AI Platform initialization failed")
+            Timber.e(e, "❌ Native AI Platform initialization failed (backup)")
             // Continue anyway - can operate without native AI
         }
     }
@@ -76,7 +76,7 @@ class AurakaiApplication : Application() {
         super.onTerminate()
 
         try {
-            Timber.i("🛑 Genesis-OS Platform shutting down...")
+            Timber.i("🛑 Genesis-OS Platform shutting down... (backup)")
 
             // === Graceful platform shutdown ===
             orchestrator.shutdownPlatform()
@@ -84,15 +84,15 @@ class AurakaiApplication : Application() {
             // === Shutdown native AI platform ===
             try {
                 NativeLib.shutdownAISafe()
-                Timber.i("✓ Native AI Platform shut down")
+                Timber.i("✓ Native AI Platform shut down (backup)")
             } catch (e: Exception) {
-                Timber.e(e, "Failed to shut down native AI platform")
+                Timber.e(e, "Failed to shut down native AI platform (backup)")
             }
 
-            Timber.i("✅ Genesis-OS terminated gracefully")
+            Timber.i("✅ Genesis-OS terminated gracefully (backup)")
 
         } catch (e: Exception) {
-            Timber.e(e, "⚠️  Error during platform shutdown")
+            Timber.e(e, "⚠️  Error during platform shutdown (backup)")
         }
     }
 }
