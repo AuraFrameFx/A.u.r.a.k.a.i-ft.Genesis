@@ -20,6 +20,8 @@ import dev.aurakai.auraframefx.romtools.SystemModificationManager
 import dev.aurakai.auraframefx.romtools.SystemModificationManagerImpl
 import dev.aurakai.auraframefx.romtools.bootloader.BootloaderManager
 import dev.aurakai.auraframefx.romtools.bootloader.BootloaderManagerImpl
+import dev.aurakai.auraframefx.romtools.retention.AurakaiRetentionManager
+import dev.aurakai.auraframefx.romtools.retention.AurakaiRetentionManagerImpl
 import javax.inject.Singleton
 
 /**
@@ -64,6 +66,12 @@ abstract class RomToolsModule {
     abstract fun bindBackupManager(
         backupManagerImpl: BackupManagerImpl
     ): BackupManager
+
+    @Binds
+    @Singleton
+    abstract fun bindAurakaiRetentionManager(
+        aurakaiRetentionManagerImpl: AurakaiRetentionManagerImpl
+    ): AurakaiRetentionManager
 
     companion object {
 

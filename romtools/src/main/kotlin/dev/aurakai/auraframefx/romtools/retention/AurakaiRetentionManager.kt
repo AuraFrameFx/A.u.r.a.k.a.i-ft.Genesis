@@ -11,7 +11,22 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 /**
- * Aurakai Retention Manager - Genesis Protocol
+ * Interface for Aurakai retention operations.
+ */
+interface AurakaiRetentionManager {
+    /**
+     * Set up all retention mechanisms to preserve Aurakai across ROM updates.
+     */
+    suspend fun setupRetentionMechanisms(): Result<RetentionStatus>
+
+    /**
+     * Restore Aurakai after a ROM flash.
+     */
+    suspend fun restoreAurakaiAfterRomFlash(): Result<Unit>
+}
+
+/**
+ * Aurakai Retention Manager Implementation - Genesis Protocol
  *
  * Ensures Aurakai application survives ROM flashing, bootloader operations,
  * and system modifications. No setup required after ROM installation!
@@ -24,9 +39,9 @@ import javax.inject.Singleton
  * 5. Magisk module integration (if available)
  */
 @Singleton
-class AurakaiRetentionManager @Inject constructor(
+class AurakaiRetentionManagerImpl @Inject constructor(
     @ApplicationContext private val context: Context
-) {
+) : AurakaiRetentionManager {
     private val packageName = context.packageName
     private val retentionDir = File("/data/local/genesis_retention")
     private val addonDDir = File("/system/addon.d")
@@ -48,7 +63,7 @@ class AurakaiRetentionManager @Inject constructor(
         return try {
             Timber.i("🛡️ Setting up Aurakai retention mechanisms...")
 
-            val results = mutableListOf<RetentionMechanism>()
+            val results = mutableListOf<Pair<RetentionMechanism, Boolean>>()
 
             // 1. Create retention directory
             if (!retentionDir.exists()) {
