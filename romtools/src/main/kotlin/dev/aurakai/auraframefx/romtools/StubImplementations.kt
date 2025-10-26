@@ -63,22 +63,38 @@ interface FlashManager {
     suspend fun flashRom(romFile: RomFile, progressCallback: (Float) -> Unit): Result<Unit>
 
     /**
-     * Downloads a ROM file.
-     * @param rom The ROM to download.
-     * @return A Flow emitting download progress updates.
-     */
+ * Downloads the specified ROM and emits progress updates.
+ *
+ * @param rom ROM metadata used to initiate the download.
+ * @return A Flow that emits `DownloadProgress` updates representing current download progress until the download completes or fails.
+ */
     fun downloadRom(rom: AvailableRom): Flow<DownloadProgress>
 }
 
 @Singleton
 class FlashManagerImpl @Inject constructor() : FlashManager {
-    override suspend fun flashRom(
+    /**
+         * Flashes the provided ROM file to the device while reporting progress.
+         *
+         * @param romFile The ROM file to flash.
+         * @param progressCallback Callback invoked with a progress fraction (0.0 to 1.0) indicating flash progress.
+         * @return A Result that is successful when flashing completes, or a failure containing the encountered exception.
+         */
+        override suspend fun flashRom(
         romFile: RomFile,
         progressCallback: (Float) -> Unit
     ): Result<Unit> =
         Result.failure(Exception("Not implemented"))
 
-    override fun downloadRom(rom: AvailableRom): Flow<DownloadProgress> =
+    /**
+         * Provides a stream of download progress updates for the specified ROM.
+         *
+         * This implementation returns a Flow that emits a single initial DownloadProgress with zeroed values (stub).
+         *
+         * @param rom The ROM to download.
+         * @return A Flow that emits `DownloadProgress` updates for the ROM download; here it emits one zeroed progress value.
+         */
+        override fun downloadRom(rom: AvailableRom): Flow<DownloadProgress> =
         flowOf(DownloadProgress(0, 0, 0f, 0))
 }
 

@@ -223,11 +223,11 @@ class RomToolsManager @Inject constructor(
     }
 
     /**
-     * Retrieve the list of custom ROMs compatible with the current device.
+     * Retrieve available custom ROMs compatible with the current device.
      *
-     * Uses the device model from the manager's capabilities to query available ROMs.
+     * If no device model is detected in the manager's capabilities, the string `"unknown"` is used when querying compatibility.
      *
-     * @return A `Result` containing the list of compatible `AvailableRom` on success, or a failure with the underlying exception.
+     * @return A `Result` containing the list of compatible `AvailableRom` on success, or a failure wrapping the thrown exception.
      */
     suspend fun getAvailableRoms(): Result<List<AvailableRom>> {
         return try {
@@ -241,21 +241,18 @@ class RomToolsManager @Inject constructor(
     }
 
     /**
-     * Start downloading the specified available ROM and emit progress updates.
+     * Starts a ROM download and emits progress updates.
      *
-     * @param rom The ROM metadata to download.
-     * @return A flow that emits `DownloadProgress` updates reflecting bytes downloaded, total bytes, progress, speed, and completion state.
+     * @return `DownloadProgress` updates reflecting bytes downloaded, total bytes, progress (0.0–1.0), current speed, completion state, and any error information.
      */
     fun downloadRom(rom: AvailableRom): Flow<DownloadProgress> {
         return flashManager.downloadRom(rom)
     }
 
     /**
-     * Set up Aurakai retention mechanisms so Aurakai is preserved across ROM operations.
+     * Configure Aurakai retention mechanisms to preserve Aurakai across ROM operations.
      *
-     * Configures retention independently of a full ROM flash and reports the configured state.
-     *
-     * @return A Result containing the configured `RetentionStatus` on success, or a failure with the encountered exception.
+     * @return A `Result` containing the configured `RetentionStatus` on success, `failure` with the encountered exception otherwise.
      */
     suspend fun setupAurakaiRetention(): Result<dev.aurakai.auraframefx.romtools.retention.RetentionStatus> {
         return try {
@@ -278,12 +275,12 @@ class RomToolsManager @Inject constructor(
     }
 
     /**
-     * Update the current operation progress state.
+     * Update the current operation's progress state.
      *
-     * Sets the internal operation progress StateFlow to the provided operation and progress value.
+     * Sets the manager's operation progress StateFlow to reflect the given operation and progress.
      *
      * @param operation The operation being reported.
-     * @param progress Completion progress as a float between 0.0 and 1.0.
+     * @param progress Completion progress value between 0.0 and 1.0.
      */
     private fun updateOperationProgress(operation: RomOperation, progress: Float) {
         _operationProgress.value = OperationProgress(operation, progress)
