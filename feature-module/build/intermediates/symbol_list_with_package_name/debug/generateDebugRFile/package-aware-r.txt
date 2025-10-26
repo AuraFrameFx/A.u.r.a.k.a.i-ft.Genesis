@@ -1,3 +1,0 @@
-dev.aurakai.auraframefx.java
-string feature_module_debug_name
-string feature_module_main_name

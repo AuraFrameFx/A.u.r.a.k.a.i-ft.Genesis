@@ -12,7 +12,8 @@ class AgentInstructionsValidationTest {
 
     @Test
     @DisplayName("AGENT_INSTRUCTIONS.md exists in repository root")
-    fun age-ntInstructionsFileExists() {
+    fun age-ntInstructionsFileExists()
+    {
         val agentInstructionsFile = File(rootDir, "AGENT_INSTRUCTIONS.md")
         assertTrue(
             agentInstructionsFile.exists(),

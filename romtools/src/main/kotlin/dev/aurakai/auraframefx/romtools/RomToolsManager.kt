@@ -238,211 +238,211 @@ class RomToolsManager @Inject constructor(
         }
     }
 
-    /**
-     * Start downloading the specified available ROM and emit progress updates.
-     *
-     * @param rom The ROM metadata to download.
-     * @return A flow that emits `DownloadProgress` updates reflecting bytes downloaded, total bytes, progress, speed, and completion state.
-    suspend fun downloadRom(rom: AvailableRom): Flow<DownloadProgress> {
-        return flashManager.downloadRom(rom)
-    }
+/**
+ * Start downloading the specified available ROM and emit progress updates.
+ *
+ * @param rom The ROM metadata to download.
+ * @return A flow that emits `DownloadProgress` updates reflecting bytes downloaded, total bytes, progress, speed, and completion state.
+suspend fun downloadRom(rom: AvailableRom): Flow<DownloadProgress> {
+return flashManager.downloadRom(rom)
+}
 
-    /**
-     * Set up Aurakai retention mechanisms so Aurakai is preserved across ROM operations.
-     *
-     * Configures retention independently of a full ROM flash and reports the configured state.
-     *
-     * @return A Result containing the configured `RetentionStatus` on success, or a failure with the encountered exception.
-     */
-    suspend fun setupAurakaiRetention(): Result<dev.aurakai.auraframefx.romtools.retention.RetentionStatus> {
-        return try {
-            updateOperationProgress(RomOperation.SETTING_UP_RETENTION, 0f)
+/**
+ * Set up Aurakai retention mechanisms so Aurakai is preserved across ROM operations.
+ *
+ * Configures retention independently of a full ROM flash and reports the configured state.
+ *
+ * @return A Result containing the configured `RetentionStatus` on success, or a failure with the encountered exception.
+*/
+suspend fun setupAurakaiRetention(): Result<dev.aurakai.auraframefx.romtools.retention.RetentionStatus> {
+return try {
+updateOperationProgress(RomOperation.SETTING_UP_RETENTION, 0f)
 
-            val retentionStatus = retentionManager.setupRetentionMechanisms().getOrThrow()
+val retentionStatus = retentionManager.setupRetentionMechanisms().getOrThrow()
 
-            updateOperationProgress(RomOperation.COMPLETED, 100f)
-            clearOperationProgress()
+updateOperationProgress(RomOperation.COMPLETED, 100f)
+clearOperationProgress()
 
-            Timber.i("🛡️ Aurakai retention mechanisms setup complete")
-            Result.success(retentionStatus)
+Timber.i("🛡️ Aurakai retention mechanisms setup complete")
+Result.success(retentionStatus)
 
-        } catch (e: Exception) {
-            Timber.e(e, "Failed to setup Aurakai retention")
-            updateOperationProgress(RomOperation.FAILED, 0f)
-            clearOperationProgress()
-            Result.failure(e)
-        }
-    }
+} catch (e: Exception) {
+Timber.e(e, "Failed to setup Aurakai retention")
+updateOperationProgress(RomOperation.FAILED, 0f)
+clearOperationProgress()
+Result.failure(e)
+}
+}
 
-    /**
-     * Update the current operation progress state.
-     *
-     * Sets the internal operation progress StateFlow to the provided operation and progress value.
-     *
-     * @param operation The operation being reported.
-     * @param progress Completion progress as a float between 0.0 and 1.0.
-     */
-    private fun updateOperationProgress(operation: RomOperation, progress: Float) {
-        _operationProgress.value = OperationProgress(operation, progress)
-    }
+/**
+ * Update the current operation progress state.
+ *
+ * Sets the internal operation progress StateFlow to the provided operation and progress value.
+ *
+ * @param operation The operation being reported.
+ * @param progress Completion progress as a float between 0.0 and 1.0.
+*/
+private fun updateOperationProgress(operation: RomOperation, progress: Float) {
+_operationProgress.value = OperationProgress(operation, progress)
+}
 
-    /**
-     * Clears the current operation progress state.
-     */
-    private fun clearOperationProgress() {
-        _operationProgress.value = null
-    }
+/**
+ * Clears the current operation progress state.
+*/
+private fun clearOperationProgress() {
+_operationProgress.value = null
+}
 
-    /**
-     * Determines whether root access is available on the device.
-     *
-     * @return `true` if a shell with root privileges can be executed, `false` otherwise.
-     */
-    private fun checkRootAccess(): Boolean {
-        return try {
-            val process = Runtime.getRuntime().exec("su -c 'echo test'")
-            process.waitFor() == 0
-        } catch (e: Exception) {
-            false
-        }
-    }
+/**
+ * Determines whether root access is available on the device.
+ *
+ * @return `true` if a shell with root privileges can be executed, `false` otherwise.
+*/
+private fun checkRootAccess(): Boolean {
+return try {
+val process = Runtime.getRuntime().exec("su -c 'echo test'")
+process.waitFor() == 0
+} catch (e: Exception) {
+false
+}
+}
 
-    /**
-     * Provides the list of CPU ABIs supported by the current device.
-     *
-     * @return A list of supported CPU ABI strings in order of preference.
-     */
-    private fun getSupportedArchitectures(): List<String> {
-        return Build.SUPPORTED_ABIS.toList()
-    }
+/**
+ * Provides the list of CPU ABIs supported by the current device.
+ *
+ * @return A list of supported CPU ABI strings in order of preference.
+*/
+private fun getSupportedArchitectures(): List<String> {
+return Build.SUPPORTED_ABIS.toList()
+}
 
-    // Companion object for static access
-    companion object {
-        private val romRepository = RomRepository()
-    }
+// Companion object for static access
+companion object {
+private val romRepository = RomRepository()
+}
 }
 
 // Data classes
 data class RomToolsState(
-    val capabilities: RomCapabilities? = null,
-    val isInitialized: Boolean = false,
-    val settings: RomToolsSettings = RomToolsSettings(),
-    val availableRoms: List<AvailableRom> = emptyList(),
-    val backups: List<BackupInfo> = emptyList()
+val capabilities: RomCapabilities? = null,
+val isInitialized: Boolean = false,
+val settings: RomToolsSettings = RomToolsSettings(),
+val availableRoms: List<AvailableRom> = emptyList(),
+val backups: List<BackupInfo> = emptyList()
 )
 
 data class RomCapabilities(
-    val hasRootAccess: Boolean,
-    val hasBootloaderAccess: Boolean,
-    val hasRecoveryAccess: Boolean,
-    val hasSystemWriteAccess: Boolean,
-    val supportedArchitectures: List<String>,
-    val deviceModel: String,
-    val androidVersion: String,
-    val securityPatchLevel: String
+val hasRootAccess: Boolean,
+val hasBootloaderAccess: Boolean,
+val hasRecoveryAccess: Boolean,
+val hasSystemWriteAccess: Boolean,
+val supportedArchitectures: List<String>,
+val deviceModel: String,
+val androidVersion: String,
+val securityPatchLevel: String
 )
 
 data class RomToolsSettings(
-    val autoBackup: Boolean = true,
-    val verifyRomSignatures: Boolean = true,
-    val enableGenesisOptimizations: Boolean = true,
-    val maxBackupCount: Int = 5,
-    val downloadDirectory: String = ""
+val autoBackup: Boolean = true,
+val verifyRomSignatures: Boolean = true,
+val enableGenesisOptimizations: Boolean = true,
+val maxBackupCount: Int = 5,
+val downloadDirectory: String = ""
 )
 
 data class OperationProgress(
-    val operation: RomOperation,
-    val progress: Float
+val operation: RomOperation,
+val progress: Float
 )
 
 /**
  * Represents the different types of ROM operations.
- */
+*/
 enum class RomOperation {
-    SETTING_UP_RETENTION,      // 🛡️ Setting up Aurakai retention mechanisms
-    VERIFYING_ROM,
-    CREATING_BACKUP,
-    UNLOCKING_BOOTLOADER,
-    INSTALLING_RECOVERY,
-    FLASHING_ROM,
-    VERIFYING_INSTALLATION,
-    RESTORING_AURAKAI,         // 🔄 Restoring Aurakai after ROM flash
-    RESTORING_BACKUP,
-    APPLYING_OPTIMIZATIONS,
-    DOWNLOADING_ROM,
-    COMPLETED,
-    FAILED
+SETTING_UP_RETENTION,      // 🛡️ Setting up Aurakai retention mechanisms
+VERIFYING_ROM,
+CREATING_BACKUP,
+UNLOCKING_BOOTLOADER,
+INSTALLING_RECOVERY,
+FLASHING_ROM,
+VERIFYING_INSTALLATION,
+RESTORING_AURAKAI,         // 🔄 Restoring Aurakai after ROM flash
+RESTORING_BACKUP,
+APPLYING_OPTIMIZATIONS,
+DOWNLOADING_ROM,
+COMPLETED,
+FAILED
 }
 
 data class RomFile(
-    val name: String,
-    val path: String,
-    val size: Long = 0L,
-    val checksum: String = ""
+val name: String,
+val path: String,
+val size: Long = 0L,
+val checksum: String = ""
 )
 
 data class DeviceInfo(
-    val model: String,
-    val manufacturer: String,
-    val androidVersion: String,
-    val securityPatchLevel: String,
-    val bootloaderVersion: String
+val model: String,
+val manufacturer: String,
+val androidVersion: String,
+val securityPatchLevel: String,
+val bootloaderVersion: String
 ) {
-    companion object {
-        /**
-         * Creates a DeviceInfo populated from the current Android build properties.
-         *
-         * @return A DeviceInfo containing the device model, manufacturer, Android version, security patch level, and bootloader version.
-         */
-        fun getCurrentDevice(): DeviceInfo {
-            return DeviceInfo(
-                model = Build.MODEL,
-                manufacturer = Build.MANUFACTURER,
-                androidVersion = Build.VERSION.RELEASE,
-                securityPatchLevel = Build.VERSION.SECURITY_PATCH,
-                bootloaderVersion = Build.BOOTLOADER
-            )
-        }
-    }
+companion object {
+/**
+ * Creates a DeviceInfo populated from the current Android build properties.
+ *
+ * @return A DeviceInfo containing the device model, manufacturer, Android version, security patch level, and bootloader version.
+*/
+fun getCurrentDevice(): DeviceInfo {
+return DeviceInfo(
+model = Build.MODEL,
+manufacturer = Build.MANUFACTURER,
+androidVersion = Build.VERSION.RELEASE,
+securityPatchLevel = Build.VERSION.SECURITY_PATCH,
+bootloaderVersion = Build.BOOTLOADER
+)
+}
+}
 }
 
 data class BackupInfo(
-    val name: String,
-    val path: String,
-    val size: Long,
-    val createdAt: Long,
-    val deviceModel: String,
-    val androidVersion: String,
-    val partitions: List<String>
+val name: String,
+val path: String,
+val size: Long,
+val createdAt: Long,
+val deviceModel: String,
+val androidVersion: String,
+val partitions: List<String>
 )
 
 data class AvailableRom(
-    val name: String,
-    val version: String,
-    val androidVersion: String,
-    val downloadUrl: String,
-    val size: Long,
-    val checksum: String
+val name: String,
+val version: String,
+val androidVersion: String,
+val downloadUrl: String,
+val size: Long,
+val checksum: String
 )
 
 data class DownloadProgress(
-    val bytesDownloaded: Long,
-    val totalBytes: Long,
-    val progress: Float,
-    val speed: Long,
-    val isCompleted: Boolean = false,
-    val error: String? = null
+val bytesDownloaded: Long,
+val totalBytes: Long,
+val progress: Float,
+val speed: Long,
+val isCompleted: Boolean = false,
+val error: String? = null
 )
 
 class RomRepository {
-    /**
-     * Retrieves a list of ROMs compatible with the given device model.
-     *
-     * @param deviceModel The device model identifier to use when matching available ROMs.
-     * @return A list of `AvailableRom` instances compatible with `deviceModel`. Currently this function returns an empty list while the repository lookup is not implemented.
-     */
-    fun getCompatibleRoms(deviceModel: String): List<AvailableRom> {
-        // Would query online repository - placeholder for now
-        return emptyList()
-    }
+/**
+ * Retrieves a list of ROMs compatible with the given device model.
+ *
+ * @param deviceModel The device model identifier to use when matching available ROMs.
+ * @return A list of `AvailableRom` instances compatible with `deviceModel`. Currently this function returns an empty list while the repository lookup is not implemented.
+*/
+fun getCompatibleRoms(deviceModel: String): List<AvailableRom> {
+// Would query online repository - placeholder for now
+return emptyList()
+}
 }

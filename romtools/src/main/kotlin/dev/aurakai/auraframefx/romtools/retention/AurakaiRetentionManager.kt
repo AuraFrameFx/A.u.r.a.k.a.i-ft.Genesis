@@ -109,9 +109,9 @@ class AurakaiRetentionManager @Inject constructor(
             val dataBackupPath = File(retentionDir, "aurakai_data.tar.gz")
             executeRootCommand(
                 "tar -czf ${dataBackupPath.absolutePath} " +
-                "-C ${dataDir.parent} " +
-                "--exclude='cache' --exclude='code_cache' " +
-                "${dataDir.name}"
+                        "-C ${dataDir.parent} " +
+                        "--exclude='cache' --exclude='code_cache' " +
+                        "${dataDir.name}"
             )
 
             // Backup shared prefs specifically (critical for Genesis state)
@@ -178,7 +178,7 @@ class AurakaiRetentionManager @Inject constructor(
     /**
      * Create the addon.d shell script used to back up and restore Aurakai across ROM updates.
      *
-     * @return The addon.d shell script content as a String. The script performs backup and restore of the Aurakai APK and its app data to preserve the app across ROM flashing. 
+     * @return The addon.d shell script content as a String. The script performs backup and restore of the Aurakai APK and its app data to preserve the app across ROM flashing.
      */
     private fun generateAddonDScript(): String {
         return """
@@ -257,7 +257,8 @@ esac
                 recoveryZipDir.mkdirs()
             }
 
-            val zipFile = File(recoveryZipDir, "aurakai_installer_${System.currentTimeMillis()}.zip")
+            val zipFile =
+                File(recoveryZipDir, "aurakai_installer_${System.currentTimeMillis()}.zip")
             val packageInfo = context.packageManager.getPackageInfo(packageName, 0)
             val apkPath = packageInfo.applicationInfo.sourceDir
 
@@ -361,18 +362,21 @@ sh /tmp/META-INF/com/google/android/updater-script
             moduleDir.mkdirs()
 
             // module.prop
-            File(moduleDir, "module.prop").writeText("""
+            File(moduleDir, "module.prop").writeText(
+                """
 id=aurakai_genesis
 name=Aurakai Genesis AI
 version=1.0.0
 versionCode=1
 author=AuraFrameFx
 description=Ensures Aurakai Genesis AI persists through ROM updates and system modifications
-            """.trimIndent())
+            """.trimIndent()
+            )
 
             // Install script
             val installScript = File(moduleDir, "install.sh")
-            installScript.writeText("""
+            installScript.writeText(
+                """
 #!/system/bin/sh
 MODPATH=${'$'}{0%/*}
 
@@ -385,7 +389,8 @@ mkdir -p ${'$'}MODPATH/system/app/Aurakai
 cp /data/local/genesis_retention/aurakai.apk ${'$'}MODPATH/system/app/Aurakai/Aurakai.apk
 
 ui_print "✅ Aurakai will persist through ROM updates"
-            """.trimIndent())
+            """.trimIndent()
+            )
 
             executeRootCommand("chmod 755 ${installScript.absolutePath}")
 
@@ -451,7 +456,7 @@ ui_print "✅ Aurakai will persist through ROM updates"
     private fun isMagiskInstalled(): Boolean {
         return try {
             File("/data/adb/magisk").exists() ||
-            executeRootCommand("which magisk").isNotEmpty()
+                    executeRootCommand("which magisk").isNotEmpty()
         } catch (e: Exception) {
             false
         }

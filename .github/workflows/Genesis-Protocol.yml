@@ -35,7 +35,8 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build --configuration-cache --parallel
 
-      - name: Upload build outputs (example: APKs, JARs)
+      - name:
+          Upload build outputs (example: APKs, JARs)
         if: success()
         uses: actions/upload-artifact@v4
         with:

@@ -1,4 +1,5 @@
 `#include "CascadeAIService.hpp"
+
 #include <android/log.h>
 #include <string>
 #include <memory>
