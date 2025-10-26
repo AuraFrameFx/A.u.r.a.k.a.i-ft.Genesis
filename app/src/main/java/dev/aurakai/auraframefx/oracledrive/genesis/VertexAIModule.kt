@@ -32,7 +32,7 @@ object VertexAIModule {
     @Singleton
     fun provideVertexAIConfig(): VertexAIConfig {
         return VertexAIConfig(
-            projectId = "auraframefx",
+            projectId = "collabcanvas",
             location = "us-central1",
             endpoint = "us-central1-aiplatform.googleapis.com",
             // Security settings

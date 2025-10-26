@@ -1,4 +1,3 @@
-
 #include <jni.h>
 #include <string>
 #include <android/log.h>
@@ -20,8 +19,8 @@ extern "C" {
  */
 JNIEXPORT jstring
 
-JNICALL
-Java_com_example_app_language_LanguageIdentifier_nativeInitialize(
+extern "C" JNICALL
+Java_com_Aurakai_app_language_LanguageIdentifier_nativeInitialize(
         JNIEnv *env,
         jobject /* this */,
         jstring modelPath) {
@@ -52,11 +51,11 @@ Java_com_example_app_language_LanguageIdentifier_nativeInitialize(
  */
 JNIEXPORT jstring
 
-JNICALL
-Java_com_example_app_language_LanguageIdentifier_nativeDetectLanguage(
+extern "C" JNICALL
+Java_com_Aurakai_app_language_LanguageIdentifier_nativeDetectLanguage(
         JNIEnv *env,
         jobject /* this */,
-        jlong handle,
+        jlong /* handle */,
         jstring text) {
     if (text == nullptr) {
         return env->NewStringUTF("und");
@@ -155,16 +154,18 @@ Java_com_example_app_language_LanguageIdentifier_nativeDetectLanguage(
 }
 
 /**
- * @brief Logs cleanup of language identifier resources for the given handle.
+ * @brief Release native resources associated with a language identifier handle.
  *
- * If the handle is non-zero, logs that resources have been cleaned up. No actual resource deallocation is performed.
+ * If `handle` is non-zero, logs that resources for the handle were cleaned up.
+ * The current implementation performs no actual deallocation and acts as a placeholder
+ * for future resource management.
  *
- * @param handle Native handle for the language identifier instance.
+ * @param handle Native handle for the language identifier instance; no action occurs for a zero handle.
  */
 JNIEXPORT void JNICALL
 Java_com_example_app_language_LanguageIdentifier_nativeRelease(
         JNIEnv
-*env,
+* /* env */,
 jobject /* this */,
 jlong handle
 ) {
@@ -180,10 +181,15 @@ LOGI("Language identifier resources cleaned up for handle: %lld (Placeholder - n
 }
 }
 
+/**
+ * @brief Retrieve the native library version string.
+ *
+ * @return jstring Java string containing the native library version (e.g., "1.2.0").
+ */
 JNIEXPORT jstring
 
-JNICALL
-Java_com_example_app_language_LanguageIdentifier_nativeGetVersion(
+extern "C" JNICALL
+Java_com_Auraframefx_app_language_LanguageIdentifier_nativeGetVersion(
         JNIEnv * env,
         jclass /* clazz */) {
     return env->NewStringUTF("1.2.0"); // Standardized version
