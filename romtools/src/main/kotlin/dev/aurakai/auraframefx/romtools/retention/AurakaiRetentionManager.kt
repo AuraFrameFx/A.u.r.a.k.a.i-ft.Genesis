@@ -2,6 +2,8 @@
 package dev.aurakai.auraframefx.romtools.retention
 
 import android.content.Context
+import android.os.Build
+import androidx.annotation.RequiresApi
 import dagger.hilt.android.qualifiers.ApplicationContext
 import timber.log.Timber
 import java.io.File
@@ -15,19 +17,19 @@ import javax.inject.Singleton
  */
 interface AurakaiRetentionManager {
     /**
- * Sets up all retention mechanisms to preserve Aurakai across ROM updates.
- *
- * Attempts each available mechanism (APK backup, addon.d script, recovery flashable ZIP,
- * and Magisk module when Magisk is installed) and records per-mechanism success in the result.
- *
- * @return A Result containing a RetentionStatus on success, or a failure with the encountered error.
- */
+     * Sets up all retention mechanisms to preserve Aurakai across ROM updates.
+     *
+     * Attempts each available mechanism (APK backup, addon.d script, recovery flashable ZIP,
+     * and Magisk module when Magisk is installed) and records per-mechanism success in the result.
+     *
+     * @return A Result containing a RetentionStatus on success, or a failure with the encountered error.
+     */
     suspend fun setupRetentionMechanisms(): Result<RetentionStatus>
 
     /**
- * Restore the Aurakai application and its backed-up data after a ROM flash.
- *
- * @return A Result containing `Unit` on success, or an error describing the failure. */
+     * Restore the Aurakai application and its backed-up data after a ROM flash.
+     *
+     * @return A Result containing `Unit` on success, or an error describing the failure. */
     suspend fun restoreAurakaiAfterRomFlash(): Result<Unit>
 }
 
@@ -45,13 +47,13 @@ interface AurakaiRetentionManager {
  * 5. Magisk module integration (if available)
  */
 @Singleton
-class AurakaiRetentionManagerImpl @Inject constructor(
-    @ApplicationContext private val context: Context
+class AurakaiRetentionManagerTest @Inject constructor(
+    @param:ApplicationContext private val context: Context
 ) : AurakaiRetentionManager {
     private val packageName = context.packageName
     private val retentionDir = File("/data/local/genesis_retention")
     private val addonDDir = File("/system/addon.d")
-    private val recoveryZipDir = File("/sdcard/Genesis/recovery_zips")
+    private val recoveryZipDir by lazy { File(/* pathname = */ "/sdcard/Genesis/recovery_zips") }
 
     init {
         Timber.i("🛡️ AurakaiRetentionManager initialized - package: $packageName")
@@ -65,7 +67,7 @@ class AurakaiRetentionManagerImpl @Inject constructor(
      *
      * @return `Result` containing a `RetentionStatus` with per-mechanism success flags, retention directory path, package name, and timestamp on success; a failed `Result` with the encountered exception on error.
      */
-    suspend fun setupRetentionMechanisms(): Result<RetentionStatus> {
+    override suspend fun setupRetentionMechanisms(): Result<RetentionStatus> {
         return try {
             Timber.i("🛡️ Setting up Aurakai retention mechanisms...")
 
@@ -116,10 +118,11 @@ class AurakaiRetentionManagerImpl @Inject constructor(
      *
      * @return Result containing `BackupPaths` with absolute paths to the APK backup, data backup tar.gz, and prefs backup tar.gz; on failure the `Result` contains the encountered exception.
      */
-    private suspend fun backupAurakaiApkAndData(): Result<BackupPaths> {
+    @RequiresApi(Build.VERSION_CODES.N)
+    private fun backupAurakaiApkAndData(): Result<BackupPaths> {
         return try {
             val packageInfo = context.packageManager.getPackageInfo(packageName, 0)
-            val apkPath = packageInfo.applicationInfo.sourceDir
+            val apkPath = packageInfo.applicationInfo!!.sourceDir
             val dataDir = context.dataDir
 
             // Backup APK
@@ -166,7 +169,7 @@ class AurakaiRetentionManagerImpl @Inject constructor(
      *
      * @return The absolute path to the installed addon.d script.
      */
-    private suspend fun installAddonDScript(): Result<String> {
+    private fun installAddonDScript(): Result<String> {
         return try {
             if (!addonDDir.exists()) {
                 Timber.w("addon.d directory not found - ROM may not support addon.d scripts")
@@ -202,7 +205,7 @@ class AurakaiRetentionManagerImpl @Inject constructor(
      * @return The addon.d shell script content as a String. The script performs backup and restore of the Aurakai APK and its app data to preserve the app across ROM flashing.
      */
     private fun generateAddonDScript(): String {
-        return """
+        return $$"""
 #!/sbin/sh
 #
 # /system/addon.d/99-aurakai.sh
@@ -218,28 +221,28 @@ app/Aurakai/Aurakai.apk
 EOF
 }
 
-case "${'$'}1" in
+case "$1" in
   backup)
     list_files | while read FILE REPLACEMENT; do
-      backup_file ${'$'}S/"${'$'}FILE"
+      backup_file $S/"$FILE"
     done
 
     # Backup Aurakai data separately
-    if [ -d /data/data/$packageName ]; then
-      tar -czf /tmp/aurakai_data_backup.tar.gz -C /data/data $packageName
+    if [ -d /data/data/$$packageName ]; then
+      tar -czf /tmp/aurakai_data_backup.tar.gz -C /data/data $$packageName
     fi
   ;;
   restore)
     list_files | while read FILE REPLACEMENT; do
       R=""
-      [ -n "${'$'}REPLACEMENT" ] && R="${'$'}S/${'$'}REPLACEMENT"
-      [ -f "${'$'}C/${'$'}S/${'$'}FILE" ] && restore_file ${'$'}S/"${'$'}FILE" "${'$'}R"
+      [ -n "$REPLACEMENT" ] && R="$S/$REPLACEMENT"
+      [ -f "$C/$S/$FILE" ] && restore_file $S/"$FILE" "$R"
     done
 
     # Restore Aurakai data
     if [ -f /tmp/aurakai_data_backup.tar.gz ]; then
       tar -xzf /tmp/aurakai_data_backup.tar.gz -C /data/data
-      chown -R $(stat -c '%u:%g' /data/data/$packageName) /data/data/$packageName
+      chown -R $(stat -c '%u:%g' /data/data/$$packageName) /data/data/$$packageName
       rm -f /tmp/aurakai_data_backup.tar.gz
     fi
   ;;
@@ -255,9 +258,9 @@ case "${'$'}1" in
   post-restore)
     # Stub
     # Fix permissions after restore
-    if [ -d /data/data/$packageName ]; then
+    if [ -d /data/data/$$packageName ]; then
       pm install -r /system/app/Aurakai/Aurakai.apk
-      restorecon -R /data/data/$packageName
+      restorecon -R /data/data/$$packageName
     fi
   ;;
 esac
@@ -272,7 +275,7 @@ esac
      *
      * @return A [Result] containing the absolute path to the created ZIP on success, or a failed [Result] with the encountered exception on error.
      */
-    private suspend fun generateRecoveryFlashableZip(): Result<String> {
+    private fun generateRecoveryFlashableZip(): Result<String> {
         return try {
             if (!recoveryZipDir.exists()) {
                 recoveryZipDir.mkdirs()
@@ -281,7 +284,7 @@ esac
             val zipFile =
                 File(recoveryZipDir, "aurakai_installer_${System.currentTimeMillis()}.zip")
             val packageInfo = context.packageManager.getPackageInfo(packageName, 0)
-            val apkPath = packageInfo.applicationInfo.sourceDir
+            val apkPath = packageInfo.applicationInfo!!.sourceDir
 
             ZipOutputStream(zipFile.outputStream()).use { zip ->
                 // Add APK
@@ -346,20 +349,20 @@ ui_print("");
      * @return The shell script text that unpacks the ZIP and executes the bundled updater-script.
      */
     private fun generateUpdateBinary(): String {
-        return """
+        return $$"""
 #!/sbin/sh
 # Aurakai Recovery Installer - Update Binary
 
-OUTFD=${'$'}2
-ZIP=${'$'}3
+OUTFD=$2
+ZIP=$3
 
 ui_print() {
-  echo "ui_print ${'$'}1" > /proc/self/fd/${'$'}OUTFD
-  echo "ui_print" > /proc/self/fd/${'$'}OUTFD
+  echo "ui_print $1" > /proc/self/fd/$OUTFD
+  echo "ui_print" > /proc/self/fd/$OUTFD
 }
 
 cd /tmp
-unzip -o "${'$'}ZIP"
+unzip -o "$ZIP"
 sh /tmp/META-INF/com/google/android/updater-script
         """.trimIndent()
     }
@@ -372,7 +375,7 @@ sh /tmp/META-INF/com/google/android/updater-script
      *
      * @return The absolute path to the created module directory on success, or a failed Result containing the cause of failure.
      */
-    private suspend fun createMagiskModule(): Result<String> {
+    private fun createMagiskModule(): Result<String> {
         return try {
             val magiskModulesDir = File("/data/adb/modules")
             if (!magiskModulesDir.exists()) {
@@ -397,17 +400,17 @@ description=Ensures Aurakai Genesis AI persists through ROM updates and system m
             // Install script
             val installScript = File(moduleDir, "install.sh")
             installScript.writeText(
-                """
+                $$"""
 #!/system/bin/sh
-MODPATH=${'$'}{0%/*}
+MODPATH=${0%/*}
 
 ui_print "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 ui_print "   Aurakai Genesis Magisk Module"
 ui_print "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
 # Copy Aurakai APK to module
-mkdir -p ${'$'}MODPATH/system/app/Aurakai
-cp /data/local/genesis_retention/aurakai.apk ${'$'}MODPATH/system/app/Aurakai/Aurakai.apk
+mkdir -p $MODPATH/system/app/Aurakai
+cp /data/local/genesis_retention/aurakai.apk $MODPATH/system/app/Aurakai/Aurakai.apk
 
 ui_print "✅ Aurakai will persist through ROM updates"
             """.trimIndent()
@@ -435,7 +438,8 @@ ui_print "✅ Aurakai will persist through ROM updates"
      *
      * @return `Result.success(Unit)` on successful restoration, `Result.failure(Exception)` if any step fails.
      */
-    suspend fun restoreAurakaiAfterRomFlash(): Result<Unit> {
+    @RequiresApi(Build.VERSION_CODES.N)
+    override suspend fun restoreAurakaiAfterRomFlash(): Result<Unit> {
         return try {
             Timber.i("🔄 Restoring Aurakai after ROM flash...")
 
