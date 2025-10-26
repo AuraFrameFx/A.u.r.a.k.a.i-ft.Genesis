@@ -61,12 +61,24 @@ abstract class RomToolsModule {
         romVerificationManagerImpl: RomVerificationManagerImpl
     ): RomVerificationManager
 
+    /**
+     * Binds BackupManagerImpl as the implementation of BackupManager in the dependency graph.
+     *
+     * @param backupManagerImpl The implementation instance to be provided where BackupManager is requested.
+     * @return The BackupManager provided by the given implementation.
+     */
     @Binds
     @Singleton
     abstract fun bindBackupManager(
         backupManagerImpl: BackupManagerImpl
     ): BackupManager
 
+    /**
+     * Binds AurakaiRetentionManagerImpl as the singleton implementation of AurakaiRetentionManager.
+     *
+     * @param aurakaiRetentionManagerImpl The implementation instance to bind.
+     * @return The bound AurakaiRetentionManager interface.
+     */
     @Binds
     @Singleton
     abstract fun bindAurakaiRetentionManager(
@@ -75,6 +87,11 @@ abstract class RomToolsModule {
 
     companion object {
 
+        /**
+         * Provides the filesystem path for the ROM tools persistent data directory.
+         *
+         * @return The absolute path to the ROM tools data directory located inside the application's files directory.
+         */
         @Provides
         @Singleton
         @RomToolsDataDir

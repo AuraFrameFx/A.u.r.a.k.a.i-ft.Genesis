@@ -624,7 +624,7 @@ inner class IntegrationTests {
         assertNotNull(result3)
     }
 }
-}
+
 
 // Additional helper data class
 data class BackupPaths(
