@@ -15,12 +15,19 @@ import javax.inject.Singleton
  */
 interface AurakaiRetentionManager {
     /**
-     * Set up all retention mechanisms to preserve Aurakai across ROM updates.
+     * Sets up all retention mechanisms to preserve Aurakai across ROM updates.
+     *
+     * Attempts each available mechanism (APK backup, addon.d script, recovery flashable ZIP,
+     * and Magisk module when Magisk is installed) and records per-mechanism success in the result.
+     *
+     * @return A Result containing a RetentionStatus on success, or a failure with the encountered error.
      */
     suspend fun setupRetentionMechanisms(): Result<RetentionStatus>
 
     /**
-     * Restore Aurakai after a ROM flash.
+     * Restore the Aurakai application and its backed-up data after a ROM flash.
+     *
+     * @return A Result containing `Unit` on success, or an error describing the failure.
      */
     suspend fun restoreAurakaiAfterRomFlash(): Result<Unit>
 }
@@ -52,14 +59,14 @@ class AurakaiRetentionManagerImpl @Inject constructor(
     }
 
     /**
-     * Orchestrates creation of all persistence mechanisms to preserve Aurakai across ROM updates.
+     * Sets up all retention mechanisms to preserve Aurakai across ROM updates.
      *
-     * Creates the retention directory, backs up the APK and app data, installs an addon.d script when supported,
-     * generates a recovery flashable ZIP, and creates a Magisk module if Magisk is detected.
+     * Attempts to create the retention directory and perform APK/data backup, install an addon.d script when supported,
+     * generate a recovery flashable ZIP, and create a Magisk module if Magisk is detected.
      *
-     * @return A Result containing a RetentionStatus with per-mechanism success flags, retention directory path, package name, and timestamp on success; a failed Result with the encountered exception on error.
+     * @return `Result` containing a `RetentionStatus` with per-mechanism success flags, retention directory path, package name, and timestamp on success; a failed `Result` with the encountered exception on error.
      */
-    suspend fun setupRetentionMechanisms(): Result<RetentionStatus> {
+    override suspend fun setupRetentionMechanisms(): Result<RetentionStatus> {
         return try {
             Timber.i("🛡️ Setting up Aurakai retention mechanisms...")
 
