@@ -1,7 +1,5 @@
 assertEquals(4, mechanisms.size)
-}
-}
-}
+
 @Nested
 @DisplayName("Retention Mechanism Redundancy Tests")
 inner class RedundancyTests {

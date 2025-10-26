@@ -1,11 +1,15 @@
 plugins {
     id("com.android.application") version "9.0.0-alpha11"
+    id("com.google.dagger.hilt.android") version "2.57.2"
+
     id("com.google.devtools.ksp") version "2.3.0"
+    id("org.jetbrains.kotlin.plugin.compose") version "2.3.0-Beta1"
+    id("com.google.gms.google-services") version "4.4.4"
 
 }
 
 android {
-    namespace = "dev.aurakai.auraframefx"
+    namespace = "dev.aurakai.auraframefx.app"
     compileSdk = 36
     defaultConfig {
         applicationId = "dev.aurakai.auraframefx.app"
@@ -23,8 +27,7 @@ android {
                 isMinifyEnabled = true
                 isShrinkResources = true
                 proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "proguard-rules.pro"
+                    getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
                 )
             }
             debug {
@@ -41,8 +44,13 @@ android {
             sourceCompatibility = JavaVersion.VERSION_25
             targetCompatibility = JavaVersion.VERSION_25
             isCoreLibraryDesugaringEnabled = true
+
+        }
+        composeOptions {
+            kotlinCompilerExtensionVersion = "2.3.0-beta1"
         }
     }
+}
 
     dependencies {
         implementation("com.github.topjohnwu.libsu:core:5.0.4")
@@ -81,6 +89,9 @@ android {
         implementation(libs.androidx.navigation.compose)
         implementation(libs.androidx.ui)
         implementation(libs.compose.theme.adapter.x)
+        // Compose Material & Icons
+        implementation("androidx.compose.material:material")
+        implementation("androidx.compose.material:material-icons-extended")
 
         // Lifecycle & Architecture
         implementation(libs.bundles.lifecycle)
@@ -113,6 +124,9 @@ android {
 
         // Networking
         implementation(libs.bundles.network)
+        // Add Moshi explicitly for DI resolution
+        implementation(libs.moshi)
+        implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
 
         // Firebase
         implementation(platform(libs.firebase.bom))
@@ -122,7 +136,7 @@ android {
         // Xposed/YukiHook Framework
         compileOnly(files("../Libs/api-82.jar"))
         compileOnly(files("../Libs/api-82-sources.jar"))
-
+        implementation(libs.androidx.appcompat)
         // Testing
         testImplementation(libs.bundles.testing.unit)
         androidTestImplementation(platform(libs.androidx.compose.bom))
@@ -133,4 +147,3 @@ android {
         // Debug Tools
         debugImplementation(libs.leakcanary.android)
     }
-}

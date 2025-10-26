@@ -48,21 +48,20 @@ object VertexAIModule {
         )
     }
 
-}
+    /**
+     * Provides a singleton instance of `VertexAIClient` for interacting with Vertex AI services.
+     *
+     * @return A configured `VertexAIClient` instance.
+     */
+    @Provides
+    @Singleton
+    fun provideVertexAIClient(
+        config: VertexAIConfig,
+        @ApplicationContext context: Context,
+        securityContext: SecurityContext,
+        logger: AuraFxLogger
+    ): VertexAIClient {
+        return VertexAIClientImpl()
+    }
 
-/**
- * Provides a singleton instance of `VertexAIClient` for interacting with Vertex AI services.
- *
- * @return A configured `VertexAIClient` instance.
- */
-@kotlin.jvm.JvmMultifileClassStatic
-@Provides
-@Singleton
-private fun VertexAIModule.provideVertexAIClient(
-    config: VertexAIConfig,
-    @ApplicationContext context: Context,
-    securityContext: SecurityContext,
-    logger: AuraFxLogger
-): VertexAIClient {
-    return VertexAIClientImpl()
 }
