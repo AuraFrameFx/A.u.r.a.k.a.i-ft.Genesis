@@ -1,11 +1,9 @@
 plugins {
     id("com.android.application") version "9.0.0-alpha11"
     id("com.google.dagger.hilt.android") version "2.57.2"
-
     id("com.google.devtools.ksp") version "2.3.0"
     id("org.jetbrains.kotlin.plugin.compose") version "2.3.0-Beta1"
     id("com.google.gms.google-services") version "4.4.4"
-
 }
 
 android {
