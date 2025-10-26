@@ -29,7 +29,8 @@ interface AurakaiRetentionManager {
     /**
      * Restore the Aurakai application and its backed-up data after a ROM flash.
      *
-     * @return A Result containing `Unit` on success, or an error describing the failure. */
+     * @return A Result containing `Unit` on success, or an error describing the failure.
+     */
     suspend fun restoreAurakaiAfterRomFlash(): Result<Unit>
 }
 
