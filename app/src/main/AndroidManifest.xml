@@ -19,8 +19,7 @@
     <!-- Optional features -->
     <uses-feature
         android:name="android.hardware.camera"
-        android:required="false"
-        tools:targetApi="5" />
+        android:required="false" />
     <uses-feature android:name="android.hardware.microphone" />
 
     <!-- Custom permission -->
@@ -30,7 +29,7 @@
 
     <!-- Application -->
     <application
-        android:name="dev.aurakai.auraframefx.AurakaiApplication"
+        android:name="dev.aurakai.auraframefx.app.AurakaiApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/Theme.dev.aurakai.auraframefx">
@@ -57,8 +56,18 @@
             android:name="yukihookapi_module_version"
             android:value="1.0.0" />
 
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+            <meta-data
+                android:name="dev.aurakai.auraframefx.core.initialization.AppInitializerInitializer"
+                android:value="androidx.startup" />
+        </provider>
+
         <activity
-            android:name="dev.aurakai.auraframefx.MainActivity"
+            android:name="dev.aurakai.auraframefx.aura.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -67,18 +76,18 @@
         </activity>
 
         <service
-            android:name=".VertexSyncService"
+            android:name="dev.aurakai.auraframefx.app.VertexSyncService"
             android:exported="false" />
         <service
-            android:name=".security.IntegrityMonitorService"
+            android:name="dev.aurakai.auraframefx.security.IntegrityMonitorService"
             android:exported="false" />
         <service
-            android:name=".services.BackupService"
+            android:name="dev.aurakai.auraframefx.services.BackupService"
             android:exported="false"
             android:foregroundServiceType="dataSync" />
 
         <receiver
-            android:name=".receivers.BootCompletedReceiver"
+            android:name="dev.aurakai.auraframefx.receivers.BootCompletedReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -88,7 +97,7 @@
 
         <!-- Integrity Violation Receiver -->
         <receiver
-            android:name=".security.IntegrityViolationReceiver"
+            android:name="dev.aurakai.auraframefx.security.IntegrityViolationReceiver"
             android:exported="false"
             android:permission="dev.aurakai.auraframefx.permission.RECEIVE_INTEGRITY_VIOLATION">
             <intent-filter>

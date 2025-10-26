@@ -9,7 +9,7 @@ import dagger.hilt.components.SingletonComponent
 import dev.aurakai.auraframefx.BuildConfig
 import dev.aurakai.auraframefx.di.qualifiers.BaseUrl
 import dev.aurakai.auraframefx.network.AuraApiService
-import dev.aurakai.auraframefx.network.api.AuthApi
+import dev.aurakai.auraframefx.network.AuthApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -24,7 +24,7 @@ import javax.inject.Singleton
  * TEMPORARY FIX: Removed circular dependency with AuthInterceptor
  */
 @Module
-@InstallIn(SingletonComponent::class)
+@InstallIn(/* ...value = */ SingletonComponent::class)
 object NetworkModule {
 
     @Provides

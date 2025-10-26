@@ -1,5 +1,7 @@
 plugins {
-    id("genesis.library")
+    id("com.android.library") version "9.0.0-alpha11"
+    id("com.google.devtools.ksp") version "2.3.0"
+
 }
 
 android {
@@ -7,7 +9,7 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        minSdk = 33
+        minSdk = 34
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }

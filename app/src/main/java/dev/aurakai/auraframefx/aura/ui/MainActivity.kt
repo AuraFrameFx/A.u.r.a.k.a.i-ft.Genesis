@@ -1,4 +1,8 @@
-package dev.aurakai.auraframefx
+package dev.aurakai.auraframefx.aura.ui
+
+// NOTE: "Aurakai" is a project-significant term. Do NOT rename to synonyms or alter its spelling.
+// The codebase intentionally uses `AurakaiApplication` for the Android Application class
+// and `AuraOSUi` (a Compose root) for the UI entrypoint. Every word matters.
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -56,7 +60,7 @@ class MainActivity : ComponentActivity() {
 
             setContent {
                 MaterialTheme {
-                    AuraOSApp()
+                    AuraOSUi()
                 }
             }
 
@@ -72,8 +76,18 @@ class MainActivity : ComponentActivity() {
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
+/**
+ * Root Compose UI for the Aurakai platform.
+ *
+ * NOTE: This is a UI composable (lifecycle = Activity/Compose) and NOT the Android
+ * Application class `AurakaiApplication` (which is annotated with @HiltAndroidApp
+ * and is declared in the manifest as the application entry point).
+ *
+ * Keep the exact spelling "Aurakai" in class and resource names — it has semantic
+ * meaning for project tooling, manifest registration, and downstream integration.
+ */
 @Composable
-fun AuraOSApp() {
+fun AuraOSUi() {
     val navController = rememberNavController()
     var currentRoute by remember { mutableStateOf("home") }
 

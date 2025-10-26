@@ -1,4 +1,3 @@
-
 // ===== AOSP-Re:Genesis - SETTINGS =====
 // Re:Genesis - Advanced Android OS Project
 // Version: 2025.09.02-03 - Full Enhancement Suite

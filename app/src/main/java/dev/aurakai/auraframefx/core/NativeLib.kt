@@ -10,7 +10,7 @@ object NativeLib {
 
     init {
         try {
-            System.loadLibrary("auraframefx")
+            System.loadLibrary("collabcanvas")
             Timber.i("Aurakai native library loaded successfully")
         } catch (e: UnsatisfiedLinkError) {
             Timber.e(e, "Failed to load Aurakai native library")

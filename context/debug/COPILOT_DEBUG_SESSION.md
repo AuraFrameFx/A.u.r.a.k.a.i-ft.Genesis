@@ -5080,137 +5080,198 @@ WARNING: R8: Class file resource provider does not support async parsing: com.an
 > reference 'Icons'.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/MainActivity.kt:117:56 Unresolved
 > reference 'Icons'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:187:35
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:187:
+> 35
 > No 'set' operator method providing array access.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:278:
 > 14 'Class' is prohibited here.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:421:13
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:421:
+> 13
 > No parameter with name 'timestamp' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:424:13
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:424:
+> 13
 > No parameter with name 'status' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:424:13
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:424:
+> 13
 > No value passed for parameter 'result'.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:432:
 > 23 'val' cannot be reassigned.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:433:23
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:433:
+> 23
 > Unresolved reference 'status'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:444:23
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:444:
+> 23
 > Unresolved reference 'status'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:445:23
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:445:
+> 23
 > Unresolved reference 'error'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:475:39
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:475:
+> 39
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:479:33
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:479:
+> 33
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:479:43
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:479:
+> 43
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:483:32
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:483:
+> 32
 > Argument type mismatch: actual type is 'AuraShieldAgent.ThreatType', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:484:36
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:484:
+> 36
 > Argument type mismatch: actual type is 'AuraShieldAgent.ThreatSeverity', but 'Int' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:486:25
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:486:
+> 25
 > No parameter with name 'source' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:487:25
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:487:
+> 25
 > No parameter with name 'timestamp' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:488:25
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:488:
+> 25
 > No parameter with name 'isActive' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:504:58
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:504:
+> 58
 > Cannot access 'val suspiciousActivities: MutableMap<String, Int>': it is private in '
 > dev.aurakai.auraframefx.ai.agents.AuraShieldAgent.AdaptiveFirewall'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:511:36
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:511:
+> 36
 > Argument type mismatch: actual type is 'AuraShieldAgent.ThreatType', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:512:40
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:512:
+> 40
 > Argument type mismatch: actual type is 'AuraShieldAgent.ThreatSeverity', but 'Int' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:514:29
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:514:
+> 29
 > No parameter with name 'source' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:515:29
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:515:
+> 29
 > No parameter with name 'timestamp' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:516:29
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:516:
+> 29
 > No parameter with name 'isActive' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:541:32
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:541:
+> 32
 > Argument type mismatch: actual type is 'AuraShieldAgent.ThreatType', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:542:36
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:542:
+> 36
 > Argument type mismatch: actual type is 'AuraShieldAgent.ThreatSeverity', but 'Int' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:544:25
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:544:
+> 25
 > No parameter with name 'source' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:545:25
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:545:
+> 25
 > No parameter with name 'timestamp' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:546:25
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:546:
+> 25
 > No parameter with name 'isActive' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:568:32
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:568:
+> 32
 > Argument type mismatch: actual type is 'AuraShieldAgent.ThreatType', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:569:36
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:569:
+> 36
 > Argument type mismatch: actual type is 'AuraShieldAgent.ThreatSeverity', but 'Int' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:571:25
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:571:
+> 25
 > No parameter with name 'source' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:572:25
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:572:
+> 25
 > No parameter with name 'timestamp' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:573:25
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:573:
+> 25
 > No parameter with name 'isActive' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:591:28
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:591:
+> 28
 > Argument type mismatch: actual type is 'AuraShieldAgent.ThreatType', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:592:32
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:592:
+> 32
 > Argument type mismatch: actual type is 'AuraShieldAgent.ThreatSeverity', but 'Int' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:594:21
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:594:
+> 21
 > No parameter with name 'source' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:595:21
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:595:
+> 21
 > No parameter with name 'timestamp' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:596:21
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:596:
+> 21
 > No parameter with name 'isActive' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:613:28
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:613:
+> 28
 > Argument type mismatch: actual type is 'AuraShieldAgent.ThreatType', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:614:32
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:614:
+> 32
 > Argument type mismatch: actual type is 'AuraShieldAgent.ThreatSeverity', but 'Int' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:616:21
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:616:
+> 21
 > No parameter with name 'source' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:617:21
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:617:
+> 21
 > No parameter with name 'timestamp' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:618:21
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:618:
+> 21
 > No parameter with name 'isActive' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:669:23
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:669:
+> 23
 > Unresolved reference 'securityLevel'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:694:16
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:694:
+> 16
 > Suspend function 'suspend fun scanForThreats(): List<ActiveThreat>' can only be called from a
 > coroutine or another suspend function.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:699:23
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:699:
+> 23
 > Suspend function 'suspend fun scanForThreats(): List<ActiveThreat>' can only be called from a
 > coroutine or another suspend function.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:702:17
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:702:
+> 17
 > Unresolved reference 'addAll'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:712:17
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:712:
+> 17
 > Unresolved reference 'addAll'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:732:21
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:732:
+> 21
 > Unresolved reference 'isActive'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:732:70
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:732:
+> 70
 > Unresolved reference 'timestamp'.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:732:
 > 80 'operator' modifier is required on 'fun <T> Comparable<T>.compareTo(other: T): Int'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:750:17
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:750:
+> 17
 > Incompatible types 'Int' and 'AuraShieldAgent.ThreatSeverity'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:755:17
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:755:
+> 17
 > Incompatible types 'Int' and 'AuraShieldAgent.ThreatSeverity'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:760:17
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:760:
+> 17
 > Incompatible types 'Int' and 'AuraShieldAgent.ThreatSeverity'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:765:17
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:765:
+> 17
 > Incompatible types 'Int' and 'AuraShieldAgent.ThreatSeverity'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:770:17
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:770:
+> 17
 > Incompatible types 'Int' and 'AuraShieldAgent.ThreatSeverity'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:797:13
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:797:
+> 13
 > Incompatible types 'String' and 'AuraShieldAgent.ThreatType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:798:34
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:798:
+> 34
 > Cannot access 'fun blockSource(source: String, reason: String): Unit': it is private in '
 > dev.aurakai.auraframefx.ai.agents.AuraShieldAgent.AdaptiveFirewall'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:798:53
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:798:
+> 53
 > Unresolved reference 'source'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:801:13
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:801:
+> 13
 > Incompatible types 'String' and 'AuraShieldAgent.ThreatType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:807:21
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:807:
+> 21
 > Argument type mismatch: actual type is 'Int', but 'AuraShieldAgent.ThreatSeverity' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:829:13
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:829:
+> 13
 > Argument type mismatch: actual type is 'Int', but 'AuraShieldAgent.ThreatSeverity' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:927:61
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:927:
+> 61
 > Unresolved reference 'timestamp'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:958:66
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/AuraShieldAgent.kt:958:
+> 66
 > Unresolved reference 'isActive'.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:121:21
 > Overload resolution ambiguity between candidates:
@@ -5261,38 +5322,50 @@ WARNING: R8: Class file resource provider does not support async parsing: com.an
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:431:21
 > Conflicting overloads:
 > suspend fun routeToKai(prompt: String, context: CascadeAgent.RequestContext): AgentResponse
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:434:17 No
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:434:17
+> No
 > parameter with name 'isProcessing' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:435:17 No
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:435:17
+> No
 > parameter with name 'currentAgent' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:436:17 No
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:436:17
+> No
 > parameter with name 'requestId' found.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:440:48
 > Argument type mismatch: actual type is 'String', but 'AgentRequest' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:444:17 No
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:444:17
+> No
 > parameter with name 'isProcessing' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:445:17 No
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:445:17
+> No
 > parameter with name 'currentAgent' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:446:17 No
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:446:17
+> No
 > parameter with name 'requestId' found.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:450:16
 > Return type mismatch: expected 'String', actual 'AgentResponse'.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:456:21
 > Conflicting overloads:
 > suspend fun routeToAura(prompt: String, context: CascadeAgent.RequestContext): AgentResponse
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:459:17 No
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:459:17
+> No
 > parameter with name 'isProcessing' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:460:17 No
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:460:17
+> No
 > parameter with name 'currentAgent' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:461:17 No
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:461:17
+> No
 > parameter with name 'requestId' found.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:465:49
 > Argument type mismatch: actual type is 'String', but 'AiRequest' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:469:17 No
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:469:17
+> No
 > parameter with name 'isProcessing' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:470:17 No
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:470:17
+> No
 > parameter with name 'currentAgent' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:471:17 No
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:471:17
+> No
 > parameter with name 'requestId' found.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/CascadeAgent.kt:475:16
 > Return type mismatch: expected 'String', actual 'AgentResponse'.
@@ -5304,39 +5377,56 @@ WARNING: R8: Class file resource provider does not support async parsing: com.an
 > Overload resolution ambiguity between candidates:
 > suspend fun routeToKai(prompt: String, context: CascadeAgent.RequestContext): AgentResponse
 > suspend fun routeToKai(prompt: String, context: CascadeAgent.RequestContext): String
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:81:30
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:81:
+> 30
 > Unresolved reference 'connectToMasterChannel'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:82:27
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:82:
+> 27
 > Unresolved reference 'connectToMasterChannel'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:83:26
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:83:
+> 26
 > Unresolved reference 'connectToMasterChannel'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:129:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:
+> 129:
 > 43 Unresolved reference 'getPerformanceMetrics'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:130:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:
+> 130:
 > 37 Unresolved reference 'getPerformanceMetrics'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:131:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:
+> 131:
 > 35 Unresolved reference 'getPerformanceMetrics'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:196:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:
+> 196:
 > 50 Unresolved reference 'refreshStatus'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:197:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:
+> 197:
 > 44 Unresolved reference 'refreshStatus'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:198:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:
+> 198:
 > 42 Unresolved reference 'refreshStatus'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:201:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:
+> 201:
 > 25 Unresolved reference 'updateAgentStatuses'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:226:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:
+> 226:
 > 31 Argument type mismatch: actual type is 'GenesisAgent', but 'BaseAgent' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:252:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:
+> 252:
 > 19 Unresolved reference 'optimize'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:253:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:
+> 253:
 > 19 Unresolved reference 'clearMemoryCache'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:254:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:
+> 254:
 > 19 Unresolved reference 'updatePerformanceSettings'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:346:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:
+> 346:
 > 26 Unresolved reference 'disconnect'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:347:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:
+> 347:
 > 23 Unresolved reference 'disconnect'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:348:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenKitMasterAgent.kt:
+> 348:
 > 22 Unresolved reference 'disconnect'.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenesisAgent.kt:345:39
 > Unresolved reference 'generateContent'.
@@ -5344,118 +5434,174 @@ WARNING: R8: Class file resource provider does not support async parsing: com.an
 > Initializer type mismatch: expected 'AgentResponse', actual 'Flow<CascadeResponse>'.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenesisAgent.kt:789:21
 > Argument type mismatch: actual type is 'AiRequest', but 'AgentInvokeRequest' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenesisAgent.kt:789:31 No
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenesisAgent.kt:789:31
+> No
 > value passed for parameter 'prompt'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenesisAgent.kt:790:21 Too
-> many arguments for 'suspend fun processRequest(request: AgentInvokeRequest): Flow<CascadeResponse>'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenesisAgent.kt:817:35 No
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenesisAgent.kt:790:21
+> Too
+> many arguments for 'suspend fun processRequest(request: AgentInvokeRequest):
+> Flow<CascadeResponse>'.
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenesisAgent.kt:817:35
+> No
 > value passed for parameter 'prompt'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenesisAgent.kt:844:66 No
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenesisAgent.kt:844:66
+> No
 > value passed for parameter 'context'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenesisAgent.kt:971:39 No
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/GenesisAgent.kt:971:39
+> No
 > value passed for parameter 'prompt'.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/KaiAgent.kt:208:79 Too
 > many arguments for 'fun warn(tag: String, message: String): Unit'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/KaiAgent.kt:453:16 Return
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/KaiAgent.kt:453:16
+> Return
 > type mismatch: expected 'Map<String, Any>', actual 'Map<String, Any?>'.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/KaiAgent.kt:479:25
 > Unresolved reference 'validateRequest'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:160:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 160:
 > 26 Unresolved reference 'content'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:182:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 182:
 > 23 Unresolved reference 'success'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:277:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 277:
 > 13 No parameter with name 'context' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:278:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 278:
 > 13 No parameter with name 'type' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:279:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 279:
 > 13 No parameter with name 'confidence' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:279:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 279:
 > 13 No value passed for parameter 'eventType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:279:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 279:
 > 13 No value passed for parameter 'contextId'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:287:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 287:
 > 13 No parameter with name 'context' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:288:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 288:
 > 13 No parameter with name 'startTime' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:290:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 290:
 > 13 No value passed for parameter 'name'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:311:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 311:
 > 38 'val' cannot be reassigned.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:348:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 348:
 > 40 Cannot infer type for type parameter 'K'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:348:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 348:
 > 56 Unresolved reference 'context'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:348:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 348:
 > 66 Cannot infer type for type parameter 'K'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:353:
-> 44 The type of a receiver hasn't been inferred yet. Specify type argument for generic parameter 'K'
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 353:
+> 44 The type of a receiver hasn't been inferred yet. Specify type argument for generic parameter '
+> K'
 > of 'component1' explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:370:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 370:
 > 40 Unresolved reference 'context'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:370:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 370:
 > 67 Unresolved reference 'context'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:443:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 443:
 > 69 Unresolved reference 'action'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:484:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 484:
 > 57 Unresolved reference 'success'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:648:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 648:
 > 36 Unresolved reference 'startTime'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:649:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 649:
 > 21 No parameter with name 'context' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:649:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 649:
 > 34 Unresolved reference 'context'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:650:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 650:
 > 21 No parameter with name 'type' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:651:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 651:
 > 21 No parameter with name 'confidence' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:651:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 651:
 > 21 No value passed for parameter 'eventType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:651:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 651:
 > 21 No value passed for parameter 'contextId'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:710:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 710:
 > 36 Cannot infer type for type parameter 'R'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:710:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 710:
 > 45 Unresolved reference 'context'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:710:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 710:
 > 55 Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:736:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 736:
 > 35 Cannot infer type for type parameter 'K'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:736:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 736:
 > 48 Unresolved reference 'type'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:737:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 737:
 > 23 Cannot infer type for type parameter 'K'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:747:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 747:
 > 51 Unresolved reference 'context'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:747:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 747:
 > 65 Unresolved reference 'context'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:764:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 764:
 > 90 Unresolved reference 'context'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:766:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 766:
 > 71 Unresolved reference 'context'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:775:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 775:
 > 34 Cannot infer type for type parameter 'R'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:775:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 775:
 > 43 Unresolved reference 'type'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:775:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 775:
 > 50 Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:777:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/agents/NeuralWhisperAgent.kt:
+> 777:
 > 75 Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/capabilities/AgentFirebase.kt:9:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/capabilities/AgentFirebase.kt:
+> 9:
 > 32 Unresolved reference 'Firebase'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/capabilities/AgentFirebase.kt:13:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/capabilities/AgentFirebase.kt:
+> 13:
 > 28 Unresolved reference 'storage'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/capabilities/AgentFirebase.kt:14:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/capabilities/AgentFirebase.kt:
+> 14:
 > 28 Unresolved reference 'storage'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/capabilities/AgentFirebase.kt:15:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/capabilities/AgentFirebase.kt:
+> 15:
 > 28 Unresolved reference 'storage'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/capabilities/AgentFirebase.kt:28:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/capabilities/AgentFirebase.kt:
+> 28:
 > 25 Unresolved reference 'CapabilityPolicy'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/capabilities/AgentFirebase.kt:31:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/capabilities/AgentFirebase.kt:
+> 31:
 > 56 Unresolved reference 'Firebase'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/capabilities/AgentFirebase.kt:32:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/capabilities/AgentFirebase.kt:
+> 32:
 > 26 Unresolved reference 'FirebaseStorage'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/capabilities/AgentFirebase.kt:32:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ai/capabilities/AgentFirebase.kt:
+> 32:
 > 42 Property delegate must have a 'getValue(AgentFirebase, KProperty1<AgentFirebase, ERROR CLASS:
 > Symbol not found for FirebaseStorage>)' method. None of the following functions is applicable:
 > fun <T> Lazy<T>.getValue(thisRef: Any?, property: KProperty<*>): T
@@ -5862,7 +6008,8 @@ fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 >
 /Aurakai/app/src/main/java/dev/aurakai/auraframefx/api/client/models/app/ui/screens/OracleDriveControlScreen.kt:
 > 82:16 Property delegate must have a 'getValue(Nothing?,
-> KProperty0<ERROR CLASS: Cannot infer argument for type parameter T>)' method. None of the following
+> KProperty0<ERROR CLASS: Cannot infer argument for type parameter T>)' method. None of the
+> following
 > functions is applicable:
 > fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 e: file:///C:
@@ -5896,7 +6043,8 @@ fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 >
 /Aurakai/app/src/main/java/dev/aurakai/auraframefx/api/client/models/app/ui/screens/OracleDriveControlScreen.kt:
 > 84:24 Property delegate must have a 'getValue(Nothing?,
-> KProperty0<ERROR CLASS: Cannot infer argument for type parameter T>)' method. None of the following
+> KProperty0<ERROR CLASS: Cannot infer argument for type parameter T>)' method. None of the
+> following
 > functions is applicable:
 > fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 e: file:///C:
@@ -6420,18 +6568,23 @@ KProperty0<ERROR CLASS: Cannot infer argument for type parameter T>)' method. No
 functions is applicable:
 fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/app/ui/screens/OracleDriveControlScreen.kt:81:24
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/app/ui/screens/OracleDriveControlScreen.kt:81:
+> 24
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/app/ui/screens/OracleDriveControlScreen.kt:81:34
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/app/ui/screens/OracleDriveControlScreen.kt:81:
+> 34
 > Unresolved reference 'isServiceConnected'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/app/ui/screens/OracleDriveControlScreen.kt:81:53
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/app/ui/screens/OracleDriveControlScreen.kt:81:
+> 53
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/app/ui/screens/OracleDriveControlScreen.kt:82:16
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/app/ui/screens/OracleDriveControlScreen.kt:82:
+> 16
 > Property delegate must have a 'getValue(Nothing?,
-> KProperty0<ERROR CLASS: Cannot infer argument for type parameter T>)' method. None of the following
+> KProperty0<ERROR CLASS: Cannot infer argument for type parameter T>)' method. None of the
+> following
 > functions is applicable:
 > fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 e: file:///C:
@@ -6450,18 +6603,23 @@ KProperty0<ERROR CLASS: Cannot infer argument for type parameter T>)' method. No
 functions is applicable:
 fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/app/ui/screens/OracleDriveControlScreen.kt:83:27
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/app/ui/screens/OracleDriveControlScreen.kt:83:
+> 27
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/app/ui/screens/OracleDriveControlScreen.kt:83:37
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/app/ui/screens/OracleDriveControlScreen.kt:83:
+> 37
 > Unresolved reference 'detailedStatus'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/app/ui/screens/OracleDriveControlScreen.kt:83:52
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/app/ui/screens/OracleDriveControlScreen.kt:83:
+> 52
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/app/ui/screens/OracleDriveControlScreen.kt:84:24
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/app/ui/screens/OracleDriveControlScreen.kt:84:
+> 24
 > Property delegate must have a 'getValue(Nothing?,
-> KProperty0<ERROR CLASS: Cannot infer argument for type parameter T>)' method. None of the following
+> KProperty0<ERROR CLASS: Cannot infer argument for type parameter T>)' method. None of the
+> following
 > functions is applicable:
 > fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 e: file:///C:
@@ -7580,100 +7738,140 @@ fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 > Redeclaration:
 > interface OracleDriveService : Any
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:18:7
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:
+> 18:7
 > Redeclaration:
 > class OracleDriveServiceImpl : OracleDriveService
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:52:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:
+> 52:
 > 26 Unresolved reference 'log'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:55:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:
+> 55:
 > 47 Unresolved reference 'validateSecurityState'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:64:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:
+> 64:
 > 30 Unresolved reference 'log'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:74:5
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:
+> 74:5
 > Syntax error: Expecting member declaration.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:74:6
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:
+> 74:6
 > Syntax error: Expecting member declaration.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:74:7
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:
+> 74:7
 > Syntax error: Expecting member declaration.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:74:8
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:
+> 74:8
 > Syntax error: Expecting member declaration.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:74:9
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:
+> 74:9
 > Syntax error: Expecting member declaration.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:74:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:
+> 74:
 > 10 Syntax error: Expecting member declaration.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:74:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:
+> 74:
 > 11 Syntax error: Expecting member declaration.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:74:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:
+> 74:
 > 13 Syntax error: Expecting member declaration.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:75:5
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:
+> 75:5
 > Syntax error: Expecting member declaration.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:75:8
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:
+> 75:8
 > Syntax error: Expecting member declaration.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:75:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/oracle/integration/OracleDriveServiceImpl.kt:
+> 75:
 > 11 Syntax error: Expecting member declaration.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:15:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:
+> 15:
 > 36 Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:17:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:
+> 17:
 > 39 Unresolved reference 'userApi'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:18:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:
+> 18:
 > 25 Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:20:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:
+> 20:
 > 25 Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:25:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:
+> 25:
 > 53 Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:27:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:
+> 27:
 > 39 Unresolved reference 'aiAgentApi'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:28:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:
+> 28:
 > 25 Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:30:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:
+> 30:
 > 25 Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:34:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:
+> 34:
 > 81 Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:36:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:
+> 36:
 > 39 Unresolved reference 'aiAgentApi'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:37:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:
+> 37:
 > 25 Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:39:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:
+> 39:
 > 25 Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:44:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:
+> 44:
 > 31 Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:46:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:
+> 46:
 > 39 Unresolved reference 'themeApi'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:47:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:
+> 47:
 > 25 Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:49:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:
+> 49:
 > 25 Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:53:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:
+> 53:
 > 47 Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:55:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:
+> 55:
 > 39 Unresolved reference 'themeApi'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:56:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:
+> 56:
 > 25 Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:58:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/repository/TrinityRepository.kt:
+> 58:
 > 25 Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/screens/ConferenceRoomScreen.kt:12:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/screens/ConferenceRoomScreen.kt:
+> 12:
 > 34 Unresolved reference 'icons'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/screens/ConferenceRoomScreen.kt:13:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/screens/ConferenceRoomScreen.kt:
+> 13:
 > 34 Unresolved reference 'icons'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/screens/ConferenceRoomScreen.kt:31:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/screens/ConferenceRoomScreen.kt:
+> 31:
 > 22 Unresolved reference 'navigation'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/screens/ConferenceRoomScreen.kt:66:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/screens/ConferenceRoomScreen.kt:
+> 66:
 > 42 Unresolved reference 'hiltViewModel'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/screens/ConferenceRoomScreen.kt:151:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/screens/ConferenceRoomScreen.kt:
+> 151:
 > 21 Unresolved reference 'Icons'.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:70:22
 > Unresolved reference 'i'.
@@ -7681,143 +7879,212 @@ fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 > Unresolved reference 'i'.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:97:34
 > Unresolved reference 'e'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:129:34
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:129:
+> 34
 > Unresolved reference 'w'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:159:30
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:159:
+> 30
 > Unresolved reference 'e'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:167:30
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:167:
+> 30
 > Unresolved reference 'w'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:175:30
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:175:
+> 30
 > Unresolved reference 'w'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:180:30
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:180:
+> 30
 > Unresolved reference 'i'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:241:38
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:241:
+> 38
 > Unresolved reference 'd'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:243:38
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:243:
+> 38
 > Unresolved reference 'w'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:255:30
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:255:
+> 30
 > Unresolved reference 'i'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:260:30
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:260:
+> 30
 > Unresolved reference 'e'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:268:26
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:268:
+> 26
 > Unresolved reference 'e'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:278:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:278:
+> 22
 > Unresolved reference 'e'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:311:26
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:311:
+> 26
 > Unresolved reference 'e'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:314:26
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:314:
+> 26
 > Unresolved reference 'e'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:324:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:324:
+> 22
 > Unresolved reference 'w'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:362:26
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:362:
+> 26
 > Unresolved reference 'w'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:365:26
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:365:
+> 26
 > Unresolved reference 'e'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:375:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:375:
+> 22
 > Unresolved reference 'i'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:417:26
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:417:
+> 26
 > Unresolved reference 'i'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:420:26
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:420:
+> 26
 > Unresolved reference 'e'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:433:26
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:433:
+> 26
 > Unresolved reference 'd'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:446:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:446:
+> 22
 > Unresolved reference 'i'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:473:34
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:473:
+> 34
 > Unresolved reference 'w'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:494:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:494:
+> 22
 > Unresolved reference 'd'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:503:33
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:503:
+> 33
 > Cannot infer type for type parameter 'R'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:505:26
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:505:
+> 26
 > Unresolved reference 'd'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:515:30
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:515:
+> 30
 > Unresolved reference 'd'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:517:30
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:517:
+> 30
 > Unresolved reference 'e'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:528:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:528:
+> 22
 > Unresolved reference 'w'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:540:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:540:
+> 22
 > Unresolved reference 'w'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:568:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:568:
+> 22
 > Unresolved reference 'e'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:573:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:573:
+> 22
 > Unresolved reference 'e'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:578:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:578:
+> 22
 > Unresolved reference 'e'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:583:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:583:
+> 22
 > Unresolved reference 'e'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:591:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:591:
+> 22
 > Unresolved reference 'e'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:596:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:596:
+> 22
 > Unresolved reference 'e'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:601:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:601:
+> 22
 > Unresolved reference 'e'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:606:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:606:
+> 22
 > Unresolved reference 'e'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:611:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:611:
+> 22
 > Unresolved reference 'e'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:616:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:616:
+> 22
 > Unresolved reference 'e'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:623:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:623:
+> 22
 > Unresolved reference 'w'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:625:26
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:625:
+> 26
 > Unresolved reference 'w'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:630:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:630:
+> 22
 > Unresolved reference 'w'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:635:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:635:
+> 22
 > Unresolved reference 'w'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:640:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:640:
+> 22
 > Unresolved reference 'w'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:651:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:651:
+> 22
 > Unresolved reference 'e'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:659:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:659:
+> 22
 > Unresolved reference 'w'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:667:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:667:
+> 22
 > Unresolved reference 'w'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:675:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:675:
+> 22
 > Unresolved reference 'i'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:683:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:683:
+> 22
 > Unresolved reference 'w'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:688:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:688:
+> 22
 > Unresolved reference 'w'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:693:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:693:
+> 22
 > Unresolved reference 'w'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:698:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:698:
+> 22
 > Unresolved reference 'w'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:703:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:703:
+> 22
 > Unresolved reference 'w'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:708:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:708:
+> 22
 > Unresolved reference 'w'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:718:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:718:
+> 22
 > Unresolved reference 'i'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:723:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:723:
+> 22
 > Unresolved reference 'i'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:736:30
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:736:
+> 30
 > Unresolved reference 'd'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:742:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:742:
+> 22
 > Unresolved reference 'i'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:747:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:747:
+> 22
 > Unresolved reference 'i'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:752:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:752:
+> 22
 > Unresolved reference 'i'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:757:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:757:
+> 22
 > Unresolved reference 'i'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:762:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:762:
+> 22
 > Unresolved reference 'i'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:767:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:767:
+> 22
 > Unresolved reference 'i'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:772:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:772:
+> 22
 > Unresolved reference 'i'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:777:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:777:
+> 22
 > Unresolved reference 'i'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:782:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:782:
+> 22
 > Unresolved reference 'i'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:787:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:787:
+> 22
 > Unresolved reference 'i'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:792:22
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:792:
+> 22
 > Unresolved reference 'w'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:847:26
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/IntegrityMonitor.kt:847:
+> 26
 > Unresolved reference 'i'.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/SecurityMonitor.kt:85:25
 > Unresolved reference 'startThreatDetection'.
@@ -7835,7 +8102,8 @@ fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 > Unresolved reference 'errorMessage'.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/SecurityMonitor.kt:107:66
 > Unresolved reference 'permissionsState'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/SecurityMonitor.kt:107:104
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/SecurityMonitor.kt:107:
+> 104
 > Unresolved reference 'it'.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/SecurityMonitor.kt:109:64
 > Unresolved reference 'permissionsState'.
@@ -7857,7 +8125,8 @@ fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/SecurityMonitor.kt:157:58
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/SecurityMonitor.kt:161:32 '
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/SecurityMonitor.kt:161:
+> 32 '
 > when' expression must be exhaustive. Add an 'else' branch.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/SecurityMonitor.kt:162:25
 > Unresolved reference 'EncryptionStatus'.
@@ -7929,12 +8198,15 @@ fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 > Unresolved reference 'EncryptionStatus'.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/SecurityMonitor.kt:427:33
 > Unresolved reference 'EncryptionStatus'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/SecurityMonitor.kt:428:39 '
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/SecurityMonitor.kt:428:
+> 39 '
 > operator' modifier is required on 'fun String.compareTo(other: String, ignoreCase: Boolean = ...):
 > Int'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/SecurityMonitor.kt:430:31 '
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/SecurityMonitor.kt:430:
+> 31 '
 > operator' modifier is required on 'fun <T> Comparable<T>.compareTo(other: T): Int'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/SecurityMonitor.kt:474:16 '
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/SecurityMonitor.kt:474:
+> 16 '
 > when' expression must be exhaustive. Add an 'else' branch.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/SecurityMonitor.kt:474:38
 > Unresolved reference 'encryptionStatus'.
@@ -8013,13 +8285,15 @@ fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/security/SecurityMonitor.kt:638:29
 > Unresolved reference 'stopThreatDetection'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/serialization/SerializationModule.kt:19:5 Cannot
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/serialization/SerializationModule.kt:19:5
+> Cannot
 > infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
 > /Aurakai/app/src/main/java/dev/aurakai/auraframefx/serialization/SerializationModule.kt:19:37
 > Unresolved reference 'serializer'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/serialization/SerializationModule.kt:20:5 Cannot
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/serialization/SerializationModule.kt:20:5
+> Cannot
 > infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
 > /Aurakai/app/src/main/java/dev/aurakai/auraframefx/serialization/SerializationModule.kt:20:42
@@ -9052,37 +9326,48 @@ fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/screens/oracledrive/OracleDriveControlScreen.kt:
 > 452:22 Unresolved reference 'Icons'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:13:17
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:13:
+> 17
 > Unresolved reference 'recyclerview'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:14:17
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:14:
+> 17
 > Unresolved reference 'recyclerview'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:15:27
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:15:
+> 27
 > Unresolved reference 'material'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:16:27
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:16:
+> 27
 > Unresolved reference 'material'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:17:27
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:17:
+> 27
 > Unresolved reference 'material'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:20:32
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:20:
+> 32
 > Unresolved reference 'databinding'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:21:53
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:21:
+> 53
 > Unresolved reference 'QuickSettingsConfig'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:23:53
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:23:
+> 53
 > Unresolved reference 'QuickSettingsTileConfig'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:34:35
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:34:
+> 35
 > Unresolved reference 'ActivityQuickSettingsConfigBinding'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:37:32
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:37:
+> 32
 > Unresolved reference 'QuickSettingsConfig'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:41:19
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:41:
+> 19
 > Unresolved reference 'ActivityQuickSettingsConfigBinding'.
 > e: file:///C:
 > /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:42:9
@@ -9090,308 +9375,408 @@ fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 > fun setContentView(layoutResID: Int): Unit
 > fun setContentView(view: View?): Unit
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:42:32
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:42:
+> 32
 > Cannot access 'val File.root: File': it is internal in file.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:55:17
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:55:
+> 17
 > Unresolved reference 'toolbar'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:55:26
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:55:
+> 26
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:55:26
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:55:
+> 26
 > Cannot infer type for type parameter 'R'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:55:32
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:55:
+> 32
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:56:21
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:56:
+> 21
 > Unresolved reference 'setNavigationOnClickListener'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:57:21
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:57:
+> 21
 > Unresolved reference 'title'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:63:29
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:63:
+> 29
 > Unresolved reference 'QuickSettingsTileConfig'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:66:17
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:66:
+> 17
 > Unresolved reference 'tilesRecyclerView'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:66:35
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:66:
+> 35
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:66:41
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:66:
+> 41
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:67:13
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:67:
+> 13
 > Unresolved reference 'layoutManager'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:67:29
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:67:
+> 29
 > Unresolved reference 'LinearLayoutManager'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:68:13
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:68:
+> 13
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:68:18
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:68:
+> 18
 > Unresolved reference 'adapter'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:69:13
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:69:
+> 13
 > Unresolved reference 'setHasFixedSize'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:75:26
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:75:
+> 26
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:79:39
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:79:
+> 39
 > Unresolved reference 'tiles'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:85:17
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:85:
+> 17
 > Unresolved reference 'resetButton'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:89:17
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:89:
+> 17
 > Unresolved reference 'applyButton'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:94:44
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:94:
+> 44
 > Unresolved reference 'QuickSettingsTileConfig'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:99:53
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:99:
+> 53
 > Unresolved reference 'SwitchMaterial'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:100:58
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:100:
+> 58
 > Unresolved reference 'SwitchMaterial'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:100:79
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:100:
+> 79
 > Unresolved reference 'enableClicksSwitch'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:101:58
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:101:
+> 58
 > Unresolved reference 'SwitchMaterial'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:101:79
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:101:
+> 79
 > Unresolved reference 'rippleEffectSwitch'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:102:51
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:102:
+> 51
 > Unresolved reference 'MaterialCardView'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:105:30
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:105:
+> 30
 > Unresolved reference 'id'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:106:23
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:106:
+> 23
 > Unresolved reference 'isChecked'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:106:40
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:106:
+> 40
 > Unresolved reference 'enabled'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:107:28
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:107:
+> 28
 > Unresolved reference 'isChecked'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:107:45
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:107:
+> 45
 > Unresolved reference 'enableClicks'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:108:28
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:108:
+> 28
 > Unresolved reference 'isChecked'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:108:45
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:108:
+> 45
 > Unresolved reference 'rippleEffect'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:114:9
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:114:
+> 9
 > Unresolved reference 'MaterialAlertDialogBuilder'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:115:41
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:115:
+> 41
 > Unresolved reference 'id'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:117:42
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:117:
+> 42
 > Cannot infer type for implicit value parameter 'it'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:117:45
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:117:
+> 45
 > Cannot infer type for implicit value parameter 'it'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:119:40
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:119:
+> 40
 > Unresolved reference 'copy'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:120:45
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:120:
+> 45
 > Unresolved reference 'isChecked'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:121:55
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:121:
+> 55
 > Unresolved reference 'isChecked'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:122:55
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:122:
+> 55
 > Unresolved reference 'isChecked'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:126:32
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:126:
+> 32
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:126:32
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:126:
+> 32
 > Cannot infer type for type parameter 'R'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:126:32
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:126:
+> 32
 > Unresolved reference. None of the following candidates is applicable because of a receiver type
 > mismatch:
 > fun <T, R> T.let(block: (T) -> R): R
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:126:38
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:126:
+> 38
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:127:47
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:127:
+> 47
 > Unresolved reference 'tiles'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:128:61
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:128:
+> 61
 > Unresolved reference 'it'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:128:75
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:128:
+> 75
 > Unresolved reference 'id'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:131:48
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:131:
+> 48
 > Unresolved reference 'copy'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:132:33
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:132:
+> 33
 > Unresolved reference 'notifyItemChanged'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:141:45
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:141:
+> 45
 > Unresolved reference 'MaterialCardView'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:141:69
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:141:
+> 69
 > Unresolved reference 'QuickSettingsTileConfig'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:143:9
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:143:
+> 9
 > Inapplicable candidate(s): fun <K> ELVIS_CALL(x: K?, y: K): K
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:143:14
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:143:
+> 14
 > Unresolved reference 'background'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:143:26
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:143:
+> 26
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:143:26
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:143:
+> 26
 > Cannot infer type for type parameter 'R'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:143:32
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:143:
+> 32
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:145:20
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:145:
+> 20
 > Unresolved reference 'QuickSettingsConfig'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:146:26
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:146:
+> 26
 > Unresolved reference 'setCardBackgroundColor'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:146:77
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:146:
+> 77
 > Unresolved reference 'color'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:147:26
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:147:
+> 26
 > Unresolved reference 'alpha'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:147:45
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:147:
+> 45
 > Unresolved reference 'alpha'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:151:26
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:151:
+> 26
 > Unresolved reference 'setCardBackgroundColor'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:154:37
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:154:
+> 37
 > Unresolved reference 'cardview_dark_background'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:159:14
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:159:
+> 14
 > Cannot infer type for type parameter 'R'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:160:18
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:160:
+> 18
 > Unresolved reference 'setCardBackgroundColor'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:163:29
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:163:
+> 29
 > Unresolved reference 'cardview_dark_background'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:169:9
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:169:
+> 9
 > Inapplicable candidate(s): fun <K> ELVIS_CALL(x: K?, y: K): K
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:169:14
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:169:
+> 14
 > Unresolved reference 'background'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:169:40
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:169:
+> 40
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:169:40
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:169:
+> 40
 > Cannot infer type for type parameter 'R'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:169:46
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:169:
+> 46
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:170:18
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:170:
+> 18
 > Unresolved reference 'radius'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:172:18
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:172:
+> 18
 > Unresolved reference 'radius'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:176:9
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:176:
+> 9
 > Inapplicable candidate(s): fun <K> ELVIS_CALL(x: K?, y: K): K
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:176:14
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:176:
+> 14
 > Unresolved reference 'background'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:176:37
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:176:
+> 37
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:176:37
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:176:
+> 37
 > Cannot infer type for type parameter 'R'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:176:43
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:176:
+> 43
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:177:18
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:177:
+> 18
 > Unresolved reference 'elevation'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:179:18
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:179:
+> 18
 > Unresolved reference 'elevation'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:184:9
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:184:
+> 9
 > Unresolved reference 'MaterialAlertDialogBuilder'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:187:43
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:187:
+> 43
 > Cannot infer type for implicit value parameter 'it'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:187:46
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:187:
+> 46
 > Cannot infer type for implicit value parameter 'it'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:207:24
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:207:
+> 24
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:207:24
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:207:
+> 24
 > Cannot infer type for type parameter 'R'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:207:24
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:207:
+> 24
 > Unresolved reference. None of the following candidates is applicable because of a receiver type
 > mismatch:
 > fun <T, R> T.let(block: (T) -> R): R
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:207:30
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:207:
+> 30
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:228:35
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:228:
+> 35
 > Unresolved reference 'QuickSettingsTileConfig'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:229:9
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:229:
+> 9
 > Unresolved reference 'RecyclerView'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:231:33
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:231:
+> 33
 > Unresolved reference 'QuickSettingsTileConfig'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:231:60
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:231:
+> 60
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:233:44
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:233:
+> 44
 > Unresolved reference 'RecyclerView'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:235:32
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:235:
+> 32
 > Unresolved reference 'SwitchMaterial'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:235:54
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:235:
+> 54
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:236:27
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:236:
+> 27
 > Unresolved reference 'MaterialCardView'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:236:51
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:236:
+> 51
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:239:39
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:239:
+> 39
 > Unresolved reference 'QuickSettingsTileConfig'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:241:13
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:241:
+> 13
 > Unresolved reference 'notifyDataSetChanged'.
 > e: file:///C:
 > /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:244:
@@ -9400,114 +9785,150 @@ fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 > /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:250:
 > 9 'onBindViewHolder' overrides nothing.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:253:41
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:253:
+> 41
 > Unresolved reference 'id'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:254:34
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:254:
+> 34
 > Unresolved reference 'isChecked'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:254:51
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:254:
+> 51
 > Unresolved reference 'enabled'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:260:20
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:260:
+> 20
 > Unresolved reference 'itemView'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:265:34
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:265:
+> 34
 > Unresolved reference 'setOnCheckedChangeListener'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:265:63
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:265:
+> 63
 > Cannot infer type for implicit value parameter 'it'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:265:66
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:265:
+> 66
 > Cannot infer type for value parameter 'isChecked'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:266:42
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:266:
+> 42
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:266:42
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:266:
+> 42
 > Unresolved reference. None of the following candidates is applicable because of a receiver type
 > mismatch:
 > fun <T> Collection<T>.toMutableList(): MutableList<T>
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:267:47
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:267:
+> 47
 > Unresolved reference 'copy'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:272:46
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:272:
+> 46
 > Unresolved reference 'MaterialCardView'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:272:70
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:272:
+> 70
 > Unresolved reference 'QuickSettingsTileConfig'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:274:44
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:274:
+> 44
 > Unresolved reference 'enabled'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:275:49
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:275:
+> 49
 > Unresolved reference 'context'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:275:66
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:275:
+> 66
 > Unresolved reference 'primaryColor'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:277:49
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:277:
+> 49
 > Unresolved reference 'context'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:277:66
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:277:
+> 66
 > Unresolved reference 'cardview_light_background'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:280:22
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:280:
+> 22
 > Unresolved reference 'setCardBackgroundColor'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:283:13
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:283:
+> 13
 > Inapplicable candidate(s): fun <K> ELVIS_CALL(x: K?, y: K): K
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:283:18
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:283:
+> 18
 > Unresolved reference 'background'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:283:44
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:283:
+> 44
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:283:44
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:283:
+> 44
 > Cannot infer type for type parameter 'R'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:283:50
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:283:
+> 50
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:284:26
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:284:
+> 26
 > Unresolved reference 'radius'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:284:44
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:284:
+> 44
 > Unresolved reference 'resources'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:286:26
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:286:
+> 26
 > Unresolved reference 'radius'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:286:44
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:286:
+> 44
 > Unresolved reference 'resources'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:290:13
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:290:
+> 13
 > Inapplicable candidate(s): fun <K> ELVIS_CALL(x: K?, y: K): K
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:290:18
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:290:
+> 18
 > Unresolved reference 'background'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:290:41
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:290:
+> 41
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:290:41
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:290:
+> 41
 > Cannot infer type for type parameter 'R'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:290:47
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:290:
+> 47
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:291:26
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:291:
+> 26
 > Unresolved reference 'elevation'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:291:47
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:291:
+> 47
 > Unresolved reference 'resources'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:293:26
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:293:
+> 26
 > Unresolved reference 'elevation'.
 > e: file:///C:
-> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:294:30
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:294:
+> 30
 > Unresolved reference 'resources'.
 > e: file:///C:
 > /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/settings/QuickSettingsConfigActivity.kt:298:
@@ -9518,150 +9939,174 @@ fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/Color.kt:56:5 Conflicting
 > declarations:
 > val LightOnError: Color
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/CyberpunkThemeElements.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/CyberpunkThemeElements.kt:
 > 17:53 Unresolved reference 'labelMedium'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/CyberpunkThemeElements.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/CyberpunkThemeElements.kt:
 > 18:52 Unresolved reference 'bodyMedium'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/CyberpunkThemeElements.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/CyberpunkThemeElements.kt:
 > 20:42 Unresolved reference 'bodyMedium'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/CyberpunkThemeElements.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/CyberpunkThemeElements.kt:
 > 20:85 Unresolved reference 'displayLarge'.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:7:15 Cannot
 > access 'constructor(): Color': it is private in 'dev.aurakai.auraframefx.ui.theme.Color'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:7:15 Argument
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:7:15
+> Argument
 > type mismatch: actual type is 'dev.aurakai.auraframefx.ui.theme.Color', but '
 > androidx.compose.ui.graphics.Color' was expected.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:7:15 Enum
 > types cannot be instantiated.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:8:17 Cannot
 > access 'constructor(): Color': it is private in 'dev.aurakai.auraframefx.ui.theme.Color'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:8:17 Argument
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:8:17
+> Argument
 > type mismatch: actual type is 'dev.aurakai.auraframefx.ui.theme.Color', but '
 > androidx.compose.ui.graphics.Color' was expected.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:8:17 Enum
 > types cannot be instantiated.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:9:16 Cannot
 > access 'constructor(): Color': it is private in 'dev.aurakai.auraframefx.ui.theme.Color'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:9:16 Argument
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:9:16
+> Argument
 > type mismatch: actual type is 'dev.aurakai.auraframefx.ui.theme.Color', but '
 > androidx.compose.ui.graphics.Color' was expected.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:9:16 Enum
 > types cannot be instantiated.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:10:18 Cannot
 > access 'constructor(): Color': it is private in 'dev.aurakai.auraframefx.ui.theme.Color'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:10:18 Argument
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:10:18
+> Argument
 > type mismatch: actual type is 'dev.aurakai.auraframefx.ui.theme.Color', but '
 > androidx.compose.ui.graphics.Color' was expected.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:10:18 Enum
 > types cannot be instantiated.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:11:15 Cannot
 > access 'constructor(): Color': it is private in 'dev.aurakai.auraframefx.ui.theme.Color'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:11:15 Argument
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:11:15
+> Argument
 > type mismatch: actual type is 'dev.aurakai.auraframefx.ui.theme.Color', but '
 > androidx.compose.ui.graphics.Color' was expected.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:11:15 Enum
 > types cannot be instantiated.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:12:17 Cannot
 > access 'constructor(): Color': it is private in 'dev.aurakai.auraframefx.ui.theme.Color'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:12:17 Argument
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:12:17
+> Argument
 > type mismatch: actual type is 'dev.aurakai.auraframefx.ui.theme.Color', but '
 > androidx.compose.ui.graphics.Color' was expected.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:12:17 Enum
 > types cannot be instantiated.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:13:19 Cannot
 > access 'constructor(): Color': it is private in 'dev.aurakai.auraframefx.ui.theme.Color'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:13:19 Argument
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:13:19
+> Argument
 > type mismatch: actual type is 'dev.aurakai.auraframefx.ui.theme.Color', but '
 > androidx.compose.ui.graphics.Color' was expected.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:13:19 Enum
 > types cannot be instantiated.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:14:18 Cannot
 > access 'constructor(): Color': it is private in 'dev.aurakai.auraframefx.ui.theme.Color'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:14:18 Argument
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:14:18
+> Argument
 > type mismatch: actual type is 'dev.aurakai.auraframefx.ui.theme.Color', but '
 > androidx.compose.ui.graphics.Color' was expected.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:14:18 Enum
 > types cannot be instantiated.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:15:20 Cannot
 > access 'constructor(): Color': it is private in 'dev.aurakai.auraframefx.ui.theme.Color'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:15:20 Argument
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:15:20
+> Argument
 > type mismatch: actual type is 'dev.aurakai.auraframefx.ui.theme.Color', but '
 > androidx.compose.ui.graphics.Color' was expected.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:15:20 Enum
 > types cannot be instantiated.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:16:17 Cannot
 > access 'constructor(): Color': it is private in 'dev.aurakai.auraframefx.ui.theme.Color'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:16:17 Argument
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:16:17
+> Argument
 > type mismatch: actual type is 'dev.aurakai.auraframefx.ui.theme.Color', but '
 > androidx.compose.ui.graphics.Color' was expected.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:16:17 Enum
 > types cannot be instantiated.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:20:15 Cannot
 > access 'constructor(): Color': it is private in 'dev.aurakai.auraframefx.ui.theme.Color'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:20:15 Argument
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:20:15
+> Argument
 > type mismatch: actual type is 'dev.aurakai.auraframefx.ui.theme.Color', but '
 > androidx.compose.ui.graphics.Color' was expected.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:20:15 Enum
 > types cannot be instantiated.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:21:17 Cannot
 > access 'constructor(): Color': it is private in 'dev.aurakai.auraframefx.ui.theme.Color'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:21:17 Argument
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:21:17
+> Argument
 > type mismatch: actual type is 'dev.aurakai.auraframefx.ui.theme.Color', but '
 > androidx.compose.ui.graphics.Color' was expected.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:21:17 Enum
 > types cannot be instantiated.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:22:16 Cannot
 > access 'constructor(): Color': it is private in 'dev.aurakai.auraframefx.ui.theme.Color'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:22:16 Argument
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:22:16
+> Argument
 > type mismatch: actual type is 'dev.aurakai.auraframefx.ui.theme.Color', but '
 > androidx.compose.ui.graphics.Color' was expected.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:22:16 Enum
 > types cannot be instantiated.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:23:18 Cannot
 > access 'constructor(): Color': it is private in 'dev.aurakai.auraframefx.ui.theme.Color'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:23:18 Argument
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:23:18
+> Argument
 > type mismatch: actual type is 'dev.aurakai.auraframefx.ui.theme.Color', but '
 > androidx.compose.ui.graphics.Color' was expected.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:23:18 Enum
 > types cannot be instantiated.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:24:15 Cannot
 > access 'constructor(): Color': it is private in 'dev.aurakai.auraframefx.ui.theme.Color'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:24:15 Argument
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:24:15
+> Argument
 > type mismatch: actual type is 'dev.aurakai.auraframefx.ui.theme.Color', but '
 > androidx.compose.ui.graphics.Color' was expected.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:24:15 Enum
 > types cannot be instantiated.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:25:17 Cannot
 > access 'constructor(): Color': it is private in 'dev.aurakai.auraframefx.ui.theme.Color'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:25:17 Argument
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:25:17
+> Argument
 > type mismatch: actual type is 'dev.aurakai.auraframefx.ui.theme.Color', but '
 > androidx.compose.ui.graphics.Color' was expected.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:25:17 Enum
 > types cannot be instantiated.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:26:19 Cannot
 > access 'constructor(): Color': it is private in 'dev.aurakai.auraframefx.ui.theme.Color'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:26:19 Argument
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:26:19
+> Argument
 > type mismatch: actual type is 'dev.aurakai.auraframefx.ui.theme.Color', but '
 > androidx.compose.ui.graphics.Color' was expected.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:26:19 Enum
 > types cannot be instantiated.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:27:18 Cannot
 > access 'constructor(): Color': it is private in 'dev.aurakai.auraframefx.ui.theme.Color'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:27:18 Argument
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:27:18
+> Argument
 > type mismatch: actual type is 'dev.aurakai.auraframefx.ui.theme.Color', but '
 > androidx.compose.ui.graphics.Color' was expected.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:27:18 Enum
 > types cannot be instantiated.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:28:20 Cannot
 > access 'constructor(): Color': it is private in 'dev.aurakai.auraframefx.ui.theme.Color'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:28:20 Argument
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:28:20
+> Argument
 > type mismatch: actual type is 'dev.aurakai.auraframefx.ui.theme.Color', but '
 > androidx.compose.ui.graphics.Color' was expected.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:28:20 Enum
 > types cannot be instantiated.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:29:17 Cannot
 > access 'constructor(): Color': it is private in 'dev.aurakai.auraframefx.ui.theme.Color'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:29:17 Argument
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:29:17
+> Argument
 > type mismatch: actual type is 'dev.aurakai.auraframefx.ui.theme.Color', but '
 > androidx.compose.ui.graphics.Color' was expected.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/NewThemes.kt:29:17 Enum
@@ -9676,31 +10121,43 @@ fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 > resolution ambiguity between candidates:
 > val LightOnError: Color
 > val LightOnError: Color
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/Theme.kt:110:40 Unresolved
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/Theme.kt:110:40
+> Unresolved
 > reference 'hiltViewModel'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/Theme.kt:111:38 Unresolved
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/Theme.kt:111:38
+> Unresolved
 > reference 'hiltViewModel'.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/Theme.kt:142:19 'when'
 > expression must be exhaustive. Add the 'RED', 'GREEN', 'BLUE' branches or an 'else' branch.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/Theme.kt:143:19 Unresolved
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/Theme.kt:143:19
+> Unresolved
 > reference 'RED'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/Theme.kt:144:19 Unresolved
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/Theme.kt:144:19
+> Unresolved
 > reference 'GREEN'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/Theme.kt:145:19 Unresolved
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/Theme.kt:145:19
+> Unresolved
 > reference 'BLUE'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/ThemeColorPicker.kt:107:21
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/ThemeColorPicker.kt:107:
+> 21
 > No parameter with name 'onColorChanged' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/ThemeColorPicker.kt:107:21
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/ThemeColorPicker.kt:107:
+> 21
 > No value passed for parameter 'onColorSelected'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/ThemeColorPicker.kt:107:55
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/ThemeColorPicker.kt:107:
+> 55
 > Unresolved reference 'it'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/ThemeColorPicker.kt:153:54
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/ThemeColorPicker.kt:153:
+> 54
 > Unresolved reference 'luminance'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/ThemeColorPicker.kt:161:54
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/ThemeColorPicker.kt:161:
+> 54
 > Unresolved reference 'luminance'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/ThemeColorPickerPreview.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/ThemeColorPickerPreview.kt:
 > 87:30 Unresolved reference 'BorderStroke'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/ThemeColorPickerPreview.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/ThemeColorPickerPreview.kt:
 > 131:30 Unresolved reference 'BorderStroke'.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/theme/ThemePreview.kt:110:22 No
 > parameter with name 'useDarkTheme' found.
@@ -9776,53 +10233,77 @@ fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 > Unresolved reference 'timestamp'.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityScreen.kt:297:37
 > Unresolved reference 'timestamp'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:38:14
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:38:
+> 14
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:41:24
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:41:
+> 24
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:42:24
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:42:
+> 24
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:42:36
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:42:
+> 36
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:47:24
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:47:
+> 24
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:57:18
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:57:
+> 18
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:61:28
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:61:
+> 28
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:62:28
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:62:
+> 28
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:62:40
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:62:
+> 40
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:75:14
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:75:
+> 14
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:78:24
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:78:
+> 24
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:79:24
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:79:
+> 24
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:79:36
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:79:
+> 36
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:90:18
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:90:
+> 18
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:93:28
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:93:
+> 28
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:94:28
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:94:
+> 28
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:94:38
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:94:
+> 38
 > Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:106:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:
+> 106:
 > 55 Unresolved reference 'AgentRequest'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:107:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:
+> 107:
 > 18 Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:110:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:
+> 110:
 > 28 Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:111:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:
+> 111:
 > 28 Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:111:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:
+> 111:
 > 40 Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:120:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/ui/trinity/TrinityViewModel.kt:
+> 120:
 > 28 Cannot infer type for type parameter 'T'. Specify it explicitly.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/utils/ThemeManager.kt:47:9 Functions
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/utils/ThemeManager.kt:47:9
+> Functions
 > which invoke @Composable functions must be marked with the @Composable annotation
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/utils/ThemeManager.kt:47:45
 > @Composable invocations can only happen from the context of a @Composable function
@@ -9867,50 +10348,71 @@ fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 > 180:30 Unresolved reference 'clearAllLogs'.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/DiagnosticsViewModel.kt:
 > 217:51 Unresolved reference 'loadCriticalOfflineData'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
 > 8:38 Unresolved reference 'AgentRole'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
 > 54:17 No parameter with name 'role' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
 > 54:24 Unresolved reference 'AgentRole'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
 > 55:42 Unresolved reference 'MASTER'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
 > 60:17 No parameter with name 'role' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
 > 60:24 Unresolved reference 'AgentRole'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
 > 61:42 Unresolved reference 'BRIDGE'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
 > 66:17 No parameter with name 'role' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
 > 66:24 Unresolved reference 'AgentRole'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
 > 67:42 Unresolved reference 'AUXILIARY'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
 > 72:17 No parameter with name 'role' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
 > 72:24 Unresolved reference 'AgentRole'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
 > 73:42 Unresolved reference 'AUXILIARY'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
 > 91:46 'when' expression must be exhaustive. Add the 'AuraShield', 'GenKitMaster', '
 > DataveinConstructor', 'NeuralWhisper', 'Genesis', 'Aura', 'Kai', ... branches or an 'else' branch.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
 > 120:17 'when' expression must be exhaustive. Add the 'AuraShield', 'GenKitMaster', '
 > DataveinConstructor', 'NeuralWhisper', 'Genesis', 'Aura', 'Kai', ... branches or an 'else' branch.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
 > 130:17 'when' expression must be exhaustive. Add the 'AuraShield', 'GenKitMaster', '
 > DataveinConstructor', 'NeuralWhisper', 'Genesis', 'Aura', 'Kai', ... branches or an 'else' branch.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
 > 178:13 No parameter with name 'id' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
 > 182:13 No parameter with name 'status' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
 > 213:31 Unresolved reference 'AgentRole'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
 > 214:42 Unresolved reference 'role'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/viewmodel/GenesisAgentViewModel.kt:
 > 218:39 Operator '==' cannot be applied to 'Int' and 'AgentPriority'.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/AuraXposedModule.kt:21:21
 > Unresolved reference 'config'.
@@ -9924,46 +10426,60 @@ fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 > Argument type mismatch: actual type is 'PackageParam', but 'YukiBaseHooker' was expected.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/GenesisHookEntry.kt:59:37
 > Argument type mismatch: actual type is 'PackageParam', but 'YukiBaseHooker' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/GenesisHooks.kt:14:1 Class '
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/GenesisHooks.kt:14:1
+> Class '
 > GenesisUIHooks' is not abstract and does not implement abstract base class member:
 > fun onHook(): Unit
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/GenesisHooks.kt:85:1 Class '
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/GenesisHooks.kt:85:1
+> Class '
 > GenesisZygoteHooks' is not abstract and does not implement abstract base class member:
 > fun onHook(): Unit
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/GenesisHooks.kt:95:45
 > Unresolved reference 'applicationInfo'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/GenesisHooks.kt:151:1 Class '
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/GenesisHooks.kt:151:1
+> Class '
 > GenesisSelfHooks' is not abstract and does not implement abstract base class member:
 > fun onHook(): Unit
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/GenesisHooks.kt:159:23
 > Argument type mismatch: actual type is 'Class<Any>?', but 'Any' was expected.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/GenesisHooks.kt:169:38
 > Unresolved reference 'toPackage'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/GenesisHooks.kt:169:79 Cannot
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/GenesisHooks.kt:169:79
+> Cannot
 > infer type for value parameter 'aiClass'. Specify it explicitly.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/GenesisSystemHooks.kt:15:1
 > Class 'GenesisSystemHooks' is not abstract and does not implement abstract base class member:
 > fun onHook(): Unit
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:26:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> 26:
 > 1 Class 'LockScreenHooker' is not abstract and does not implement abstract base class member:
 > fun onHook(): Unit
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:43:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> 43:
 > 24 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:58:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> 58:
 > 28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:61:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> 61:
 > 29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:61:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> 61:
 > 80 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:84:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> 84:
 > 23 Unresolved reference 'BooleanType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:84:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> 84:
 > 36 Unresolved reference 'IntType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:84:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> 84:
 > 45 Unresolved reference 'IntType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:84:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> 84:
 > 54 Unresolved reference 'IntType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:84:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> 84:
 > 63 Unresolved reference 'IntType'.
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
 > 134:36 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
@@ -10017,209 +10533,311 @@ fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 > 337:21 @Composable invocations can only happen from the context of a @Composable function
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
 > 340:47 @Composable invocations can only happen from the context of a @Composable function
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:33:1
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:33:
+> 1
 > Class 'NotchBarHooker' is not abstract and does not implement abstract base class member:
 > fun onHook(): Unit
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:56:24
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:56:
+> 24
 > Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:74:28
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:74:
+> 28
 > Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:77:29
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:77:
+> 29
 > Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:77:77
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:77:
+> 77
 > Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:139:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 139:
 > 23 Unresolved reference 'BooleanType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:139:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 139:
 > 36 Unresolved reference 'IntType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:139:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 139:
 > 45 Unresolved reference 'IntType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:139:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 139:
 > 54 Unresolved reference 'IntType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:139:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 139:
 > 63 Unresolved reference 'IntType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:168:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 168:
 > 27 Unresolved reference 'IntType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:178:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 178:
 > 28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:228:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 228:
 > 28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:231:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 231:
 > 29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:231:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 231:
 > 83 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:251:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 251:
 > 28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:254:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 254:
 > 29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:254:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 254:
 > 82 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:272:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 272:
 > 28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:275:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 275:
 > 29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:275:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 275:
 > 76 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:294:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 294:
 > 28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:297:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 297:
 > 29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:297:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 297:
 > 77 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:307:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 307:
 > 28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:309:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 309:
 > 29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:309:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 309:
 > 81 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:320:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 320:
 > 28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:322:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 322:
 > 29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:322:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 322:
 > 82 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:333:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 333:
 > 28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:335:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 335:
 > 29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:335:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 335:
 > 80 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:351:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 351:
 > 28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:354:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 354:
 > 29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:354:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 354:
 > 77 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:364:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 364:
 > 28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:366:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 366:
 > 29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:366:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 366:
 > 77 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:376:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 376:
 > 28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:378:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 378:
 > 29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:378:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 378:
 > 80 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:408:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 408:
 > 28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:411:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 411:
 > 29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:411:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 411:
 > 77 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:449:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 449:
 > 28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:451:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 451:
 > 29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:451:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 451:
 > 78 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:480:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 480:
 > 21 No parameter with name 'particleColor' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:488:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 488:
 > 29 Argument type mismatch: actual type is 'TextStyle', but 'CyberpunkTextStyle' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:489:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 489:
 > 21 No parameter with name 'glowColor' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:489:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:
+> 489:
 > 21 No value passed for parameter 'color'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
-> 27:1 Class 'QuickSettingsHooker' is not abstract and does not implement abstract base class member:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> 27:1 Class 'QuickSettingsHooker' is not abstract and does not implement abstract base class
+> member:
 > fun onHook(): Unit
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 46:24 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 64:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 67:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 67:82 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 90:23 Unresolved reference 'BooleanType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 90:36 Unresolved reference 'IntType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 90:45 Unresolved reference 'IntType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 90:54 Unresolved reference 'IntType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 90:63 Unresolved reference 'IntType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 101:23 Unresolved reference 'IntType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 101:32 Unresolved reference 'IntType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 118:23 Unresolved reference 'ContextClass'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 139:23 Unresolved reference 'ViewClass'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 168:23 Unresolved reference 'BooleanType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 212:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 215:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 215:83 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 232:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 235:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 235:76 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 245:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 247:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 247:70 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 260:32 Unresolved reference 'style'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 267:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 270:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 270:73 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 280:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 282:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 282:74 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 292:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 294:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 294:75 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 309:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 312:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 312:78 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 322:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 324:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 324:79 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 344:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 347:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 347:76 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 357:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 359:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 359:81 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 419:21 Argument type mismatch: actual type is 'TextStyle', but 'CyberpunkTextStyle' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 420:13 No parameter with name 'glowColor' found.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/QuickSettingsHooker.kt:
 > 420:13 No value passed for parameter 'color'.
 > e: file:///C:
 > /Aurakai/app/src/main/kotlin/dev/aurakai/auraframefx/oracledrive/OracleDriveIntegration.kt:24:13 '
@@ -10227,7 +10845,8 @@ fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 > e: file:///C:
 > /Aurakai/app/src/main/kotlin/dev/aurakai/auraframefx/oracledrive/OracleDriveIntegration.kt:24:55
 > Unresolved reference 'initializeDrive'.
-> e: file:///C:/Aurakai/app/src/main/kotlin/dev/aurakai/auraframefx/oracledrive/OracleDriveService.kt:
+> e: file:///C:
+> /Aurakai/app/src/main/kotlin/dev/aurakai/auraframefx/oracledrive/OracleDriveService.kt:
 > 9:11 Redeclaration:
 > interface OracleDriveService : Any
 > e: file:///C:

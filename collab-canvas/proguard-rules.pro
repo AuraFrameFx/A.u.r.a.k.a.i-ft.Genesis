@@ -22,9 +22,7 @@
 
 # Genesis Protocol - Collaborative Canvas Module
 # Only keep necessary classes for reflection/serialization/JNI
--keep class dev.aurakai.auraframefx.collabcanvas.network.CollabWebSocketManager { *; }
--keep class dev.aurakai.auraframefx.collabcanvas.model.CollabCanvasState { *; }
--keep class dev.aurakai.auraframefx.collabcanvas.model.CollabUser { *; }
+
 
 # If you use @Keep annotation, uncomment below:
 # -keep @dev.aurakai.auraframefx.common.Keep class * { *; }

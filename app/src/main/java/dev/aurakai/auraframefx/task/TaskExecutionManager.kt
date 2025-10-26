@@ -1,9 +1,10 @@
 ﻿package dev.aurakai.auraframefx.task
 
-class TaskExecutionManager {
-    // Skeleton for managing task execution and orchestration
+@Deprecated("Replaced by dev.aurakai.auraframefx.ai.task.execution.TaskExecutionManager. This legacy stub remains for history and should be removed after migration.")
+class TaskExecutionManagerLegacy {
+    // TODO: Implement task execution logic (e.g., assign to agent, monitor progress, aggregate results)
     fun executeTask(task: String) {
-        // TODO: Implement task execution logic (e.g., assign to agent, monitor progress, aggregate results)
+        // legacy stub - no-op
     }
 }
 

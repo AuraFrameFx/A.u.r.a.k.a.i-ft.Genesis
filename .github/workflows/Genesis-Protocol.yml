@@ -1,0 +1,46 @@
+name: Genesis Protocol
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+  checks: write
+
+jobs:
+  build-genesis:
+    name: Build - Java 24 + Gradle Clean
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java 24 (Temurin)
+        uses: actions/setup-java@v3
+        with:
+          java-version: '24'
+          distribution: 'temurin'
+
+      - name: Clear Gradle cache (force clean)
+        run: |
+          rm -rf $HOME/.gradle/caches
+          ./gradlew clean
+
+      - name: Build with Gradle
+        run: ./gradlew build --configuration-cache --parallel
+
+      - name:
+          Upload build outputs (example: APKs, JARs)
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifacts
+          path: |
+            app/build/outputs/apk/**/*.apk
+            build/libs/**/*.jar

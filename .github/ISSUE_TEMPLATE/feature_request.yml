@@ -1,8 +1,8 @@
 name: ✨ Feature Request
 description: Suggest a new feature for Genesis
 title: "[FEATURE] "
-labels: ["enhancement", "needs-review"]
-assignees: []
+labels: [ "enhancement", "needs-review" ]
+assignees: [ ]
 
 body:
   - type: markdown

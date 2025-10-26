@@ -32,7 +32,7 @@ object VertexAIModule {
     @Singleton
     fun provideVertexAIConfig(): VertexAIConfig {
         return VertexAIConfig(
-            projectId = "auraframefx",
+            projectId = "collabcanvas",
             location = "us-central1",
             endpoint = "us-central1-aiplatform.googleapis.com",
             modelName = "gemini-1.5-pro-002",
@@ -59,8 +59,9 @@ object VertexAIModule {
         config: VertexAIConfig,
         @ApplicationContext context: Context,
         securityContext: SecurityContext,
-        logger: AuraFxLogger,
+        logger: AuraFxLogger
     ): VertexAIClient {
         return VertexAIClientImpl()
     }
+
 }
