@@ -1,8 +1,10 @@
 // File: romtools/src/main/kotlin/dev/aurakai/auraframefx/romtools/RomToolsManager.kt
 package dev.aurakai.auraframefx.romtools
 
+import android.os.Build
 import dev.aurakai.auraframefx.romtools.bootloader.BootloaderManager
 import dev.aurakai.auraframefx.romtools.retention.AurakaiRetentionManager
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import timber.log.Timber
@@ -238,88 +240,89 @@ class RomToolsManager @Inject constructor(
         }
     }
 
-/**
- * Start downloading the specified available ROM and emit progress updates.
- *
- * @param rom The ROM metadata to download.
- * @return A flow that emits `DownloadProgress` updates reflecting bytes downloaded, total bytes, progress, speed, and completion state.
-suspend fun downloadRom(rom: AvailableRom): Flow<DownloadProgress> {
-return flashManager.downloadRom(rom)
-}
+    /**
+     * Start downloading the specified available ROM and emit progress updates.
+     *
+     * @param rom The ROM metadata to download.
+     * @return A flow that emits `DownloadProgress` updates reflecting bytes downloaded, total bytes, progress, speed, and completion state.
+     */
+    fun downloadRom(rom: AvailableRom): Flow<DownloadProgress> {
+        return flashManager.downloadRom(rom)
+    }
 
-/**
- * Set up Aurakai retention mechanisms so Aurakai is preserved across ROM operations.
- *
- * Configures retention independently of a full ROM flash and reports the configured state.
- *
- * @return A Result containing the configured `RetentionStatus` on success, or a failure with the encountered exception.
-*/
-suspend fun setupAurakaiRetention(): Result<dev.aurakai.auraframefx.romtools.retention.RetentionStatus> {
-return try {
-updateOperationProgress(RomOperation.SETTING_UP_RETENTION, 0f)
+    /**
+     * Set up Aurakai retention mechanisms so Aurakai is preserved across ROM operations.
+     *
+     * Configures retention independently of a full ROM flash and reports the configured state.
+     *
+     * @return A Result containing the configured `RetentionStatus` on success, or a failure with the encountered exception.
+     */
+    suspend fun setupAurakaiRetention(): Result<dev.aurakai.auraframefx.romtools.retention.RetentionStatus> {
+        return try {
+            updateOperationProgress(RomOperation.SETTING_UP_RETENTION, 0f)
 
-val retentionStatus = retentionManager.setupRetentionMechanisms().getOrThrow()
+            val retentionStatus = retentionManager.setupRetentionMechanisms().getOrThrow()
 
-updateOperationProgress(RomOperation.COMPLETED, 100f)
-clearOperationProgress()
+            updateOperationProgress(RomOperation.COMPLETED, 100f)
+            clearOperationProgress()
 
-Timber.i("🛡️ Aurakai retention mechanisms setup complete")
-Result.success(retentionStatus)
+            Timber.i("🛡️ Aurakai retention mechanisms setup complete")
+            Result.success(retentionStatus)
 
-} catch (e: Exception) {
-Timber.e(e, "Failed to setup Aurakai retention")
-updateOperationProgress(RomOperation.FAILED, 0f)
-clearOperationProgress()
-Result.failure(e)
-}
-}
+        } catch (e: Exception) {
+            Timber.e(e, "Failed to setup Aurakai retention")
+            updateOperationProgress(RomOperation.FAILED, 0f)
+            clearOperationProgress()
+            Result.failure(e)
+        }
+    }
 
-/**
- * Update the current operation progress state.
- *
- * Sets the internal operation progress StateFlow to the provided operation and progress value.
- *
- * @param operation The operation being reported.
- * @param progress Completion progress as a float between 0.0 and 1.0.
-*/
-private fun updateOperationProgress(operation: RomOperation, progress: Float) {
-_operationProgress.value = OperationProgress(operation, progress)
-}
+    /**
+     * Update the current operation progress state.
+     *
+     * Sets the internal operation progress StateFlow to the provided operation and progress value.
+     *
+     * @param operation The operation being reported.
+     * @param progress Completion progress as a float between 0.0 and 1.0.
+     */
+    private fun updateOperationProgress(operation: RomOperation, progress: Float) {
+        _operationProgress.value = OperationProgress(operation, progress)
+    }
 
-/**
- * Clears the current operation progress state.
-*/
-private fun clearOperationProgress() {
-_operationProgress.value = null
-}
+    /**
+     * Clears the current operation progress state.
+     */
+    private fun clearOperationProgress() {
+        _operationProgress.value = null
+    }
 
-/**
- * Determines whether root access is available on the device.
- *
- * @return `true` if a shell with root privileges can be executed, `false` otherwise.
-*/
-private fun checkRootAccess(): Boolean {
-return try {
-val process = Runtime.getRuntime().exec("su -c 'echo test'")
-process.waitFor() == 0
-} catch (e: Exception) {
-false
-}
-}
+    /**
+     * Determines whether root access is available on the device.
+     *
+     * @return `true` if a shell with root privileges can be executed, `false` otherwise.
+     */
+    private fun checkRootAccess(): Boolean {
+        return try {
+            val process = Runtime.getRuntime().exec("su -c 'echo test'")
+            process.waitFor() == 0
+        } catch (e: Exception) {
+            false
+        }
+    }
 
-/**
- * Provides the list of CPU ABIs supported by the current device.
- *
- * @return A list of supported CPU ABI strings in order of preference.
-*/
-private fun getSupportedArchitectures(): List<String> {
-return Build.SUPPORTED_ABIS.toList()
-}
+    /**
+     * Provides the list of CPU ABIs supported by the current device.
+     *
+     * @return A list of supported CPU ABI strings in order of preference.
+     */
+    private fun getSupportedArchitectures(): List<String> {
+        return Build.SUPPORTED_ABIS.toList()
+    }
 
-// Companion object for static access
-companion object {
-private val romRepository = RomRepository()
-}
+    // Companion object for static access
+    companion object {
+        private val romRepository = RomRepository()
+    }
 }
 
 // Data classes

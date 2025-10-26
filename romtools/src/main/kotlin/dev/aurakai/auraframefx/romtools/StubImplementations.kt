@@ -65,8 +65,9 @@ interface FlashManager {
     /**
      * Downloads a ROM file.
      * @param rom The ROM to download.
+     * @return A Flow emitting download progress updates.
      */
-    suspend fun downloadRom(rom: AvailableRom): Flow<DownloadProgress>
+    fun downloadRom(rom: AvailableRom): Flow<DownloadProgress>
 }
 
 @Singleton
@@ -77,7 +78,7 @@ class FlashManagerImpl @Inject constructor() : FlashManager {
     ): Result<Unit> =
         Result.failure(Exception("Not implemented"))
 
-    override suspend fun downloadRom(rom: AvailableRom): Flow<DownloadProgress> =
+    override fun downloadRom(rom: AvailableRom): Flow<DownloadProgress> =
         flowOf(DownloadProgress(0, 0, 0f, 0))
 }
 
