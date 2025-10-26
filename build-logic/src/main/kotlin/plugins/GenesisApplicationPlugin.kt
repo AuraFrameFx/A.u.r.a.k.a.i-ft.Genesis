@@ -25,6 +25,7 @@ class GenesisApplicationPlugin : Plugin<Project> {
         // with strict Gradle versions.
         with(target.pluginManager) {
             apply("com.android.application")
+            apply("org.jetbrains.kotlin.android")  // CRITICAL: Compiles Kotlin source files
             apply("com.google.dagger.hilt.android")
             apply("com.google.devtools.ksp")
             apply("org.jetbrains.kotlin.plugin.compose")
