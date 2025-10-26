@@ -1,3 +1,59 @@
+package dev.aurakai.auraframefx.romtools
+
+import dev.aurakai.auraframefx.romtools.bootloader.BootloaderManager
+import dev.aurakai.auraframefx.romtools.retention.AurakaiRetentionManager
+import dev.aurakai.auraframefx.romtools.retention.BackupPaths
+import dev.aurakai.auraframefx.romtools.retention.RetentionMechanism
+import dev.aurakai.auraframefx.romtools.retention.RetentionStatus
+import io.mockk.coEvery
+import io.mockk.coVerify
+import io.mockk.every
+import io.mockk.mockk
+import kotlinx.coroutines.test.runTest
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.DisplayName
+import org.junit.jupiter.api.Nested
+import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertNotNull
+import kotlin.test.assertTrue
+
+@DisplayName("RomToolsManager Tests")
+class RomToolsManagerTest {
+
+    private lateinit var romToolsManager: RomToolsManager
+    private lateinit var mockBootloaderManager: BootloaderManager
+    private lateinit var mockRecoveryManager: RecoveryManager
+    private lateinit var mockSystemModificationManager: SystemModificationManager
+    private lateinit var mockFlashManager: FlashManager
+    private lateinit var mockVerificationManager: RomVerificationManager
+    private lateinit var mockBackupManager: BackupManager
+    private lateinit var mockRetentionManager: AurakaiRetentionManager
+
+    @BeforeEach
+    fun setup() {
+        mockBootloaderManager = mockk(relaxed = true)
+        mockRecoveryManager = mockk(relaxed = true)
+        mockSystemModificationManager = mockk(relaxed = true)
+        mockFlashManager = mockk(relaxed = true)
+        mockVerificationManager = mockk(relaxed = true)
+        mockBackupManager = mockk(relaxed = true)
+        mockRetentionManager = mockk(relaxed = true)
+        
+        romToolsManager = RomToolsManager(
+            bootloaderManager = mockBootloaderManager,
+            recoveryManager = mockRecoveryManager,
+            systemModificationManager = mockSystemModificationManager,
+            flashManager = mockFlashManager,
+            verificationManager = mockVerificationManager,
+            backupManager = mockBackupManager,
+            retentionManager = mockRetentionManager
+        )
+    }
+
+// Additional data class for testing with proper defaults
+data class BackupInfo(
+    val id: String,
 val path: String,
 val size: Long,
 val timestamp: Long
