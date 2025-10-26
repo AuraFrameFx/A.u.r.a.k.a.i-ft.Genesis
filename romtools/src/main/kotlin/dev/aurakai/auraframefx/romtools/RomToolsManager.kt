@@ -246,7 +246,7 @@ class RomToolsManager @Inject constructor(
      * @param rom The ROM metadata to download.
      * @return A flow that emits `DownloadProgress` updates reflecting bytes downloaded, total bytes, progress, speed, and completion state.
      */
-    suspend fun downloadRom(rom: AvailableRom): Flow<DownloadProgress> {
+    fun downloadRom(rom: AvailableRom): Flow<DownloadProgress> {
         return flashManager.downloadRom(rom)
     }
 

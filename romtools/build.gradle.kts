@@ -1,6 +1,8 @@
 plugins {
     id("com.android.library") version "9.0.0-alpha11"
+    id("com.google.dagger.hilt.android") version "2.57.2"
     id("com.google.devtools.ksp") version "2.3.0"
+    id("org.jetbrains.kotlin.plugin.compose") version "2.3.0-Beta1"
 }
 
 

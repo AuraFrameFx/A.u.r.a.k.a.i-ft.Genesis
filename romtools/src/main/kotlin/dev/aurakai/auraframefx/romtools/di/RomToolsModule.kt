@@ -1,14 +1,13 @@
 // File: romtools/src/main/kotlin/dev/aurakai/auraframefx/romtools/di/RomToolsModule.kt
 package dev.aurakai.auraframefx.romtools.di
 
-// Hilt imports temporarily commented out
-// import dagger.Binds
-// import dagger.Module
-// import dagger.Provides
-// import dagger.hilt.InstallIn
-// import dagger.hilt.android.qualifiers.ApplicationContext
-// import dagger.hilt.components.SingletonComponent
 import android.content.Context
+import dagger.Binds
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.components.SingletonComponent
 import dev.aurakai.auraframefx.romtools.BackupManager
 import dev.aurakai.auraframefx.romtools.BackupManagerImpl
 import dev.aurakai.auraframefx.romtools.FlashManager
@@ -21,85 +20,85 @@ import dev.aurakai.auraframefx.romtools.SystemModificationManager
 import dev.aurakai.auraframefx.romtools.SystemModificationManagerImpl
 import dev.aurakai.auraframefx.romtools.bootloader.BootloaderManager
 import dev.aurakai.auraframefx.romtools.bootloader.BootloaderManagerImpl
+import javax.inject.Singleton
 
 /**
- * ROM Tools module - Hilt temporarily disabled.
- * TODO: Re-enable when Hilt plugin configuration is resolved.
+ * ROM Tools Hilt module providing dependency injection bindings.
  */
-// @Module
-// @InstallIn(SingletonComponent::class)
-class RomToolsModule {
+@Module
+@InstallIn(SingletonComponent::class)
+abstract class RomToolsModule {
 
-    // @Binds
-    // @Singleton
-    fun bindBootloaderManager(
+    @Binds
+    @Singleton
+    abstract fun bindBootloaderManager(
         bootloaderManagerImpl: BootloaderManagerImpl
-    ): BootloaderManager = bootloaderManagerImpl
+    ): BootloaderManager
 
-    // @Binds
-    // @Singleton
-    fun bindRecoveryManager(
+    @Binds
+    @Singleton
+    abstract fun bindRecoveryManager(
         recoveryManagerImpl: RecoveryManagerImpl
-    ): RecoveryManager = recoveryManagerImpl
+    ): RecoveryManager
 
-    // @Binds
-    // @Singleton
-    fun bindSystemModificationManager(
+    @Binds
+    @Singleton
+    abstract fun bindSystemModificationManager(
         systemModificationManagerImpl: SystemModificationManagerImpl
-    ): SystemModificationManager = systemModificationManagerImpl
+    ): SystemModificationManager
 
-    // @Binds
-    // @Singleton
-    fun bindFlashManager(
+    @Binds
+    @Singleton
+    abstract fun bindFlashManager(
         flashManagerImpl: FlashManagerImpl
-    ): FlashManager = flashManagerImpl
+    ): FlashManager
 
-    // @Binds
-    // @Singleton
-    fun bindRomVerificationManager(
+    @Binds
+    @Singleton
+    abstract fun bindRomVerificationManager(
         romVerificationManagerImpl: RomVerificationManagerImpl
-    ): RomVerificationManager = romVerificationManagerImpl
+    ): RomVerificationManager
 
-    // @Binds
-    // @Singleton
-    fun bindBackupManager(
+    @Binds
+    @Singleton
+    abstract fun bindBackupManager(
         backupManagerImpl: BackupManagerImpl
-    ): BackupManager = backupManagerImpl
+    ): BackupManager
 
     companion object {
 
-        // @Provides
-        // @RomToolsDataDir
+        @Provides
+        @Singleton
+        @RomToolsDataDir
         fun provideRomToolsDataDirectory(
-            // @ApplicationContext
-            context: Context
+            @ApplicationContext context: Context
         ): String {
             return "${context.filesDir}/romtools"
         }
 
-        // @Provides
-        // @RomToolsBackupDir
+        @Provides
+        @Singleton
+        @RomToolsBackupDir
         fun provideRomToolsBackupDirectory(
-            // @ApplicationContext
-            context: Context
+            @ApplicationContext context: Context
         ): String {
             return "${context.getExternalFilesDir(null)}/backups"
         }
 
-        // @Provides
-        // @RomToolsDownloadDir
+        @Provides
+        @Singleton
+        @RomToolsDownloadDir
         fun provideRomToolsDownloadDirectory(
-            // @ApplicationContext
-            context: Context
+            @ApplicationContext context: Context
         ): String {
             return "${context.getExternalFilesDir(null)}/downloads"
         }
 
-        // @Provides
-        // @RomToolsTempDir
+        @Provides
+        @Singleton
+        @RomToolsTempDir
         fun provideRomToolsTempDirectory(
-            // @ApplicationContext
-            context: Context
+            @ApplicationContext context: Context
         ): String {
             return "${context.cacheDir}/romtools_temp"
         }
