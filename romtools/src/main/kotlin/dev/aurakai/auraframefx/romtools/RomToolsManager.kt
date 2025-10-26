@@ -1,10 +1,8 @@
 // File: romtools/src/main/kotlin/dev/aurakai/auraframefx/romtools/RomToolsManager.kt
 package dev.aurakai.auraframefx.romtools
 
-import android.os.Build
 import dev.aurakai.auraframefx.romtools.bootloader.BootloaderManager
 import dev.aurakai.auraframefx.romtools.retention.AurakaiRetentionManager
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import timber.log.Timber
@@ -240,17 +238,16 @@ class RomToolsManager @Inject constructor(
         }
     }
 
-    /**
-     * Start downloading the specified available ROM and emit progress updates.
-     *
-     * @param rom The ROM metadata to download.
-     * @return A flow that emits `DownloadProgress` updates reflecting bytes downloaded, total bytes, progress, speed, and completion state.
-     */
-    suspend fun downloadRom(rom: AvailableRom): Flow<DownloadProgress> {
-        return flashManager.downloadRom(rom)
-    }
+/**
+ * Start downloading the specified available ROM and emit progress updates.
+ *
+ * @param rom The ROM metadata to download.
+ * @return A flow that emits `DownloadProgress` updates reflecting bytes downloaded, total bytes, progress, speed, and completion state.
+suspend fun downloadRom(rom: AvailableRom): Flow<DownloadProgress> {
+return flashManager.downloadRom(rom)
+}
 
-    /**
+/**
  * Set up Aurakai retention mechanisms so Aurakai is preserved across ROM operations.
  *
  * Configures retention independently of a full ROM flash and reports the configured state.

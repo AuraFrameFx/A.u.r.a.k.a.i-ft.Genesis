@@ -32,7 +32,7 @@ object VertexAIModule {
     @Singleton
     fun provideVertexAIConfig(): VertexAIConfig {
         return VertexAIConfig(
-            projectId = "auraframefx",
+            projectId = "collabcanvas",
             location = "us-central1",
             endpoint = "us-central1-aiplatform.googleapis.com",
             modelName = "gemini-1.5-pro-002",
@@ -48,19 +48,21 @@ object VertexAIModule {
         )
     }
 
-    /**
-     * Provides a singleton instance of `VertexAIClient` for interacting with Vertex AI services.
-     *
-     * @return A configured `VertexAIClient` instance.
-     */
-    @Provides
-    @Singleton
-    fun provideVertexAIClient(
-        config: VertexAIConfig,
-        @ApplicationContext context: Context,
-        securityContext: SecurityContext,
-        logger: AuraFxLogger,
-    ): VertexAIClient {
-        return VertexAIClientImpl()
-    }
+}
+
+/**
+ * Provides a singleton instance of `VertexAIClient` for interacting with Vertex AI services.
+ *
+ * @return A configured `VertexAIClient` instance.
+ */
+@kotlin.jvm.JvmMultifileClassStatic
+@Provides
+@Singleton
+private fun VertexAIModule.provideVertexAIClient(
+    config: VertexAIConfig,
+    @ApplicationContext context: Context,
+    securityContext: SecurityContext,
+    logger: AuraFxLogger
+): VertexAIClient {
+    return VertexAIClientImpl()
 }

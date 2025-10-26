@@ -16,14 +16,14 @@ This guide will help you set up a GitHub Projects board to manage Genesis releas
 
 Create these columns (drag issues between them):
 
-| Column | Purpose | Automation |
-|--------|---------|------------|
-| 📥 **Backlog** | Future releases | Default for new issues |
-| 🎯 **Planning** | Current release planning | Move here when assigned to milestone |
-| 🏗️ **In Progress** | Active development | Move here when PR opened |
-| ✅ **Testing** | QA & validation | Move here when PR merged to dev |
-| 🚀 **Ready to Release** | Approved for next release | Move here after testing |
-| ✨ **Released** | Shipped to users | Auto-close when released |
+| Column                  | Purpose                   | Automation                           |
+|-------------------------|---------------------------|--------------------------------------|
+| 📥 **Backlog**          | Future releases           | Default for new issues               |
+| 🎯 **Planning**         | Current release planning  | Move here when assigned to milestone |
+| 🏗️ **In Progress**     | Active development        | Move here when PR opened             |
+| ✅ **Testing**           | QA & validation           | Move here when PR merged to dev      |
+| 🚀 **Ready to Release** | Approved for next release | Move here after testing              |
+| ✨ **Released**          | Shipped to users          | Auto-close when released             |
 
 ### Step 3: Set Up Custom Fields
 
@@ -67,6 +67,7 @@ Add these fields to track release info:
 ### Step 5: Set Up Labels
 
 These labels are already configured via issue templates:
+
 - `release` - Release planning issues
 - `bug` - Bug reports
 - `enhancement` - Feature requests
@@ -74,6 +75,7 @@ These labels are already configured via issue templates:
 - `needs-review` - Needs technical review
 
 Add custom labels:
+
 - `breaking-change` - Breaking API changes
 - `security` - Security-related
 - `performance` - Performance improvements
@@ -135,22 +137,26 @@ Add these workflows to `.github/workflows/`:
 Create multiple views for different perspectives:
 
 ### 1. **Current Release** (Board View)
+
 - Filter: `milestone:"v1.0.0"`
 - Sorted by Priority
 - Grouped by Status
 
 ### 2. **Roadmap** (Table View)
+
 - All open issues
 - Group by: Milestone
 - Sort by: Priority
 - Show: Version, Component, Size
 
 ### 3. **Bug Triage** (Board View)
+
 - Filter: `label:bug is:open`
 - Group by: Priority
 - Sort by: Created date
 
 ### 4. **Performance Dashboard** (Chart View)
+
 - Burndown chart by milestone
 - Velocity chart
 - Issue completion rate
@@ -172,16 +178,19 @@ Use emoji + colors for visual clarity:
 Save these as board filters:
 
 **Ready for v1.0**
+
 ```
 is:open milestone:"v1.0.0" -label:blocked
 ```
 
 **Blocked Items**
+
 ```
 is:open label:blocked
 ```
 
 **This Week**
+
 ```
 is:open created:>2025-10-18
 ```

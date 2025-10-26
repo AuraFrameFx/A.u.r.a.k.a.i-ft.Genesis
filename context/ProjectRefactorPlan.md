@@ -389,25 +389,25 @@ security:
   operationId: downloadObject
   security:
   - BearerAuth: []
-  parameters:
+    parameters:
   - name: bucketName
-  in: path
-  required: true
-  schema:
-  type: string
+    in: path
+    required: true
+    schema:
+    type: string
   - name: objectName
-  in: path
-  required: true
-  schema:
-  type: string
-  responses:
-  '200':
-  description: Object downloaded
-  content:
-  application/octet-stream:
-  schema:
-  type: string
-  format: binary
+    in: path
+    required: true
+    schema:
+    type: string
+    responses:
+    '200':
+    description: Object downloaded
+    content:
+    application/octet-stream:
+    schema:
+    type: string
+    format: binary
 
   delete:
   tags: [Oracle Drive]
@@ -415,20 +415,20 @@ security:
   operationId: deleteObject
   security:
   - BearerAuth: []
-  parameters:
+    parameters:
   - name: bucketName
-  in: path
-  required: true
-  schema:
-  type: string
+    in: path
+    required: true
+    schema:
+    type: string
   - name: objectName
-  in: path
-  required: true
-  schema:
-  type: string
-  responses:
-  '204':
-  description: Object deleted
+    in: path
+    required: true
+    schema:
+    type: string
+    responses:
+    '204':
+    description: Object deleted
 
 # ===== CONTENT GENERATION =====
 
@@ -624,12 +624,12 @@ required:
   type: object
   required:
   - message
-  properties:
-  message:
-  type: string
-  context:
-  type: object
-  additionalProperties: true
+    properties:
+    message:
+    type: string
+    context:
+    type: object
+    additionalProperties: true
 
   AgentMessage:
   type: object
@@ -694,19 +694,19 @@ required:
   type: object
   required:
   - prompt
-  properties:
-  prompt:
-  type: string
-  maxTokens:
-  type: integer
-  default: 500
-  temperature:
-  type: number
-  format: float
-  default: 0.7
-  model:
-  type: string
-  default: "gemini-pro"
+    properties:
+    prompt:
+    type: string
+    maxTokens:
+    type: integer
+    default: 500
+    temperature:
+    type: number
+    format: float
+    default: 0.7
+    model:
+    type: string
+    default: "gemini-pro"
 
   GenerateTextResponse:
   type: object
@@ -724,12 +724,12 @@ required:
   type: object
   required:
   - imageData
-  properties:
-  imageData:
-  type: string
-  format: byte
-  prompt:
-  type: string
+    properties:
+    imageData:
+    type: string
+    format: byte
+    prompt:
+    type: string
 
   GenerateImageDescriptionResponse:
   type: object

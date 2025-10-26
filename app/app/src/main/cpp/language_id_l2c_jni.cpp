@@ -19,8 +19,8 @@ extern "C" {
  */
 JNIEXPORT jstring
 
-JNICALL
-Java_com_example_app_language_LanguageIdentifier_nativeInitialize(
+extern "C" JNICALL
+Java_com_Aurakai_app_language_LanguageIdentifier_nativeInitialize(
         JNIEnv *env,
         jobject /* this */,
         jstring modelPath) {
@@ -51,8 +51,8 @@ Java_com_example_app_language_LanguageIdentifier_nativeInitialize(
  */
 JNIEXPORT jstring
 
-JNICALL
-Java_com_example_app_language_LanguageIdentifier_nativeDetectLanguage(
+extern "C" JNICALL
+Java_com_Aurakai_app_language_LanguageIdentifier_nativeDetectLanguage(
         JNIEnv *env,
         jobject /* this */,
         jlong /* handle */,
@@ -188,8 +188,8 @@ LOGI("Language identifier resources cleaned up for handle: %lld (Placeholder - n
  */
 JNIEXPORT jstring
 
-JNICALL
-Java_com_example_app_language_LanguageIdentifier_nativeGetVersion(
+extern "C" JNICALL
+Java_com_Auraframefx_app_language_LanguageIdentifier_nativeGetVersion(
         JNIEnv * env,
         jclass /* clazz */) {
     return env->NewStringUTF("1.2.0"); // Standardized version

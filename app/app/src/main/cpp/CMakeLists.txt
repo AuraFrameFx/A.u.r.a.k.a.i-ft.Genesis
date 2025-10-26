@@ -42,8 +42,8 @@ if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/language_id_l2c_jni.cpp")
 endif ()
 
 # Check if CASCADE AI service exists and add it
-if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/ai/cascade/src/CascadeAIService.cpp")
-    list(APPEND GENESIS_SOURCES ai/cascade/src/CascadeAIService.cpp)
+if (EXISTS "../java/dev/aurakai/auraframefx/cascade/CascadeAIService.cpp")
+    list(APPEND GENESIS_SOURCES ../java/dev/aurakai/auraframefx/cascade/CascadeAIService.cpp)
     message(STATUS "Added CascadeAIService.cpp")
 endif ()
 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues name="AGP (9.0.0-alpha11)" by="lint 9.0.0-alpha11" client="gradle" dependencies="false"
+    format="6" type="baseline" variant="fatal" version="9.0.0-alpha11">
+
+    <issue id="EnsureInitializerMetadata"
+        message="Every Initializer needs to be accompanied by a corresponding &lt;meta-data> entry in the AndroidManifest.xml file.">
+        <location
+            file="src/main/java/dev/aurakai/auraframefx/core/initialization/AppInitializerInitializer.kt" />
+    </issue>
+
+</issues>

@@ -1,6 +1,8 @@
 plugins {
-    id("genesis.library")
+    id("com.android.library") version "9.0.0-alpha11"
+    id("com.google.devtools.ksp") version "2.3.0"
 }
+
 
 android {
     namespace = "dev.aurakai.auraframefx.romtools"

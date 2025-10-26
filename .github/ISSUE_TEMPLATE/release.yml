@@ -1,8 +1,8 @@
 name: 🚀 Release Planning
 description: Plan a new Genesis release
 title: "[RELEASE] v<version> - <codename>"
-labels: ["release", "planning"]
-assignees: []
+labels: [ "release", "planning" ]
+assignees: [ ]
 
 body:
   - type: markdown
