@@ -1,3 +1,47 @@
+package dev.aurakai.auraframefx.romtools.retention
+
+import android.content.Context
+import android.content.pm.PackageManager
+import dev.aurakai.auraframefx.romtools.retention.AurakaiRetentionManager
+import dev.aurakai.auraframefx.romtools.retention.AurakaiRetentionManagerImpl
+import dev.aurakai.auraframefx.romtools.retention.BackupPaths
+import dev.aurakai.auraframefx.romtools.retention.RetentionMechanism
+import dev.aurakai.auraframefx.romtools.retention.RetentionStatus
+import io.mockk.every
+import io.mockk.mockk
+import io.mockk.mockkStatic
+import kotlinx.coroutines.test.runTest
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.DisplayName
+import org.junit.jupiter.api.Nested
+import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertFalse
+import kotlin.test.assertNotNull
+import kotlin.test.assertTrue
+
+@DisplayName("AurakaiRetentionManager Tests")
+class AurakaiRetentionManagerTest {
+
+    private lateinit var retentionManager: AurakaiRetentionManager
+    private lateinit var mockContext: Context
+    private lateinit var mockPackageManager: PackageManager
+    private val testPackageName = "dev.aurakai.auraframefx.test"
+
+    @BeforeEach
+    fun setup() {
+        mockContext = mockk(relaxed = true)
+        mockPackageManager = mockk(relaxed = true)
+        every { mockContext.packageName } returns testPackageName
+        every { mockContext.packageManager } returns mockPackageManager
+        retentionManager = AurakaiRetentionManagerImpl(mockContext)
+    }
+
+    @Test
+    @DisplayName("Should have all 4 retention mechanisms defined")
+    fun `should have all retention mechanisms`() {
+        val mechanisms = RetentionMechanism.values()
+        
 assertEquals(4, mechanisms.size)
 
 @Nested
