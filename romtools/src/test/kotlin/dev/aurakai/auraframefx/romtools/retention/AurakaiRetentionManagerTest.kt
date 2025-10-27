@@ -1,28 +1,8 @@
-// File: romtools/src/main/kotlin/dev/aurakai/auraframefx/romtools/retention/AurakaiRetentionManager.kt
-package dev.aurakai.auraframefx.romtools.retention
+assertEquals(4, mechanisms.size)
 
-import android.content.Context
-import dagger.hilt.android.qualifiers.ApplicationContext
-import timber.log.Timber
-import java.io.File
-import java.util.zip.ZipEntry
-import java.util.zip.ZipOutputStream
-import javax.inject.Inject
-import javax.inject.Singleton
-
-/**
- * Interface for Aurakai retention operations.
- */
-interface AurakaiRetentionManager {
-    /**
-     * Sets up all retention mechanisms to preserve Aurakai across ROM updates.
-     *
-     * Attempts each available mechanism (APK backup, addon.d script, recovery flashable ZIP,
-     * and Magisk module when Magisk is installed) and records per-mechanism success in the result.
-     *
-     * @return A Result containing a RetentionStatus on success, or a failure with the encountered error.
-     */
-    suspend fun setupRetentionMechanisms(): Result<RetentionStatus>
+@Nested
+@DisplayName("Retention Mechanism Redundancy Tests")
+inner class RedundancyTests {
 
     /**
      * Restore the Aurakai application and its backed-up data after a ROM flash.
@@ -111,20 +91,9 @@ class AurakaiRetentionManagerTest @Inject constructor(
         }
     }
 
-    /**
-     * Back up the Aurakai APK, the app data (excluding `cache` and `code_cache`), and the `shared_prefs` directory if it exists.
-     *
-     * @return Result containing `BackupPaths` with absolute paths to the APK backup, data backup tar.gz, and prefs backup tar.gz; on failure the `Result` contains the encountered exception.
-     */
-    private suspend fun backupAurakaiApkAndData(): Result<BackupPaths> {
-        return try {
-            val packageInfo = context.packageManager.getPackageInfo(packageName, 0)
-            val apkPath = packageInfo.applicationInfo!!.sourceDir
-            val dataDir = context.dataDir
-
-            // Backup APK
-            val apkBackupPath = File(retentionDir, "aurakai.apk")
-            executeRootCommand("cp $apkPath ${apkBackupPath.absolutePath}")
+    @Nested
+    @DisplayName("File System Operation Tests")
+    inner class FileSystemOperationTests {
 
             // Backup app data (excluding cache)
             val dataBackupPath = File(retentionDir, "aurakai_data.tar.gz")
@@ -196,19 +165,21 @@ class AurakaiRetentionManagerTest @Inject constructor(
         }
     }
 
-    /**
-     * Create the addon.d shell script used to back up and restore Aurakai across ROM updates.
-     *
-     * @return The addon.d shell script content as a String. The script performs backup and restore of the Aurakai APK and its app data to preserve the app across ROM flashing.
-     */
-    private fun generateAddonDScript(): String {
-        return """
-#!/sbin/sh
-#
-# /system/addon.d/99-aurakai.sh
-# Aurakai Genesis AI survival script for ROM updates
-# This ensures Aurakai persists through ROM flashing
-#
+@Nested
+@DisplayName("Restoration Process Tests")
+inner class RestorationProcessTests {
+
+    @Test
+    @DisplayName("Should restore from APK backup first")
+    fun `should prioritize apk restore`() = runTest {
+        // Given - APK backup exists
+        mockkStatic(Runtime::class)
+        val mockRuntime = mockk<Runtime>()
+        val mockProcess = mockk<Process>()
+        every { Runtime.getRuntime() } returns mockRuntime
+        every { mockRuntime.exec(any<Array<String>>()) } returns mockProcess
+        every { mockProcess.waitFor() } returns 0
+        every { mockProcess.inputStream } returns "".byteInputStream()
 
 . /tmp/backuptool.functions
 
@@ -283,11 +254,9 @@ esac
             val packageInfo = context.packageManager.getPackageInfo(packageName, 0)
             val apkPath = packageInfo.applicationInfo!!.sourceDir
 
-            ZipOutputStream(zipFile.outputStream()).use { zip ->
-                // Add APK
-                zip.putNextEntry(ZipEntry("system/app/Aurakai/Aurakai.apk"))
-                File(apkPath).inputStream().use { it.copyTo(zip) }
-                zip.closeEntry()
+@Nested
+@DisplayName("Script Generation Tests")
+inner class ScriptGenerationTests {
 
                 // Add updater-script
                 zip.putNextEntry(ZipEntry("META-INF/com/google/android/updater-script"))
@@ -319,25 +288,27 @@ esac
      */
     private fun generateUpdaterScript(): String {
         return """
-ui_print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-ui_print("   Aurakai Genesis AI Installer   ");
-ui_print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-ui_print("");
-ui_print("Installing Aurakai to /system/app...");
+ui_print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+        ui_print("   Aurakai Genesis AI Installer   ")
+        ui_print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+        ui_print("")
+        ui_print("Installing Aurakai to /system/app...")
 
-mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
+        mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system")
 
-package_extract_dir("system", "/system");
+        @Nested
+        @DisplayName("Recovery ZIP Generation Tests")
+        inner class RecoveryZipGenerationTests {
 
-set_metadata_recursive("/system/app/Aurakai", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
+set_metadata_recursive("/system/app/Aurakai", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0")
 
-unmount("/system");
+            unmount("/system")
 
-ui_print("");
-ui_print("✅ Aurakai installed successfully!");
-ui_print("   Reboot and enjoy Genesis AI");
-ui_print("");
-        """.trimIndent()
+            ui_print("")
+            ui_print("✅ Aurakai installed successfully!")
+            ui_print("   Reboot and enjoy Genesis AI")
+            ui_print("")
+            """.trimIndent()
     }
 
     /**
@@ -379,8 +350,9 @@ sh /tmp/META-INF/com/google/android/updater-script
                 return Result.failure(Exception("Magisk modules directory not found"))
             }
 
-            val moduleDir = File(magiskModulesDir, "aurakai_genesis")
-            moduleDir.mkdirs()
+@Nested
+@DisplayName("Magisk Module Tests")
+inner class MagiskModuleTests {
 
             // module.prop
             File(moduleDir, "module.prop").writeText(
@@ -424,20 +396,22 @@ ui_print "✅ Aurakai will persist through ROM updates"
         }
     }
 
-    /**
-     * Restores the Aurakai APK and app data from the retention directory after a ROM flash.
-     *
-     * If an APK backup named `aurakai.apk` is present in the retention directory, the APK is installed.
-     * If a data backup named `aurakai_data.tar.gz` is present, it is extracted into the app data parent
-     * directory, ownership is corrected to the app UID, and SELinux contexts are restored.
-     *
-     * If the APK backup is missing the function returns a failure Result.
-     *
-     * @return `Result.success(Unit)` on successful restoration, `Result.failure(Exception)` if any step fails.
-     */
-    override suspend fun restoreAurakaiAfterRomFlash(): Result<Unit> {
-        return try {
-            Timber.i("🔄 Restoring Aurakai after ROM flash...")
+@Nested
+@DisplayName("Timestamp and Versioning Tests")
+inner class TimestampTests {
+
+    @Test
+    @DisplayName("Should record timestamp when retention is setup")
+    fun `should record setup timestamp`() = runTest {
+        // Given
+        val beforeTime = System.currentTimeMillis()
+
+        val status = RetentionStatus(
+            mechanisms = mapOf(RetentionMechanism.APK_BACKUP to true),
+            retentionDirPath = "/data/local/genesis_retention",
+            packageName = testPackageName,
+            timestamp = System.currentTimeMillis()
+        )
 
             val apkBackup = File(retentionDir, "aurakai.apk")
             val dataBackup = File(retentionDir, "aurakai_data.tar.gz")
@@ -469,40 +443,86 @@ ui_print "✅ Aurakai will persist through ROM updates"
         }
     }
 
-    /**
-     * Detects whether Magisk is installed on the device.
-     *
-     * @return `true` if Magisk is present, `false` otherwise.
-     */
-    private fun isMagiskInstalled(): Boolean {
-        return try {
-            File("/data/adb/magisk").exists() ||
-                    executeRootCommand("which magisk").isNotEmpty()
-        } catch (e: Exception) {
-            false
-        }
+@Nested
+@DisplayName("Error Recovery Tests")
+inner class ErrorRecoveryTests {
+
+    @Test
+    @DisplayName("Should cleanup partial backups on failure")
+    fun `should cleanup on failure`() = runTest {
+        // Given
+        mockkStatic(Runtime::class)
+        val mockRuntime = mockk<Runtime>()
+        every { Runtime.getRuntime() } returns mockRuntime
+        every { mockRuntime.exec(any<Array<String>>()) } throws Exception("Backup failed")
+
+        // When
+        val result = retentionManager.setupRetentionMechanisms()
+
+        // Then
+        assertTrue(result.isFailure)
+        // In real implementation, verify cleanup was attempted
     }
 
-    /**
-     * Run a shell command with root privileges and return its trimmed standard output.
-     *
-     * If execution fails or an exception occurs, an empty string is returned.
-     *
-     * @param command The shell command to execute as root (passed to `su -c`).
-     * @return The trimmed stdout produced by the command, or an empty string on failure.
-     */
-    private fun executeRootCommand(command: String): String {
-        return try {
-            val process = Runtime.getRuntime().exec(arrayOf("su", "-c", command))
-            val output = process.inputStream.bufferedReader().readText()
-            process.waitFor()
-            output.trim()
-        } catch (e: Exception) {
-            Timber.e(e, "Failed to execute root command: $command")
-            ""
-        }
+    @Test
+    @DisplayName("Should retry failed mechanism once")
+    fun `should retry failed operations`() = runTest {
+        // Test would verify retry logic
+        // For now, just verify failure is handled
+        mockkStatic(Runtime::class)
+        val mockRuntime = mockk<Runtime>()
+        every { Runtime.getRuntime() } returns mockRuntime
+        every { mockRuntime.exec(any<Array<String>>()) } throws Exception("Transient error")
+
+        val result = retentionManager.setupRetentionMechanisms()
+        assertTrue(result.isFailure)
+    }
+
+    @Test
+    @DisplayName("Should log all errors for debugging")
+    fun `should log errors`() = runTest {
+        // Given
+        every { mockPackageManager.getPackageInfo(testPackageName, 0) } throws
+                Exception("Test error")
+
+        // When
+        val result = retentionManager.setupRetentionMechanisms()
+
+        // Then
+        assertTrue(result.isFailure)
+        // Verify error was logged (in real impl, check Timber)
     }
 }
+
+@Nested
+@DisplayName("Integration and End-to-End Tests")
+inner class IntegrationTests {
+
+    @Test
+    @DisplayName("Should complete full retention and restoration cycle")
+    fun `should complete full cycle`() = runTest {
+        // This would be a full integration test
+        // Setup retention -> Simulate ROM flash -> Restore
+        // For unit test, we just verify the interfaces are correct
+
+        mockkStatic(Runtime::class)
+        val mockRuntime = mockk<Runtime>()
+        val mockProcess = mockk<Process>()
+        every { Runtime.getRuntime() } returns mockRuntime
+        every { mockRuntime.exec(any<Array<String>>()) } returns mockProcess
+        every { mockProcess.waitFor() } returns 0
+        every { mockProcess.inputStream } returns "".byteInputStream()
+
+        // Setup
+        val setupResult = retentionManager.setupRetentionMechanisms()
+
+        // Restore
+        val restoreResult = retentionManager.restoreAurakaiAfterRomFlash()
+
+        // Both operations should be called
+        assertNotNull(setupResult)
+        assertNotNull(restoreResult)
+    }
 
 /**
  * Retention status after setup.

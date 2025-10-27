@@ -1,6 +1,5 @@
 plugins {
     id("com.android.library") version "9.0.0-alpha11"
-    id("com.google.devtools.ksp") version "2.3.0"
 }
 
 android {
@@ -15,23 +14,21 @@ android {
         sourceCompatibility = JavaVersion.VERSION_25
         targetCompatibility = JavaVersion.VERSION_25
     }
+}
 
-
-
-    java {
-        toolchain {
-            languageVersion.set(JavaLanguageVersion.of(25))
-        }
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(25))
     }
+}
 
-    dependencies {
-        // Pure business logic, no Android dependencies
-        implementation(libs.kotlinx.coroutines.core)
-        implementation(project(":core:common"))
+dependencies {
+    // Pure business logic, no Android dependencies
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(project(":core:common"))
 
-        // Testing
-        testImplementation(libs.junit.jupiter.api)
-        testRuntimeOnly(libs.junit.jupiter.engine)
-        testImplementation(libs.mockk)
-    }
+    // Testing
+    testImplementation(libs.junit.jupiter.api)
+    testRuntimeOnly(libs.junit.jupiter.engine)
+    testImplementation(libs.mockk)
 }

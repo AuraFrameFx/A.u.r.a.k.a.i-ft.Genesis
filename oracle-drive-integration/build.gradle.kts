@@ -16,12 +16,18 @@ android {
     namespace = "dev.aurakai.auraframefx.oracledriveintegration"
     compileSdk = 36
 
+    defaultConfig {
+        minSdk = 34
+        multiDexEnabled = true  // Required for core library desugaring
+    }
+
     compileOptions {
         // Use a compatible Java version and enable core library desugaring for this module
         sourceCompatibility = JavaVersion.VERSION_25
         targetCompatibility = JavaVersion.VERSION_25
         isCoreLibraryDesugaringEnabled = true
     }
+
     defaultConfig {
         multiDexEnabled = true
     }

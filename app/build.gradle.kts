@@ -58,6 +58,7 @@ android {
 
 dependencies {
     // Core and hooking/runtime dependencies (required per project conventions)
+    implementation(libs.core)
     implementation("com.github.topjohnwu.libsu:core:5.0.4")
     implementation("com.github.topjohnwu.libsu:io:5.0.4")
     implementation(libs.libsu.io)
@@ -71,6 +72,8 @@ dependencies {
     implementation(libs.timber)
     implementation(libs.hilt.android)
     implementation(libs.androidx.material)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.compose.ui.tooling)
 
     implementation(project(":core-module"))
     implementation(project(":feature-module"))
@@ -90,10 +93,8 @@ dependencies {
     implementation(libs.bundles.compose.ui)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.compose.ui)
 
-    // Compose Material & Icons
-    implementation("androidx.compose.material:material")
-    implementation("androidx.compose.material:material-icons-extended")
 
     // Lifecycle & Architecture
     implementation(libs.bundles.lifecycle)

@@ -96,9 +96,11 @@ android {
 
         // 3rd Party UI
 
-        // Local Libs - Removed Xposed API as not needed for collab-canvas
-        // compileOnly(files("libs/api-82.jar"))
-        // compileOnly(files("libs/api-82-sources.jar"))
+        // Local Libs
+        compileOnly(files("libs/api-82.jar"))
+        compileOnly(files("libs/api-82-sources.jar"))
+        implementation(libs.androidx.material)
+
 
         // Testing
         testImplementation(libs.bundles.testing.unit)
@@ -113,8 +115,6 @@ android {
         group = "aegenesis"
         doLast {
             println("COLLAB CANVAS - Ready (Java 24 toolchain, unified).")
-
-
         }
     }
 }

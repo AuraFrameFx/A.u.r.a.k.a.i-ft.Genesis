@@ -19,33 +19,30 @@ android {
 }
 
 version = "1.0.0"
-android {
-    namespace = "dev.aurakai.auraframefx.collab_canvas"
-    compileSdk = 36
-    java {
-        toolchain { languageVersion.set(JavaLanguageVersion.of(25)) }
-    }
 
-    dependencies {
+java {
+    toolchain { languageVersion.set(JavaLanguageVersion.of(25)) }
+}
 
-        // Module dependency
-        api(project(":list"))
+dependencies {
 
-        // Concurrency and serialization
-        implementation(libs.bundles.coroutines)
-        implementation(libs.kotlinx.serialization.json)
+    // Module dependency
+    api(project(":list"))
 
-        // File operations and compression
-        implementation(libs.commons.io)
-        implementation(libs.commons.compress)
-        implementation(libs.xz)
+    // Concurrency and serialization
+    implementation(libs.bundles.coroutines)
+    implementation(libs.kotlinx.serialization.json)
 
-        // Logging API only (do not bind implementation at runtime for libraries)
-        implementation(libs.slf4j.api)
+    // File operations and compression
+    implementation(libs.commons.io)
+    implementation(libs.commons.compress)
+    implementation(libs.xz)
 
-        // Testing (JUnit 5)
-        testImplementation(libs.junit.jupiter.api)
-        testRuntimeOnly(libs.junit.jupiter.engine)
-        testImplementation(libs.mockk)
-    }
+    // Logging API only (do not bind implementation at runtime for libraries)
+    implementation(libs.slf4j.api)
+
+    // Testing (JUnit 5)
+    testImplementation(libs.junit.jupiter.api)
+    testRuntimeOnly(libs.junit.jupiter.engine)
+    testImplementation(libs.mockk)
 }
