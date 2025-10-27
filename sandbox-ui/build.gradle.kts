@@ -36,7 +36,7 @@ android {
 dependencies {
     // SACRED RULE #5: DEPENDENCY HIERARCHY
     implementation(project(":core-module"))
-    implementation(project(":app"))
+    // REMOVED: implementation(project(":app")) - Circular dependency! Libraries should not depend on :app
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
