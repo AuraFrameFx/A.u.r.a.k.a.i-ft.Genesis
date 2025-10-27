@@ -224,6 +224,7 @@ class NeuralWhisper @Inject constructor(
         if (isTranscribing) {
             stopTranscription()
         }
+        scope.cancel()
         Timber.i("NeuralWhisper: Service shutdown complete")
     }
 }
