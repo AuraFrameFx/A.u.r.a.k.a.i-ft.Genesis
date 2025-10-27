@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "dev.aurakai.auraframefx.collab_canvas"
+    namespace = "dev.aurakai.auraframefx.collab.canvas"
     compileSdk = 36
 
     defaultConfig {
@@ -27,11 +27,6 @@ android {
         compose = true
         buildConfig = true
 
-        java {
-            toolchain {
-                languageVersion.set(JavaLanguageVersion.of(25))
-            }
-        }
         packaging {
             resources {
                 excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -39,13 +34,19 @@ android {
         }
     }
 
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(25))
+        }
+    }
     dependencies {
         // Module dependencies - depend on core modules only
         implementation(project(":core:domain"))
         implementation(project(":core:data"))
         implementation(project(":core:ui"))
         implementation(project(":core:common"))
-
+        implementation(libs.core)
+        implementation(libs.libsu.io)
         // AndroidX & Jetpack
         implementation(libs.androidx.core.ktx)
         implementation(libs.androidx.appcompat)
@@ -72,7 +73,7 @@ android {
         implementation(libs.kotlinx.serialization.json)
         implementation(libs.kotlinx.datetime)
         implementation(libs.bundles.coroutines)
-        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.21")
+        implementation(libs.kotlin.stdlib.jdk8)
 
         // Networking
         implementation(libs.bundles.network)
@@ -86,8 +87,12 @@ android {
         implementation(libs.compose.theme.adapter.x)
 
         // Local Libs
-        compileOnly(files("libs/api-82.jar"))
-        compileOnly(files("libs/api-82-sources.jar"))
+        // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
+        // Use local jars in project `libs/` folder to resolve Xposed API offline
+        compileOnly(files("../app/libs/api-82.jar"))
+        compileOnly(files("../app/libs/api-82-sources.jar"))
+        compileOnly(libs.yukihookapi)
+
         implementation(libs.androidx.material)
         implementation(libs.androidx.ui.tooling.preview)
         implementation(libs.androidx.ui.test.junit4)

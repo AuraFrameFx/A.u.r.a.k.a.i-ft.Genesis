@@ -1,3 +1,7 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
+import java.io.Serializable
+
 plugins {
     id("com.android.library") version "9.0.0-alpha11"
     id("com.google.devtools.ksp") version "2.3.0"
@@ -20,13 +24,15 @@ android {
 }
 
 // Precompute Compose metrics/report destinations as plain string paths to avoid buildDir deprecation warnings
-val composeMetricsPath = project.layout.buildDirectory.dir("compose_metrics").get().asFile.absolutePath
-val composeReportsPath = project.layout.buildDirectory.dir("compose_reports").get().asFile.absolutePath
+val composeMetricsPath: Serializable by lazy {
+    project.layout.buildDirectory.dir("compose_metrics").get().asFile.absolutePath
+}
+val composeReportsPath: Serializable = project.layout.buildDirectory.dir("compose_reports").get().asFile.absolutePath
 
 // Configure Kotlin compile tasks to set JVM target and add Compose compiler freeCompilerArgs using the new compilerOptions API
-tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile::class.java).configureEach {
-    (this as org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile).compilerOptions {
-        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+tasks.withType(KotlinJvmCompile::class.java).configureEach {
+    (this as KotlinJvmCompile).compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_24)
         freeCompilerArgs.addAll(
             listOf(
                 "-P",
@@ -80,8 +86,12 @@ dependencies {
     ksp(libs.androidx.room.compiler)
     implementation(libs.compose.theme.adapter.x)
     implementation(libs.firebase.auth.ktx)
-    compileOnly(files("libs/api-82.jar"))
-    compileOnly(files("libs/api-82-sources.jar"))
+    // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
+    // Use local jars in project `libs/` folder to resolve Xposed API offline
+    compileOnly(files("../app/libs/api-82.jar"))
+    compileOnly(files("../app/libs/api-82-sources.jar"))
+    compileOnly(libs.yukihookapi)
+
     implementation(libs.androidx.material)
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(platform(libs.androidx.compose.bom))

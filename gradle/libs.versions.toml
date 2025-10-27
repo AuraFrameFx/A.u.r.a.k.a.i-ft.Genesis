@@ -10,6 +10,7 @@ gradle = "9.2.0-RC-3"
 hiltAndroidCompiler = "2.57.2"
 io = "6.0.0"
 kotlin = "2.3.0-Beta1"
+kotlinStdlibJdk8 = "2.2.21"
 ksp = "2.3.0"
 
 ktlint = "13.1.0"
@@ -111,6 +112,7 @@ core = { module = "com.github.topjohnwu.libsu:core", version.ref = "core" }
 firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
 gradle-tooling-api = { module = "org.gradle:gradle-tooling-api", version.ref = "gradle" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroidCompiler" }
+kotlin-stdlib-jdk8 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlinStdlibJdk8" }
 libsu-io = { module = "com.github.topjohnwu.libsu:io", version.ref = "io" }
 symbol-processing-api = { module = "com.google.devtools.ksp:symbol-processing-api", version.ref = "ksp" }
 

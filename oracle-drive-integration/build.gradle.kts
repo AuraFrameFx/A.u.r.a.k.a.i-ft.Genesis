@@ -55,6 +55,12 @@ dependencies {
     // Logging
     implementation(libs.timber)
 
+    // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
+    // Use local jars in project `libs/` folder to resolve Xposed API offline
+    compileOnly(files("../app/libs/api-82.jar"))
+    compileOnly(files("../app/libs/api-82-sources.jar"))
+    compileOnly(libs.yukihookapi)
+
     // Testing
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
@@ -63,4 +69,3 @@ dependencies {
     // Debug tools
     debugImplementation(libs.leakcanary.android)
 }
-
