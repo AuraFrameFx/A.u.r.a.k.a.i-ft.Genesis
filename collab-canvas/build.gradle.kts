@@ -44,12 +44,7 @@ android {
             languageVersion.set(JavaLanguageVersion.of(25))
         }
     }
-        packaging {
-            resources {
-                excludes += "/META-INF/{AL2.0,LGPL2.1}"
-            }
-        }
-    }
+
 
     java {
         toolchain {
@@ -62,7 +57,6 @@ android {
         implementation(project(":core:data"))
         implementation(project(":core:ui"))
         implementation(project(":core:common"))
-        implementation(libs.core)
         implementation(libs.libsu.io)
         // AndroidX & Jetpack
         implementation(libs.androidx.core.ktx)
@@ -91,7 +85,6 @@ android {
         implementation(libs.kotlinx.serialization.json)
         implementation(libs.kotlinx.datetime)
         implementation(libs.bundles.coroutines)
-        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.21")
 
         // Networking
         implementation(libs.bundles.network)
@@ -103,14 +96,9 @@ android {
 
         // 3rd Party UI
 
-        // Local Libs
-        compileOnly(files("libs/api-82.jar"))
-        compileOnly(files("libs/api-82-sources.jar"))
-        implementation(libs.androidx.material)
-        implementation(libs.androidx.ui.tooling.preview)
-        implementation(libs.androidx.ui.test.junit4)
-        debugImplementation(libs.androidx.ui.test.manifest)
-
+        // Local Libs - Removed Xposed API as not needed for collab-canvas
+        // compileOnly(files("libs/api-82.jar"))
+        // compileOnly(files("libs/api-82-sources.jar"))
 
         // Testing
         testImplementation(libs.bundles.testing.unit)
@@ -126,6 +114,8 @@ android {
         doLast {
             println("COLLAB CANVAS - Ready (Java 24 toolchain, unified).")
 
+
         }
     }
+}
 

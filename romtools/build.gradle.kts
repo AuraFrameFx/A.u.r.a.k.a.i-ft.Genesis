@@ -47,8 +47,6 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
     implementation(libs.androidx.material)
-    implementation(libs.androidx.compose.ui.tooling.preview)
-    implementation(libs.androidx.compose.ui.tooling)
 
     implementation(libs.hilt.android)
     implementation(libs.androidx.core.ktx)

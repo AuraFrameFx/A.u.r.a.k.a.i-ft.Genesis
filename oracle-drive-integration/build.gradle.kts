@@ -16,16 +16,16 @@ android {
     namespace = "dev.aurakai.auraframefx.oracledriveintegration"
     compileSdk = 36
 
-    defaultConfig {
-        multiDexEnabled = true
-    }
-
     compileOptions {
         // Use a compatible Java version and enable core library desugaring for this module
         sourceCompatibility = JavaVersion.VERSION_25
         targetCompatibility = JavaVersion.VERSION_25
         isCoreLibraryDesugaringEnabled = true
     }
+    defaultConfig {
+        multiDexEnabled = true
+    }
+
     java {
         toolchain {
             languageVersion.set(JavaLanguageVersion.of(25))
@@ -41,13 +41,7 @@ android {
         implementation(libs.hilt.android)
         ksp(libs.hilt.android.compiler)
         implementation(libs.androidx.material)
-        implementation(libs.androidx.ui.tooling.preview)
-        implementation(libs.ui.tooling)
-        implementation(libs.androidx.ui.test.junit4)
-        debugImplementation(libs.androidx.ui.test.manifest)
-        implementation(libs.androidx.ui.test)
-        implementation(libs.androidx.ui.test.junit4)
-        debugImplementation(libs.androidx.ui.test.manifest)
+
         implementation(libs.hilt.android)
         implementation(libs.androidx.core.ktx)
         implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -69,7 +63,6 @@ android {
         implementation(libs.bundles.firebase)
         ksp(libs.hilt.compiler)
         ksp(libs.androidx.room.compiler)
-        implementation(libs.compose.theme.adapter.x)
         implementation(libs.firebase.auth.ktx)
         compileOnly(files("libs/api-82.jar"))
         compileOnly(files("libs/api-82-sources.jar"))
@@ -78,6 +71,5 @@ android {
         androidTestImplementation(platform(libs.androidx.compose.bom))
         androidTestImplementation(libs.hilt.android.testing)
         debugImplementation(libs.leakcanary.android)
-
     }
 }

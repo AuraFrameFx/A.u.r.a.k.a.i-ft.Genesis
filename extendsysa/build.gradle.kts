@@ -28,7 +28,6 @@ dependencies {
     implementation(project(":core-module"))
 
     dependencies {
-        implementation(libs.core)
         implementation(libs.libsu.io)
 
         implementation("com.jakewharton.timber:timber:5.0.1")
