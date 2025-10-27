@@ -16,7 +16,6 @@ android {
 
 dependencies {
     // Root/hooking dependencies (grouped together at the top)
-    implementation(libs.core)
     implementation(libs.androidx.appcompat) // added to ensure appcompat is present
     // Use local jars in project `libs/` folder to resolve Xposed API offline
     compileOnly(libs.yukihookapi)
@@ -26,13 +25,7 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
     implementation(libs.androidx.material)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.ui.tooling)
-    implementation(libs.androidx.ui.test.junit4)
-    implementation(libs.androidx.ui.test.manifest)
-    implementation(libs.androidx.ui.test)
-    implementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.test.manifest)
+
     implementation(libs.hilt.android)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -55,7 +48,6 @@ dependencies {
     implementation(libs.bundles.firebase)
     ksp(libs.hilt.compiler)
     ksp(libs.androidx.room.compiler)
-    implementation(libs.compose.theme.adapter.x)
     implementation(libs.firebase.auth.ktx)
     compileOnly(files("../Libs/api-82.jar"))
     compileOnly(files("../Libs/api-82-sources.jar"))
@@ -64,4 +56,6 @@ dependencies {
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.hilt.android.testing)
     debugImplementation(libs.leakcanary.android)
+    implementation(libs.kotlin.stdlib.jdk8)
+
 }

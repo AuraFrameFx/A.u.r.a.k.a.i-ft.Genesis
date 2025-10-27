@@ -15,9 +15,10 @@ java {
 }
 dependencies {
     // Pure Kotlin JVM module - no Android dependencies
-    implementation(kotlin("stdlib"))
+    implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.bundles.coroutines)
+    implementation(libs.kotlin.stdlib.jdk8)
 
     testImplementation(libs.junit.jupiter.api)
     testRuntimeOnly(libs.junit.jupiter.engine)

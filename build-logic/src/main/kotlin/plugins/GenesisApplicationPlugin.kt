@@ -12,8 +12,8 @@ import org.gradle.api.Project
  *
  * Plugin Application Order (Critical!):
  * 1. Android Application
- * 2. Hilt (Dependency Injection)
- * 3. KSP (Annotation Processing)
+ * 2. KSP (Annotation Processing)
+ * 3. Hilt (Dependency Injection)
  * 4. Compose Compiler
  * 5. Google Services (Firebase)
  *
@@ -25,8 +25,8 @@ class GenesisApplicationPlugin : Plugin<Project> {
         // with strict Gradle versions.
         with(target.pluginManager) {
             apply(/* pluginId = */ "com.android.application")
-            apply(/* pluginId = */ "com.google.dagger.hilt.android")
             apply(/* pluginId = */ "com.google.devtools.ksp")
+            apply(/* pluginId = */ "com.google.dagger.hilt.android")
             apply(/* pluginId = */ "org.jetbrains.kotlin.plugin.compose")
             apply(/* pluginId = */ "com.google.gms.google-services")
         }

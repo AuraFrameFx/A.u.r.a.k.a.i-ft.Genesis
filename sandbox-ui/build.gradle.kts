@@ -67,7 +67,7 @@ dependencies {
     implementation(libs.bundles.firebase)
     ksp(libs.hilt.compiler)
     ksp(libs.androidx.room.compiler)
-    implementation(libs.compose.theme.adapter.x)
+    implementation(libs.compose.theme.adapter)
     implementation(libs.firebase.auth.ktx)
     compileOnly(files("libs/api-82.jar"))
     compileOnly(files("libs/api-82-sources.jar"))
@@ -75,4 +75,5 @@ dependencies {
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     debugImplementation(libs.leakcanary.android)
+    implementation(libs.kotlin.stdlib.jdk8)
 }

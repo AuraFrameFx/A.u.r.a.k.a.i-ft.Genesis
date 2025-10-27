@@ -58,9 +58,8 @@ android {
 
 dependencies {
     // Core and hooking/runtime dependencies (required per project conventions)
-    implementation(libs.core)
-    implementation("com.github.topjohnwu.libsu:core:6.0.0")
-    implementation("com.github.topjohnwu.libsu:io:6.0.0")
+    implementation("com.github.topjohnwu.libsu:core:5.0.4")
+    implementation("com.github.topjohnwu.libsu:io:5.0.4")
     implementation(libs.libsu.io)
 
     // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
@@ -72,13 +71,12 @@ dependencies {
     implementation(libs.timber)
     implementation(libs.hilt.android)
     implementation(libs.androidx.material)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.ui.tooling)
-    implementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.test.manifest)
-    implementation(libs.androidx.ui.test)
-    implementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.test.manifest)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.compose.ui.tooling)
+    implementation(libs.androidx.compose.ui.test.junit4)
+    debugImplementation(libs.androidx.compose.ui.test.manifest)
+    implementation(libs.androidx.compose.ui.test)
+    debugImplementation(libs.androidx.compose.ui.test.manifest)
     implementation(project(":core-module"))
     implementation(project(":feature-module"))
     implementation(project(":romtools"))
@@ -88,32 +86,25 @@ dependencies {
     implementation(project(":oracle-drive-integration"))
 
     // AndroidX Core
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.material)
+    implementation(libs.bundles.androidx.core)
     implementation(libs.androidx.security.crypto)
     coreLibraryDesugaring(libs.desugar.jdk.libs)
 
     // Compose
     implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.compose.material3)
+    implementation(libs.bundles.compose.ui)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
-    implementation(libs.androidx.ui)
-    implementation(libs.compose.theme.adapter.x)
-    // Compose Material & Icons
-    implementation("androidx.compose.material:material")
-    implementation("androidx.compose.material:material-icons-extended")
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.compose.theme.adapter)
+    implementation(libs.androidx.compose.material)
+    implementation(libs.androidx.compose.material.icons.extended)
 
     // Lifecycle & Architecture
     implementation(libs.bundles.lifecycle)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
     // Room Database
     implementation(libs.bundles.room)
-    implementation(libs.androidx.room.runtime)
-    implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
 
     // DataStore
@@ -136,9 +127,8 @@ dependencies {
 
     // Networking
     implementation(libs.bundles.network)
-    // Add Moshi explicitly for DI resolution
     implementation(libs.moshi)
-    implementation(libs.converter.moshi)
+    implementation(libs.retrofit.converter.moshi)
 
     // Firebase
     implementation(platform(libs.firebase.bom))
@@ -151,6 +141,7 @@ dependencies {
     androidTestImplementation(libs.hilt.android.testing)
     androidTestImplementation(libs.androidx.benchmark.junit4)
     androidTestImplementation(libs.androidx.test.uiautomator)
+    implementation(libs.kotlin.stdlib.jdk8)
 
     // Debug Tools
     debugImplementation(libs.leakcanary.android)

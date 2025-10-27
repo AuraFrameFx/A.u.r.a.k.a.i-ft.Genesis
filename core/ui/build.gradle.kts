@@ -1,6 +1,6 @@
 plugins {
-    id("com.android.library") version "9.0.0-alpha11"
-    id("com.google.devtools.ksp") version "2.3.0"
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -23,10 +23,11 @@ android {
         sourceCompatibility = JavaVersion.VERSION_25
         targetCompatibility = JavaVersion.VERSION_25
     }
-    java {
-        toolchain {
-            languageVersion.set(JavaLanguageVersion.of(25))
-        }
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(25))
     }
 }
 
@@ -39,6 +40,7 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
+    implementation(libs.kotlin.stdlib.jdk8)
 
     // Hilt for ViewModels
     implementation(libs.hilt.android)
