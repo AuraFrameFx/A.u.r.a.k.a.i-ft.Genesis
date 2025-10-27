@@ -1,5 +1,3 @@
-// ===== AOSP-Re:Genesis - SETTINGS =====
-// Re:Genesis - Advanced Android OS Project
 // Version: 2025.09.02-03 - Full Enhancement Suite
 
 enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
@@ -42,9 +40,7 @@ pluginManagement {
 
     }
 }
-plugins {
-    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
-}
+
 
 dependencyResolutionManagement {
     // Enforce consistent dependency resolution
@@ -82,6 +78,10 @@ rootProject.name = "AuraKai"
 // Core modules
 include(":app")
 include(":core-module")
+include(":core:common")
+include(":core:domain")
+include(":core:data")
+include(":core:ui")
 includeBuild("build-logic")
 
 // Feature modules

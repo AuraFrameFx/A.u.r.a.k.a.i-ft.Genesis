@@ -1,16 +1,18 @@
 plugins {
-    `maven-publish`
-    `java-library`
+    id("maven-publish")
+    id("java-library")
+
 }
 
 version = "1.0.0"
 
+
+
 java {
-    toolchain { languageVersion = JavaLanguageVersion.of(25) }
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(25))
+    }
 }
-
-
-
 dependencies {
     // Pure Kotlin JVM module - no Android dependencies
     implementation(kotlin("stdlib"))

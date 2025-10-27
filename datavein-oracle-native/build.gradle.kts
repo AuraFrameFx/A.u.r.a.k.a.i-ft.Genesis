@@ -1,17 +1,24 @@
 plugins {
     id("com.android.library") version "9.0.0-alpha11"
     id("com.google.devtools.ksp") version "2.3.0"
-
 }
+
 android {
     namespace = "dev.aurakai.auraframefx.dataveinoraclenative"
     compileSdk = 36
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(25))
+        }
+    }
 }
+
+
 dependencies {
     // Root/hooking dependencies (grouped together at the top)
     implementation(libs.core)
+    implementation(libs.androidx.appcompat) // added to ensure appcompat is present
     // Use local jars in project `libs/` folder to resolve Xposed API offline
-    compileOnly(files("../libs/api-82.jar"))
     compileOnly(libs.yukihookapi)
     implementation(libs.libsu.io)
 
@@ -57,5 +64,4 @@ dependencies {
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.hilt.android.testing)
     debugImplementation(libs.leakcanary.android)
-
 }

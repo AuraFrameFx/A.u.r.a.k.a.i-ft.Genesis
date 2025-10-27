@@ -49,27 +49,19 @@ gradlePlugin {
     plugins {
         register("androidApplication") {
             id = "genesis.android.application"
-            implementationClass = "GenesisApplicationPlugin"
+            implementationClass = "dev.aurakai.auraframefx.buildlogic.plugins.GenesisApplicationPlugin"
         }
         register("androidLibrary") {
             id = "genesis.android.library"
-            implementationClass = "AndroidLibraryConventionPlugin"
+            implementationClass = "dev.aurakai.auraframefx.buildlogic.plugins.AndroidLibraryConventionPlugin"
         }
         register("androidHilt") {
             id = "genesis.android.hilt"
-            implementationClass = "AndroidHiltConventionPlugin"
-        }
-        register("androidCompose") {
-            id = "genesis.android.compose"
-            implementationClass = "AndroidComposeConventionPlugin"
-        }
-        register("androidNative") {
-            id = "genesis.android.native"
-            implementationClass = "AndroidNativeConventionPlugin"
+            implementationClass = "dev.aurakai.auraframefx.buildlogic.plugins.AndroidHiltConventionPlugin"
         }
         register("androidBase") {
             id = "android.base"
-            implementationClass = "AndroidBasePlugin"
+            implementationClass = "dev.aurakai.auraframefx.buildlogic.plugins.AndroidBasePlugin"
         }
     }
 }

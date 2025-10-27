@@ -1,7 +1,8 @@
-//// ==== GENESIS PROTOCOL - ANDROID LIBRARY CONVENTION ====
-//// Standard Android library configuration for all modules
-//// AGP 9.0+ with built-in Kotlin support
+//package plugins
 //
+//// ==== GENESIS PROTOCOL - ANDROID LIBRARY CONVENTION ====
+////// Standard Android library configuration for all modules
+////// AGP 9.0+ with built-in Kotlin support
 //import org.gradle.api.Plugin
 //import org.gradle.api.Project
 //
@@ -9,12 +10,12 @@
 //    /**
 //     * Applies Android library conventions to the given Gradle project.
 //     *
-//     * Configures the project by applying the Android library and base plugins, setting Android SDK levels
-//     * from the version catalog, enforcing Java 24 for compilation, and configuring Kotlin Android compiler options.
+//     * Configures the project by applying the Android library plugin, setting Android SDK levels
+//     * from the version catalog, enforcing Java 25 for compilation, and configuring Kotlin Android compiler options.
 //     *
-//     * - Applies "com.android.library" and "genesis.android.base".
+//     * - Applies "com.android.library".
 //     * - Sets Android compileSdk and defaultConfig.minSdk from the `libs` version catalog.
-//     * - Sets Java sourceCompatibility and targetCompatibility to Java 24.
+//     * - Sets Java sourceCompatibility and targetCompatibility to Java 25.
 //     * - If the Kotlin Android extension is present, sets Kotlin `jvmTarget` to JVM_24 and adds the compiler args
 //     *   `-opt-in=kotlin.RequiresOptIn` and `-Xjvm-default=all`.
 //     *
@@ -22,14 +23,11 @@
 //     */
 //    override fun apply(target: Project) {
 //        with(target) {
-//            // Do NOT apply the Hilt Gradle plugin in library modules (AGP 8+/9+)
-//            pluginManager.apply("com.android.library")
-//
-//            // Apply Android library plugin and base plugin for Hilt + KSP
+//            // Apply plugins directly to the plugin manager for clarity and compatibility
+//            // with strict Gradle versions.
 //            with(pluginManager) {
-//                apply("genesis.android.base")  // Applies Hilt + KSP at the right time
-//                // ✅ REMOVED: AGP 9.0 has built-in Kotlin support
-//                // apply("org.jetbrains.kotlin.android")  // NO LONGER NEEDED
+//                apply(/* pluginId = */ "com.android.library")
+//                apply(/* pluginId = */ "com.google.devtools.ksp")
 //            }
 //        }
 //    }

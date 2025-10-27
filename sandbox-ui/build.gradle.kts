@@ -4,7 +4,6 @@ plugins {
 }
 
 
-
 android {
     namespace = "dev.aurakai.auraframefx.benchmark"
     compileSdk = 36
@@ -19,6 +18,11 @@ android {
         sourceCompatibility = JavaVersion.VERSION_25
         targetCompatibility = JavaVersion.VERSION_25
         isCoreLibraryDesugaringEnabled = true
+    }
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(25))
+        }
     }
 
     buildFeatures {
@@ -65,8 +69,8 @@ dependencies {
     ksp(libs.androidx.room.compiler)
     implementation(libs.compose.theme.adapter.x)
     implementation(libs.firebase.auth.ktx)
-    compileOnly(files("../Libs/api-82.jar"))
-    compileOnly(files("../Libs/api-82-sources.jar"))
+    compileOnly(files("libs/api-82.jar"))
+    compileOnly(files("libs/api-82-sources.jar"))
     implementation(libs.androidx.material)
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(platform(libs.androidx.compose.bom))

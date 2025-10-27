@@ -6,53 +6,67 @@ plugins {
 android {
     namespace = "dev.aurakai.auraframefx.oracledriveintegration"
     compileSdk = 36
-}
-dependencies {
-    implementation("com.github.topjohnwu.libsu:core:5.0.4")
-    implementation("com.github.topjohnwu.libsu:io:5.0.4")
-    coreLibraryDesugaring(libs.desugar.jdk.libs)
 
-    implementation(libs.timber)
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.android.compiler)
-    implementation(libs.androidx.material)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.ui.tooling)
-    implementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.test.manifest)
-    implementation(libs.androidx.ui.test)
-    implementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.test.manifest)
-    implementation(libs.hilt.android)
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    coreLibraryDesugaring(libs.desugar.jdk.libs)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.navigation.compose)
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.compose.material3)
-    implementation(libs.bundles.lifecycle)
-    implementation(libs.bundles.room)
-    implementation(libs.androidx.datastore.preferences)
-    implementation(libs.androidx.datastore.core)
-    implementation(libs.kotlinx.serialization.json)
-    implementation(libs.kotlinx.datetime)
-    implementation(libs.bundles.coroutines)
-    implementation(libs.bundles.network)
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.bundles.firebase)
-    ksp(libs.hilt.compiler)
-    ksp(libs.androidx.room.compiler)
-    implementation(libs.compose.theme.adapter.x)
-    implementation(libs.firebase.auth.ktx)
-    compileOnly(files("../Libs/api-82.jar"))
-    compileOnly(files("../Libs/api-82-sources.jar"))
-    implementation(libs.androidx.material)
-    testImplementation(libs.bundles.testing.unit)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.hilt.android.testing)
-    debugImplementation(libs.leakcanary.android)
+    compileOptions {
+        // Use a compatible Java version and enable core library desugaring for this module
+        sourceCompatibility = JavaVersion.VERSION_25
+        targetCompatibility = JavaVersion.VERSION_25
+        isCoreLibraryDesugaringEnabled = true
+    }
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(25))
+        }
+    }
 
+    dependencies {
+        implementation("com.github.topjohnwu.libsu:core:5.0.4")
+        implementation("com.github.topjohnwu.libsu:io:5.0.4")
+        coreLibraryDesugaring(libs.desugar.jdk.libs)
+
+        implementation(libs.timber)
+        implementation(libs.hilt.android)
+        ksp(libs.hilt.android.compiler)
+        implementation(libs.androidx.material)
+        implementation(libs.androidx.ui.tooling.preview)
+        implementation(libs.ui.tooling)
+        implementation(libs.androidx.ui.test.junit4)
+        debugImplementation(libs.androidx.ui.test.manifest)
+        implementation(libs.androidx.ui.test)
+        implementation(libs.androidx.ui.test.junit4)
+        debugImplementation(libs.androidx.ui.test.manifest)
+        implementation(libs.hilt.android)
+        implementation(libs.androidx.core.ktx)
+        implementation(libs.androidx.lifecycle.runtime.ktx)
+        implementation(libs.androidx.lifecycle.viewmodel.ktx)
+        coreLibraryDesugaring(libs.desugar.jdk.libs)
+        implementation(platform(libs.androidx.compose.bom))
+        implementation(libs.androidx.activity.compose)
+        implementation(libs.androidx.navigation.compose)
+        implementation(libs.androidx.core.ktx)
+        implementation(libs.androidx.compose.material3)
+        implementation(libs.bundles.lifecycle)
+        implementation(libs.bundles.room)
+        implementation(libs.androidx.datastore.preferences)
+        implementation(libs.androidx.datastore.core)
+        implementation(libs.kotlinx.serialization.json)
+        implementation(libs.kotlinx.datetime)
+        implementation(libs.bundles.coroutines)
+        implementation(libs.bundles.network)
+        implementation(platform(libs.firebase.bom))
+        implementation(libs.bundles.firebase)
+        ksp(libs.hilt.compiler)
+        ksp(libs.androidx.room.compiler)
+        implementation(libs.compose.theme.adapter.x)
+        implementation(libs.firebase.auth.ktx)
+        compileOnly(files("libs/api-82.jar"))
+        compileOnly(files("libs/api-82-sources.jar"))
+        implementation(libs.androidx.material)
+        testImplementation(libs.bundles.testing.unit)
+        androidTestImplementation(platform(libs.androidx.compose.bom))
+        androidTestImplementation(libs.hilt.android.testing)
+        debugImplementation(libs.leakcanary.android)
+
+    }
 }
+

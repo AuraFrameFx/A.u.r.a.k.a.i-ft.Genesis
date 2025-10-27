@@ -1,7 +1,6 @@
 plugins {
     id("com.android.library") version "9.0.0-alpha11"
     id("com.google.devtools.ksp") version "2.3.0"
-
 }
 
 android {
@@ -27,74 +26,87 @@ android {
     buildFeatures {
         compose = true
         buildConfig = true
-    }
 
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        java {
+            toolchain {
+                languageVersion.set(JavaLanguageVersion.of(25))
+            }
+        }
+        packaging {
+            resources {
+                excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            }
         }
     }
-}
 
-dependencies {
-    // Module dependencies
-    implementation(project(":core-module"))
+    dependencies {
+        // Module dependencies - depend on core modules only
+        implementation(project(":core:domain"))
+        implementation(project(":core:data"))
+        implementation(project(":core:ui"))
+        implementation(project(":core:common"))
 
-    // AndroidX & Jetpack
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.navigation.compose)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.compose.ui)
-    implementation(libs.androidx.compose.ui.graphics)
-    implementation(libs.androidx.compose.ui.tooling.preview)
-    implementation(libs.androidx.compose.material3)
-    implementation(libs.androidx.material)
-    implementation(libs.bundles.lifecycle)
-    implementation(libs.bundles.room)
-    implementation(libs.androidx.datastore.preferences)
-    implementation(libs.androidx.datastore.core)
-    // DI
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
+        // AndroidX & Jetpack
+        implementation(libs.androidx.core.ktx)
+        implementation(libs.androidx.appcompat)
+        implementation(libs.androidx.activity.compose)
+        implementation(libs.androidx.navigation.compose)
+        implementation(platform(libs.androidx.compose.bom))
+        implementation(libs.androidx.compose.ui)
+        implementation(libs.androidx.compose.ui.graphics)
+        implementation(libs.androidx.compose.ui.tooling.preview)
+        implementation(libs.androidx.compose.material3)
+        implementation(libs.androidx.material)
+        implementation(libs.bundles.lifecycle)
+        implementation(libs.bundles.room)
+        implementation(libs.androidx.datastore.preferences)
+        implementation(libs.androidx.datastore.core)
+        // DI
+        implementation(libs.hilt.android)
+        ksp(libs.hilt.compiler)
 
-    // Desugaring
-    coreLibraryDesugaring(libs.desugar.jdk.libs)
+        // Desugaring
+        coreLibraryDesugaring(libs.desugar.jdk.libs)
 
-    // Kotlin
-    implementation(libs.kotlinx.serialization.json)
-    implementation(libs.kotlinx.datetime)
-    implementation(libs.bundles.coroutines)
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.21")
+        // Kotlin
+        implementation(libs.kotlinx.serialization.json)
+        implementation(libs.kotlinx.datetime)
+        implementation(libs.bundles.coroutines)
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.21")
 
-    // Networking
-    implementation(libs.bundles.network)
+        // Networking
+        implementation(libs.bundles.network)
 
-    // Firebase
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.bundles.firebase)
-    implementation(libs.firebase.auth.ktx)
+        // Firebase
+        implementation(platform(libs.firebase.bom))
+        implementation(libs.bundles.firebase)
+        implementation(libs.firebase.auth.ktx)
 
-    // 3rd Party UI
-    implementation(libs.compose.theme.adapter.x)
+        // 3rd Party UI
+        implementation(libs.compose.theme.adapter.x)
 
-    // Local Libs
-    compileOnly(files("../Libs/api-82.jar"))
-    compileOnly(files("../Libs/api-82-sources.jar"))
+        // Local Libs
+        compileOnly(files("libs/api-82.jar"))
+        compileOnly(files("libs/api-82-sources.jar"))
+        implementation(libs.androidx.material)
+        implementation(libs.androidx.ui.tooling.preview)
+        implementation(libs.androidx.ui.test.junit4)
+        debugImplementation(libs.androidx.ui.test.manifest)
 
-    // Testing
-    testImplementation(libs.bundles.testing.unit)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.hilt.android.testing)
-    androidTestImplementation(libs.androidx.benchmark.junit4)
-    androidTestImplementation(libs.androidx.test.uiautomator)
-    debugImplementation(libs.leakcanary.android)
-}
 
-tasks.register("collabStatus") {
-    group = "aegenesis"
-    doLast {
-        println("COLLAB CANVAS - Ready (Java 24 toolchain, unified).")
+        // Testing
+        testImplementation(libs.bundles.testing.unit)
+        androidTestImplementation(platform(libs.androidx.compose.bom))
+        androidTestImplementation(libs.hilt.android.testing)
+        androidTestImplementation(libs.androidx.benchmark.junit4)
+        androidTestImplementation(libs.androidx.test.uiautomator)
+        debugImplementation(libs.leakcanary.android)
+    }
+
+    tasks.register("collabStatus") {
+        group = "aegenesis"
+        doLast {
+            println("COLLAB CANVAS - Ready (Java 24 toolchain, unified).")
+        }
     }
 }

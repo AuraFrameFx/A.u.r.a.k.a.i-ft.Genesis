@@ -1,7 +1,6 @@
 plugins {
-    id("com.android.application") version "9.0.0-alpha11"
+    id("com.android.library") version "9.0.0-alpha11"
     id("com.google.devtools.ksp") version "2.3.0"
-
 }
 
 android {
@@ -35,6 +34,7 @@ dependencies {
     implementation(project(":core-module"))
 
     // Hilt / native utilities (confirm these are intended)
+    implementation(libs.hilt.android)
 
     coreLibraryDesugaring(libs.desugar.jdk.libs)
 
