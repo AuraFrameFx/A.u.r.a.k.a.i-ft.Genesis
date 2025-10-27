@@ -84,7 +84,7 @@ dependencies {
     implementation(libs.bundles.firebase)
     ksp(libs.hilt.compiler)
     ksp(libs.androidx.room.compiler)
-    implementation(libs.compose.theme.adapter.x)
+    implementation(libs.compose.theme.adapter)
     implementation(libs.firebase.auth.ktx)
     // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
     // Use local jars in project `libs/` folder to resolve Xposed API offline
@@ -97,4 +97,5 @@ dependencies {
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.hilt.android.testing)
     debugImplementation(libs.leakcanary.android)
+    implementation(libs.kotlin.stdlib.jdk8)
 }

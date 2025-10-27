@@ -3,6 +3,21 @@
     id("com.google.devtools.ksp") version "2.3.0"
 }
 
+android {
+    namespace = "dev.aurakai.auraframefx.core.module"
+    compileSdk = 36
+
+    defaultConfig {
+        minSdk = 34
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_25
+        targetCompatibility = JavaVersion.VERSION_25
+    }
+
+}
+
 version = "1.0.0"
 android {
     namespace = "dev.aurakai.auraframefx.collab_canvas"
@@ -32,8 +47,5 @@ android {
         testImplementation(libs.junit.jupiter.api)
         testRuntimeOnly(libs.junit.jupiter.engine)
         testImplementation(libs.mockk)
-        implementation(libs.kotlin.stdlib.jdk8)
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.21")
     }
-}
-
-

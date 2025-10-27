@@ -1,6 +1,6 @@
 plugins {
-    id("com.android.library") version "9.0.0-alpha11"
-    id("com.google.devtools.ksp") version "2.3.0"
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -28,6 +28,7 @@ dependencies {
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.timber)
+    implementation(libs.kotlin.stdlib.jdk8)
 
     // Testing
     testImplementation(libs.junit.jupiter.api)

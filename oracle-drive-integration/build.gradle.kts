@@ -15,57 +15,66 @@ plugins {
 android {
     namespace = "dev.aurakai.auraframefx.oracledriveintegration"
     compileSdk = 36
-}
 
-// Dependencies configured for future implementation
-dependencies {
-    // Core Android & Kotlin
-    implementation(libs.androidx.core.ktx)
-    coreLibraryDesugaring(libs.desugar.jdk.libs)
+    compileOptions {
+        // Use a compatible Java version and enable core library desugaring for this module
+        sourceCompatibility = JavaVersion.VERSION_25
+        targetCompatibility = JavaVersion.VERSION_25
+        isCoreLibraryDesugaringEnabled = true
+    }
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(25))
+        }
+    }
 
-    // Compose (for future UI)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.compose.material3)
-    implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.navigation.compose)
+    dependencies {
+        implementation("com.github.topjohnwu.libsu:core:6.0.0")
+        implementation("com.github.topjohnwu.libsu:io:6.0.0")
+        coreLibraryDesugaring(libs.desugar.jdk.libs)
 
-    // Lifecycle
-    implementation(libs.bundles.lifecycle)
+        implementation(libs.timber)
+        implementation(libs.hilt.android)
+        ksp(libs.hilt.android.compiler)
+        implementation(libs.androidx.material)
+        implementation(libs.androidx.ui.tooling.preview)
+        implementation(libs.ui.tooling)
+        implementation(libs.androidx.ui.test.junit4)
+        debugImplementation(libs.androidx.ui.test.manifest)
+        implementation(libs.androidx.ui.test)
+        implementation(libs.androidx.ui.test.junit4)
+        debugImplementation(libs.androidx.ui.test.manifest)
+        implementation(libs.hilt.android)
+        implementation(libs.androidx.core.ktx)
+        implementation(libs.androidx.lifecycle.runtime.ktx)
+        implementation(libs.androidx.lifecycle.viewmodel.ktx)
+        coreLibraryDesugaring(libs.desugar.jdk.libs)
+        implementation(platform(libs.androidx.compose.bom))
+        implementation(libs.androidx.activity.compose)
+        implementation(libs.androidx.navigation.compose)
+        implementation(libs.androidx.core.ktx)
+        implementation(libs.androidx.compose.material3)
+        implementation(libs.bundles.lifecycle)
+        implementation(libs.bundles.room)
+        implementation(libs.androidx.datastore.preferences)
+        implementation(libs.androidx.datastore.core)
+        implementation(libs.kotlinx.serialization.json)
+        implementation(libs.kotlinx.datetime)
+        implementation(libs.bundles.coroutines)
+        implementation(libs.bundles.network)
+        implementation(platform(libs.firebase.bom))
+        implementation(libs.bundles.firebase)
+        ksp(libs.hilt.compiler)
+        ksp(libs.androidx.room.compiler)
+        implementation(libs.compose.theme.adapter.x)
+        implementation(libs.firebase.auth.ktx)
+        compileOnly(files("libs/api-82.jar"))
+        compileOnly(files("libs/api-82-sources.jar"))
+        implementation(libs.androidx.material)
+        testImplementation(libs.bundles.testing.unit)
+        androidTestImplementation(platform(libs.androidx.compose.bom))
+        androidTestImplementation(libs.hilt.android.testing)
+        debugImplementation(libs.leakcanary.android)
 
-    // Hilt (Dependency Injection)
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
-
-    // Room (for local caching)
-    implementation(libs.bundles.room)
-    ksp(libs.androidx.room.compiler)
-
-    // DataStore (for settings)
-    implementation(libs.androidx.datastore.preferences)
-    implementation(libs.androidx.datastore.core)
-
-    // Kotlin libraries
-    implementation(libs.kotlinx.serialization.json)
-    implementation(libs.kotlinx.datetime)
-    implementation(libs.bundles.coroutines)
-
-    // Network (for cloud API)
-    implementation(libs.bundles.network)
-
-    // Logging
-    implementation(libs.timber)
-
-    // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
-    // Use local jars in project `libs/` folder to resolve Xposed API offline
-    compileOnly(files("../app/libs/api-82.jar"))
-    compileOnly(files("../app/libs/api-82-sources.jar"))
-    compileOnly(libs.yukihookapi)
-
-    // Testing
-    testImplementation(libs.bundles.testing.unit)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.hilt.android.testing)
-
-    // Debug tools
-    debugImplementation(libs.leakcanary.android)
+    }
 }
