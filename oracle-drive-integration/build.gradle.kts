@@ -1,3 +1,12 @@
+// ⚠️ PLACEHOLDER MODULE - NO IMPLEMENTATION YET ⚠️
+//
+// This module is reserved for future Oracle Cloud Integration features.
+// See README.md for planned features and architecture.
+//
+// Status: Awaiting implementation (0 source files)
+// Documented: Yes (see README.md)
+// Remove this module if not implementing soon to reduce build time.
+
 plugins {
     id("com.android.library") version "9.0.0-alpha11"
     id("com.google.devtools.ksp") version "2.3.0"
@@ -8,8 +17,7 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        minSdk = 34
-        multiDexEnabled = true  // Required for core library desugaring
+        multiDexEnabled = true
     }
 
     compileOptions {
@@ -18,7 +26,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_25
         isCoreLibraryDesugaringEnabled = true
     }
-
     java {
         toolchain {
             languageVersion.set(JavaLanguageVersion.of(25))
@@ -34,7 +41,13 @@ android {
         implementation(libs.hilt.android)
         ksp(libs.hilt.android.compiler)
         implementation(libs.androidx.material)
-
+        implementation(libs.androidx.ui.tooling.preview)
+        implementation(libs.ui.tooling)
+        implementation(libs.androidx.ui.test.junit4)
+        debugImplementation(libs.androidx.ui.test.manifest)
+        implementation(libs.androidx.ui.test)
+        implementation(libs.androidx.ui.test.junit4)
+        debugImplementation(libs.androidx.ui.test.manifest)
         implementation(libs.hilt.android)
         implementation(libs.androidx.core.ktx)
         implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -56,7 +69,7 @@ android {
         implementation(libs.bundles.firebase)
         ksp(libs.hilt.compiler)
         ksp(libs.androidx.room.compiler)
-        implementation(libs.compose.theme.adapter)
+        implementation(libs.compose.theme.adapter.x)
         implementation(libs.firebase.auth.ktx)
         compileOnly(files("libs/api-82.jar"))
         compileOnly(files("libs/api-82-sources.jar"))
@@ -65,6 +78,6 @@ android {
         androidTestImplementation(platform(libs.androidx.compose.bom))
         androidTestImplementation(libs.hilt.android.testing)
         debugImplementation(libs.leakcanary.android)
-        implementation(libs.kotlin.stdlib.jdk8)
+
     }
 }

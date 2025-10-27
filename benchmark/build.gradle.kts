@@ -32,7 +32,6 @@ dependencies {
 
     // Project dependencies
     implementation(project(":core-module"))
-    implementation(libs.kotlin.stdlib.jdk8)
 
     // Hilt / native utilities (confirm these are intended)
     implementation(libs.hilt.android)

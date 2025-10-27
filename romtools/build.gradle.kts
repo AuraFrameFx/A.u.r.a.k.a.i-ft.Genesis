@@ -31,18 +31,17 @@ java {
 
 dependencies {
     // Core and hooking/runtime dependencies (ordered per project conventions)
-    implementation(libs.libsu.core)
     implementation(libs.androidx.appcompat) // ensured present near top as requested
 
     // TopJohnWu libsu runtime helpers (required by modules that perform system/root ops)
     implementation("com.github.topjohnwu.libsu:core:6.0.0")
     implementation("com.github.topjohnwu.libsu:io:6.0.0")
     implementation(libs.libsu.io)
-    implementation(libs.kotlin.stdlib.jdk8)
 
     // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
     // Use local jars in project `libs/` folder to resolve Xposed API offline
-    compileOnly(files("libs/api-82.jar"))
+    compileOnly(files("../app/libs/api-82.jar"))
+    compileOnly(files("../app/libs/api-82-sources.jar"))
     compileOnly(libs.yukihookapi)
     implementation(libs.timber)
     implementation(libs.hilt.android)
@@ -50,10 +49,7 @@ dependencies {
     implementation(libs.androidx.material)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.ui.tooling)
-    implementation(libs.androidx.compose.ui.test.junit4)
-    debugImplementation(libs.androidx.compose.ui.test.manifest)
-    implementation(libs.androidx.compose.ui.test)
-    debugImplementation(libs.androidx.compose.ui.test.manifest)
+
     implementation(libs.hilt.android)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -76,10 +72,8 @@ dependencies {
     implementation(libs.bundles.firebase)
     ksp(libs.hilt.compiler)
     ksp(libs.androidx.room.compiler)
-    implementation(libs.compose.theme.adapter)
     implementation(libs.firebase.auth.ktx)
-    compileOnly(files("libs/api-82.jar"))
-    compileOnly(files("libs/api-82-sources.jar"))
+
     implementation(libs.androidx.material)
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(platform(libs.androidx.compose.bom))

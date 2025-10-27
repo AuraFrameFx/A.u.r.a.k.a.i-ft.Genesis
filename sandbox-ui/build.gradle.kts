@@ -36,7 +36,7 @@ android {
 dependencies {
     // SACRED RULE #5: DEPENDENCY HIERARCHY
     implementation(project(":core-module"))
-    implementation(project(":app"))
+    // REMOVED: implementation(project(":app")) - Circular dependency! Libraries should not depend on :app
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
@@ -67,13 +67,10 @@ dependencies {
     implementation(libs.bundles.firebase)
     ksp(libs.hilt.compiler)
     ksp(libs.androidx.room.compiler)
-    implementation(libs.compose.theme.adapter)
     implementation(libs.firebase.auth.ktx)
-    compileOnly(files("libs/api-82.jar"))
-    compileOnly(files("libs/api-82-sources.jar"))
+
     implementation(libs.androidx.material)
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     debugImplementation(libs.leakcanary.android)
-    implementation(libs.kotlin.stdlib.jdk8)
 }

@@ -3,8 +3,54 @@
 import kotlinx.coroutines.delay
 
 /**
- * Stub implementation of VertexAIClientImpl to resolve compilation errors
- * This will be replaced with actual VertexAI integration when dependencies are added
+ * ⚠️ **STUB IMPLEMENTATION - NOT CONNECTED TO REAL VERTEX AI** ⚠️
+ *
+ * This is a placeholder implementation that returns **hardcoded fake responses**
+ * to allow the Trinity AI system (Aura, Kai, Genesis) to compile and run during
+ * development. No actual AI processing occurs.
+ *
+ * **Current Behavior:**
+ * - All `generateText()` calls return templated strings with the prompt embedded
+ * - All `analyzeContent()` calls return fixed analysis results
+ * - All `generateCode()` calls return comment strings
+ * - All methods add artificial delays to simulate API latency
+ *
+ * **What's Needed for Real Integration:**
+ * 1. Add Google Cloud Vertex AI SDK dependency to build.gradle.kts:
+ *    ```kotlin
+ *    implementation("com.google.cloud:google-cloud-aiplatform:3.x.x")
+ *    ```
+ *
+ * 2. Uncomment the real implementation code (see commented sections below)
+ *
+ * 3. Configure GCP credentials:
+ *    - Set GOOGLE_APPLICATION_CREDENTIALS environment variable
+ *    - Or use Firebase Authentication with service account
+ *
+ * 4. Update VertexAIModule.kt with real project ID and location:
+ *    ```kotlin
+ *    projectId = "your-actual-gcp-project-id"
+ *    location = "us-central1"  // or your preferred region
+ *    modelName = "gemini-1.5-pro"
+ *    ```
+ *
+ * 5. Test with a real API key and verify connectivity
+ *
+ * **Related Files:**
+ * - VertexAIConfig.kt - Configuration is ready, just needs real values
+ * - VertexAIModule.kt - Hilt DI configured with Gemini 1.5 Pro
+ * - VertexAIUtils.kt - Utility functions ready for real integration
+ *
+ * **Architecture Note:**
+ * The entire Trinity system (TrinityCoordinatorService, Aura, Kai, Genesis)
+ * depends on this client. Once real AI is connected, the system will route
+ * requests intelligently:
+ * - **Kai (Shield)** - Security, analysis, protection
+ * - **Aura (Sword)** - Creativity, design, innovation
+ * - **Genesis (Mind)** - Fusion abilities, synthesis, ethics
+ *
+ * @see VertexAIModule
+ * @see TrinityCoordinatorService
  */
 class VertexAIClientImpl : VertexAIClient {
 

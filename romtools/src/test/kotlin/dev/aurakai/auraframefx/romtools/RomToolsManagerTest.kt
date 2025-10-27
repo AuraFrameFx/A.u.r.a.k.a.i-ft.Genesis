@@ -2,7 +2,6 @@ package dev.aurakai.auraframefx.romtools
 
 import dev.aurakai.auraframefx.romtools.bootloader.BootloaderManager
 import dev.aurakai.auraframefx.romtools.retention.AurakaiRetentionManager
-import dev.aurakai.auraframefx.romtools.retention.BackupPaths
 import dev.aurakai.auraframefx.romtools.retention.RetentionMechanism
 import dev.aurakai.auraframefx.romtools.retention.RetentionStatus
 import io.mockk.coEvery
@@ -51,14 +50,7 @@ class RomToolsManagerTest {
         )
     }
 
-// Additional data class for testing with proper defaults
-data class BackupInfo(
-    val id: String,
-val path: String,
-val size: Long,
-val timestamp: Long
-)
-@Nested
+    @Nested
 @DisplayName("Retention Failure Abort Tests")
 inner class RetentionFailureAbortTests {
 
@@ -361,4 +353,10 @@ inner class EdgeCaseTests {
 }
 }
 
-// Additional data class for testing with proper defaults
+// Data classes for testing
+data class BackupInfo(
+    val id: String,
+    val path: String,
+    val size: Long,
+    val timestamp: Long
+)

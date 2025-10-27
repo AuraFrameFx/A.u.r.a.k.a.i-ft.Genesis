@@ -1,21 +1,33 @@
-# Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
+# ═══════════════════════════════════════════════════════════════════════════
+# AURAKAI GENESIS - ProGuard/R8 Configuration
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# ⚠️ CRITICAL: Always test release builds thoroughly!
+#
+# This configuration protects reflection-heavy code from being stripped:
+# - Hilt/Dagger dependency injection
+# - Room database entities and DAOs
+# - Firebase serialization
+# - Kotlin serialization (@Serializable classes)
+# - YukiHook / Xposed framework (ROM tools)
+# - Kotlin Coroutines
+#
+# TESTING CHECKLIST for release builds:
+# ✓ Hilt-injected classes work
+# ✓ Room database queries execute
+# ✓ Firebase serialization/deserialization works
+# ✓ YukiHook API calls succeed (ROM tools)
+# ✓ @Serializable classes serialize correctly
+# ✓ Coroutines launch and complete
+#
+# If you encounter ClassNotFoundException, NoSuchMethodException, or
+# similar errors in release builds, add specific -keep rules below.
+#
+# ═══════════════════════════════════════════════════════════════════════════
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
-
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
-
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# Preserve line numbers for debugging release crashes
+-keepattributes SourceFile,LineNumberTable
+-renamesourcefileattribute SourceFile
 
 # --- Critical Application Rules ---
 
@@ -33,8 +45,15 @@
 # Keep Hilt and Dagger classes required for dependency injection.
 -keep class dagger.hilt.** { *; }
 -keep class javax.inject.** { *; }
+-keep class * extends dagger.hilt.android.internal.managers.ViewComponentManager$FragmentContextWrapper { *; }
+-keepclasseswithmembers class * {
+    @dagger.* <fields>;
+}
+-keepclasseswithmembers class * {
+    @dagger.* <methods>;
+}
 
-# Keep Room database entities.
+# Keep Room database entities, DAOs, and database classes.
 -keep class dev.aurakai.auraframefx.data.database.entities.** { *; }
 
 # Keep classes annotated with @Keep. This is a good practice for classes
