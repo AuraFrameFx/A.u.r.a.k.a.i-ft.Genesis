@@ -132,8 +132,6 @@ android {
         implementation(libs.firebase.auth.ktx)
 
         // Xposed/YukiHook Framework
-        compileOnly(files("../Libs/api-82.jar"))
-        compileOnly(files("../Libs/api-82-sources.jar"))
         implementation(libs.androidx.appcompat)
         // Testing
         testImplementation(libs.bundles.testing.unit)

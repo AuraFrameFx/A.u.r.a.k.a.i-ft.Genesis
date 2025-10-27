@@ -79,10 +79,6 @@ dependencies {
     // 3rd Party UI
     implementation(libs.compose.theme.adapter.x)
 
-    // Local Libs
-    compileOnly(files("../Libs/api-82.jar"))
-    compileOnly(files("../Libs/api-82-sources.jar"))
-
     // Testing
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(platform(libs.androidx.compose.bom))

@@ -80,8 +80,6 @@ dependencies {
     implementation(libs.androidx.material)
 
     // Xposed API
-    compileOnly(files("../Libs/api-82.jar"))
-    compileOnly(files("../Libs/api-82-sources.jar"))
 
     // Testing
     testImplementation(libs.bundles.testing.unit)
