@@ -131,8 +131,12 @@ android {
         implementation(libs.bundles.firebase)
         implementation(libs.firebase.auth.ktx)
 
-        // Xposed/YukiHook Framework
+        // Xposed/YukiHook Framework (compileOnly - not bundled in APK)
+        compileOnly(libs.yukihookapi)           // YukiHook API v1.3.1 (primary - Kotlin-friendly)
+        compileOnly(libs.lsposed.api)           // LSPosed API v6.4 (modern Xposed)
+        compileOnly(libs.xposed.api)            // Traditional Xposed API v82 (fallback)
         implementation(libs.androidx.appcompat)
+
         // Testing
         testImplementation(libs.bundles.testing.unit)
         androidTestImplementation(platform(libs.androidx.compose.bom))

@@ -79,7 +79,10 @@ dependencies {
     // Material Design
     implementation(libs.androidx.material)
 
-    // Xposed API
+    // Xposed API (System extension module needs hooking capabilities)
+    compileOnly(libs.yukihookapi)           // YukiHook API v1.3.1
+    compileOnly(libs.lsposed.api)           // LSPosed API v6.4
+    compileOnly(libs.xposed.api)            // Traditional Xposed API v82
 
     // Testing
     testImplementation(libs.bundles.testing.unit)
