@@ -16,6 +16,10 @@ android {
     namespace = "dev.aurakai.auraframefx.oracledriveintegration"
     compileSdk = 36
 
+    defaultConfig {
+        multiDexEnabled = true
+    }
+
     compileOptions {
         // Use a compatible Java version and enable core library desugaring for this module
         sourceCompatibility = JavaVersion.VERSION_25
@@ -48,7 +52,6 @@ android {
         implementation(libs.androidx.core.ktx)
         implementation(libs.androidx.lifecycle.runtime.ktx)
         implementation(libs.androidx.lifecycle.viewmodel.ktx)
-        coreLibraryDesugaring(libs.desugar.jdk.libs)
         implementation(platform(libs.androidx.compose.bom))
         implementation(libs.androidx.activity.compose)
         implementation(libs.androidx.navigation.compose)
