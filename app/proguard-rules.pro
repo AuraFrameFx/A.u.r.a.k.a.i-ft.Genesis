@@ -72,10 +72,11 @@
 -keepattributes *Annotation*
 -keepattributes EnclosingMethod
 -keepattributes InnerClasses
--keep class com.google.firebase.** { *; }
--keep class com.google.android.gms.** { *; }
--dontwarn com.google.firebase.**
-
+# Rely on Firebase library consumer rules. Add only if custom model serialization requires:
+# -keepclassmembers class dev.aurakai.auraframefx.** {
+#   @com.google.firebase.firestore.PropertyName <fields>;
+#   @com.google.firebase.firestore.PropertyName <methods>;
+# }
 # Keep Kotlin serialization
 -keepattributes *Annotation*, InnerClasses
 -dontnote kotlinx.serialization.AnnotationsKt
