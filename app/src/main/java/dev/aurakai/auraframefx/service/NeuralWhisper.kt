@@ -74,7 +74,6 @@ class NeuralWhisper @Inject constructor(
             // TODO: Start audio capture
 
             isRecording = true
-            isTranscribing = true
 
             // Update conversation state
             _conversationState.value = _conversationState.value.copy(
@@ -224,6 +223,7 @@ class NeuralWhisper @Inject constructor(
         if (isTranscribing) {
             stopTranscription()
         }
+        scope.cancel()
         Timber.i("NeuralWhisper: Service shutdown complete")
     }
 }

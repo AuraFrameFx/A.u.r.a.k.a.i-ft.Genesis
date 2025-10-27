@@ -1,30 +1,55 @@
 plugins {
-    id("com.android.library") version "9.0.0-alpha11"
-    id("com.google.dagger.hilt.android") version "2.57.2"
-    id("com.google.devtools.ksp") version "2.3.0"
-    id("org.jetbrains.kotlin.plugin.compose") version "2.3.0-Beta1"
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.ksp)
 }
 
-
 android {
-    namespace = "dev.aurakai.auraframefx.romtools"
+    namespace = "dev.aurakai.auraframefx"
     compileSdk = 36
+
+    defaultConfig {
+        minSdk = 34
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_25
+        targetCompatibility = JavaVersion.VERSION_25
+    }
+
+
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "2.3.0-beta1"
+    }
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(25))
+    }
 }
 
 dependencies {
-    implementation("com.github.topjohnwu.libsu:core:5.0.4")
-    implementation("com.github.topjohnwu.libsu:io:5.0.4")
+    // Core and hooking/runtime dependencies (ordered per project conventions)
+    implementation(libs.androidx.appcompat) // ensured present near top as requested
 
+    // TopJohnWu libsu runtime helpers (required by modules that perform system/root ops)
+    implementation("com.github.topjohnwu.libsu:core:6.0.0")
+    implementation("com.github.topjohnwu.libsu:io:6.0.0")
+    implementation(libs.libsu.io)
+
+    // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
+    // Use local jars in project `libs/` folder to resolve Xposed API offline
+    compileOnly(files("../app/libs/api-82.jar"))
+    compileOnly(files("../app/libs/api-82-sources.jar"))
+    compileOnly(libs.yukihookapi)
     implementation(libs.timber)
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
     implementation(libs.androidx.material)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.ui.tooling)
-    implementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.test.manifest)
-    implementation(libs.androidx.ui.test)
-    implementation(libs.androidx.ui.test.manifest)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.compose.ui.tooling)
+
     implementation(libs.hilt.android)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -47,8 +72,8 @@ dependencies {
     implementation(libs.bundles.firebase)
     ksp(libs.hilt.compiler)
     ksp(libs.androidx.room.compiler)
-    implementation(libs.compose.theme.adapter.x)
     implementation(libs.firebase.auth.ktx)
+
     implementation(libs.androidx.material)
 
     // Xposed/YukiHook Framework (ROM tools need system-level hooks)
@@ -59,25 +84,6 @@ dependencies {
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.hilt.android.testing)
-    debugImplementation(libs.leakcanary.android)
-
-    // Explicit androidx versions requested by the user (added alongside existing libs entries)
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.navigation.compose)
-    implementation(libs.androidx.hilt.navigation.compose)
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.androidx.room.runtime)
-    implementation(libs.androidx.room.ktx)
-    implementation(libs.androidx.work.runtime.ktx)
-    implementation(libs.androidx.hilt.work)
-    implementation(libs.androidx.datastore.preferences)
-    implementation(libs.androidx.datastore.core)
-    implementation(libs.androidx.security.crypto)
     androidTestImplementation(libs.androidx.benchmark.junit4)
     androidTestImplementation(libs.androidx.test.uiautomator)
 }

@@ -1,27 +1,34 @@
 plugins {
     id("com.android.library") version "9.0.0-alpha11"
     id("com.google.devtools.ksp") version "2.3.0"
-
 }
+
 android {
     namespace = "dev.aurakai.auraframefx.dataveinoraclenative"
     compileSdk = 36
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(25))
+        }
+    }
 }
+
+
 dependencies {
+    // Root/hooking dependencies (grouped together at the top)
+    implementation(libs.androidx.appcompat) // added to ensure appcompat is present
+    // Use local jars in project `libs/` folder to resolve Xposed API offline
+    compileOnly(files("../app/libs/api-82.jar"))
+    compileOnly(files("../app/libs/api-82-sources.jar"))
+    compileOnly(libs.yukihookapi)
+    implementation(libs.libsu.io)
     implementation("com.github.topjohnwu.libsu:core:5.0.4")
     implementation("com.github.topjohnwu.libsu:io:5.0.4")
-
     implementation(libs.timber)
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
     implementation(libs.androidx.material)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.ui.tooling)
-    implementation(libs.androidx.ui.test.junit4)
-    implementation(libs.androidx.ui.test.manifest)
-    implementation(libs.androidx.ui.test)
-    implementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.test.manifest)
+
     implementation(libs.hilt.android)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -44,7 +51,6 @@ dependencies {
     implementation(libs.bundles.firebase)
     ksp(libs.hilt.compiler)
     ksp(libs.androidx.room.compiler)
-    implementation(libs.compose.theme.adapter.x)
     implementation(libs.firebase.auth.ktx)
     implementation(libs.androidx.material)
     testImplementation(libs.bundles.testing.unit)

@@ -3,12 +3,14 @@
 agp = "9.0.0-alpha11"
 benchmarkJunit4 = "1.4.1"
 composeThemeAdapterX = "1.1.1"
+converterMoshi = "3.0.0"
+core = "6.0.0"
 firebaseAuthKtx = "23.2.1"
 gradle = "9.2.0-RC-3"
 hiltAndroidCompiler = "2.57.2"
+io = "6.0.0"
 kotlin = "2.3.0-Beta1"
 ksp = "2.3.0"
-java = "24"
 
 ktlint = "13.1.0"
 
@@ -104,9 +106,12 @@ androidx-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", versi
 androidx-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "uiTestManifest" }
 androidx-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "ui" }
 compose-theme-adapter-x = { module = "com.google.android.material:compose-theme-adapter-3", version.ref = "composeThemeAdapterX" }
+converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "converterMoshi" }
+core = { module = "com.github.topjohnwu.libsu:core", version.ref = "core" }
 firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
 gradle-tooling-api = { module = "org.gradle:gradle-tooling-api", version.ref = "gradle" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroidCompiler" }
+libsu-io = { module = "com.github.topjohnwu.libsu:io", version.ref = "io" }
 symbol-processing-api = { module = "com.google.devtools.ksp:symbol-processing-api", version.ref = "ksp" }
 
 # AndroidX Core
@@ -193,7 +198,7 @@ logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "lo
 bcprov = { module = "org.bouncycastle:bcprov-jdk18on", version.ref = "bcprov" }
 
 # Hooking Frameworks
-xposed-api = { module = "de.robv.android.xposed:api", version.ref = "xposed" }
+# xposed-api = { module = "de.robv.android.xposed:api", version.ref = "xposed" }
 lsposed-api = { module = "io.github.libxposed:api", version.ref = "lsposed" }
 yukihookapi = { module = "com.highcapable.yukihookapi:api", version.ref = "yukihookapi" }
 
@@ -225,6 +230,7 @@ testing-unit = ["junit", "mockk", "kotlinx-coroutines-test"]
 testing-android = ["androidx-test-junit", "androidx-test-espresso-core", "androidx-test-uiautomator"]
 
 [plugins]
+
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

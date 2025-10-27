@@ -1,8 +1,11 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
+import java.io.Serializable
+
 plugins {
     id("com.android.library") version "9.0.0-alpha11"
     id("com.google.devtools.ksp") version "2.3.0"
 }
-
 android {
     namespace = "dev.aurakai.auraframefx.securecomm"
     compileSdk = 36
@@ -14,18 +17,43 @@ android {
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
     }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "2.3.0-beta1"
+    }
+}
+
+// Precompute Compose metrics/report destinations as plain string paths to avoid buildDir deprecation warnings
+val composeMetricsPath: Serializable by lazy {
+    project.layout.buildDirectory.dir("compose_metrics").get().asFile.absolutePath
+}
+val composeReportsPath: Serializable = project.layout.buildDirectory.dir("compose_reports").get().asFile.absolutePath
+
+// Configure Kotlin compile tasks to set JVM target and add Compose compiler freeCompilerArgs using the new compilerOptions API
+tasks.withType(KotlinJvmCompile::class.java).configureEach {
+    (this as KotlinJvmCompile).compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_24)
+        freeCompilerArgs.addAll(
+            listOf(
+                "-P",
+                "plugin:androidx.compose.compiler.plugins.kotlin:metricsDestination=$composeMetricsPath",
+                "-P",
+                "plugin:androidx.compose.compiler.plugins.kotlin:reportsDestination=$composeReportsPath"
+            )
+        )
+    }
 }
 
 dependencies {
 
     implementation(project(":core-module"))
-    implementation(project(":app"))
     implementation(project(":datavein-oracle-native"))
     implementation(project(":oracle-drive-integration"))
     implementation(project(":benchmark"))
     implementation(project(":sandbox-ui"))
-    implementation("com.github.topjohnwu.libsu:core:5.0.4")
-    implementation("com.github.topjohnwu.libsu:io:5.0.4")
+    implementation("com.github.topjohnwu.libsu:core:6.0.0")
+    implementation("com.github.topjohnwu.libsu:io:6.0.0")
+    implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
@@ -56,10 +84,16 @@ dependencies {
     implementation(libs.bundles.firebase)
     ksp(libs.hilt.compiler)
     ksp(libs.androidx.room.compiler)
-    implementation(libs.compose.theme.adapter.x)
     implementation(libs.firebase.auth.ktx)
+    // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
+    // Use local jars in project `libs/` folder to resolve Xposed API offline
+    compileOnly(files("../app/libs/api-82.jar"))
+    compileOnly(files("../app/libs/api-82-sources.jar"))
+    compileOnly(libs.yukihookapi)
+
     implementation(libs.androidx.material)
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.hilt.android.testing)
     debugImplementation(libs.leakcanary.android)
 }

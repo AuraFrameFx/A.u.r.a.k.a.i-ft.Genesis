@@ -1,12 +1,11 @@
 plugins {
-    id("com.android.application") version "9.0.0-alpha11"
-    id("com.google.dagger.hilt.android") version "2.57.2"
+    id("com.android.application")
     id("com.google.devtools.ksp") version "2.3.0"
-    id("org.jetbrains.kotlin.plugin.compose") version "2.3.0-Beta1"
-    id("com.google.gms.google-services") version "4.4.4"
+
 }
 
 android {
+
     namespace = "dev.aurakai.auraframefx.app"
     compileSdk = 36
     defaultConfig {
@@ -19,131 +18,125 @@ android {
         lint {
             baseline = file("lint-baseline.xml")
         }
+    }
 
-        buildTypes {
-            release {
-                isMinifyEnabled = true
-                isShrinkResources = true
-                proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
-                )
-            }
-            debug {
-                isDebuggable = true
-                applicationIdSuffix = ".debug"
-                versionNameSuffix = "-DEBUG"
-            }
+    buildTypes {
+        release {
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+            )
         }
-        buildFeatures {
-            compose = true
-            aidl = true
-        }
-        compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_25
-            targetCompatibility = JavaVersion.VERSION_25
-            isCoreLibraryDesugaringEnabled = true
-
-        }
-        composeOptions {
-            kotlinCompilerExtensionVersion = "2.3.0-beta1"
+        debug {
+            isDebuggable = true
+            applicationIdSuffix = ".debug"
+            versionNameSuffix = "-DEBUG"
         }
     }
+
+    buildFeatures {
+        compose = true
+        aidl = true
+    }
+
+    // Java compatibility / desugaring
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_25
+        targetCompatibility = JavaVersion.VERSION_25
+        isCoreLibraryDesugaringEnabled = true
+    }
+
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "2.3.0-beta1"
+    }
+
+
+    ndkVersion = "29.0.14206865"
 }
 
-    dependencies {
-        implementation("com.github.topjohnwu.libsu:core:5.0.4")
-        implementation("com.github.topjohnwu.libsu:io:5.0.4")
+dependencies {
+    // Core and hooking/runtime dependencies (required per project conventions)
+    implementation(libs.core)
+    implementation("com.github.topjohnwu.libsu:core:5.0.4")
+    implementation("com.github.topjohnwu.libsu:io:5.0.4")
+    implementation(libs.libsu.io)
 
-        implementation(libs.timber)
-        implementation(libs.hilt.android)
-        implementation(libs.androidx.material)
-        implementation(libs.androidx.ui.tooling.preview)
-        implementation(libs.ui.tooling)
-        implementation(libs.androidx.ui.test.junit4)
-        debugImplementation(libs.androidx.ui.test.manifest)
-        implementation(libs.androidx.ui.test)
-        implementation(libs.androidx.ui.test.junit4)
-        debugImplementation(libs.androidx.ui.test.manifest)
-        implementation(project(":core-module"))
-        implementation(project(":feature-module"))
-        implementation(project(":romtools"))
-        implementation(project(":collab-canvas"))
-        implementation(project(":colorblendr"))
-        implementation(project(":datavein-oracle-native"))
-        implementation(project(":oracle-drive-integration"))
+    // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
+    compileOnly(libs.yukihookapi)
+    // Fallback to local jars if catalog entries aren't available
+    compileOnly(files("libs/api-82.jar"))
+    compileOnly(files("libs/api-82-sources.jar"))
+
+    implementation(libs.timber)
+    implementation(libs.hilt.android)
+    implementation(libs.androidx.material)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.compose.ui.tooling)
+
+    implementation(project(":core-module"))
+    implementation(project(":feature-module"))
+    implementation(project(":romtools"))
+    implementation(project(":collab-canvas"))
+    implementation(project(":colorblendr"))
+    implementation(project(":datavein-oracle-native"))
+    implementation(project(":oracle-drive-integration"))
+
+    // AndroidX Core
+    implementation(libs.bundles.androidx.core)
+    implementation(libs.androidx.security.crypto)
+    coreLibraryDesugaring(libs.desugar.jdk.libs)
+
+    // Compose
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.bundles.compose.ui)
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.compose.ui)
 
 
-        // AndroidX Core
-        implementation(libs.androidx.core.ktx)
-        implementation(libs.androidx.appcompat)
-        implementation(libs.androidx.material)
-        implementation(libs.androidx.security.crypto)
-        coreLibraryDesugaring(libs.desugar.jdk.libs)
+    // Lifecycle & Architecture
+    implementation(libs.bundles.lifecycle)
 
-        // Compose
-        implementation(platform(libs.androidx.compose.bom))
-        implementation(libs.androidx.compose.material3)
-        implementation(libs.androidx.activity.compose)
-        implementation(libs.androidx.navigation.compose)
-        implementation(libs.androidx.ui)
-        implementation(libs.compose.theme.adapter.x)
-        // Compose Material & Icons
-        implementation("androidx.compose.material:material")
-        implementation("androidx.compose.material:material-icons-extended")
+    // Room Database
+    implementation(libs.bundles.room)
+    ksp(libs.androidx.room.compiler)
 
-        // Lifecycle & Architecture
-        implementation(libs.bundles.lifecycle)
-        implementation(libs.androidx.lifecycle.runtime.ktx)
-        implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    // DataStore
+    implementation(libs.androidx.datastore.preferences)
+    implementation(libs.androidx.datastore.core)
 
-        // Room Database
-        implementation(libs.bundles.room)
-        implementation(libs.androidx.room.runtime)
-        implementation(libs.androidx.room.ktx)
-        ksp(libs.androidx.room.compiler)
+    // WorkManager & Hilt Integration
+    implementation(libs.androidx.work.runtime.ktx)
+    implementation(libs.androidx.hilt.work)
+    implementation(libs.androidx.hilt.navigation.compose)
 
-        // DataStore
-        implementation(libs.androidx.datastore.preferences)
-        implementation(libs.androidx.datastore.core)
+    // Dependency Injection
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 
-        // WorkManager & Hilt Integration
-        implementation(libs.androidx.work.runtime.ktx)
-        implementation(libs.androidx.hilt.work)
-        implementation(libs.androidx.hilt.navigation.compose)
+    // Kotlin Libraries
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.kotlinx.datetime)
+    implementation(libs.bundles.coroutines)
 
-        // Dependency Injection
-        implementation(libs.hilt.android)
-        ksp(libs.hilt.compiler)
+    // Networking
+    implementation(libs.bundles.network)
+    implementation(libs.moshi)
 
-        // Kotlin Libraries
-        implementation(libs.kotlinx.serialization.json)
-        implementation(libs.kotlinx.datetime)
-        implementation(libs.bundles.coroutines)
+    // Firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.bundles.firebase)
+    implementation(libs.firebase.auth.ktx)
 
-        // Networking
-        implementation(libs.bundles.network)
-        // Add Moshi explicitly for DI resolution
-        implementation(libs.moshi)
-        implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
+    // Testing
+    testImplementation(libs.bundles.testing.unit)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.hilt.android.testing)
+    androidTestImplementation(libs.androidx.benchmark.junit4)
+    androidTestImplementation(libs.androidx.test.uiautomator)
 
-        // Firebase
-        implementation(platform(libs.firebase.bom))
-        implementation(libs.bundles.firebase)
-        implementation(libs.firebase.auth.ktx)
-
-        // Xposed/YukiHook Framework (compileOnly - not bundled in APK)
-        compileOnly(libs.yukihookapi)           // YukiHook API v1.3.1 (primary - Kotlin-friendly)
-        compileOnly(libs.lsposed.api)           // LSPosed API v6.4 (modern Xposed)
-        compileOnly(libs.xposed.api)            // Traditional Xposed API v82 (fallback)
-        implementation(libs.androidx.appcompat)
-
-        // Testing
-        testImplementation(libs.bundles.testing.unit)
-        androidTestImplementation(platform(libs.androidx.compose.bom))
-        androidTestImplementation(libs.hilt.android.testing)
-        androidTestImplementation(libs.androidx.benchmark.junit4)
-        androidTestImplementation(libs.androidx.test.uiautomator)
-
-        // Debug Tools
-        debugImplementation(libs.leakcanary.android)
-    }
+    // Debug Tools
+    debugImplementation(libs.leakcanary.android)
+}

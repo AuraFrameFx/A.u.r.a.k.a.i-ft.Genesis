@@ -55,50 +55,6 @@
 
 # Keep Room database entities, DAOs, and database classes.
 -keep class dev.aurakai.auraframefx.data.database.entities.** { *; }
--keep class * extends androidx.room.RoomDatabase
--keep @androidx.room.Entity class * { *; }
--dontwarn androidx.room.paging.**
-
-# Keep YukiHook / Xposed Framework classes (CRITICAL for ROM tools)
--keep class com.highcapable.yukihookapi.** { *; }
--keep class de.robv.android.xposed.** { *; }
--keep @com.highcapable.yukihookapi.annotation.xposed.InjectYukiHookWithXposed class * { *; }
--keepclasseswithmembernames class * {
-    @com.highcapable.yukihookapi.annotation.xposed.* <methods>;
-}
-
-# Keep Firebase classes for serialization
--keepattributes Signature
--keepattributes *Annotation*
--keepattributes EnclosingMethod
--keepattributes InnerClasses
--keep class com.google.firebase.** { *; }
--keep class com.google.android.gms.** { *; }
--dontwarn com.google.firebase.**
-
-# Keep Kotlin serialization
--keepattributes *Annotation*, InnerClasses
--dontnote kotlinx.serialization.AnnotationsKt
--keepclassmembers class kotlinx.serialization.json.** {
-    *** Companion;
-}
--keepclasseswithmembers class kotlinx.serialization.json.** {
-    kotlinx.serialization.KSerializer serializer(...);
-}
--keep,includedescriptorclasses class dev.aurakai.auraframefx.**$$serializer { *; }
--keepclassmembers class dev.aurakai.auraframefx.** {
-    *** Companion;
-}
--keepclasseswithmembers class dev.aurakai.auraframefx.** {
-    kotlinx.serialization.KSerializer serializer(...);
-}
-
-# Keep Kotlin Coroutines
--keepnames class kotlinx.coroutines.internal.MainDispatcherFactory {}
--keepnames class kotlinx.coroutines.CoroutineExceptionHandler {}
--keepclassmembernames class kotlinx.** {
-    volatile <fields>;
-}
 
 # Keep classes annotated with @Keep. This is a good practice for classes
 # accessed via reflection.

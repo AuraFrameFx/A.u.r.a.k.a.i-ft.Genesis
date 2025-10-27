@@ -1,5 +1,21 @@
 ﻿plugins {
-    id("java-library")
+    id("com.android.library") version "9.0.0-alpha11"
+    id("com.google.devtools.ksp") version "2.3.0"
+}
+
+android {
+    namespace = "dev.aurakai.auraframefx.core.module"
+    compileSdk = 36
+
+    defaultConfig {
+        minSdk = 34
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_25
+        targetCompatibility = JavaVersion.VERSION_25
+    }
+
 }
 
 version = "1.0.0"
@@ -9,6 +25,7 @@ java {
 }
 
 dependencies {
+
     // Module dependency
     api(project(":list"))
 
@@ -28,9 +45,4 @@ dependencies {
     testImplementation(libs.junit.jupiter.api)
     testRuntimeOnly(libs.junit.jupiter.engine)
     testImplementation(libs.mockk)
-    implementation(kotlin("stdlib-jdk8"))
-}
-
-tasks.test {
-    useJUnitPlatform()
 }
