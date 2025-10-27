@@ -16,53 +16,51 @@ android {
     namespace = "dev.aurakai.auraframefx.oracledriveintegration"
     compileSdk = 36
 }
+
+// Dependencies configured for future implementation
 dependencies {
-    implementation("com.github.topjohnwu.libsu:core:5.0.4")
-    implementation("com.github.topjohnwu.libsu:io:5.0.4")
+    // Core Android & Kotlin
+    implementation(libs.androidx.core.ktx)
     coreLibraryDesugaring(libs.desugar.jdk.libs)
 
-    implementation(libs.timber)
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.android.compiler)
-    implementation(libs.androidx.material)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.ui.tooling)
-    implementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.test.manifest)
-    implementation(libs.androidx.ui.test)
-    implementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.test.manifest)
-    implementation(libs.hilt.android)
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    coreLibraryDesugaring(libs.desugar.jdk.libs)
+    // Compose (for future UI)
     implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.compose.material3)
+
+    // Lifecycle
     implementation(libs.bundles.lifecycle)
+
+    // Hilt (Dependency Injection)
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+
+    // Room (for local caching)
     implementation(libs.bundles.room)
+    ksp(libs.androidx.room.compiler)
+
+    // DataStore (for settings)
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.androidx.datastore.core)
+
+    // Kotlin libraries
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.kotlinx.datetime)
     implementation(libs.bundles.coroutines)
+
+    // Network (for cloud API)
     implementation(libs.bundles.network)
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.bundles.firebase)
-    ksp(libs.hilt.compiler)
-    ksp(libs.androidx.room.compiler)
-    implementation(libs.compose.theme.adapter.x)
-    implementation(libs.firebase.auth.ktx)
-    compileOnly(files("../Libs/api-82.jar"))
-    compileOnly(files("../Libs/api-82-sources.jar"))
-    implementation(libs.androidx.material)
+
+    // Logging
+    implementation(libs.timber)
+
+    // Testing
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.hilt.android.testing)
-    debugImplementation(libs.leakcanary.android)
 
+    // Debug tools
+    debugImplementation(libs.leakcanary.android)
 }
 
