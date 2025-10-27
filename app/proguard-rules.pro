@@ -78,7 +78,7 @@
 #   @com.google.firebase.firestore.PropertyName <methods>;
 # }
 # Keep Kotlin serialization
--keepattributes *Annotation*, InnerClasses
+-dontnote kotlinx.serialization.AnnotationsKt
 -dontnote kotlinx.serialization.AnnotationsKt
 -keepclassmembers class kotlinx.serialization.json.** {
     *** Companion;
