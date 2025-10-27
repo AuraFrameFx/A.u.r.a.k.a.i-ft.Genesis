@@ -1,21 +1,33 @@
-# Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
+# ═══════════════════════════════════════════════════════════════════════════
+# AURAKAI GENESIS - ProGuard/R8 Configuration
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# ⚠️ CRITICAL: Always test release builds thoroughly!
+#
+# This configuration protects reflection-heavy code from being stripped:
+# - Hilt/Dagger dependency injection
+# - Room database entities and DAOs
+# - Firebase serialization
+# - Kotlin serialization (@Serializable classes)
+# - YukiHook / Xposed framework (ROM tools)
+# - Kotlin Coroutines
+#
+# TESTING CHECKLIST for release builds:
+# ✓ Hilt-injected classes work
+# ✓ Room database queries execute
+# ✓ Firebase serialization/deserialization works
+# ✓ YukiHook API calls succeed (ROM tools)
+# ✓ @Serializable classes serialize correctly
+# ✓ Coroutines launch and complete
+#
+# If you encounter ClassNotFoundException, NoSuchMethodException, or
+# similar errors in release builds, add specific -keep rules below.
+#
+# ═══════════════════════════════════════════════════════════════════════════
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
-
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
-
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# Preserve line numbers for debugging release crashes
+-keepattributes SourceFile,LineNumberTable
+-renamesourcefileattribute SourceFile
 
 # --- Critical Application Rules ---
 
@@ -33,9 +45,60 @@
 # Keep Hilt and Dagger classes required for dependency injection.
 -keep class dagger.hilt.** { *; }
 -keep class javax.inject.** { *; }
+-keep class * extends dagger.hilt.android.internal.managers.ViewComponentManager$FragmentContextWrapper { *; }
+-keepclasseswithmembers class * {
+    @dagger.* <fields>;
+}
+-keepclasseswithmembers class * {
+    @dagger.* <methods>;
+}
 
-# Keep Room database entities.
+# Keep Room database entities, DAOs, and database classes.
 -keep class dev.aurakai.auraframefx.data.database.entities.** { *; }
+-keep class * extends androidx.room.RoomDatabase
+-keep @androidx.room.Entity class * { *; }
+-dontwarn androidx.room.paging.**
+
+# Keep YukiHook / Xposed Framework classes (CRITICAL for ROM tools)
+-keep class com.highcapable.yukihookapi.** { *; }
+-keep class de.robv.android.xposed.** { *; }
+-keep @com.highcapable.yukihookapi.annotation.xposed.InjectYukiHookWithXposed class * { *; }
+-keepclasseswithmembernames class * {
+    @com.highcapable.yukihookapi.annotation.xposed.* <methods>;
+}
+
+# Keep Firebase classes for serialization
+-keepattributes Signature
+-keepattributes *Annotation*
+-keepattributes EnclosingMethod
+-keepattributes InnerClasses
+-keep class com.google.firebase.** { *; }
+-keep class com.google.android.gms.** { *; }
+-dontwarn com.google.firebase.**
+
+# Keep Kotlin serialization
+-keepattributes *Annotation*, InnerClasses
+-dontnote kotlinx.serialization.AnnotationsKt
+-keepclassmembers class kotlinx.serialization.json.** {
+    *** Companion;
+}
+-keepclasseswithmembers class kotlinx.serialization.json.** {
+    kotlinx.serialization.KSerializer serializer(...);
+}
+-keep,includedescriptorclasses class dev.aurakai.auraframefx.**$$serializer { *; }
+-keepclassmembers class dev.aurakai.auraframefx.** {
+    *** Companion;
+}
+-keepclasseswithmembers class dev.aurakai.auraframefx.** {
+    kotlinx.serialization.KSerializer serializer(...);
+}
+
+# Keep Kotlin Coroutines
+-keepnames class kotlinx.coroutines.internal.MainDispatcherFactory {}
+-keepnames class kotlinx.coroutines.CoroutineExceptionHandler {}
+-keepclassmembernames class kotlinx.** {
+    volatile <fields>;
+}
 
 # Keep classes annotated with @Keep. This is a good practice for classes
 # accessed via reflection.
