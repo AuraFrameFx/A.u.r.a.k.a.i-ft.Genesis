@@ -79,7 +79,6 @@
 # }
 # Keep Kotlin serialization
 -dontnote kotlinx.serialization.AnnotationsKt
--dontnote kotlinx.serialization.AnnotationsKt
 -keepclassmembers class kotlinx.serialization.json.** {
     *** Companion;
 }
