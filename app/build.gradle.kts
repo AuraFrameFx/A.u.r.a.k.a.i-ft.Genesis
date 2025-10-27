@@ -59,8 +59,8 @@ android {
 dependencies {
     // Core and hooking/runtime dependencies (required per project conventions)
     implementation(libs.core)
-    implementation("com.github.topjohnwu.libsu:core:5.0.4")
-    implementation("com.github.topjohnwu.libsu:io:5.0.4")
+    implementation("com.github.topjohnwu.libsu:core:6.0.0")
+    implementation("com.github.topjohnwu.libsu:io:6.0.0")
     implementation(libs.libsu.io)
 
     // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
