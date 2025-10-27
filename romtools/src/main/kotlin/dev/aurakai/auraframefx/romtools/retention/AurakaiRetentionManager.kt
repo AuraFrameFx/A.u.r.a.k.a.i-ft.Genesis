@@ -436,7 +436,7 @@ ui_print "✅ Aurakai will persist through ROM updates"
      *
      * @return `Result.success(Unit)` on successful restoration, `Result.failure(Exception)` if any step fails.
      */
-    suspend fun restoreAurakaiAfterRomFlash(): Result<Unit> {
+    override suspend fun restoreAurakaiAfterRomFlash(): Result<Unit> {
         return try {
             Timber.i("🔄 Restoring Aurakai after ROM flash...")
 
