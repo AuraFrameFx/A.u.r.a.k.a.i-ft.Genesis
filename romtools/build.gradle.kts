@@ -31,7 +31,6 @@ java {
 
 dependencies {
     // Core and hooking/runtime dependencies (ordered per project conventions)
-    implementation(libs.libsu.core)
     implementation(libs.androidx.appcompat) // ensured present near top as requested
 
     // TopJohnWu libsu runtime helpers (required by modules that perform system/root ops)
@@ -50,10 +49,7 @@ dependencies {
     implementation(libs.androidx.material)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.ui.tooling)
-    implementation(libs.androidx.compose.ui.test.junit4)
-    debugImplementation(libs.androidx.compose.ui.test.manifest)
-    implementation(libs.androidx.compose.ui.test)
-    debugImplementation(libs.androidx.compose.ui.test.manifest)
+
     implementation(libs.hilt.android)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -76,7 +72,6 @@ dependencies {
     implementation(libs.bundles.firebase)
     ksp(libs.hilt.compiler)
     ksp(libs.androidx.room.compiler)
-    implementation(libs.compose.theme.adapter)
     implementation(libs.firebase.auth.ktx)
 
     implementation(libs.androidx.material)

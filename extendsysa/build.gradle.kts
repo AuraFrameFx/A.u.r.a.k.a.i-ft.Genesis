@@ -30,7 +30,6 @@ dependencies {
     dependencies {
         implementation(libs.core)
         implementation(libs.libsu.io)
-        implementation(libs.kotlin.stdlib.jdk8)
 
         implementation("com.jakewharton.timber:timber:5.0.1")
         implementation("com.google.dagger:hilt-android:2.57.2")

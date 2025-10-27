@@ -102,7 +102,6 @@ android {
         implementation(libs.firebase.auth.ktx)
 
         // 3rd Party UI
-        implementation(libs.compose.theme.adapter)
 
         // Local Libs
         compileOnly(files("libs/api-82.jar"))
@@ -129,4 +128,4 @@ android {
 
         }
     }
-}
+

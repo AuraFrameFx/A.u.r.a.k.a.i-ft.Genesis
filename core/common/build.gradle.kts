@@ -28,7 +28,6 @@ dependencies {
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.timber)
-    implementation(libs.kotlin.stdlib.jdk8)
 
     // Testing
     testImplementation(libs.junit.jupiter.api)

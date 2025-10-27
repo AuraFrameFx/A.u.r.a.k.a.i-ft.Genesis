@@ -49,3 +49,4 @@ android {
         testImplementation(libs.mockk)
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.21")
     }
+}

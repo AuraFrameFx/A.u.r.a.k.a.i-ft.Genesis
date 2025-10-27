@@ -1,6 +1,6 @@
 plugins {
     id("com.android.library") version "9.0.0-alpha11"
-    id("org.jetbrains.kotlin.jvm")
+    id("com.google.devtools.ksp") version "2.3.0"
 }
 
 android {
@@ -16,10 +16,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_25
     }
 
-    kotlinOptions {
-        jvmTarget = "25"
-    }
-}
+
 
     java {
         toolchain {
@@ -31,14 +28,10 @@ android {
         // Pure business logic, no Android dependencies
         implementation(libs.kotlinx.coroutines.core)
         implementation(project(":core:common"))
-        implementation(libs.kotlin.stdlib.jdk8)
 
         // Testing
         testImplementation(libs.junit.jupiter.api)
         testRuntimeOnly(libs.junit.jupiter.engine)
         testImplementation(libs.mockk)
     }
-
-tasks.test {
-    useJUnitPlatform()
 }

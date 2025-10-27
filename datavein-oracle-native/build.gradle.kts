@@ -57,6 +57,5 @@ dependencies {
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.hilt.android.testing)
     debugImplementation(libs.leakcanary.android)
-    implementation(libs.kotlin.stdlib.jdk8)
 
 }

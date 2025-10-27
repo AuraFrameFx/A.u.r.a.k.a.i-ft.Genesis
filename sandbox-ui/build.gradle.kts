@@ -67,7 +67,6 @@ dependencies {
     implementation(libs.bundles.firebase)
     ksp(libs.hilt.compiler)
     ksp(libs.androidx.room.compiler)
-    implementation(libs.compose.theme.adapter)
     implementation(libs.firebase.auth.ktx)
 
     implementation(libs.androidx.material)
