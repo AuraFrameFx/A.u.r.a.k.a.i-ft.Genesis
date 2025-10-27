@@ -33,7 +33,6 @@ dependencies {
     implementation(libs.bundles.network)
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.androidx.datastore.core)
-    implementation(libs.kotlin.stdlib.jdk8)
 
     // Common utilities
     implementation(project(":core:common"))

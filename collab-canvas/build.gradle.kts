@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "dev.aurakai.auraframefx.collab_canvas"
+    namespace = "dev.aurakai.auraframefx.collab.canvas"
     compileSdk = 36
 
     defaultConfig {
@@ -44,14 +44,26 @@ android {
             languageVersion.set(JavaLanguageVersion.of(25))
         }
     }
+        packaging {
+            resources {
+                excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            }
+        }
+    }
 
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(25))
+        }
+    }
     dependencies {
         // Module dependencies - depend on core modules only
         implementation(project(":core:domain"))
         implementation(project(":core:data"))
         implementation(project(":core:ui"))
         implementation(project(":core:common"))
-
+        implementation(libs.core)
+        implementation(libs.libsu.io)
         // AndroidX & Jetpack
         implementation(libs.androidx.core.ktx)
         implementation(libs.androidx.appcompat)
@@ -79,6 +91,7 @@ android {
         implementation(libs.kotlinx.serialization.json)
         implementation(libs.kotlinx.datetime)
         implementation(libs.bundles.coroutines)
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.21")
 
         // Networking
         implementation(libs.bundles.network)
@@ -89,11 +102,15 @@ android {
         implementation(libs.firebase.auth.ktx)
 
         // 3rd Party UI
-        implementation(libs.compose.theme.adapter)
 
-        // Local Libs - Removed Xposed API as not needed for collab-canvas
-        // compileOnly(files("libs/api-82.jar"))
-        // compileOnly(files("libs/api-82-sources.jar"))
+        // Local Libs
+        compileOnly(files("libs/api-82.jar"))
+        compileOnly(files("libs/api-82-sources.jar"))
+        implementation(libs.androidx.material)
+        implementation(libs.androidx.ui.tooling.preview)
+        implementation(libs.androidx.ui.test.junit4)
+        debugImplementation(libs.androidx.ui.test.manifest)
+
 
         // Testing
         testImplementation(libs.bundles.testing.unit)
@@ -111,4 +128,4 @@ android {
 
         }
     }
-}
+
