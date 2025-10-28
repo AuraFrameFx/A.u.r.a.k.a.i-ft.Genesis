@@ -86,12 +86,17 @@ includeBuild("build-logic")
 
 // Feature modules
 include(":feature-module")
-include(":datavein-oracle-native")
-include(":oracle-drive-integration")
 include(":secure-comm")
 include(":auralab")
 include(":collab-canvas")
 include(":chromacore")
+
+// Oracle Drive - AI-Powered Root & ROM Management System
+include(":oracledrive:protocore")         // ROM protocol core (formerly romtools)
+include(":oracledrive:datavein")          // Data management (formerly datavein-oracle-native)
+include(":oracledrive:integration")       // Oracle integration (formerly oracle-drive-integration)
+include(":oracledrive:bootloader")        // Bootloader management (NEW)
+include(":oracledrive:root")              // Root management: APatch/Magisk/KernelSU (NEW)
 
 // Dynamic modules (A-F)
 include(":extendsysa")
@@ -103,7 +108,6 @@ include(":extendsysf")
 
 // Testing & Quality modules
 include(":benchmark")
-include(":protocore")
 include(":list")
 println("🏗️ Genesis Protocol Enhanced Build System")
 println("📦 Total modules: ${rootProject.children.size}")

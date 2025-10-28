@@ -77,11 +77,15 @@ dependencies {
 
     implementation(project(":core-module"))
     implementation(project(":feature-module"))
-    implementation(project(":protocore"))
     implementation(project(":collab-canvas"))
     implementation(project(":chromacore"))
-    implementation(project(":datavein-oracle-native"))
-    implementation(project(":oracle-drive-integration"))
+
+    // Oracle Drive modules
+    implementation(project(":oracledrive:protocore"))
+    implementation(project(":oracledrive:datavein"))
+    implementation(project(":oracledrive:integration"))
+    implementation(project(":oracledrive:bootloader"))
+    implementation(project(":oracledrive:root"))
 
     // AndroidX Core
     implementation(libs.bundles.androidx.core)
