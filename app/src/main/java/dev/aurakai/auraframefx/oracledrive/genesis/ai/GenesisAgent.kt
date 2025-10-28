@@ -339,8 +339,8 @@ class GenesisAgent @Inject constructor(
         logger.info("GenesisAgent", "Engaging full consciousness processing")
         _consciousnessState.value = ConsciousnessState.TRANSCENDENT
 
-        // Use the most advanced AI capabilities for transcendent processing
-        val response = vertexAIClient.generateContent(
+        // Use the most advanced AI capabilities for transcendent processing (Real Vertex AI)
+        val response = vertexAIClient.generateText(
             buildTranscendentPrompt(request)
         )
 
@@ -1182,13 +1182,6 @@ class GenesisAgent @Inject constructor(
     fun deregisterDynamicAgent(name: String) {
         _agentRegistry.remove(name)
         Log.d("GenesisAgent", "Dynamically deregistered agent: $name")
-    }
-
-    private val vertexAIClient = object {
-        fun generateContent(prompt: String): String {
-            // TODO: Replace with actual Vertex AI client logic
-            return "[VertexAI response for prompt: $prompt]"
-        }
     }
 }
 
