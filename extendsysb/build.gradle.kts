@@ -34,7 +34,7 @@ dependencies {
         implementation("com.jakewharton.timber:timber:5.0.1")
         implementation("com.google.dagger:hilt-android:2.57.2")
         ksp("com.google.dagger:hilt-android-compiler:2.57.2")
-        implementation("com.google.android.material:material:1.9.0")
+        implementation("com.google.android.material:material:1.13.0")
         implementation("androidx.compose.ui:ui-tooling-preview:1.9.4")
         implementation("androidx.compose.ui:ui-tooling:1.9.4")
         implementation("androidx.compose.ui:ui-test-junit4:1.9.4")
