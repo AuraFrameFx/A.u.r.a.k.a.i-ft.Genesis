@@ -42,7 +42,6 @@ dependencies {
     // Use local jars in project `libs/` folder to resolve Xposed API offline
     compileOnly(files("../app/libs/api-82.jar"))
     compileOnly(files("../app/libs/api-82-sources.jar"))
-    compileOnly(libs.yukihookapi)
     implementation(libs.timber)
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
