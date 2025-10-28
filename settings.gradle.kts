@@ -9,6 +9,8 @@ pluginManagement {
     plugins {
         id("build-logic") version "1.0.0"
         id("foojay.build-logic") version "1.0.0"
+        id("org.gradle.toolchains.foojay-resolver-convention")
+        id("org.gradle.toolchains.jvm-toolchain-management")
     }
 
 
@@ -45,28 +47,30 @@ pluginManagement {
 
 
 dependencyResolutionManagement {
-    // Enforce consistent dependency resolution
+// Enforce consistent dependency resolution
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
 
-    // Repository configuration with all necessary sources
+// Repository configuration with all necessary sources
     repositories {
         google()
         mavenCentral()
         maven { url = uri("https://jitpack.io") }
+        maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
+        maven { url = uri("https://api.xposed.info/") }
 
-        // AndroidX Snapshots
+// AndroidX Snapshots
         maven {
             url = uri("https://androidx.dev/kmp/builds/11950322/artifacts/snapshots/repository")
             name = "AndroidX Snapshot"
         }
 
-        // Gradle releases (for org.gradle artifacts like gradle-tooling-api)
+// Gradle releases (for org.gradle artifacts like gradle-tooling-api)
         maven {
             url = uri("https://repo.gradle.org/gradle/libs-releases")
             name = "Gradle Releases"
         }
 
-        // AndroidX Compose
+// AndroidX Compose
         maven {
             url = uri("https://androidx.dev/storage/compose-compiler/repository/")
             name = "AndroidX Compose"

@@ -21,6 +21,13 @@ android {
         multiDexEnabled = true  // Required for core library desugaring
     }
 
+    buildFeatures {
+        compose = true
+        buildConfig = true
+        aidl = false
+        shaders = false
+    }
+
     compileOptions {
         // Use a compatible Java version and enable core library desugaring for this module
         sourceCompatibility = JavaVersion.VERSION_25

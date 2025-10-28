@@ -26,6 +26,8 @@ android {
     buildFeatures {
         compose = true
         buildConfig = true
+        aidl = false
+        shaders = false
     }
 
     packaging {
@@ -118,6 +120,4 @@ android {
         }
     }
 }
-
-
 

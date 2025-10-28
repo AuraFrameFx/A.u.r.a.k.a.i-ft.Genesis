@@ -7,6 +7,14 @@ plugins {
 android {
     namespace = "dev.aurakai.auraframefx.java"
     compileSdk = 36
+
+    buildFeatures {
+        compose = true
+        buildConfig = true
+        aidl = false
+        shaders = false
+    }
+
     java {
         toolchain {
             languageVersion.set(JavaLanguageVersion.of(25))

@@ -37,7 +37,9 @@ android {
 
     buildFeatures {
         compose = true
+        buildConfig = true
         aidl = true
+        shaders = false
     }
 
     // Java compatibility / desugaring
