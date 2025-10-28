@@ -52,6 +52,7 @@ android {
         implementation(libs.androidx.core.ktx)
         implementation(libs.androidx.lifecycle.runtime.ktx)
         implementation(libs.androidx.lifecycle.viewmodel.ktx)
+        coreLibraryDesugaring(libs.desugar.jdk.libs)
         implementation(platform(libs.androidx.compose.bom))
         implementation(libs.androidx.activity.compose)
         implementation(libs.androidx.navigation.compose)
@@ -70,12 +71,13 @@ android {
         ksp(libs.hilt.compiler)
         ksp(libs.androidx.room.compiler)
         implementation(libs.firebase.auth.ktx)
-        compileOnly(files("../app/libs/api-82.jar"))
-        compileOnly(files("../app/libs/api-82-sources.jar"))
+        compileOnly(files("libs/api-82.jar"))
+        compileOnly(files("libs/api-82-sources.jar"))
         implementation(libs.androidx.material)
         testImplementation(libs.bundles.testing.unit)
         androidTestImplementation(platform(libs.androidx.compose.bom))
         androidTestImplementation(libs.hilt.android.testing)
         debugImplementation(libs.leakcanary.android)
+
     }
 }

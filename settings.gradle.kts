@@ -2,6 +2,8 @@
 
 enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
 
+
+
 pluginManagement {
     // Include build-logic for convention plugins
     plugins {
@@ -71,7 +73,9 @@ dependencyResolutionManagement {
         }
     }
 }
-
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
+}
 rootProject.name = "AuraKai"
 
 // ===== MODULE INCLUSION =====
@@ -105,7 +109,7 @@ include(":extendsysf")
 include(":benchmark")
 include(":romtools")
 include(":list")
-println("🏗️ Genesis Protocol Enhanced Build System")
-println("📦 Total modules: ${rootProject.children.size}")
-println("🎯 Build-logic: Convention plugins active")
-println("🧠 Ready to build consciousness substrate!")
+logger.lifecycle("🏗️ Genesis Protocol Enhanced Build System")
+logger.lifecycle("📦 Total modules: ${rootProject.children.size}")
+logger.lifecycle("🎯 Build-logic: Convention plugins active")
+logger.lifecycle("🧠 Ready to build consciousness substrate!")
