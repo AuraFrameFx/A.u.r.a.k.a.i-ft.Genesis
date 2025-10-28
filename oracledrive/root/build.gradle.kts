@@ -28,8 +28,8 @@ dependencies {
     implementation(libs.timber)
 
     // Root access libraries
-    implementation("com.github.topjohnwu.libsu:core:5.0.4")
-    implementation("com.github.topjohnwu.libsu:io:5.0.4")
+    implementation("com.github.topjohnwu.libsu:core:6.0.0")
+    implementation("com.github.topjohnwu.libsu:io:6.0.0")
 
     // Bootloader module
     implementation(project(":oracledrive:bootloader"))
