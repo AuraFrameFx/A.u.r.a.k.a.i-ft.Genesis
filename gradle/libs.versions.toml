@@ -9,7 +9,7 @@ firebaseAuthKtx = "23.2.1"
 gradle = "9.2.0-RC-3"
 hiltAndroidCompiler = "2.57.2"
 io = "6.0.0"
-kotlin = "2.3.0-Beta1"
+kotlin = "2.3.0-Beta2"
 ksp = "2.3.0"
 
 ktlint = "13.1.0"
