@@ -78,7 +78,6 @@ dependencies {
 
     // Xposed/YukiHook Framework (ROM tools need system-level hooks)
     compileOnly(libs.yukihookapi)           // YukiHook API v1.3.1
-    compileOnly(libs.lsposed.api)           // LSPosed API v6.4
     compileOnly(libs.xposed.api)            // Traditional Xposed API v82
 
     testImplementation(libs.bundles.testing.unit)
