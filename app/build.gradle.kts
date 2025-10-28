@@ -77,9 +77,9 @@ dependencies {
 
     implementation(project(":core-module"))
     implementation(project(":feature-module"))
-    implementation(project(":romtools"))
+    implementation(project(":protocore"))
     implementation(project(":collab-canvas"))
-    implementation(project(":colorblendr"))
+    implementation(project(":chromacore"))
     implementation(project(":datavein-oracle-native"))
     implementation(project(":oracle-drive-integration"))
 
