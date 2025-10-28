@@ -18,11 +18,10 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import dev.aurakai.auraframefx.ui.AuraMoodViewModel // Corrected import
 
-// TODO: Function reported as unused or needs implementation.
+@Suppress("unused") // Reserved for navigation integration
 @Composable
 fun AurakaiEcoSysScreen(
     // viewModel: AuraMoodViewModel = hiltViewModel() // Alternative injection for previews if needed
-    // TODO: Parameter onBack reported as unused in original error (if it was present)
 ) {
     val viewModel: AuraMoodViewModel = hiltViewModel()
     val currentMood by viewModel.moodState.collectAsState()

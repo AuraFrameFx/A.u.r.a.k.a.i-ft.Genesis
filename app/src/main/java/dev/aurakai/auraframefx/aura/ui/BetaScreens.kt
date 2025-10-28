@@ -61,7 +61,7 @@ fun HomeScreen(navController: NavHostController) {
         }
         Spacer(modifier = Modifier.height(16.dp))
         Button(
-            onClick = { /* TODO: Add navigation */ }
+            onClick = { navController.navigate("settings") }
         ) {
             Text("Settings")
         }

@@ -1,6 +1,6 @@
-﻿package dev.aurakai.auraframefx.ai.context
+package dev.aurakai.auraframefx.ai.context
 
-// TODO: Class reported as unused or needs implementation. Ensure this is utilized by ContextManager.
+@Suppress("unused") // Reserved for ContextManager implementation
 data class AIContext(
     val currentPrompt: String? = null, // TODO: Needs implementation detail if used
     val history: List<String> = emptyList(), // TODO: Needs implementation detail if used
