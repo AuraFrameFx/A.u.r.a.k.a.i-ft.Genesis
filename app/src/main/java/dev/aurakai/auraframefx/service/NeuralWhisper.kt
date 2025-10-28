@@ -1,6 +1,9 @@
 package dev.aurakai.auraframefx.service
 
+import android.Manifest
 import android.content.Context
+import android.content.pm.PackageManager
+import androidx.core.content.ContextCompat
 import dev.aurakai.auraframefx.models.ConversationState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -69,7 +72,16 @@ class NeuralWhisper @Inject constructor(
         }
 
         return try {
-            // TODO: Check RECORD_AUDIO permission
+            // Check RECORD_AUDIO permission
+            if (ContextCompat.checkSelfPermission(
+                    context,
+                    Manifest.permission.RECORD_AUDIO
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
+                Timber.w("NeuralWhisper: RECORD_AUDIO permission not granted")
+                return false
+            }
+
             // TODO: Initialize MediaRecorder or AudioRecord
             // TODO: Start audio capture
 

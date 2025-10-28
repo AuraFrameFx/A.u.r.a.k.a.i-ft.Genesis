@@ -1,8 +1,8 @@
-﻿package dev.aurakai.auraframefx.model.agent_states
+package dev.aurakai.auraframefx.model.agent_states
 
 // TODO: Define actual properties for these states/events.
-// TODO: Classes reported as unused or need implementation. Ensure these are utilized by NeuralWhisperAgent.
 
+@Suppress("unused") // Reserved for NeuralWhisperAgent implementation
 data class ActiveContext(
     // Renamed from ActiveContexts (singular)
     val contextId: String,
@@ -11,6 +11,7 @@ data class ActiveContext(
     // Add other relevant active context properties
 )
 
+@Suppress("unused") // Reserved for NeuralWhisperAgent implementation
 // ContextChain could be a list of context snapshots or events
 data class ContextChainEvent(
     val eventId: String,
@@ -19,6 +20,7 @@ data class ContextChainEvent(
     // Add other relevant chain event properties
 )
 
+@Suppress("unused") // Reserved for NeuralWhisperAgent implementation
 data class LearningEvent(
     val eventId: String,
     val description: String,
