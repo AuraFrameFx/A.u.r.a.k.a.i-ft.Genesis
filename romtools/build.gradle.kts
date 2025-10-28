@@ -40,11 +40,8 @@ dependencies {
     implementation(libs.androidx.appcompat) // ensured present near top as requested
 
     // TopJohnWu libsu runtime helpers (required by modules that perform system/root ops)
-    implementation(libs.core)
-    implementation(libs.libsu.io)
     // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
     // Use local jars in project `libs/` folder to resolve Xposed API offline
-    compileOnly(libs.yukihookapi)
     implementation(libs.timber)
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
@@ -75,7 +72,6 @@ dependencies {
     implementation(libs.firebase.auth.ktx)
 
     // Xposed/YukiHook Framework (ROM tools need system-level hooks)
-    implementation(libs.lsposed.api)           // LSPosed API v6.4
     compileOnly(libs.xposed.api)            // Traditional Xposed API v82
     compileOnly(libs.yukihookapi)
     // Testing
