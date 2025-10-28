@@ -38,10 +38,6 @@ dependencies {
     implementation("com.github.topjohnwu.libsu:io:6.0.0")
     implementation(libs.libsu.io)
 
-    // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
-    // Use local jars in project `libs/` folder to resolve Xposed API offline
-    compileOnly(files("../app/libs/api-82.jar"))
-    compileOnly(files("../app/libs/api-82-sources.jar"))
     implementation(libs.timber)
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
