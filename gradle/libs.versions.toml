@@ -198,8 +198,7 @@ logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "lo
 bcprov = { module = "org.bouncycastle:bcprov-jdk18on", version.ref = "bcprov" }
 
 # Hooking Frameworks
-# xposed-api = { module = "de.robv.android.xposed:api", version.ref = "xposed" }
-lsposed-api = { module = "io.github.libxposed:api", version.ref = "lsposed" }
+xposed-api = { module = "de.robv.android.xposed:api", version.ref = "xposed" }
 yukihookapi = { module = "com.highcapable.yukihookapi:api", version.ref = "yukihookapi" }
 
 # Testing
