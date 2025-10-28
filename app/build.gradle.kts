@@ -37,7 +37,9 @@ android {
 
     buildFeatures {
         compose = true
+        buildConfig = true
         aidl = true
+        shaders = false
     }
 
     // Java compatibility / desugaring
@@ -58,7 +60,6 @@ android {
 
 dependencies {
     // Core and hooking/runtime dependencies (required per project conventions)
-    implementation(libs.core)
     implementation("com.github.topjohnwu.libsu:core:5.0.4")
     implementation("com.github.topjohnwu.libsu:io:5.0.4")
     implementation(libs.libsu.io)

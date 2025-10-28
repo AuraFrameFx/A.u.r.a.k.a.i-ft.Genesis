@@ -4,11 +4,17 @@
 }
 
 android {
-    namespace = "dev.aurakai.auraframefx.core.module"
+    namespace = "dev.aurakai.auraframefx.coremodule"
     compileSdk = 36
-
     defaultConfig {
         minSdk = 34
+    }
+
+    buildFeatures {
+        compose = true
+        buildConfig = true
+        aidl = false
+        shaders = false
     }
 
     compileOptions {

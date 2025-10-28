@@ -21,6 +21,13 @@ android {
         multiDexEnabled = true  // Required for core library desugaring
     }
 
+    buildFeatures {
+        compose = true
+        buildConfig = true
+        aidl = false
+        shaders = false
+    }
+
     compileOptions {
         // Use a compatible Java version and enable core library desugaring for this module
         sourceCompatibility = JavaVersion.VERSION_25
@@ -52,6 +59,7 @@ android {
         implementation(libs.androidx.core.ktx)
         implementation(libs.androidx.lifecycle.runtime.ktx)
         implementation(libs.androidx.lifecycle.viewmodel.ktx)
+        coreLibraryDesugaring(libs.desugar.jdk.libs)
         implementation(platform(libs.androidx.compose.bom))
         implementation(libs.androidx.activity.compose)
         implementation(libs.androidx.navigation.compose)
@@ -70,12 +78,13 @@ android {
         ksp(libs.hilt.compiler)
         ksp(libs.androidx.room.compiler)
         implementation(libs.firebase.auth.ktx)
-        compileOnly(files("../app/libs/api-82.jar"))
-        compileOnly(files("../app/libs/api-82-sources.jar"))
+        compileOnly(libs.xposed.api)
+        compileOnly(libs.yukihookapi)
         implementation(libs.androidx.material)
         testImplementation(libs.bundles.testing.unit)
         androidTestImplementation(platform(libs.androidx.compose.bom))
         androidTestImplementation(libs.hilt.android.testing)
         debugImplementation(libs.leakcanary.android)
+
     }
 }
