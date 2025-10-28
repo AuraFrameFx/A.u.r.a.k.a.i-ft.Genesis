@@ -1,11 +1,11 @@
-// AOSP-ReGenesis/build-logic/build.gradle.kts
+// AOSP-ReGenesis/auraframefx/build.gradle.kts
 plugins {
     `kotlin-dsl`
 
 }
 
 
-group = "dev.aurakai.auraframefx.buildlogic"
+group = "dev.aurakai.auraframefx.buildconventions"
 
 
 // Dependencies required for the convention plugins themselves.

@@ -1,6 +1,6 @@
-// Configure the build-logic project itself
+// Configure the auraframefx project itself
 pluginManagement {
-    // Include 'build-logic' build to the composite build
+    // Include 'auraframefx' build to the composite build
 
     repositories {
         google()

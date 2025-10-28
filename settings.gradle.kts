@@ -3,10 +3,10 @@
 enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
 
 pluginManagement {
-    // Include build-logic for convention plugins
+    // Include auraframefx for convention plugins
     plugins {
-        id("build-logic") version "1.0.0"
-        id("foojay.build-logic") version "1.0.0"
+        id("auraframefx") version "1.0.0"
+        id("foojay.auraframefx") version "1.0.0"
     }
 
 
@@ -82,11 +82,11 @@ include(":core:common")
 include(":core:domain")
 include(":core:data")
 include(":core:ui")
-includeBuild("build-logic")
+includeBuild("auraframefx")
 
 // Feature modules
 include(":feature-module")
-include(":secure-comm")
+include(":CerebralStream")
 include(":auralab")
 include(":collab-canvas")
 include(":chromacore")
@@ -111,5 +111,5 @@ include(":benchmark")
 include(":list")
 println("🏗️ Genesis Protocol Enhanced Build System")
 println("📦 Total modules: ${rootProject.children.size}")
-println("🎯 Build-logic: Convention plugins active")
+println("🎯 AuraFrameFx: Convention plugins active")
 println("🧠 Ready to build consciousness substrate!")
