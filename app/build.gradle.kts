@@ -60,8 +60,8 @@ android {
 
 dependencies {
     // Core and hooking/runtime dependencies (required per project conventions)
-    implementation("com.github.topjohnwu.libsu:core:5.0.4")
-    implementation("com.github.topjohnwu.libsu:io:5.0.4")
+    implementation("com.github.topjohnwu.libsu:core:6.0.0")
+    implementation("com.github.topjohnwu.libsu:io:6.0.0")
     implementation(libs.libsu.io)
 
     // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
@@ -78,11 +78,15 @@ dependencies {
 
     implementation(project(":core-module"))
     implementation(project(":feature-module"))
-    implementation(project(":romtools"))
     implementation(project(":collab-canvas"))
-    implementation(project(":colorblendr"))
-    implementation(project(":datavein-oracle-native"))
-    implementation(project(":oracle-drive-integration"))
+    implementation(project(":chromacore"))
+
+    // Oracle Drive modules
+    implementation(project(":oracledrive:protocore"))
+    implementation(project(":oracledrive:datavein"))
+    implementation(project(":oracledrive:integration"))
+    implementation(project(":oracledrive:bootloader"))
+    implementation(project(":oracledrive:root"))
 
     // AndroidX Core
     implementation(libs.bundles.androidx.core)

@@ -29,8 +29,8 @@ dependencies {
     implementation(project(":core-module"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.bundles.lifecycle)
-    implementation("com.github.topjohnwu.libsu:core:5.0.4")
-    implementation("com.github.topjohnwu.libsu:io:5.0.4")
+    implementation("com.github.topjohnwu.libsu:core:6.0.0")
+    implementation("com.github.topjohnwu.libsu:io:6.0.0")
     // Compose
     implementation(platform(libs.androidx.compose.bom))
 
