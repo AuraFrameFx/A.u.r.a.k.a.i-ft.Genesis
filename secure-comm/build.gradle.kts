@@ -14,6 +14,13 @@ android {
         multiDexEnabled = true
     }
 
+    buildFeatures {
+        compose = true
+        buildConfig = true
+        aidl = false
+        shaders = false
+    }
+
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
     }
