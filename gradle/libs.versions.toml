@@ -13,6 +13,7 @@ ksp = "2.3.0" # Aligned with project documentation
 ktlint = "13.1.0"
 toolchainsFoojayResolver = "1.0.0"
 
+
 # -------------------- AndroidX & Google --------------------
 activityCompose = "1.11.0"
 appcompat = "1.7.1"
