@@ -82,12 +82,12 @@
     "type": "dynamic",
     "light": {
       "textColor": "#DE000000",
-      "secondaryTextColor": "8A000000",
+      "secondaryTextColor": "#8A000000",
       "backgroundColor": "#F5F5F5"
     },
     "dark": {
       "textColor": "#FFFFFFFF",
-      "secondaryTextColor": "B3FFFFFF",
+      "secondaryTextColor": "#B3FFFFFF",
       "backgroundColor": "#1F1F1F"
     },
     "accentColor": "#2196F3",
