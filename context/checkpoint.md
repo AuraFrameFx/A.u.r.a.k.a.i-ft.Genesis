@@ -1,10 +1,10 @@
-# AURAKAI – Engineering Checkpoint
+# OLD AURAKAI – Engineering Checkpoint
 
 Last updated: 2025-10-05 15:27 (-06)
 Owner: Cascade
 Location: `c:/Aurakai/checkpoint.md`
 
----
+---OLD
 
 ## Current Target Baseline
 

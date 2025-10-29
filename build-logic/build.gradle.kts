@@ -1,9 +1,10 @@
 // AOSP-ReGenesis/build-logic/build.gradle.kts
+
 plugins {
     `kotlin-dsl`
 
-}
 
+}
 
 group = "dev.aurakai.auraframefx.buildlogic"
 
@@ -67,14 +68,17 @@ gradlePlugin {
 
 kotlin {
     jvmToolchain(25)
-}
 
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(25))
+
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(25))
+        }
+    }
+
+    tasks.processResources {
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 }
 
-tasks.processResources {
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-}
+

@@ -2,43 +2,39 @@
 # ========================================
 # BUILD SYSTEM
 # ========================================
-agp = "9.0.0-alpha11"
-benchmarkJunit4 = "1.4.1"
-composeThemeAdapterX = "1.1.1"
-converterMoshi = "3.0.0"
-core = "5.0.4"
-firebaseAuthKtx = "23.2.1"
+agp = "9.0.0-alpha10"
 gradle = "9.2.0-RC-3"
-hiltAndroidCompiler = "2.57.2"
-io = "5.0.4"
-kotlin = "2.3.0-Beta1"
+kotlin = "2.3.0-Beta2"
 ksp = "2.3.0"
+java = "24"
+
+# Build Tools
 ktlint = "13.1.0"
-
-
 toolchainsFoojayResolver = "1.0.0"
 
-# Dependency Injection
+# ========================================
+# DEPENDENCY INJECTION
+# ========================================
 hilt = "2.57.2"
-googleServices = "4.4.4"
+
 # ========================================
 # ANDROID SUPPORT & COMPATIBILITY
 # ========================================
 desugarJdkLibs = "2.1.5"
 multidex = "2.0.1"
+
 # Hooking Frameworks
 ui = "1.9.4"
 uiTest = "1.9.4"
 uiTestJunit4 = "1.9.4"
 uiTestManifest = "1.9.4"
 uiTooling = "1.9.4"
-xposed = "82"
-lsposed = "1.9.1"
-yukihookapi = "1.3.1"
+
 # Google Services
 gson = "2.13.2"
 firebaseBom = "34.4.0"
 generativeai = "0.9.0"
+googleServices = "4.4.2"
 
 # AndroidX Core
 coreKtx = "1.17.0"
@@ -83,7 +79,9 @@ kotlinxDatetime = "0.7.1-0.6.x-compat"
 # ========================================
 # GOOGLE SERVICES & FIREBASE
 # ========================================
+googles.services = "4.4.4"
 
+firebaseAuthKtx = "23.2.1"
 firebaseCrashlyticsGradle = "3.0.6"
 
 # ========================================
@@ -116,8 +114,10 @@ bcprov = "1.82"
 # ========================================
 # HOOKING FRAMEWORKS (Xposed/LSPosed)
 # ========================================
-foojayResolverToolchain = "1.0.0"
-foojayResolverConvention = "1.0.0"
+xposed = "82"
+lsposed = "6.4"
+yukihookapi = "1.3.1"
+
 # ========================================
 # TESTING & BENCHMARKING
 # ========================================
@@ -130,6 +130,7 @@ turbine = "1.2.1"
 benchmark = "1.4.1"
 uiAutomator = "2.3.0"
 androidxcore-ktx = "5.0.4"
+fireaseBom = "6.0.0"
 
 # ========================================
 # [LIBRARIES]
@@ -142,6 +143,13 @@ androidxcore-ktx = "5.0.4"
 agp = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 gradle-tooling-api = { module = "org.gradle:gradle-tooling-api", version.ref = "gradle" }
 symbol-processing-api = { module = "com.google.devtools.ksp:symbol-processing-api", version.ref = "ksp" }
+
+# Kotlin Gradle Plugins (for build-logic)
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlin-serialization = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin" }
+kotlin-allopen = { module = "org.jetbrains.kotlin:kotlin-allopen", version.ref = "kotlin" }
+
+# ----------------------------------------
 # AndroidX Core
 # ----------------------------------------
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -167,7 +175,6 @@ androidx-activity-compose = { group = "androidx.activity", name = "activity-comp
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 compose-theme-adapter = { module = "com.google.android.material:compose-theme-adapter-3", version.ref = "composeThemeAdapter" }
-androidxcore-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 
 # ----------------------------------------
 # Lifecycle & Architecture Components
@@ -328,7 +335,10 @@ androidx-benchmark-macro = { module = "androidx.benchmark:benchmark-macro", vers
 # Turbine (Flow Testing)
 turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 
-jvm-toolchain-management = { group = "org.gradle.toolchains", name = "jvm-toolchain-management", version.ref = "gradle" }
+
+# ========================================
+# [BUNDLES]
+# ========================================
 [bundles]
 
 # AndroidX Core (AppCompat, Material, Core-KTX)
@@ -420,7 +430,8 @@ testing-android = [
 # Xposed/LSPosed APIs
 xposed = [
     "xposed-api",
-    "lsposed-api"
+    "lsposed-api",
+    "yukihookapi"
 ]
 
 
@@ -449,5 +460,6 @@ hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 
 # KSP (Kotlin Symbol Processing)
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
-foojay-resolver-convention = { id = "org.gradle.toolchains.foojay-resolver-convention", version.ref = "foojayResolverConvention" }
-foojay-resolver-toolchain = { id = "org.gradle.toolchains.foojay-resolver-toolchain", version.ref = "foojayResolverToolchain" }
+
+# Build Tools
+foojay-resolver = { id = "org.gradle.toolchains.foojay-resolver-convention", version.ref = "toolchainsFoojayResolver" }

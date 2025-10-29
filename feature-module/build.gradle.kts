@@ -1,18 +1,58 @@
 plugins {
-    id("com.android.library") version "9.0.0-alpha11"
-    id("com.google.devtools.ksp") version "2.3.0"
+    id("com.android.library")
+    id("com.google.devtools.ksp")
 }
 
 
 android {
     namespace = "dev.aurakai.auraframefx.java"
     compileSdk = 36
+    defaultConfig {
+        minSdk = 34
+        multiDexEnabled = true
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+    compileSdk = 36
+
+    defaultConfig {
+        minSdk = 34
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
 
     buildFeatures {
         compose = true
         buildConfig = true
-        aidl = false
+        aidl = true
         shaders = false
+    }
+
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+
+    // Java compatibility / desugaring
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_25
+        targetCompatibility = JavaVersion.VERSION_25
+        isCoreLibraryDesugaringEnabled = true
+    }
+
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "2.3.0-beta1"
     }
 
     java {
@@ -24,9 +64,18 @@ android {
 
 
 dependencies {
-    implementation("com.github.topjohnwu.libsu:core:6.0.0")
-    implementation("com.github.topjohnwu.libsu:io:6.0.0")
+    implementation(libs.libsu.core)
+    implementation("com.github.topjohnwu.libsu:core:5.0.4")
+    implementation("com.github.topjohnwu.libsu:io:5.0.4")
+    implementation(libs.libsu.io)
 
+    // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
+    compileOnly(libs.yukihookapi)
+    compileOnly(libs.xposed.api)
+
+    // Fallback to local jars if catalog entries aren't available
+    compileOnly(files("libs/api-82.jar"))
+    compileOnly(files("libs/api-82-sources.jar"))
     implementation("com.jakewharton.timber:timber:5.0.1")
     implementation("com.google.dagger:hilt-android:2.57.2")
     ksp("com.google.dagger:hilt-android-compiler:2.57.2")

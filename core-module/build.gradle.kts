@@ -1,54 +1,75 @@
 ﻿plugins {
-    id("com.android.library") version "9.0.0-alpha11"
-    id("com.google.devtools.ksp") version "2.3.0"
+    id("com.android.library")
+    id("com.google.devtools.ksp")
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
-    namespace = "dev.aurakai.auraframefx.coremodule"
+    namespace = "dev.aurakai.auraframefx.core.module"
     compileSdk = 36
+
     defaultConfig {
         minSdk = 34
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildTypes {
+        release {
+            isMinifyEnabled = true
+        }
+    }
     buildFeatures {
         compose = true
         buildConfig = true
-        aidl = false
+        aidl = true
         shaders = false
     }
 
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+
+    // Java compatibility / desugaring
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_25
         targetCompatibility = JavaVersion.VERSION_25
+        isCoreLibraryDesugaringEnabled = true
     }
 
-}
 
-version = "1.0.0"
+    composeOptions {
+        kotlinCompilerExtensionVersion = "2.3.0-beta1"
+    }
 
-java {
-    toolchain { languageVersion.set(JavaLanguageVersion.of(25)) }
-}
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(25))
+        }
 
-dependencies {
+        dependencies {
 
-    // Module dependency
-    api(project(":list"))
+            // Module dependency
+            api(project(":list"))
 
-    // Concurrency and serialization
-    implementation(libs.bundles.coroutines)
-    implementation(libs.kotlinx.serialization.json)
+            // Concurrency and serialization
+            implementation(libs.kotlinx.coroutines.core)
+            implementation(libs.bundles.coroutines)
+            implementation(libs.kotlinx.serialization.json)
+            coreLibraryDesugaring(libs.desugar.jdk.libs)
+            // File operations and compression
+            implementation(libs.commons.io)
+            implementation(libs.commons.compress)
+            implementation(libs.xz)
 
-    // File operations and compression
-    implementation(libs.commons.io)
-    implementation(libs.commons.compress)
-    implementation(libs.xz)
+            // Logging API only (do not bind implementation at runtime for libraries)
+            implementation(libs.slf4j.api)
 
-    // Logging API only (do not bind implementation at runtime for libraries)
-    implementation(libs.slf4j.api)
-
-    // Testing (JUnit 5)
-    testImplementation(libs.junit.jupiter.api)
-    testRuntimeOnly(libs.junit.jupiter.engine)
-    testImplementation(libs.mockk)
+            // Testing (JUnit 5)
+            testImplementation(libs.junit.jupiter.api)
+            testRuntimeOnly(libs.junit.jupiter.engine)
+            testImplementation(libs.mockk)
+        }
+    }
 }

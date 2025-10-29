@@ -1,8 +1,9 @@
 plugins {
-    id("com.android.library") version "9.0.0-alpha11"
-    id("com.google.devtools.ksp") version "2.3.0"
-}
+    id("com.android.library")
+    id("com.google.devtools.ksp")
+    alias(libs.plugins.kotlin.compose)
 
+}
 
 android {
     namespace = "dev.aurakai.auraframefx.benchmark"
@@ -12,25 +13,48 @@ android {
         multiDexEnabled = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+    buildTypes {
+        release {
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
 
+    buildFeatures {
+        compose = true
+        buildConfig = true
+        aidl = true
+        shaders = false
+    }
+
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+
+    // Java compatibility / desugaring
     compileOptions {
-        // Use a compatible Java version and enable core library desugaring for this module
         sourceCompatibility = JavaVersion.VERSION_25
         targetCompatibility = JavaVersion.VERSION_25
         isCoreLibraryDesugaringEnabled = true
     }
+
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "2.3.0-beta1"
+    }
+
     java {
         toolchain {
             languageVersion.set(JavaLanguageVersion.of(25))
         }
     }
-
-    buildFeatures {
-        // Modern build feature-module
-        buildConfig = true
-        aidl = false
-    }
 }
+
 
 
 dependencies {
@@ -38,6 +62,19 @@ dependencies {
     implementation(project(":core-module"))
     // REMOVED: implementation(project(":app")) - Circular dependency! Libraries should not depend on :app
     implementation(libs.androidx.core.ktx)
+    implementation(libs.libsu.core)
+    implementation("com.github.topjohnwu.libsu:core:5.0.4")
+    implementation("com.github.topjohnwu.libsu:io:5.0.4")
+    implementation(libs.libsu.io)
+
+    // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
+    compileOnly(libs.yukihookapi)
+    compileOnly(libs.xposed.api)
+
+    // Fallback to local jars if catalog entries aren't available
+    compileOnly(files("libs/api-82.jar"))
+    compileOnly(files("libs/api-82-sources.jar"))
+
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
@@ -67,6 +104,7 @@ dependencies {
     implementation(libs.bundles.firebase)
     ksp(libs.hilt.compiler)
     ksp(libs.androidx.room.compiler)
+    implementation(libs.compose.theme.adapter)
     implementation(libs.firebase.auth.ktx)
 
     implementation(libs.androidx.material)

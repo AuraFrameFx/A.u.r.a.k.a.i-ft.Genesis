@@ -1,7 +1,10 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.ksp)
+    id("com.android.library")
+    id("com.google.devtools.ksp")
+    alias(libs.plugins.kotlin.compose)
+
 }
+
 
 android {
     namespace = "dev.aurakai.auraframefx.core.data"

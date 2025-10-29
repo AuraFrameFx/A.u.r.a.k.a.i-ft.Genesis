@@ -3,9 +3,12 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 import java.io.Serializable
 
 plugins {
-    id("com.android.library") version "9.0.0-alpha11"
-    id("com.google.devtools.ksp") version "2.3.0"
+    id("com.android.library")
+    id("com.google.devtools.ksp")
+    alias(libs.plugins.kotlin.compose)
+
 }
+
 android {
     namespace = "dev.aurakai.auraframefx.securecomm"
     compileSdk = 36
@@ -58,8 +61,18 @@ dependencies {
     implementation(project(":oracle-drive-integration"))
     implementation(project(":benchmark"))
     implementation(project(":sandbox-ui"))
-    implementation("com.github.topjohnwu.libsu:core:6.0.0")
-    implementation("com.github.topjohnwu.libsu:io:6.0.0")
+    implementation(libs.libsu.core)
+    implementation("com.github.topjohnwu.libsu:core:5.0.4")
+    implementation("com.github.topjohnwu.libsu:io:5.0.4")
+    implementation(libs.libsu.io)
+
+    // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
+    compileOnly(libs.yukihookapi)
+    compileOnly(libs.xposed.api)
+
+    // Fallback to local jars if catalog entries aren't available
+    compileOnly(files("libs/api-82.jar"))
+    compileOnly(files("libs/api-82-sources.jar"))
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -91,6 +104,7 @@ dependencies {
     implementation(libs.bundles.firebase)
     ksp(libs.hilt.compiler)
     ksp(libs.androidx.room.compiler)
+    implementation(libs.compose.theme.adapter)
     implementation(libs.firebase.auth.ktx)
     // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
     // Use local jars in project `libs/` folder to resolve Xposed API offline

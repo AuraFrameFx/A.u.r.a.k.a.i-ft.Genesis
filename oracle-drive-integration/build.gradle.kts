@@ -8,35 +8,61 @@
 // Remove this module if not implementing soon to reduce build time.
 
 plugins {
-    id("com.android.library") version "9.0.0-alpha11"
-    id("com.google.devtools.ksp") version "2.3.0"
+    id("com.android.library")
+    id("com.google.devtools.ksp")
+    alias(libs.plugins.kotlin.compose)
+
 }
 
 android {
     namespace = "dev.aurakai.auraframefx.oracledriveintegration"
     compileSdk = 36
+    defaultConfig {
+        minSdk = 34
+        multiDexEnabled = true
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+    compileSdk = 36
 
     defaultConfig {
         minSdk = 34
-        multiDexEnabled = true  // Required for core library desugaring
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
     }
 
     buildFeatures {
         compose = true
         buildConfig = true
-        aidl = false
+        aidl = true
         shaders = false
     }
 
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+
+    // Java compatibility / desugaring
     compileOptions {
-        // Use a compatible Java version and enable core library desugaring for this module
         sourceCompatibility = JavaVersion.VERSION_25
         targetCompatibility = JavaVersion.VERSION_25
         isCoreLibraryDesugaringEnabled = true
     }
 
-    defaultConfig {
-        multiDexEnabled = true
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "2.3.0-beta1"
     }
 
     java {
@@ -44,11 +70,21 @@ android {
             languageVersion.set(JavaLanguageVersion.of(25))
         }
     }
+}
+dependencies {
+    implementation(libs.libsu.core)
+    implementation("com.github.topjohnwu.libsu:core:5.0.4")
+    implementation("com.github.topjohnwu.libsu:io:5.0.4")
+    implementation(libs.libsu.io)
 
-    dependencies {
-        implementation("com.github.topjohnwu.libsu:core:6.0.0")
-        implementation("com.github.topjohnwu.libsu:io:6.0.0")
-        coreLibraryDesugaring(libs.desugar.jdk.libs)
+    // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
+    compileOnly(libs.yukihookapi)
+    compileOnly(libs.xposed.api)
+
+    // Fallback to local jars if catalog entries aren't available
+    compileOnly(files("libs/api-82.jar"))
+    compileOnly(files("libs/api-82-sources.jar"))
+    coreLibraryDesugaring(libs.desugar.jdk.libs)
 
         implementation(libs.timber)
         implementation(libs.hilt.android)
@@ -77,9 +113,10 @@ android {
         implementation(libs.bundles.firebase)
         ksp(libs.hilt.compiler)
         ksp(libs.androidx.room.compiler)
+    implementation(libs.compose.theme.adapter)
         implementation(libs.firebase.auth.ktx)
-        compileOnly(libs.xposed.api)
-        compileOnly(libs.yukihookapi)
+    compileOnly(files("libs/api-82.jar"))
+    compileOnly(files("libs/api-82-sources.jar"))
         implementation(libs.androidx.material)
         testImplementation(libs.bundles.testing.unit)
         androidTestImplementation(platform(libs.androidx.compose.bom))
@@ -87,4 +124,4 @@ android {
         debugImplementation(libs.leakcanary.android)
 
     }
-}
+

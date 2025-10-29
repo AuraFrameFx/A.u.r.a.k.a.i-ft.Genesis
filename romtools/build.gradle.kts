@@ -1,45 +1,80 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.ksp)
+    id("com.android.library")
+    id("com.google.devtools.ksp")
+    alias(libs.plugins.kotlin.compose)
+
 }
 
 android {
-    namespace = "dev.aurakai.auraframefx"
+    namespace = "dev.aurakai.auraframefx.romtools"
     compileSdk = 36
 
     defaultConfig {
         minSdk = 34
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+
     buildFeatures {
         compose = true
         buildConfig = true
-        aidl = false
+        aidl = true
         shaders = false
     }
 
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+
+    // Java compatibility / desugaring
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_25
         targetCompatibility = JavaVersion.VERSION_25
+        isCoreLibraryDesugaringEnabled = true
     }
-
 
 
     composeOptions {
         kotlinCompilerExtensionVersion = "2.3.0-beta1"
     }
-}
 
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(25))
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(25))
+        }
     }
 }
 
 dependencies {
     // Core and hooking/runtime dependencies (ordered per project conventions)
+    implementation(libs.libsu.core)
     implementation(libs.androidx.appcompat) // ensured present near top as requested
 
-    // TopJohnWu libsu runtime helpers (required by modules that perform system/root ops)
+    implementation(libs.libsu.core)
+    implementation("com.github.topjohnwu.libsu:core:5.0.4")
+    implementation("com.github.topjohnwu.libsu:io:5.0.4")
+    implementation(libs.libsu.io)
+
+    // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
+    compileOnly(libs.yukihookapi)
+    compileOnly(libs.xposed.api)
+
+    // Fallback to local jars if catalog entries aren't available
+    compileOnly(files("libs/api-82.jar"))
+    compileOnly(files("libs/api-82-sources.jar"))
+
     // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
     // Use local jars in project `libs/` folder to resolve Xposed API offline
     implementation(libs.timber)
@@ -48,7 +83,11 @@ dependencies {
     implementation(libs.androidx.material)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.ui.tooling)
-
+    implementation(libs.androidx.compose.ui.test.junit4)
+    debugImplementation(libs.androidx.compose.ui.test.manifest)
+    implementation(libs.androidx.compose.ui.test)
+    debugImplementation(libs.androidx.compose.ui.test.manifest)
+    implementation(libs.hilt.android)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
@@ -69,6 +108,7 @@ dependencies {
     implementation(libs.bundles.firebase)
     ksp(libs.hilt.compiler)
     ksp(libs.androidx.room.compiler)
+    implementation(libs.compose.theme.adapter)
     implementation(libs.firebase.auth.ktx)
 
     // Xposed/YukiHook Framework (ROM tools need system-level hooks)

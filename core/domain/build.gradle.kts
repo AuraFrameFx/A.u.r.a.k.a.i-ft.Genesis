@@ -1,41 +1,43 @@
 plugins {
-    id("com.android.library") version "9.0.0-alpha11"
+    id("com.android.library")
+    id("com.google.devtools.ksp")
 }
 
-android {
-    namespace = "dev.aurakai.auraframefx.core.domain"
-    compileSdk = 36
 
+android {
+    namespace = "dev.aurakai.auraframefx"
+    compileSdk = 36
     defaultConfig {
         minSdk = 34
     }
-
     buildFeatures {
         compose = true
         buildConfig = true
         aidl = false
         shaders = false
     }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_25
         targetCompatibility = JavaVersion.VERSION_25
     }
-}
-
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(25))
+    composeOptions {
+        kotlinCompilerExtensionVersion = "2.3.0-beta1"
     }
-}
 
-dependencies {
-    // Pure business logic, no Android dependencies
-    implementation(libs.kotlinx.coroutines.core)
-    implementation(project(":core:common"))
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(25))
+        }
+    }
 
-    // Testing
-    testImplementation(libs.junit.jupiter.api)
-    testRuntimeOnly(libs.junit.jupiter.engine)
-    testImplementation(libs.mockk)
+    dependencies {
+        // Pure business logic, no Android dependencies
+        implementation(libs.kotlinx.coroutines.core)
+        implementation(project(":core:common"))
+
+        // Testing
+        testImplementation(libs.junit.jupiter.api)
+        testRuntimeOnly(libs.junit.jupiter.engine)
+        testImplementation(libs.mockk)
+    }
 }

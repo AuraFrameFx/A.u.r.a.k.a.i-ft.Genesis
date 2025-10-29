@@ -1,6 +1,9 @@
 plugins {
-    id("com.android.library") version "9.0.0-alpha11"
+    id("com.android.library")
     id("com.google.devtools.ksp") version "2.3.0"
+    alias(libs.plugins.kotlin.compose)
+
+
 }
 android {
     namespace = "dev.aurakai.auraframefx.colorblendr"
@@ -29,9 +32,17 @@ dependencies {
     implementation(project(":core-module"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.bundles.lifecycle)
+    implementation(libs.libsu.core)
     implementation("com.github.topjohnwu.libsu:core:5.0.4")
     implementation("com.github.topjohnwu.libsu:io:5.0.4")
-    // Compose
+    implementation(libs.libsu.io)
+
+    // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
+    compileOnly(libs.yukihookapi)
+    compileOnly(libs.xposed.api)
+
+    // Fallback to local jars if catalog entries aren't available
+
     implementation(platform(libs.androidx.compose.bom))
 
     // Lifecycle

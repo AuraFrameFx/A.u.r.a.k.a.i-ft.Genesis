@@ -1,6 +1,6 @@
 plugins {
-    id("com.android.library") version "9.0.0-alpha11"
-    id("com.google.devtools.ksp") version "2.3.0"
+    id("com.android.library")
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -11,21 +11,55 @@ android {
         multiDexEnabled = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+    compileSdk = 36
 
+    defaultConfig {
+        minSdk = 34
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+
+    buildFeatures {
+        compose = true
+        buildConfig = true
+        aidl = true
+        shaders = false
+    }
+
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+
+    // Java compatibility / desugaring
     compileOptions {
-        // Use a compatible Java version and enable core library desugaring for this module
         sourceCompatibility = JavaVersion.VERSION_25
         targetCompatibility = JavaVersion.VERSION_25
         isCoreLibraryDesugaringEnabled = true
     }
 
-    buildFeatures {
-        // Modern build feature-module
-        buildConfig = true
-        aidl = false
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "2.3.0-beta1"
+    }
+
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(25))
+        }
     }
 }
-
 // Dependencies
 dependencies {
     implementation(libs.timber)

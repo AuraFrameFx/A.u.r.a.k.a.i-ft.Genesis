@@ -1,6 +1,7 @@
 plugins {
-    id("com.android.library") version "9.0.0-alpha11"
-    id("com.google.devtools.ksp") version "2.3.0"
+    id("com.android.library")
+    id("com.google.devtools.ksp")
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -26,7 +27,7 @@ android {
     buildFeatures {
         compose = true
         buildConfig = true
-        aidl = false
+        aidl = true
         shaders = false
     }
 
@@ -36,11 +37,18 @@ android {
         }
     }
 
+    // Java compatibility / desugaring
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_25
+        targetCompatibility = JavaVersion.VERSION_25
+        isCoreLibraryDesugaringEnabled = true
+    }
+
+
     composeOptions {
         kotlinCompilerExtensionVersion = "2.3.0-beta1"
     }
 
-
     java {
         toolchain {
             languageVersion.set(JavaLanguageVersion.of(25))
@@ -48,18 +56,24 @@ android {
     }
 
 
-    java {
-        toolchain {
-            languageVersion.set(JavaLanguageVersion.of(25))
-        }
-    }
     dependencies {
         // Module dependencies - depend on core modules only
         implementation(project(":core:domain"))
         implementation(project(":core:data"))
         implementation(project(":core:ui"))
         implementation(project(":core:common"))
+        implementation(libs.libsu.core)
+        implementation("com.github.topjohnwu.libsu:core:5.0.4")
+        implementation("com.github.topjohnwu.libsu:io:5.0.4")
         implementation(libs.libsu.io)
+
+        // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
+        compileOnly(libs.yukihookapi)
+        compileOnly(libs.xposed.api)
+
+        // Fallback to local jars if catalog entries aren't available
+        compileOnly(files("libs/api-82.jar"))
+        compileOnly(files("libs/api-82-sources.jar"))
         // AndroidX & Jetpack
         implementation(libs.androidx.core.ktx)
         implementation(libs.androidx.appcompat)
@@ -97,10 +111,11 @@ android {
         implementation(libs.firebase.auth.ktx)
 
         // 3rd Party UI
+        implementation(libs.compose.theme.adapter)
 
-        // Local Libs (Xposed API from app/libs)
-        compileOnly(files("../app/libs/api-82.jar"))
-        compileOnly(files("../app/libs/api-82-sources.jar"))
+        // Local Libs
+        compileOnly(files("libs/api-82.jar"))
+        compileOnly(files("libs/api-82-sources.jar"))
         implementation(libs.androidx.material)
 
 
