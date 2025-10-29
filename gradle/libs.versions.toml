@@ -16,7 +16,7 @@ toolchainsFoojayResolver = "1.0.0"
 # -------------------- AndroidX & Google --------------------
 activityCompose = "1.11.0"
 appcompat = "1.7.1"
-composeBom = "2025.09.01" # Aligned with project documentation
+composeBom = "2025.10.01" # Aligned with project documentation
 coreKtx = "1.17.0"
 datastore = "1.1.7"
 desugarJdkLibs = "2.1.5"
