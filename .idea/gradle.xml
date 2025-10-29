@@ -7,9 +7,9 @@
         <compositeConfiguration>
           <compositeBuild compositeDefinitionSource="SCRIPT">
             <builds>
-              <build path="$PROJECT_DIR$/build-logic" name="build-logic">
+              <build path="$PROJECT_DIR$/auraframefx" name="auraframefx">
                 <projects>
-                  <project path="$PROJECT_DIR$/build-logic" />
+                  <project path="$PROJECT_DIR$/auraframefx" />
                 </projects>
               </build>
             </builds>
@@ -20,18 +20,19 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/CerebralStream" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/auraframefx" />
+            <option value="$PROJECT_DIR$/auralab" />
             <option value="$PROJECT_DIR$/benchmark" />
-            <option value="$PROJECT_DIR$/build-logic" />
+            <option value="$PROJECT_DIR$/chromacore" />
             <option value="$PROJECT_DIR$/collab-canvas" />
-            <option value="$PROJECT_DIR$/colorblendr" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core-module" />
             <option value="$PROJECT_DIR$/core/common" />
             <option value="$PROJECT_DIR$/core/data" />
             <option value="$PROJECT_DIR$/core/domain" />
             <option value="$PROJECT_DIR$/core/ui" />
-            <option value="$PROJECT_DIR$/datavein-oracle-native" />
             <option value="$PROJECT_DIR$/extendsysa" />
             <option value="$PROJECT_DIR$/extendsysb" />
             <option value="$PROJECT_DIR$/extendsysc" />
@@ -40,10 +41,12 @@
             <option value="$PROJECT_DIR$/extendsysf" />
             <option value="$PROJECT_DIR$/feature-module" />
             <option value="$PROJECT_DIR$/list" />
-            <option value="$PROJECT_DIR$/oracle-drive-integration" />
-            <option value="$PROJECT_DIR$/romtools" />
-            <option value="$PROJECT_DIR$/sandbox-ui" />
-            <option value="$PROJECT_DIR$/secure-comm" />
+            <option value="$PROJECT_DIR$/oracledrive" />
+            <option value="$PROJECT_DIR$/oracledrive/bootloader" />
+            <option value="$PROJECT_DIR$/oracledrive/datavein" />
+            <option value="$PROJECT_DIR$/oracledrive/integration" />
+            <option value="$PROJECT_DIR$/oracledrive/protocore" />
+            <option value="$PROJECT_DIR$/oracledrive/root" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="true" />

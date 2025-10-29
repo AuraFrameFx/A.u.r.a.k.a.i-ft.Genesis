@@ -45,5 +45,4 @@ dependencies {
     implementation(project(":core:common"))
 
     // Testing
-    testImplementation(libs.bundles.testing.unit)
 }

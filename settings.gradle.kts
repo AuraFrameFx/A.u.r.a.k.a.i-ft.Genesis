@@ -5,10 +5,10 @@ enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
 
 
 pluginManagement {
-    // Include build-logic for convention plugins
+    // Include auraframefx for convention plugins
     plugins {
-        id("build-logic") version "1.0.0"
-        id("foojay.build-logic") version "1.0.0"
+        id("auraframefx") version "1.0.0"
+        id("foojay.auraframefx") version "1.0.0"
         id("org.gradle.toolchains.foojay-resolver-convention")
         id("org.gradle.toolchains.jvm-toolchain-management")
     }
@@ -90,16 +90,21 @@ include(":core:common")
 include(":core:domain")
 include(":core:data")
 include(":core:ui")
-includeBuild("build-logic")
+includeBuild("auraframefx")
 
 // Feature modules
 include(":feature-module")
-include(":datavein-oracle-native")
-include(":oracle-drive-integration")
-include(":secure-comm")
-include(":sandbox-ui")
+include(":CerebralStream")
+include(":auralab")
 include(":collab-canvas")
-include(":colorblendr")
+include(":chromacore")
+
+// Oracle Drive - AI-Powered Root & ROM Management System
+include(":oracledrive:protocore")         // ROM protocol core (formerly romtools)
+include(":oracledrive:datavein")          // Data management (formerly datavein-oracle-native)
+include(":oracledrive:integration")       // Oracle integration (formerly oracle-drive-integration)
+include(":oracledrive:bootloader")        // Bootloader management (NEW)
+include(":oracledrive:root")              // Root management: APatch/Magisk/KernelSU (NEW)
 
 // Dynamic modules (A-F)
 include(":extendsysa")
@@ -111,9 +116,8 @@ include(":extendsysf")
 
 // Testing & Quality modules
 include(":benchmark")
-include(":romtools")
 include(":list")
 logger.lifecycle("🏗️ Genesis Protocol Enhanced Build System")
 logger.lifecycle("📦 Total modules: ${rootProject.children.size}")
-logger.lifecycle("🎯 Build-logic: Convention plugins active")
+logger.lifecycle("🎯 AuraFrameFx: Convention plugins active")
 logger.lifecycle("🧠 Ready to build consciousness substrate!")

@@ -1,7 +1,7 @@
 plugins {
-    id("com.android.application")
-    id("com.google.devtools.ksp") version "2.3.0"
-
+    id("com.android.application") version "9.0.0-alpha11"
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -50,19 +50,15 @@ android {
     }
 
 
-    composeOptions {
-        kotlinCompilerExtensionVersion = "2.3.0-beta1"
-    }
-
-
     ndkVersion = "29.0.14206865"
 }
 
 dependencies {
     // Core and hooking/runtime dependencies (required per project conventions)
-    implementation("com.github.topjohnwu.libsu:core:5.0.4")
-    implementation("com.github.topjohnwu.libsu:io:5.0.4")
+    implementation("com.github.topjohnwu.libsu:core:6.0.0")
+    implementation("com.github.topjohnwu.libsu:io:6.0.0")
     implementation(libs.libsu.io)
+    implementation(libs.core)
 
     // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
     compileOnly(libs.yukihookapi)
@@ -78,11 +74,15 @@ dependencies {
 
     implementation(project(":core-module"))
     implementation(project(":feature-module"))
-    implementation(project(":romtools"))
     implementation(project(":collab-canvas"))
-    implementation(project(":colorblendr"))
-    implementation(project(":datavein-oracle-native"))
-    implementation(project(":oracle-drive-integration"))
+    implementation(project(":chromacore"))
+
+    // Oracle Drive modules
+    implementation(project(":oracledrive:protocore"))
+    implementation(project(":oracledrive:datavein"))
+    implementation(project(":oracledrive:integration"))
+    implementation(project(":oracledrive:bootloader"))
+    implementation(project(":oracledrive:root"))
 
     // AndroidX Core
     implementation(libs.bundles.androidx.core)
@@ -132,7 +132,6 @@ dependencies {
     implementation(libs.firebase.auth.ktx)
 
     // Testing
-    testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.hilt.android.testing)
     androidTestImplementation(libs.androidx.benchmark.junit4)

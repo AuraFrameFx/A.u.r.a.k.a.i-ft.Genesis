@@ -35,7 +35,7 @@ object VertexAIModule {
             projectId = "collabcanvas",
             location = "us-central1",
             endpoint = "us-central1-aiplatform.googleapis.com",
-            modelName = "gemini-1.5-pro-002",
+            modelName = "gemini-2.0-flash-exp",
             apiVersion = "v1",
             // Security settings
             enableSafetyFilters = true,

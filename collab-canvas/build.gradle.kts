@@ -36,11 +36,6 @@ android {
         }
     }
 
-    composeOptions {
-        kotlinCompilerExtensionVersion = "2.3.0-beta1"
-    }
-
-
     java {
         toolchain {
             languageVersion.set(JavaLanguageVersion.of(25))
@@ -99,13 +94,15 @@ android {
         // 3rd Party UI
 
         // Local Libs (Xposed API from app/libs)
-        compileOnly(files("../app/libs/api-82.jar"))
         compileOnly(files("../app/libs/api-82-sources.jar"))
         implementation(libs.androidx.material)
 
 
         // Testing
-        testImplementation(libs.bundles.testing.unit)
+        testImplementation(libs.junit)
+        testImplementation(libs.mockk)
+        testImplementation(libs.kotlinx.coroutines.test)
+        testImplementation(libs.turbine)
         androidTestImplementation(platform(libs.androidx.compose.bom))
         androidTestImplementation(libs.hilt.android.testing)
         androidTestImplementation(libs.androidx.benchmark.junit4)

@@ -6,14 +6,17 @@ agp = "9.0.0-alpha11"
 benchmarkJunit4 = "1.4.1"
 composeThemeAdapterX = "1.1.1"
 converterMoshi = "3.0.0"
-core = "5.0.4"
+core = "6.0.0"
 firebaseAuthKtx = "23.2.1"
 gradle = "9.2.0-RC-3"
 hiltAndroidCompiler = "2.57.2"
 io = "5.0.4"
-kotlin = "2.3.0-Beta1"
+kotlin = "2.3.0-Beta2"
 ksp = "2.3.0"
 ktlint = "13.1.0"
+gradleToolingApi = "9.1.0"
+kotlinGradlePlugin = "2.3.0"
+kspGradlePlugin = "2.3.0"
 
 
 toolchainsFoojayResolver = "1.0.0"
@@ -143,7 +146,6 @@ agp = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 gradle-tooling-api = { module = "org.gradle:gradle-tooling-api", version.ref = "gradle" }
 symbol-processing-api = { module = "com.google.devtools.ksp:symbol-processing-api", version.ref = "ksp" }
 # AndroidX Core
-# ----------------------------------------
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 androidx-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
@@ -261,6 +263,7 @@ accompanist-pager-indicators = { module = "com.google.accompanist:accompanist-pa
 # ----------------------------------------
 # LibSu (Topjohnwu)
 libsu-core = { module = "com.github.topjohnwu.libsu:core", version.ref = "libsu" }
+core = { module = "com.github.topjohnwu.libsu:core", version.ref = "core" }
 libsu-io = { module = "com.github.topjohnwu.libsu:io", version.ref = "libsu" }
 
 # ----------------------------------------
@@ -330,80 +333,16 @@ turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 
 jvm-toolchain-management = { group = "org.gradle.toolchains", name = "jvm-toolchain-management", version.ref = "gradle" }
 [bundles]
-
-# AndroidX Core (AppCompat, Material, Core-KTX)
-androidx-core = [
-    "androidx-core-ktx",
-    "androidx-appcompat",
-    "androidx-material"
-]
-
-# Compose UI (Basic Compose UI stack)
-compose-ui = [
-    "androidx-compose-ui",
-    "androidx-compose-ui-graphics",
-    "androidx-compose-ui-tooling-preview",
-    "androidx-compose-material3"
-]
-
-# Compose Debug (Debug tooling)
-compose-debug = [
-    "androidx-compose-ui-tooling",
-    "androidx-compose-ui-test-manifest"
-]
-
-# Coroutines (Core + Android)
-coroutines = [
-    "kotlinx-coroutines-core",
-    "kotlinx-coroutines-android"
-]
-
-# Firebase (Common Firebase services)
-firebase = [
-    "firebase-analytics",
-    "firebase-crashlytics",
-    "firebase-perf",
-    "firebase-auth",
-    "firebase-firestore",
-    "firebase-messaging",
-    "firebase-config"
-]
-
-# Lifecycle Components
-lifecycle = [
-    "androidx-lifecycle-runtime-ktx",
-    "androidx-lifecycle-viewmodel-ktx",
-    "androidx-lifecycle-viewmodel-compose"
-]
-
-# Networking (Retrofit + OkHttp)
-network = [
-    "retrofit-core",
-    "retrofit-converter-gson",
-    "okhttp-core",
-    "okhttp-logging-interceptor"
-]
-
-# Room Database
-room = [
-    "androidx-room-runtime",
-    "androidx-room-ktx"
-]
-
-# LibSu (Root utilities)
-libsu = [
-    "libsu-core",
-    "libsu-io"
-]
-
-# Accompanist (Pager utilities)
-accompanist = [
-    "accompanist-pager",
-    "accompanist-pager-indicators"
-]
-
+androidx-core = ["androidx-core-ktx", "androidx-appcompat", "androidx-material"]
+compose-ui = ["androidx-compose-ui", "androidx-compose-ui-graphics", "androidx-compose-ui-tooling-preview", "androidx-compose-material3"]
+compose-debug = ["androidx-compose-ui-tooling"]
+coroutines = ["kotlinx-coroutines-core", "kotlinx-coroutines-android"]
+firebase = ["firebase-analytics", "firebase-crashlytics", "firebase-perf", "firebase-auth", "firebase-firestore", "firebase-messaging", "firebase-config"]
+lifecycle = ["androidx-lifecycle-runtime-ktx", "androidx-lifecycle-viewmodel-ktx", "androidx-lifecycle-viewmodel-compose"]
+network = ["retrofit-core", "retrofit-converter-gson", "okhttp-core", "okhttp-logging-interceptor"]
+room = ["androidx-room-runtime", "androidx-room-ktx"]
 # Unit Testing
-testing-unit = [
+unit-testing = [
     "junit",
     "mockk",
     "kotlinx-coroutines-test",
@@ -420,7 +359,8 @@ testing-android = [
 # Xposed/LSPosed APIs
 xposed = [
     "xposed-api",
-    "lsposed-api"
+    "lsposed-api",
+    "yukihookapi"
 ]
 
 
