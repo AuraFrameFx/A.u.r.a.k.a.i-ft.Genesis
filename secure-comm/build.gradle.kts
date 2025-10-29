@@ -4,11 +4,8 @@ import java.io.Serializable
 
 plugins {
     id("com.android.library")
-    // Hilt and KSP are applied without `apply false` in the module
-    alias(libs.plugins.kotlin.android)
+    id("com.google.devtools.ksp")
 
-    alias(libs.plugins.ksp) // Correct position: Apply KSP before Hilt
-    alias(libs.plugins.hilt)
 
 }
 android {

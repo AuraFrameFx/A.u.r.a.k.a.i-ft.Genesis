@@ -6,16 +6,10 @@
 // Status: Awaiting implementation (0 source files)
 // Documented: Yes (see README.md)
 // Remove this module if not implementing soon to reduce build time.
-
 plugins {
     id("com.android.library")
-    // Hilt and KSP are applied without `apply false` in the module
-    alias(libs.plugins.kotlin.android)
+    id("com.google.devtools.ksp")
 
-    alias(libs.plugins.ksp) // Correct position: Apply KSP before Hilt
-    alias(libs.plugins.hilt)
-    // Compose Compiler plugin required for Kotlin 2.0+ when compose is enabled
-    alias(libs.plugins.composeCompiler)
 
 }
 

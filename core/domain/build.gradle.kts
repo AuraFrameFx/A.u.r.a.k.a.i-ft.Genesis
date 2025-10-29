@@ -1,12 +1,8 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt)
-    alias(libs.plugins.kotlin.serialization)
-    alias(libs.plugins.composeCompiler)
-}
+    id("com.android.library")
 
+
+}
 android {
     namespace = "dev.aurakai.auraframefx"
     compileSdk = 36
@@ -36,20 +32,12 @@ android {
         }
     }
 
-    // Enable Java 25 preview features
-    kotlinOptions {
-        jvmTarget = "25"
-        freeCompilerArgs = freeCompilerArgs + listOf(
-            "-Xjvm-default=all",
-            "-Xjdk-release=25"
-        )
-    }
 
     dependencies {
         // Pure business logic, no Android dependencies
         implementation(libs.kotlinx.coroutines.core)
         implementation(project(":core:common"))
-
+        coreLibraryDesugaring(libs.desugar.jdk.libs)
         // Testing
         testImplementation(libs.junit.jupiter.api)
         testRuntimeOnly(libs.junit.jupiter.engine)

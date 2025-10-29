@@ -6,7 +6,7 @@
 
 [versions]
 # -------------------- Build System (as per Genesis Protocol) --------------------
-agp = "8.3.0"  # Using stable version for better compatibility
+agp = "8.13.0"  # Using stable version for better compatibility
 gradle = "8.4"  # Compatible with AGP 8.3.0
 kotlin = "1.9.22"  # Stable Kotlin version compatible with AGP 8.3.0
 ksp = "1.9.22-1.0.16"  # KSP version compatible with Kotlin 1.9.22

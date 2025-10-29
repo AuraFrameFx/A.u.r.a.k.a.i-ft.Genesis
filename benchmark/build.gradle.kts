@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
-    alias(libs.plugins.ksp) apply false
+    id("com.google.devtools.ksp")
+
 
 }
 
