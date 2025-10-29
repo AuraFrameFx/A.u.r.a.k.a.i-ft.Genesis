@@ -14,6 +14,8 @@ plugins {
 
     alias(libs.plugins.ksp) // Correct position: Apply KSP before Hilt
     alias(libs.plugins.hilt)
+    // Compose Compiler plugin required for Kotlin 2.0+ when compose is enabled
+    alias(libs.plugins.composeCompiler)
 
 }
 

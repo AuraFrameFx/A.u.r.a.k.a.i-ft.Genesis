@@ -46,6 +46,10 @@ dependencies {
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.androidx.datastore.core)
 
+    // Hilt - required when alias(libs.plugins.hilt) is applied
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+
     // Common utilities
     implementation(project(":core:common"))
 

@@ -1,12 +1,13 @@
 plugins {
     id("com.android.library")
-    alias(libs.plugins.kotlin - android) apply true
+    alias(libs.plugins.kotlin.android) apply true
     id("com.google.devtools.ksp")
 }
 
 android {
     namespace = "dev.aurakai.auraframefx"
     compileSdk = 36
+
     defaultConfig {
         minSdk = 34
     }

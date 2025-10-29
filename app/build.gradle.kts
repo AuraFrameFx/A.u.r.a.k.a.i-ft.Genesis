@@ -5,6 +5,8 @@ plugins {
 
     alias(libs.plugins.ksp) // Correct position: Apply KSP before Hilt
     alias(libs.plugins.hilt)
+    // Compose Compiler Gradle plugin required for Kotlin 2.0+ when compose buildFeatures enabled
+    alias(libs.plugins.composeCompiler)
 
 }
 
@@ -12,6 +14,10 @@ android {
 
     namespace = "dev.aurakai.auraframefx.app"
     compileSdk = 36
+    // Configure Compose compiler plugin outputs/paths (optional but recommended)
+    composeCompiler {
+        reportsDestination = layout.buildDirectory.dir("compose_compiler")
+    }
     defaultConfig {
         applicationId = "dev.aurakai.auraframefx.app.debug"
         minSdk = 34
@@ -82,7 +88,8 @@ android {
         implementation("com.github.topjohnwu.libsu:core:5.0.4")
         implementation("com.github.topjohnwu.libsu:io:5.0.4")
         implementation(libs.libsu.io)
-        implementation("org.google.dagger.hilt.android:2.57.2")
+        // Use version catalog alias for Hilt runtime (keeps versions centralized)
+        // implementation(libs.hilt.android) is declared later in this dependencies block
         // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
         compileOnly(libs.xposed.api)
         compileOnly(libs.yukihook.api)

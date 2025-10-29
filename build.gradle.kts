@@ -8,6 +8,8 @@ plugins {
     alias(libs.plugins.foojay.resolver) apply false
     // Make kotlin-android available to subprojects via the version catalog (accessor form)
     alias(libs.plugins.kotlin.android) apply false
+    // Compose Compiler Gradle Plugin (required for Kotlin 2.0+ when compose is enabled)
+    alias(libs.plugins.composeCompiler) apply false
 }
 
 subprojects {

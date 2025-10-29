@@ -1,7 +1,13 @@
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     id("com.android.library")
-    alias(libs.plugins.ksp) apply true
+    // Hilt and KSP are applied without `apply false` in the module
+    alias(libs.plugins.kotlin.android)
+    // Compose Compiler plugin required for Kotlin 2.0+ when compose is enabled
+    alias(libs.plugins.composeCompiler)
+
+    alias(libs.plugins.ksp) // Correct position: Apply KSP before Hilt
+    alias(libs.plugins.hilt)
 }
 
 android {
