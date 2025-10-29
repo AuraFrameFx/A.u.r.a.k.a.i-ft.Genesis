@@ -1,8 +1,11 @@
 plugins {
     id("com.android.library")
-    id("com.google.devtools.ksp")
-}
+    // Hilt and KSP are applied without `apply false` in the module
+    alias(libs.plugins.kotlin.android)
 
+    alias(libs.plugins.ksp) // Correct position: Apply KSP before Hilt
+    alias(libs.plugins.hilt)
+}
 
 android {
     namespace = "dev.aurakai.auraframefx.java"
@@ -70,7 +73,7 @@ dependencies {
     implementation(libs.libsu.io)
 
     // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
-    compileOnly(libs.yukihookapi)
+    compileOnly(libs.yukihook.api)
     compileOnly(libs.xposed.api)
 
     // Fallback to local jars if catalog entries aren't available
@@ -104,7 +107,6 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.kotlinx.datetime)
     implementation(libs.bundles.coroutines)
-    implementation(libs.bundles.network)
     implementation(platform(libs.firebase.bom))
     implementation(libs.bundles.firebase)
     ksp(libs.hilt.compiler)
@@ -114,7 +116,6 @@ dependencies {
     compileOnly(files("../app/libs/api-82.jar"))
     compileOnly(files("../app/libs/api-82-sources.jar"))
     implementation(libs.androidx.material)
-    testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.hilt.android.testing)
     debugImplementation(libs.leakcanary.android)

@@ -1,13 +1,11 @@
 ﻿plugins {
     id("com.android.library")
     id("com.google.devtools.ksp")
-    alias(libs.plugins.kotlin.compose)
 }
 
 android {
-    namespace = "dev.aurakai.auraframefx.core.module"
+    namespace = "dev.aurakai.auraframefx.coremodule"
     compileSdk = 36
-
     defaultConfig {
         minSdk = 34
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -25,13 +23,6 @@ android {
         shaders = false
     }
 
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
-
-    // Java compatibility / desugaring
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_25
         targetCompatibility = JavaVersion.VERSION_25
@@ -61,7 +52,6 @@ android {
             // File operations and compression
             implementation(libs.commons.io)
             implementation(libs.commons.compress)
-            implementation(libs.xz)
 
             // Logging API only (do not bind implementation at runtime for libraries)
             implementation(libs.slf4j.api)

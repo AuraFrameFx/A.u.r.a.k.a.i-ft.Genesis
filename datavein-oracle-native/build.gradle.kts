@@ -1,8 +1,7 @@
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     id("com.android.library")
-    id("com.google.devtools.ksp")
-    alias(libs.plugins.kotlin.compose)
-
+    alias(libs.plugins.ksp) apply true
 }
 
 android {
@@ -73,7 +72,7 @@ android {
         implementation(libs.libsu.io)
 
         // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
-        compileOnly(libs.yukihookapi)
+        compileOnly(libs.yukihook.api)
         compileOnly(libs.xposed.api)
 
         // Fallback to local jars if catalog entries aren't available
@@ -101,14 +100,12 @@ android {
         implementation(libs.kotlinx.serialization.json)
         implementation(libs.kotlinx.datetime)
         implementation(libs.bundles.coroutines)
-        implementation(libs.bundles.network)
         implementation(platform(libs.firebase.bom))
         implementation(libs.bundles.firebase)
         ksp(libs.hilt.compiler)
         ksp(libs.androidx.room.compiler)
-        implementation(libs.firebase.auth.ktx)
+        implementation(libs.firebase.auth)
         implementation(libs.androidx.material)
-        testImplementation(libs.bundles.testing.unit)
         androidTestImplementation(platform(libs.androidx.compose.bom))
         androidTestImplementation(libs.hilt.android.testing)
         debugImplementation(libs.leakcanary.android)

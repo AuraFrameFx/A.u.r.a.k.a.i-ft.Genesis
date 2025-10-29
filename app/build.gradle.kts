@@ -1,8 +1,11 @@
 plugins {
     id("com.android.application")
-    id("com.google.devtools.ksp")
-    id("com.google.gms.google-services")
-    alias(libs.plugins.kotlin.compose)
+    // Hilt and KSP are applied without `apply false` in the module
+    alias(libs.plugins.kotlin.android)
+
+    alias(libs.plugins.ksp) // Correct position: Apply KSP before Hilt
+    alias(libs.plugins.hilt)
+
 }
 
 android {
@@ -71,16 +74,18 @@ android {
         ndkVersion = "29.0.14206865"
     }
 
+}
+
     dependencies {
         // Core and hooking/runtime dependencies (required per project conventions)
         implementation(libs.libsu.core)
         implementation("com.github.topjohnwu.libsu:core:5.0.4")
         implementation("com.github.topjohnwu.libsu:io:5.0.4")
         implementation(libs.libsu.io)
-
+        implementation("org.google.dagger.hilt.android:2.57.2")
         // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
-        compileOnly(libs.yukihookapi)
         compileOnly(libs.xposed.api)
+        compileOnly(libs.yukihook.api)
 
         // Fallback to local jars if catalog entries aren't available
         compileOnly(files("libs/api-82.jar"))
@@ -91,10 +96,7 @@ android {
         implementation(libs.androidx.material)
         implementation(libs.androidx.compose.ui.tooling.preview)
         implementation(libs.androidx.compose.ui.tooling)
-        implementation(libs.androidx.compose.ui.test.junit4)
-        debugImplementation(libs.androidx.compose.ui.test.manifest)
-        implementation(libs.androidx.compose.ui.test)
-        debugImplementation(libs.androidx.compose.ui.test.manifest)
+
         implementation(project(":core-module"))
         implementation(project(":feature-module"))
         implementation(project(":romtools"))
@@ -114,9 +116,7 @@ android {
         implementation(libs.androidx.activity.compose)
         implementation(libs.androidx.navigation.compose)
         implementation(libs.androidx.compose.ui)
-        implementation(libs.compose.theme.adapter)
-        implementation(libs.androidx.compose.material)
-        implementation(libs.androidx.compose.material.icons.extended)
+
 
         // Lifecycle & Architecture
         implementation(libs.bundles.lifecycle)
@@ -133,7 +133,6 @@ android {
         implementation(libs.androidx.work.runtime.ktx)
         implementation(libs.androidx.hilt.work)
         implementation(libs.androidx.hilt.navigation.compose)
-
         // Dependency Injection
         implementation(libs.hilt.android)
         ksp(libs.hilt.compiler)
@@ -144,17 +143,14 @@ android {
         implementation(libs.bundles.coroutines)
 
         // Networking
-        implementation(libs.bundles.network)
-        implementation(libs.moshi)
-        implementation(libs.retrofit.converter.moshi)
+
 
         // Firebase
         implementation(platform(libs.firebase.bom))
         implementation(libs.bundles.firebase)
-        implementation(libs.firebase.auth.ktx)
+        implementation(libs.firebase.auth)
 
         // Testing
-        testImplementation(libs.bundles.testing.unit)
         androidTestImplementation(platform(libs.androidx.compose.bom))
         androidTestImplementation(libs.hilt.android.testing)
         androidTestImplementation(libs.androidx.benchmark.junit4)
@@ -163,4 +159,3 @@ android {
         // Debug Tools
         debugImplementation(libs.leakcanary.android)
     }
-}

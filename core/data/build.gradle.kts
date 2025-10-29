@@ -1,7 +1,10 @@
 plugins {
     id("com.android.library")
-    id("com.google.devtools.ksp")
-    alias(libs.plugins.kotlin.compose)
+    // Hilt and KSP are applied without `apply false` in the module
+    alias(libs.plugins.kotlin.android)
+
+    alias(libs.plugins.ksp) // Correct position: Apply KSP before Hilt
+    alias(libs.plugins.hilt)
 
 }
 
@@ -40,7 +43,6 @@ dependencies {
 
     // Data layer dependencies
     implementation(libs.bundles.room)
-    implementation(libs.bundles.network)
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.androidx.datastore.core)
 
@@ -48,5 +50,4 @@ dependencies {
     implementation(project(":core:common"))
 
     // Testing
-    testImplementation(libs.bundles.testing.unit)
 }

@@ -1,8 +1,8 @@
 plugins {
     id("com.android.library")
+    alias(libs.plugins.kotlin - android) apply true
     id("com.google.devtools.ksp")
 }
-
 
 android {
     namespace = "dev.aurakai.auraframefx"
@@ -40,4 +40,5 @@ android {
         testRuntimeOnly(libs.junit.jupiter.engine)
         testImplementation(libs.mockk)
     }
+
 }

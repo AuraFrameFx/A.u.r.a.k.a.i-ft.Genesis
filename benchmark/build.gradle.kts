@@ -1,7 +1,9 @@
 plugins {
     id("com.android.library")
-    alias(libs.plugins.ksp)
+    alias(libs.plugins.ksp) apply false
+
 }
+
 
 android {
     namespace = "dev.aurakai.auraframefx.benchmark"

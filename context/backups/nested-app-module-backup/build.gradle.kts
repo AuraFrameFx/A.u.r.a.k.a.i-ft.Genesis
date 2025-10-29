@@ -1,5 +1,8 @@
 plugins {
     id("genesis.application")
+    id("com.android.library")
+    alias(libs.plugins.kotlin - android) apply true
+    id("com.google.devtools.ksp")
 }
 
 android {

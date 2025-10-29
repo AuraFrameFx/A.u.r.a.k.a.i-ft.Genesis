@@ -5,10 +5,9 @@ plugins {
     alias(libs.plugins.hilt) apply false
     alias(libs.plugins.ksp) apply false
     alias(libs.plugins.kotlin.serialization) apply false
-    alias(libs.plugins.kotlin.jvm) apply false
-    alias(libs.plugins.firebase.crashlytics) apply false
-    alias(libs.plugins.google.services) apply false
-    alias(libs.plugins.kotlin.compose) apply false
+    alias(libs.plugins.foojay.resolver) apply false
+    // Make kotlin-android available to subprojects via the version catalog (accessor form)
+    alias(libs.plugins.kotlin.android) apply false
 }
 
 subprojects {
@@ -27,4 +26,4 @@ subprojects {
         // Exclude the old IntelliJ annotations from all dependencies
         exclude(group = "com.intellij", module = "annotations")
     }
-    }
+}

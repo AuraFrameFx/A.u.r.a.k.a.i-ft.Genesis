@@ -1,0 +1,3 @@
+dev.aurakai.auraframefx.core.module
+string core_module_debug_name
+string core_module_main_name

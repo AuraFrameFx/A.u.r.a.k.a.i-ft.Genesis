@@ -6,6 +6,12 @@ enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
 
 pluginManagement {
     // Include build-logic for convention plugins
+    plugins {
+        id("build-logic") version "1.0.0"
+        id("foojay.build-logic") version "1.0.0"
+    }
+
+
     repositories {
         // Primary repositories - Google Maven must be first for Hilt
         google()

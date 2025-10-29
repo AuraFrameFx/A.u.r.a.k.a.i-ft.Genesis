@@ -1,7 +1,6 @@
 plugins {
     id("com.android.library")
     id("com.google.devtools.ksp")
-    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -27,8 +26,6 @@ android {
     buildFeatures {
         compose = true
         buildConfig = true
-        aidl = true
-        shaders = false
     }
 
     packaging {
@@ -56,24 +53,18 @@ android {
     }
 
 
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(25))
+        }
+    }
     dependencies {
         // Module dependencies - depend on core modules only
         implementation(project(":core:domain"))
         implementation(project(":core:data"))
         implementation(project(":core:ui"))
         implementation(project(":core:common"))
-        implementation(libs.libsu.core)
-        implementation("com.github.topjohnwu.libsu:core:5.0.4")
-        implementation("com.github.topjohnwu.libsu:io:5.0.4")
         implementation(libs.libsu.io)
-
-        // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
-        compileOnly(libs.yukihookapi)
-        compileOnly(libs.xposed.api)
-
-        // Fallback to local jars if catalog entries aren't available
-        compileOnly(files("libs/api-82.jar"))
-        compileOnly(files("libs/api-82-sources.jar"))
         // AndroidX & Jetpack
         implementation(libs.androidx.core.ktx)
         implementation(libs.androidx.appcompat)
@@ -89,7 +80,6 @@ android {
         implementation(libs.bundles.room)
         implementation(libs.androidx.datastore.preferences)
         implementation(libs.androidx.datastore.core)
-
         // DI
         implementation(libs.hilt.android)
         ksp(libs.hilt.compiler)
@@ -103,15 +93,13 @@ android {
         implementation(libs.bundles.coroutines)
 
         // Networking
-        implementation(libs.bundles.network)
 
         // Firebase
         implementation(platform(libs.firebase.bom))
         implementation(libs.bundles.firebase)
-        implementation(libs.firebase.auth.ktx)
+        implementation(libs.firebase.auth)
 
         // 3rd Party UI
-        implementation(libs.compose.theme.adapter)
 
         // Local Libs
         compileOnly(files("libs/api-82.jar"))
@@ -120,7 +108,6 @@ android {
 
 
         // Testing
-        testImplementation(libs.bundles.testing.unit)
         androidTestImplementation(platform(libs.androidx.compose.bom))
         androidTestImplementation(libs.hilt.android.testing)
         androidTestImplementation(libs.androidx.benchmark.junit4)
@@ -135,4 +122,3 @@ android {
         }
     }
 }
-

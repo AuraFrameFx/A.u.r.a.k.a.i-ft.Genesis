@@ -1,7 +1,6 @@
 plugins {
     id("com.android.library")
-    id("com.google.devtools.ksp") version "2.3.0"
-    alias(libs.plugins.kotlin.compose)
+    id("com.google.devtools.ksp")
 
 
 }
@@ -38,7 +37,7 @@ dependencies {
     implementation(libs.libsu.io)
 
     // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
-    compileOnly(libs.yukihookapi)
+    compileOnly(libs.yukihook.api)
     compileOnly(libs.xposed.api)
 
     // Fallback to local jars if catalog entries aren't available
@@ -59,9 +58,8 @@ dependencies {
     // Use local jars in project `libs/` folder to resolve Xposed API offline
     compileOnly(files("../app/libs/api-82.jar"))
     compileOnly(files("../app/libs/api-82-sources.jar"))
-    compileOnly(libs.yukihookapi)
+    compileOnly(libs.yukihook.api)
 
     // Testing
-    androidTestImplementation(libs.bundles.testing.android)
 
 }

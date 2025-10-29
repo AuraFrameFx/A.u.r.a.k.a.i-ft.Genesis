@@ -9,8 +9,11 @@
 
 plugins {
     id("com.android.library")
-    id("com.google.devtools.ksp")
-    alias(libs.plugins.kotlin.compose)
+    // Hilt and KSP are applied without `apply false` in the module
+    alias(libs.plugins.kotlin.android)
+
+    alias(libs.plugins.ksp) // Correct position: Apply KSP before Hilt
+    alias(libs.plugins.hilt)
 
 }
 
@@ -53,7 +56,6 @@ android {
         }
     }
 
-    // Java compatibility / desugaring
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_25
         targetCompatibility = JavaVersion.VERSION_25
@@ -78,7 +80,7 @@ dependencies {
     implementation(libs.libsu.io)
 
     // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
-    compileOnly(libs.yukihookapi)
+    compileOnly(libs.yukihook.api)
     compileOnly(libs.xposed.api)
 
     // Fallback to local jars if catalog entries aren't available
@@ -107,21 +109,16 @@ dependencies {
         implementation(libs.androidx.datastore.core)
         implementation(libs.kotlinx.serialization.json)
         implementation(libs.kotlinx.datetime)
-        implementation(libs.bundles.coroutines)
-        implementation(libs.bundles.network)
         implementation(platform(libs.firebase.bom))
         implementation(libs.bundles.firebase)
         ksp(libs.hilt.compiler)
         ksp(libs.androidx.room.compiler)
-    implementation(libs.compose.theme.adapter)
-        implementation(libs.firebase.auth.ktx)
+    implementation(libs.firebase.auth)
     compileOnly(files("libs/api-82.jar"))
     compileOnly(files("libs/api-82-sources.jar"))
         implementation(libs.androidx.material)
-        testImplementation(libs.bundles.testing.unit)
         androidTestImplementation(platform(libs.androidx.compose.bom))
         androidTestImplementation(libs.hilt.android.testing)
         debugImplementation(libs.leakcanary.android)
 
     }
-

@@ -1,7 +1,10 @@
 plugins {
     id("com.android.library")
-    id("com.google.devtools.ksp")
-    alias(libs.plugins.kotlin.compose)
+    // Hilt and KSP are applied without `apply false` in the module
+    alias(libs.plugins.kotlin.android)
+
+    alias(libs.plugins.ksp) // Correct position: Apply KSP before Hilt
+    alias(libs.plugins.hilt)
 
 }
 
@@ -38,7 +41,6 @@ android {
         }
     }
 
-    // Java compatibility / desugaring
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_25
         targetCompatibility = JavaVersion.VERSION_25
@@ -62,13 +64,13 @@ dependencies {
     implementation(libs.libsu.core)
     implementation(libs.androidx.appcompat) // ensured present near top as requested
 
-    implementation(libs.libsu.core)
-    implementation("com.github.topjohnwu.libsu:core:5.0.4")
-    implementation("com.github.topjohnwu.libsu:io:5.0.4")
+    // TopJohnWu libsu runtime helpers (required by modules that perform system/root ops)
+    implementation("com.github.topjohnwu.libsu:core:6.0.0")
+    implementation("com.github.topjohnwu.libsu:io:6.0.0")
     implementation(libs.libsu.io)
 
     // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
-    compileOnly(libs.yukihookapi)
+    compileOnly(libs.yukihook.api)
     compileOnly(libs.xposed.api)
 
     // Fallback to local jars if catalog entries aren't available
@@ -83,10 +85,7 @@ dependencies {
     implementation(libs.androidx.material)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.ui.tooling)
-    implementation(libs.androidx.compose.ui.test.junit4)
-    debugImplementation(libs.androidx.compose.ui.test.manifest)
-    implementation(libs.androidx.compose.ui.test)
-    debugImplementation(libs.androidx.compose.ui.test.manifest)
+
     implementation(libs.hilt.android)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -103,21 +102,18 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.kotlinx.datetime)
     implementation(libs.bundles.coroutines)
-    implementation(libs.bundles.network)
     implementation(platform(libs.firebase.bom))
     implementation(libs.bundles.firebase)
     ksp(libs.hilt.compiler)
     ksp(libs.androidx.room.compiler)
-    implementation(libs.compose.theme.adapter)
-    implementation(libs.firebase.auth.ktx)
+    implementation(libs.firebase.auth)
 
     // Xposed/YukiHook Framework (ROM tools need system-level hooks)
     compileOnly(libs.xposed.api)            // Traditional Xposed API v82
-    compileOnly(libs.yukihookapi)
+    compileOnly(libs.yukihook.api)
     // Testing
     testImplementation(libs.junit.jupiter.api)
 
-    testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.hilt.android.testing)
     androidTestImplementation(libs.androidx.benchmark.junit4)

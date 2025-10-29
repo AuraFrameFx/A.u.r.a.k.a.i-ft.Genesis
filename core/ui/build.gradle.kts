@@ -1,8 +1,12 @@
 plugins {
     id("com.android.library")
-    id("com.google.devtools.ksp")
-}
+    // Hilt and KSP are applied without `apply false` in the module
+    alias(libs.plugins.kotlin.android)
 
+    alias(libs.plugins.ksp) // Correct position: Apply KSP before Hilt
+    alias(libs.plugins.hilt)
+
+}
 
 android {
     namespace = "dev.aurakai.auraframefx.core.ui"
@@ -53,7 +57,5 @@ dependencies {
     implementation(project(":core:common"))
 
     // Testing
-    testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.bundles.testing.android)
 }

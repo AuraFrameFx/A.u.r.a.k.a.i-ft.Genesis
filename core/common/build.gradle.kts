@@ -1,7 +1,10 @@
 plugins {
     id("com.android.library")
-    id("com.google.devtools.ksp")
-    alias(libs.plugins.kotlin.compose)
+    // Hilt and KSP are applied without `apply false` in the module
+    alias(libs.plugins.kotlin.android)
+
+    alias(libs.plugins.ksp) // Correct position: Apply KSP before Hilt
+    alias(libs.plugins.hilt)
 
 }
 
@@ -37,6 +40,10 @@ dependencies {
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.timber)
+
+    // Hilt (runtime + annotation processor)
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 
     // Testing
     testImplementation(libs.junit.jupiter.api)
