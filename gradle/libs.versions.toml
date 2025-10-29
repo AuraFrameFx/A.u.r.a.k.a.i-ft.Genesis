@@ -6,7 +6,7 @@
 
 [versions]
 # -------------------- Build System (as per Genesis Protocol) --------------------
-agp = "9.0.0-alpha10" # Aligned with project documentation
+agp = "9.0.0-alpha12" # Aligned with project documentation
 gradle = "9.2.0-rc-3" # Aligned with project documentation
 kotlin = "2.3.0-Beta2" # Aligned with project documentation
 ksp = "2.3.0" # Aligned with project documentation
