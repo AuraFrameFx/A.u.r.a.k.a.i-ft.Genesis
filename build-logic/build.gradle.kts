@@ -16,7 +16,7 @@ java {
 // 4. Declare dependencies required to COMPILE your custom plugins.
 dependencies {
     // The `apply(...)` function is invalid here. Use `implementation`.
-    implementation("com.android.tools.build:gradle:9.0.0-alpha10")
+    implementation("com.android.tools.build:gradle:9.0.0-alpha12")
 
     // Dependencies for Hilt, KSP, Serialization, etc., needed for your plugin logic.
     implementation("com.google.dagger:hilt-android-gradle-plugin:2.57.2") // Updated for compatibility
