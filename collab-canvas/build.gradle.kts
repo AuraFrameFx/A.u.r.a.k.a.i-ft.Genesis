@@ -36,11 +36,6 @@ android {
         }
     }
 
-    composeOptions {
-        kotlinCompilerExtensionVersion = "2.3.0-beta1"
-    }
-
-
     java {
         toolchain {
             languageVersion.set(JavaLanguageVersion.of(25))

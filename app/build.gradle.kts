@@ -50,11 +50,6 @@ android {
     }
 
 
-    composeOptions {
-        kotlinCompilerExtensionVersion = "2.3.0-beta1"
-    }
-
-
     ndkVersion = "29.0.14206865"
 }
 

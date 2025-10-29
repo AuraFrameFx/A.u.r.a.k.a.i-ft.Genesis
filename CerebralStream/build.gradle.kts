@@ -25,10 +25,6 @@ android {
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
     }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = "2.3.0-beta1"
-    }
 }
 
 // Precompute Compose metrics/report destinations as plain string paths to avoid buildDir deprecation warnings

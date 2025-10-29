@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "dev.aurakai.auraframefx"
+    namespace = "dev.aurakai.auraframefx.oracledrive.protocore"
     compileSdk = 36
 
     defaultConfig {
@@ -23,12 +23,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_25
         targetCompatibility = JavaVersion.VERSION_25
-    }
-
-
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = "2.3.0-beta1"
     }
 }
 
