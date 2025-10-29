@@ -6,7 +6,7 @@ agp = "9.0.0-alpha11"
 benchmarkJunit4 = "1.4.1"
 composeThemeAdapterX = "1.1.1"
 converterMoshi = "3.0.0"
-core = "5.0.4"
+core = "6.0.0"
 firebaseAuthKtx = "23.2.1"
 gradle = "9.2.0-RC-3"
 hiltAndroidCompiler = "2.57.2"
@@ -14,6 +14,9 @@ io = "5.0.4"
 kotlin = "2.3.0-Beta2"
 ksp = "2.3.0"
 ktlint = "13.1.0"
+gradleToolingApi = "9.1.0"
+kotlinGradlePlugin = "2.3.0"
+kspGradlePlugin = "2.3.0"
 
 
 toolchainsFoojayResolver = "1.0.0"
@@ -260,6 +263,7 @@ accompanist-pager-indicators = { module = "com.google.accompanist:accompanist-pa
 # ----------------------------------------
 # LibSu (Topjohnwu)
 libsu-core = { module = "com.github.topjohnwu.libsu:core", version.ref = "libsu" }
+core = { module = "com.github.topjohnwu.libsu:core", version.ref = "core" }
 libsu-io = { module = "com.github.topjohnwu.libsu:io", version.ref = "libsu" }
 
 # ----------------------------------------
@@ -337,11 +341,8 @@ firebase = ["firebase-analytics", "firebase-crashlytics", "firebase-perf", "fire
 lifecycle = ["androidx-lifecycle-runtime-ktx", "androidx-lifecycle-viewmodel-ktx", "androidx-lifecycle-viewmodel-compose"]
 network = ["retrofit-core", "retrofit-converter-gson", "okhttp-core", "okhttp-logging-interceptor"]
 room = ["androidx-room-runtime", "androidx-room-ktx"]
-testing-unit = ["junit", "mockk", "kotlinx-coroutines-test"]
-testing-android = ["androidx-test-junit", "androidx-test-espresso-core", "androidx-test-uiautomator"]
-
 # Unit Testing
-testing-unit = [
+unit-testing = [
     "junit",
     "mockk",
     "kotlinx-coroutines-test",
@@ -358,7 +359,8 @@ testing-android = [
 # Xposed/LSPosed APIs
 xposed = [
     "xposed-api",
-    "lsposed-api"
+    "lsposed-api",
+    "yukihookapi"
 ]
 
 

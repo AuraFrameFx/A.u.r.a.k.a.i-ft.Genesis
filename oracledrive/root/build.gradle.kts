@@ -17,11 +17,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_25
     }
 
-    kotlinOptions {
-        jvmTarget = "25"
-    }
 }
-
 dependencies {
     implementation(libs.core)
     implementation(libs.kotlinx.coroutines.android)

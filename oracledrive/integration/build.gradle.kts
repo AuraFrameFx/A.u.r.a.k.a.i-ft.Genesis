@@ -8,8 +8,9 @@
 // Remove this module if not implementing soon to reduce build time.
 
 plugins {
-    id("com.android.library") version "9.0.0-alpha11"
-    id("com.google.devtools.ksp") version "2.3.0"
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -81,7 +82,6 @@ android {
         compileOnly(libs.xposed.api)
         compileOnly(libs.yukihookapi)
         implementation(libs.androidx.material)
-        testImplementation(libs.bundles.testing.unit)
         androidTestImplementation(platform(libs.androidx.compose.bom))
         androidTestImplementation(libs.hilt.android.testing)
         debugImplementation(libs.leakcanary.android)

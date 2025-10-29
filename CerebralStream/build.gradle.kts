@@ -1,13 +1,14 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 import java.io.Serializable
-
 plugins {
-    id("com.android.library") version "9.0.0-alpha11"
-    id("com.google.devtools.ksp") version "2.3.0"
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.compose)
 }
+
 android {
-    namespace = "dev.aurakai.auraframefx.securecomm"
+    namespace = "dev.aurakai.auraframefx.cerebralstream"
     compileSdk = 36
 
     defaultConfig {
@@ -52,19 +53,11 @@ tasks.withType(KotlinJvmCompile::class.java).configureEach {
 }
 
 dependencies {
-
-    implementation(project(":core-module"))
-    implementation(project(":datavein-oracle-native"))
-    implementation(project(":oracle-drive-integration"))
-    implementation(project(":benchmark"))
-    implementation(project(":sandbox-ui"))
-    implementation("com.github.topjohnwu.libsu:core:6.0.0")
-    implementation("com.github.topjohnwu.libsu:io:6.0.0")
-    implementation(libs.androidx.appcompat)
+    // Core AndroidX
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.appcompat)
+
+    // Compose
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.graphics)
@@ -72,35 +65,59 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
+
+    // Lifecycle
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+
+    // Hilt
     implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+
+    // Core Library Desugaring
     coreLibraryDesugaring(libs.desugar.jdk.libs)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.navigation.compose)
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.compose.material3)
-    implementation(libs.bundles.lifecycle)
+
+    // Project modules
+    implementation(project(":core-module"))
+    implementation(project(":oracledrive:datavein"))
+    implementation(project(":oracledrive:integration"))
+    implementation(project(":auralab"))
+
+    // libsu for root operations
+    implementation("com.github.topjohnwu.libsu:core:6.0.0")
+    implementation("com.github.topjohnwu.libsu:io:6.0.0")
+
+    // Room
     implementation(libs.bundles.room)
+    ksp(libs.androidx.room.compiler)
+
+    // DataStore
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.androidx.datastore.core)
+
+    // Kotlin
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.kotlinx.datetime)
     implementation(libs.bundles.coroutines)
+
+    // Network
     implementation(libs.bundles.network)
+
+    // Firebase
     implementation(platform(libs.firebase.bom))
     implementation(libs.bundles.firebase)
-    ksp(libs.hilt.compiler)
-    ksp(libs.androidx.room.compiler)
     implementation(libs.firebase.auth.ktx)
-    // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
-    // Use local jars in project `libs/` folder to resolve Xposed API offline
+
+    // Xposed/YukiHook
     compileOnly(files("../app/libs/api-82.jar"))
     compileOnly(files("../app/libs/api-82-sources.jar"))
     compileOnly(libs.yukihookapi)
 
-    implementation(libs.androidx.material)
-    testImplementation(libs.bundles.testing.unit)
+    // Testing
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.hilt.android.testing)
+
+    // Debug
     debugImplementation(libs.leakcanary.android)
 }
