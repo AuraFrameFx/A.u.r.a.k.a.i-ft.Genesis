@@ -1,13 +1,7 @@
 plugins {
-    id("com.android.application")
-    // Hilt and KSP are applied without `apply false` in the module
-    alias(libs.plugins.kotlin.android)
-
-    alias(libs.plugins.ksp) // Correct position: Apply KSP before Hilt
-    alias(libs.plugins.hilt)
-    // Compose Compiler Gradle plugin required for Kotlin 2.0+ when compose buildFeatures enabled
-    alias(libs.plugins.composeCompiler)
-
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -15,9 +9,7 @@ android {
     namespace = "dev.aurakai.auraframefx.app"
     compileSdk = 36
     // Configure Compose compiler plugin outputs/paths (optional but recommended)
-    composeCompiler {
-        reportsDestination = layout.buildDirectory.dir("compose_compiler")
-    }
+
     defaultConfig {
         applicationId = "dev.aurakai.auraframefx.app.debug"
         minSdk = 34
@@ -29,6 +21,7 @@ android {
             baseline = file("lint-baseline.xml")
         }
     }
+
 
     buildTypes {
         release {
@@ -44,66 +37,71 @@ android {
             versionNameSuffix = "-DEBUG"
         }
     }
-    compileOptions {
-        sourceSets {
-            getByName("main") {
-                java {
-                    srcDir("src/main/kotlin")
-                }
+    // Source sets
+    sourceSets {
+        getByName("main") {
+            java {
+                srcDir("src/main/kotlin")
             }
         }
-        buildFeatures {
-            compose = true
-            buildConfig = true
-            aidl = true
-            shaders = false
-        }
-
-        // Java compatibility / desugaring
-        compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_25
-            targetCompatibility = JavaVersion.VERSION_25
-            isCoreLibraryDesugaringEnabled = true
-        }
-
-
-        composeOptions {
-            kotlinCompilerExtensionVersion = "2.3.0-beta2"
-        }
-
-        java {
-            toolchain {
-                languageVersion.set(JavaLanguageVersion.of(25))
-            }
-        }
-
-        ndkVersion = "29.0.14206865"
     }
 
+    // Build features
+    buildFeatures {
+        compose = true
+        buildConfig = true
+        shaders = false
+    }
+
+    // Java compatibility / desugaring
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_25
+        targetCompatibility = JavaVersion.VERSION_25
+        isCoreLibraryDesugaringEnabled = true
+    }
 }
 
     dependencies {
-        // Core and hooking/runtime dependencies (required per project conventions)
+        // Core AndroidX
+        implementation(libs.androidx.core.ktx)
+        implementation(libs.androidx.appcompat)
+        implementation(libs.androidx.lifecycle.runtime.ktx)
+
+        // Hilt
+        implementation(libs.hilt.android)
+        ksp(libs.hilt.compiler)
+        implementation(libs.androidx.hilt.navigation.compose)
+        implementation(libs.androidx.hilt.work)
+
+        // Java 25 desugaring
+        coreLibraryDesugaring(libs.desugar.jdk.libs)
+
+        // Compose
+        implementation(platform(libs.androidx.compose.bom))
+        implementation(libs.bundles.compose.ui)
+        implementation(libs.androidx.activity.compose)
+        implementation(libs.androidx.navigation.compose)
+        debugImplementation(libs.androidx.compose.ui.tooling)
+
+        // Core and hooking/runtime dependencies
         implementation(libs.libsu.core)
+        implementation(libs.libsu.io)
         implementation("com.github.topjohnwu.libsu:core:5.0.4")
         implementation("com.github.topjohnwu.libsu:io:5.0.4")
-        implementation(libs.libsu.io)
-        // Use version catalog alias for Hilt runtime (keeps versions centralized)
-        // implementation(libs.hilt.android) is declared later in this dependencies block
-        // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
+
+        // Xposed/YukiHook
         compileOnly(libs.xposed.api)
         compileOnly(libs.yukihook.api)
-
-        // Fallback to local jars if catalog entries aren't available
         compileOnly(files("libs/api-82.jar"))
         compileOnly(files("libs/api-82-sources.jar"))
 
+        // Logging
         implementation(libs.timber)
-        implementation(libs.hilt.android)
-        implementation(libs.androidx.material)
-        implementation(libs.androidx.compose.ui.tooling.preview)
-        implementation(libs.androidx.compose.ui.tooling)
 
+        // Material Design
+        implementation(libs.androidx.material)
+
+        // Project modules
         implementation(project(":core-module"))
         implementation(project(":feature-module"))
         implementation(project(":romtools"))
@@ -115,15 +113,6 @@ android {
         // AndroidX Core
         implementation(libs.bundles.androidx.core)
         implementation(libs.androidx.security.crypto)
-        coreLibraryDesugaring(libs.desugar.jdk.libs)
-
-        // Compose
-        implementation(platform(libs.androidx.compose.bom))
-        implementation(libs.bundles.compose.ui)
-        implementation(libs.androidx.activity.compose)
-        implementation(libs.androidx.navigation.compose)
-        implementation(libs.androidx.compose.ui)
-
 
         // Lifecycle & Architecture
         implementation(libs.bundles.lifecycle)
@@ -136,21 +125,13 @@ android {
         implementation(libs.androidx.datastore.preferences)
         implementation(libs.androidx.datastore.core)
 
-        // WorkManager & Hilt Integration
+        // WorkManager
         implementation(libs.androidx.work.runtime.ktx)
-        implementation(libs.androidx.hilt.work)
-        implementation(libs.androidx.hilt.navigation.compose)
-        // Dependency Injection
-        implementation(libs.hilt.android)
-        ksp(libs.hilt.compiler)
 
         // Kotlin Libraries
         implementation(libs.kotlinx.serialization.json)
         implementation(libs.kotlinx.datetime)
         implementation(libs.bundles.coroutines)
-
-        // Networking
-
 
         // Firebase
         implementation(platform(libs.firebase.bom))

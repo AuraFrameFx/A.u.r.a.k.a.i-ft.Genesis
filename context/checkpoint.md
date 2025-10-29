@@ -8,11 +8,11 @@ Location: `c:/Aurakai/checkpoint.md`
 
 ## Current Target Baseline
 
-- **Java Toolchain**: Java 24 (not 25; Studio/AGP not caught up)
+- **Java Toolchain**: Java 25 (24fallback jvm must stay as 24 for now ; Studio/AGP not caught up)
 - **Gradle**: Kotlin DSL across project, convention plugins in `build-logic/`
-- **AGP**: 9.0.0-alpha (migration in progress; built-in Kotlin caveats)
-- **Kotlin**: 2.2.20
-- **KSP**: 2.2.20-2.0.3 (fixes known circular dep bug)
+- **AGP**: 9.0.0-alpha10 (migration in progress; built-in Kotlin caveats)
+- **Kotlin**: 2.3.0
+- **KSP**: 2.3.0-Beta2 (fixes known circular dep bug)
 
 ## Why Java 24 (not 25)
 
@@ -23,19 +23,21 @@ Location: `c:/Aurakai/checkpoint.md`
 
 - Root `build.gradle.kts`
     - Set Kotlin toolchain for all Kotlin modules: `jvmToolchain(24)`
-    - Set Java toolchain: `languageVersion.set(JavaLanguageVersion.of(24))`
+  - Set Java toolchain: `languageVersion.set(JavaLanguageVersion.of(24))` set with resolver no jvm
+    blocks
 - Ensure any module without explicit toolchain (e.g., `data/api`) adds:
   ```kotlin
-  kotlin { jvmToolchain(24) }
-  java { toolchain { languageVersion.set(JavaLanguageVersion.of(24)) } }
-  ```
 
-## AGP 9.0 – Built‑in Kotlin Migration Notes
+jvm set with resolver
+java { toolchain { languageVersion.set(JavaLanguageVersion.of(25)) } }
+  ```
+VERSIONS BELOW NEED UPDATES ABOVE ARE CORRECT 
+## AGP 9.0.0-alpha10 – Built‑in Kotlin Migration Notes
 
 - If you see "remove org.jetbrains.kotlin.android" errors, follow the migration guide.
 - Known issues (per IssueTracker):
     - Safe Args requires a Kotlin plugin pairing.
-    - KSP circular dependency fixed by KSP `2.2.20-2.0.3`.
+    - KSP circular dependency fixed by KSP `2.3.0.
 - Opt-out if blocked: set `android.builtInKotlin=false` in `gradle.properties`.
 - Replace `android { kotlinOptions { ... } }` with Kotlin DSL:
   ```kotlin

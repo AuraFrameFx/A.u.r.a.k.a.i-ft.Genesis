@@ -6,10 +6,11 @@
 
 [versions]
 # -------------------- Build System (as per Genesis Protocol) --------------------
-agp = "9.0.0-alpha10" # Aligned with project documentation
-gradle = "9.2.0-rc-3" # Aligned with project documentation
-kotlin = "2.3.0-Beta2" # Aligned with project documentation
-ksp = "2.3.0" # Aligned with project documentation
+agp = "8.3.0"  # Using stable version for better compatibility
+gradle = "8.4"  # Compatible with AGP 8.3.0
+kotlin = "1.9.22"  # Stable Kotlin version compatible with AGP 8.3.0
+ksp = "1.9.22-1.0.16"  # KSP version compatible with Kotlin 1.9.22
+composeCompiler = "1.5.8"  # Compose compiler for Kotlin 1.9.22
 ktlint = "13.1.0"
 toolchainsFoojayResolver = "1.0.0"
 
@@ -85,7 +86,14 @@ xz = "1.10"
 
 [libraries]
 # -------------------- AndroidX & Google --------------------
+# Compose
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-datastore-core = { module = "androidx.datastore:datastore-core", version.ref = "datastore" }
@@ -105,13 +113,9 @@ androidx-security-crypto = { module = "androidx.security:security-crypto", versi
 androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "workManager" }
 desugar-jdk-libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugarJdkLibs" }
 
-# -------------------- Compose (BOM - versions managed by compose-bom) --------------------
-androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
-androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
-androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
+#
 androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
-androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
-androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+
 google-material-compose-theme-adapter = { module = "com.google.android.material:compose-theme-adapter-3", version = "1.1.1" }
 
 # -------------------- Dependency Injection --------------------

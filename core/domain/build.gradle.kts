@@ -1,7 +1,10 @@
 plugins {
-    id("com.android.library")
-    alias(libs.plugins.kotlin.android) apply true
-    id("com.google.devtools.ksp")
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.composeCompiler)
 }
 
 android {
@@ -21,14 +24,25 @@ android {
         sourceCompatibility = JavaVersion.VERSION_25
         targetCompatibility = JavaVersion.VERSION_25
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "2.3.0-beta1"
+
+    // Enable Java 25 preview features
+    compileOptions {
+        isCoreLibraryDesugaringEnabled = true
     }
 
     java {
         toolchain {
-            languageVersion.set(JavaLanguageVersion.of(25))
+            languageVersion = JavaLanguageVersion.of(25)
         }
+    }
+
+    // Enable Java 25 preview features
+    kotlinOptions {
+        jvmTarget = "25"
+        freeCompilerArgs = freeCompilerArgs + listOf(
+            "-Xjvm-default=all",
+            "-Xjdk-release=25"
+        )
     }
 
     dependencies {
