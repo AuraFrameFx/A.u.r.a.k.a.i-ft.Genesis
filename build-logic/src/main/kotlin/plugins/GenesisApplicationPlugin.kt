@@ -44,12 +44,12 @@ class GenesisApplicationPlugin : Plugin<Project> {
 
             // Configure Android extension
             target.extensions.getByType<ApplicationExtension>().apply {
-                compileSdk = 34
+                compileSdk = 36
 
                 defaultConfig {
                     applicationId = "dev.aurakai.auraframefx"
-                    minSdk = 24
-                    targetSdk = 34
+                    minSdk = 34
+                    targetSdk = 36
                     versionCode = 1
                     versionName = "1.0"
 
@@ -70,8 +70,8 @@ class GenesisApplicationPlugin : Plugin<Project> {
                 }
 
                 compileOptions {
-                    sourceCompatibility = JavaVersion.VERSION_17
-                    targetCompatibility = JavaVersion.VERSION_17
+                    sourceCompatibility = JavaVersion.VERSION_24
+                    targetCompatibility = JavaVersion.VERSION_24
                 }
 
                 buildFeatures {
@@ -79,7 +79,7 @@ class GenesisApplicationPlugin : Plugin<Project> {
                 }
 
                 composeOptions {
-                    kotlinCompilerExtensionVersion = "1.5.8"
+                    kotlinCompilerExtensionVersion = "1.9.22"
                 }
 
                 packaging {
