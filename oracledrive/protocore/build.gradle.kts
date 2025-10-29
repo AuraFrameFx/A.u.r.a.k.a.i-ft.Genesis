@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.compose)
+
+
 }
 
 android {
@@ -9,6 +12,12 @@ android {
 
     defaultConfig {
         minSdk = 34
+    }
+    buildFeatures {
+        compose = true
+        buildConfig = true
+        aidl = false
+        shaders = false
     }
 
     compileOptions {
@@ -34,10 +43,8 @@ dependencies {
     implementation(libs.androidx.appcompat) // ensured present near top as requested
 
     // TopJohnWu libsu runtime helpers (required by modules that perform system/root ops)
-    implementation("com.github.topjohnwu.libsu:core:6.0.0")
-    implementation("com.github.topjohnwu.libsu:io:6.0.0")
-    implementation(libs.libsu.io)
-
+    // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
+    // Use local jars in project `libs/` folder to resolve Xposed API offline
     implementation(libs.timber)
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
@@ -45,7 +52,6 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.ui.tooling)
 
-    implementation(libs.hilt.android)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
@@ -53,7 +59,6 @@ dependencies {
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
-    implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.compose.material3)
     implementation(libs.bundles.lifecycle)
     implementation(libs.bundles.room)
@@ -69,13 +74,12 @@ dependencies {
     ksp(libs.androidx.room.compiler)
     implementation(libs.firebase.auth.ktx)
 
-    implementation(libs.androidx.material)
-
     // Xposed/YukiHook Framework (ROM tools need system-level hooks)
-    compileOnly(libs.yukihookapi)           // YukiHook API v1.3.1
     compileOnly(libs.xposed.api)            // Traditional Xposed API v82
+    compileOnly(libs.yukihookapi)
+    // Testing
+    testImplementation(libs.junit.jupiter.api)
 
-    testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.hilt.android.testing)
     androidTestImplementation(libs.androidx.benchmark.junit4)

@@ -1,12 +1,21 @@
 plugins {
-    id("com.android.library") version "9.0.0-alpha11"
-    id("com.google.devtools.ksp") version "2.3.0"
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.compose)
 }
 
 
 android {
     namespace = "dev.aurakai.auraframefx.java"
     compileSdk = 36
+
+    buildFeatures {
+        compose = true
+        buildConfig = true
+        aidl = false
+        shaders = false
+    }
+
     java {
         toolchain {
             languageVersion.set(JavaLanguageVersion.of(25))
@@ -57,7 +66,6 @@ dependencies {
     compileOnly(files("../app/libs/api-82.jar"))
     compileOnly(files("../app/libs/api-82-sources.jar"))
     implementation(libs.androidx.material)
-    testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.hilt.android.testing)
     debugImplementation(libs.leakcanary.android)

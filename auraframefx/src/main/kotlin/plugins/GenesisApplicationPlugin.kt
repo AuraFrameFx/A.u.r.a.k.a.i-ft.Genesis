@@ -24,7 +24,7 @@ class GenesisApplicationPlugin : Plugin<Project> {
         // Apply plugins directly to the plugin manager for clarity and compatibility
         // with strict Gradle versions.
         with(target.pluginManager) {
-            apply(/* pluginId = */ "com.android.application")
+            apply(/* pluginId = */ "genesis.android.application")
             apply(/* pluginId = */ "com.google.devtools.ksp")
             apply(/* pluginId = */ "com.google.dagger.hilt.android")
             apply(/* pluginId = */ "org.jetbrains.kotlin.plugin.compose")

@@ -1,6 +1,7 @@
 plugins {
-    id("com.android.library") version "9.0.0-alpha11"
-    id("com.google.devtools.ksp") version "2.3.0"
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -69,7 +70,6 @@ dependencies {
         compileOnly(files("../Libs/api-82.jar"))
         compileOnly(files("../Libs/api-82-sources.jar"))
         implementation(libs.androidx.material)
-        testImplementation(libs.bundles.testing.unit)
         androidTestImplementation(platform(libs.androidx.compose.bom))
         androidTestImplementation(libs.hilt.android.testing)
         debugImplementation(libs.leakcanary.android)

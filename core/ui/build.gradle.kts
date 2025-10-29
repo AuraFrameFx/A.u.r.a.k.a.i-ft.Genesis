@@ -1,6 +1,10 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -13,6 +17,9 @@ android {
 
     buildFeatures {
         compose = true
+        buildConfig = true
+        aidl = false
+        shaders = false
     }
 
     composeOptions {
@@ -28,6 +35,15 @@ android {
 java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(25))
+    }
+}
+// Configure Kotlin compile tasks to set JVM target and add Compose compiler freeCompilerArgs using the new compilerOptions API
+tasks.withType(KotlinJvmCompile::class.java).configureEach {
+    (this as KotlinJvmCompile).compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_24)
+        freeCompilerArgs.addAll(
+
+        )
     }
 }
 
@@ -49,7 +65,6 @@ dependencies {
     implementation(project(":core:common"))
 
     // Testing
-    testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.bundles.testing.android)
 }

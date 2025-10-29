@@ -1,6 +1,7 @@
 plugins {
-    id("com.android.library") version "9.0.0-alpha11"
-    id("com.google.devtools.ksp") version "2.3.0"
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.compose)
 }
 
 

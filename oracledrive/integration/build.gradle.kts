@@ -8,8 +8,9 @@
 // Remove this module if not implementing soon to reduce build time.
 
 plugins {
-    id("com.android.library") version "9.0.0-alpha11"
-    id("com.google.devtools.ksp") version "2.3.0"
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -19,6 +20,13 @@ android {
     defaultConfig {
         minSdk = 34
         multiDexEnabled = true  // Required for core library desugaring
+    }
+
+    buildFeatures {
+        compose = true
+        buildConfig = true
+        aidl = false
+        shaders = false
     }
 
     compileOptions {
@@ -52,6 +60,7 @@ android {
         implementation(libs.androidx.core.ktx)
         implementation(libs.androidx.lifecycle.runtime.ktx)
         implementation(libs.androidx.lifecycle.viewmodel.ktx)
+        coreLibraryDesugaring(libs.desugar.jdk.libs)
         implementation(platform(libs.androidx.compose.bom))
         implementation(libs.androidx.activity.compose)
         implementation(libs.androidx.navigation.compose)
@@ -70,12 +79,12 @@ android {
         ksp(libs.hilt.compiler)
         ksp(libs.androidx.room.compiler)
         implementation(libs.firebase.auth.ktx)
-        compileOnly(files("../app/libs/api-82.jar"))
-        compileOnly(files("../app/libs/api-82-sources.jar"))
+        compileOnly(libs.xposed.api)
+        compileOnly(libs.yukihookapi)
         implementation(libs.androidx.material)
-        testImplementation(libs.bundles.testing.unit)
         androidTestImplementation(platform(libs.androidx.compose.bom))
         androidTestImplementation(libs.hilt.android.testing)
         debugImplementation(libs.leakcanary.android)
+
     }
 }

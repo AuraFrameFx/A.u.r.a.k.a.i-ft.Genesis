@@ -1,11 +1,21 @@
 plugins {
     id("com.android.library") version "9.0.0-alpha11"
     id("com.google.devtools.ksp") version "2.3.0"
+    alias(libs.plugins.kotlin.compose)
+
 }
 
 android {
     namespace = "dev.aurakai.auraframefx.dataveinoraclenative"
     compileSdk = 36
+
+    buildFeatures {
+        compose = true
+        buildConfig = true
+        aidl = false
+        shaders = false
+    }
+
     java {
         toolchain {
             languageVersion.set(JavaLanguageVersion.of(25))
@@ -53,7 +63,6 @@ dependencies {
     ksp(libs.androidx.room.compiler)
     implementation(libs.firebase.auth.ktx)
     implementation(libs.androidx.material)
-    testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.hilt.android.testing)
     debugImplementation(libs.leakcanary.android)

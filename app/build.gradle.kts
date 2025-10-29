@@ -1,7 +1,7 @@
 plugins {
-    id("com.android.application")
-    id("com.google.devtools.ksp") version "2.3.0"
-
+    id("com.android.application") version "9.0.0-alpha11"
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -37,7 +37,9 @@ android {
 
     buildFeatures {
         compose = true
+        buildConfig = true
         aidl = true
+        shaders = false
     }
 
     // Java compatibility / desugaring
@@ -58,10 +60,10 @@ android {
 
 dependencies {
     // Core and hooking/runtime dependencies (required per project conventions)
-    implementation(libs.core)
     implementation("com.github.topjohnwu.libsu:core:6.0.0")
     implementation("com.github.topjohnwu.libsu:io:6.0.0")
     implementation(libs.libsu.io)
+    implementation(libs.core)
 
     // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
     compileOnly(libs.yukihookapi)
@@ -135,7 +137,6 @@ dependencies {
     implementation(libs.firebase.auth.ktx)
 
     // Testing
-    testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.hilt.android.testing)
     androidTestImplementation(libs.androidx.benchmark.junit4)
