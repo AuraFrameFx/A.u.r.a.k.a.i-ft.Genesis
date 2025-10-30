@@ -4,8 +4,7 @@ plugins {
 }
 
 android {
-
-    namespace = "dev.aurakai.auraframefx.app"
+    namespace = "dev.aurakai.auraframefx""
     compileSdk = 36
     // Configure Compose compiler plugin outputs/paths (optional but recommended)
 
