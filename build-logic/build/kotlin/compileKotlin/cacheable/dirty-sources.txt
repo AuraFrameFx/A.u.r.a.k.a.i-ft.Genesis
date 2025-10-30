@@ -1,9 +1,0 @@
-C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.k.a.i-ft.Genesis\build-logic\src\main\kotlin\plugins\YukiHookAndroidConventionPlugin.kt
-C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.k.a.i-ft.Genesis\build-logic\src\main\kotlin\plugins\GenesisApplicationPlugin.kt
-C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.k.a.i-ft.Genesis\build-logic\src\main\kotlin\plugins\GenesisJvmPlugin.kt
-C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.k.a.i-ft.Genesis\build-logic\src\main\kotlin\plugins\AndroidHiltConventionPlugin.kt
-C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.k.a.i-ft.Genesis\build-logic\src\main\kotlin\conventionclass\genesis.convention.library.kt
-C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.k.a.i-ft.Genesis\build-logic\src\main\kotlin\plugins\GenesisLibraryPlugin.kt
-C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.k.a.i-ft.Genesis\build-logic\src\main\kotlin\conventionclass\genesis.convention.application.kt
-C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.k.a.i-ft.Genesis\build-logic\src\main\kotlin\dev\aurakai\TestClass.kt
-C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.k.a.i-ft.Genesis\build-logic\src\main\kotlin\plugins\GenesisBasePlugin.kt
