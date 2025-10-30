@@ -24,16 +24,16 @@ class GenesisLibraryPlugin : Plugin<Project> {
             // Configure Android extension
             target.extensions.getByType<LibraryExtension>().apply {
                 // Add any library-specific configuration here
-                compileSdk = 34
+                compileSdk = 36
 
                 defaultConfig {
-                    minSdk = 24
+                    minSdk = 34
                     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                 }
 
                 compileOptions {
-                    sourceCompatibility = JavaVersion.VERSION_17
-                    targetCompatibility = JavaVersion.VERSION_17
+                    sourceCompatibility = JavaVersion.VERSION_24
+                    targetCompatibility = JavaVersion.VERSION_24
                 }
 
                 buildFeatures {
@@ -41,7 +41,7 @@ class GenesisLibraryPlugin : Plugin<Project> {
                 }
 
                 composeOptions {
-                    kotlinCompilerExtensionVersion = "1.5.8"
+                    kotlinCompilerExtensionVersion = "1.9.22"
                 }
             }
 
