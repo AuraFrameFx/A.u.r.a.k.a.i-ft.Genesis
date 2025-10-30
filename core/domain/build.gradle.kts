@@ -4,7 +4,7 @@ plugins {
 
 }
 android {
-    namespace = "dev.aurakai.auraframefx"
+    namespace = "dev.aurakai.auraframefx.core.domain"
     compileSdk = 36
 
     defaultConfig {
