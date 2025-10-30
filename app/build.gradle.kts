@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "dev.aurakai.auraframefx""
+    namespace = "dev.aurakai.auraframefx"
     compileSdk = 36
     // Configure Compose compiler plugin outputs/paths (optional but recommended)
 
@@ -38,9 +38,8 @@ android {
     // Source sets
     sourceSets {
         getByName("main") {
-            java {
-                srcDir("src/main/kotlin")
-            }
+            java.srcDirs("src/main/kotlin")
+            resources.srcDirs("src/main/resources")
         }
     }
 
