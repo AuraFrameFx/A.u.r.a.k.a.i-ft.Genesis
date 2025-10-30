@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("com.google.devtools.ksp")
+    id("org.jetbrains.kotlin.plugin.serialization")
 }
 
 android {
@@ -42,8 +43,8 @@ android {
 
             // Java compatibility / desugaring
             compileOptions {
-                sourceCompatibility = JavaVersion.VERSION_25
-                targetCompatibility = JavaVersion.VERSION_25
+                sourceCompatibility = JavaVersion.VERSION_24
+                targetCompatibility = JavaVersion.VERSION_24
                 isCoreLibraryDesugaringEnabled = true
             }
         }
@@ -75,14 +76,12 @@ dependencies {
     // Core and hooking/runtime dependencies
     implementation(libs.libsu.core)
     implementation(libs.libsu.io)
-    implementation("com.github.topjohnwu.libsu:core:5.0.4")
-    implementation("com.github.topjohnwu.libsu:io:5.0.4")
 
     // Xposed/YukiHook
     compileOnly(libs.xposed.api)
     compileOnly(libs.yukihook.api)
-    compileOnly(files("libs/api-82.jar"))
-    compileOnly(files("libs/api-82-sources.jar"))
+    compileOnly(files("../libs/api-82.jar"))
+    compileOnly(files("../libs/api-82-sources.jar"))
 
     // Logging
     implementation(libs.timber)
@@ -126,6 +125,24 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.bundles.firebase)
     implementation(libs.firebase.auth)
+
+    // Fix R8 missing classes (Tink KeysDownloader → Google HTTP Client)
+    implementation(libs.google.http.client)
+
+    // Fix R8 missing classes (grpc-okhttp expects com.squareup.okhttp.* package)
+    implementation(libs.okhttp2)
+
+    // Fix R8 missing classes (org.joda.time.Instant)
+    implementation(libs.joda.time)
+
+    // Ensure we stick to the Android flavor of Guava (avoid JRE-only APIs)
+    // Note: libs.google.guava should already be the "-android" artifact in your catalog.
+    implementation(libs.google.guava)
+    constraints {
+        implementation(libs.google.guava) {
+            because("Prefer guava-android to avoid java.lang.reflect.AnnotatedType linkage on Android")
+        }
+    }
 
     // Testing
     androidTestImplementation(platform(libs.androidx.compose.bom))

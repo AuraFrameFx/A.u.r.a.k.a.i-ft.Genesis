@@ -39,7 +39,7 @@
         android:protectionLevel="signature" />
 
     <application
-        android:name="dev.aurakai.auraframefx.app.AurakaiApplication"
+        android:name=".AurakaiApplication"
         android:allowBackup="true"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"

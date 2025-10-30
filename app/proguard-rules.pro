@@ -72,6 +72,10 @@
 -dontwarn java.lang.module.ModuleDescriptor
 -dontwarn javax.lang.model.**
 -dontwarn javax.tools.**
+-dontwarn com.google.api.client.**
+-dontwarn com.squareup.okhttp.**
+-dontwarn org.joda.time.**
+-dontwarn java.lang.reflect.AnnotatedType
 
 # --- Optimizations ---
 -optimizations !code/simplification/arithmetic,!code/simplification/cast,!field/*,!class/merging/*

@@ -10,10 +10,10 @@ plugins {
     kotlin("plugin.serialization") version "2.3.0-Beta2" apply false
 
     // Compose - using direct plugin ID for AGP 9.0.0-alpha10 compatibility
-    id("org.jetbrains.compose") version "1.6.0-beta02" apply false
+    id("org.jetbrains.compose") version "1.9.2" apply false
 
     // Dagger Hilt
-    id("com.google.dagger.hilt.android") version "2.51" apply false
+    id("com.google.dagger.hilt.android") version "2.57.2" apply false
 
     // KSP - using version from version catalog
     id("com.google.devtools.ksp") version "2.3.0" apply false

@@ -27,8 +27,8 @@ dependencies {
 
     // Dependencies for testing your plugins.
     testImplementation(gradleTestKit())
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.2")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.2")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:6.0.0")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:6.0.0")
 }
 
 // 5. Define the custom convention plugins that this `build-logic` module provides.

@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "dev.aurakai.auraframefx.collab.canvas"
+    namespace = "dev.aurakai.auraframefx.collab_canvas"
     compileSdk = 36
 
     defaultConfig {
@@ -40,85 +40,68 @@ android {
         targetCompatibility = JavaVersion.VERSION_25
         isCoreLibraryDesugaringEnabled = true
     }
+}
 
+dependencies {
+    // Module dependencies
+    implementation(project(":core-module"))
 
-    composeOptions {
-        kotlinCompilerExtensionVersion = "2.3.0-beta1"
-    }
+    // AndroidX & Jetpack
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.navigation.compose)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.ui.graphics)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.material)
+    implementation(libs.bundles.lifecycle)
+    implementation(libs.bundles.room)
+    implementation(libs.androidx.datastore.preferences)
+    implementation(libs.androidx.datastore.core)
+    // DI
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 
-    java {
-        toolchain {
-            languageVersion.set(JavaLanguageVersion.of(25))
-        }
-    }
+    // Desugaring
+    coreLibraryDesugaring(libs.desugar.jdk.libs)
 
+    // Kotlin
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.kotlinx.datetime)
+    implementation(libs.bundles.coroutines)
 
-    java {
-        toolchain {
-            languageVersion.set(JavaLanguageVersion.of(25))
-        }
-    }
-    dependencies {
-        // Module dependencies - depend on core modules only
-        implementation(project(":core:domain"))
-        implementation(project(":core:data"))
-        implementation(project(":core:ui"))
-        implementation(project(":core:common"))
-        implementation(libs.libsu.io)
-        // AndroidX & Jetpack
-        implementation(libs.androidx.core.ktx)
-        implementation(libs.androidx.appcompat)
-        implementation(libs.androidx.activity.compose)
-        implementation(libs.androidx.navigation.compose)
-        implementation(platform(libs.androidx.compose.bom))
-        implementation(libs.androidx.compose.ui)
-        implementation(libs.androidx.compose.ui.graphics)
-        implementation(libs.androidx.compose.ui.tooling.preview)
-        implementation(libs.androidx.compose.material3)
-        implementation(libs.androidx.material)
-        implementation(libs.bundles.lifecycle)
-        implementation(libs.bundles.room)
-        implementation(libs.androidx.datastore.preferences)
-        implementation(libs.androidx.datastore.core)
-        // DI
-        implementation(libs.hilt.android)
-        ksp(libs.hilt.compiler)
+    // Networking
+    implementation(libs.bundles.network.retrofit)
 
-        // Desugaring
-        coreLibraryDesugaring(libs.desugar.jdk.libs)
+    // Firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.bundles.firebase)
+    implementation(libs.firebase.auth)
 
-        // Kotlin
-        implementation(libs.kotlinx.serialization.json)
-        implementation(libs.kotlinx.datetime)
-        implementation(libs.bundles.coroutines)
+    // 3rd Party UI
+    implementation(libs.compose.theme.adapter.x)
 
-        // Networking
+    // Local Libs
+    compileOnly(files("../libs/api-82.jar"))
+    compileOnly(files("../libs/api-82-sources.jar"))
 
-        // Firebase
-        implementation(platform(libs.firebase.bom))
-        implementation(libs.bundles.firebase)
-        implementation(libs.firebase.auth)
+    // Testing
+    testImplementation(libs.bundles.coroutines.test)
+    testImplementation(libs.bundles.junit)
+    testImplementation(libs.bundles.mockk)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.hilt.android.testing)
+    androidTestImplementation(libs.androidx.benchmark.junit4)
+    androidTestImplementation(libs.androidx.test.uiautomator)
+    debugImplementation(libs.leakcanary.android)
+}
 
-        // 3rd Party UI
-
-        // Local Libs
-        compileOnly(files("libs/api-82.jar"))
-        compileOnly(files("libs/api-82-sources.jar"))
-        implementation(libs.androidx.material)
-
-
-        // Testing
-        androidTestImplementation(platform(libs.androidx.compose.bom))
-        androidTestImplementation(libs.hilt.android.testing)
-        androidTestImplementation(libs.androidx.benchmark.junit4)
-        androidTestImplementation(libs.androidx.test.uiautomator)
-        debugImplementation(libs.leakcanary.android)
-    }
-
-    tasks.register("collabStatus") {
-        group = "aegenesis"
-        doLast {
-            println("COLLAB CANVAS - Ready (Java 24 toolchain, unified).")
-        }
+tasks.register("collabStatus") {
+    group = "aegenesis"
+    doLast {
+        println("COLLAB CANVAS - Ready (Java 24 toolchain, unified).")
     }
 }

@@ -1,6 +1,7 @@
 package plugins
 
 import com.android.build.api.dsl.LibraryExtension
+import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.getByType
@@ -12,17 +13,15 @@ import org.gradle.kotlin.dsl.getByType
 class GenesisLibraryPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target.pluginManager) {
-            // Apply Android Library plugin
             apply("com.android.library")
-
-            // Apply other required plugins
             apply("org.jetbrains.kotlin.android")
-            apply("org.jetbrains.kotlin.plugin.serialization")
-            apply("com.google.devtools.ksp")
             apply("com.google.dagger.hilt.android")
+            apply("com.google.devtools.ksp")
+            apply("org.jetbrains.kotlin.plugin.serialization")
 
             // Configure Android extension
-            target.extensions.getByType<LibraryExtension>().apply {
+            val extension = target.extensions.getByType<LibraryExtension>()
+            extension.apply {
                 // Add any library-specific configuration here
                 compileSdk = 36
 
@@ -41,12 +40,9 @@ class GenesisLibraryPlugin : Plugin<Project> {
                 }
 
                 composeOptions {
-                    kotlinCompilerExtensionVersion = "1.9.22"
+                    kotlinCompilerExtensionVersion = "1.5.15"
                 }
             }
-
-            // Apply KSP plugin after Android plugin
-            apply("com.google.devtools.ksp")
         }
     }
 }

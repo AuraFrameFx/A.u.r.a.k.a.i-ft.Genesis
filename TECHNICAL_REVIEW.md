@@ -90,9 +90,8 @@ A.u.r.a.k.a.i-ft.Genesis/
 
 ### Prerequisites
 
-- JDK 17 or higher
-- Android Studio Flamingo (2022.2.1) or later
-- Android NDK (for native components)
+- JDK 24 or higher
+  otter 2 canary 2- Android NDK (for native components)
 - At least 8GB RAM (16GB recommended)
 
 ### Building the Project
