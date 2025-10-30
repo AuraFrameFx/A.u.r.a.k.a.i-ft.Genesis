@@ -9,7 +9,7 @@ android {
     // Configure Compose compiler plugin outputs/paths (optional but recommended)
 
     defaultConfig {
-        applicationId = "dev.aurakai.auraframefx.app.debug"
+        applicationId = "dev.aurakai.auraframefx"
         minSdk = 34
         versionCode = 1
         versionName = "1.0"
