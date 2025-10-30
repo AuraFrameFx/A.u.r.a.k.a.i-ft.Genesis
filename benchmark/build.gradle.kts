@@ -1,34 +1,29 @@
 plugins {
     id("com.android.library")
     id("com.google.devtools.ksp")
-
-
 }
-
 
 android {
     namespace = "dev.aurakai.auraframefx.benchmark"
     compileSdk = 36
-    defaultConfig {
-        minSdk = 34
-        multiDexEnabled = true
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-    compileSdk = 36
 
     defaultConfig {
         minSdk = 34
+        multiDexEnabled = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = true
+            isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+        debug {
+            isMinifyEnabled = false
         }
     }
 
