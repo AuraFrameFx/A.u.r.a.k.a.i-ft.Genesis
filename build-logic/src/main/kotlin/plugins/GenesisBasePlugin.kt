@@ -35,11 +35,11 @@ class GenesisBasePlugin : Plugin<Project> {
             // Configure Java toolchain
             extensions.configure(org.gradle.api.plugins.JavaPluginExtension::class.java) {
                 it.apply {
-                    sourceCompatibility = JavaVersion.VERSION_17
-                    targetCompatibility = JavaVersion.VERSION_17
+                    sourceCompatibility = JavaVersion.VERSION_24
+                    targetCompatibility = JavaVersion.VERSION_24
 
                     toolchain {
-                        languageVersion.set(org.gradle.jvm.toolchain.JavaLanguageVersion.of(17))
+                        languageVersion.set(org.gradle.jvm.toolchain.JavaLanguageVersion.of(24))
                     }
                 }
             }
@@ -47,7 +47,7 @@ class GenesisBasePlugin : Plugin<Project> {
             // Configure Kotlin compilation
             tasks.withType(KotlinCompile::class.java).configureEach {
                 it.kotlinOptions {
-                    jvmTarget = "17"
+                    jvmTarget = "24"
                     freeCompilerArgs = listOf(
                         "-opt-in=kotlin.RequiresOptIn",
                         "-Xcontext-receivers"
