@@ -94,7 +94,7 @@ firebaseCrashlyticsGradle = "3.0.6"
 # ========================================
 coil = "2.7.0"
 lottie = "6.1.0"
-accompanist = "0.32.0"
+accompanist = "0.36.0"
 timber = "5.0.1"
 slf4j = "2.0.17"
 guava = "33.5.0-android"
