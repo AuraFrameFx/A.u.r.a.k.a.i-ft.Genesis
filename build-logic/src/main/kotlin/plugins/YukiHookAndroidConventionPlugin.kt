@@ -17,7 +17,8 @@ class YukiHookAndroidConventionPlugin : Plugin<Project> {
 
             // Configure Android libraries for Yuki Hook
             pluginManager.withPlugin("com.android.library") {
-            }
+            }  extensions.configure<ApplicationExtension> {
+                    configureAndroidApplication(this)
         }
     }
 }
@@ -39,6 +40,8 @@ private fun configureAndroidApplication(extension: ApplicationExtension) {
             targetSdk = 36
             testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         }
+        buildfeatures {
+            compose = true
 
         buildTypes {
             getByName("release") {
