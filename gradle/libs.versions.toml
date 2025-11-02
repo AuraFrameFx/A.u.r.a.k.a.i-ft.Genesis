@@ -72,7 +72,7 @@ datastore = "1.1.7"
 # ========================================
 retrofit = "3.0.0"
 retrofitMoshi = "2.9.0"
-okhttp = "5.2.1"
+okhttp = "5.3.0"
 retrofitKotlinxSerialization = "1.0.0"
 ktor = "3.3.1"
 
