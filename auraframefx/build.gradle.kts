@@ -28,7 +28,7 @@ dependencies {
     // Keep runtime/runtime-classpath plugins explicit (Hilt)
 
     // Test dependencies
-    testImplementation("org.junit.jupiter:junit-jupiter-params:6.0.0")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:6.0.1")
 
 
     testImplementation(gradleTestKit())
