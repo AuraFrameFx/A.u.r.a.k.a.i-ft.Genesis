@@ -14,7 +14,7 @@ val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
 dependencies {
     implementation("com.android.tools.build:gradle:9.0.0-alpha11")
     implementation("com.google.dagger:hilt-android-gradle-plugin:2.57.2")
-    implementation("com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:2.3.0")
+    implementation("com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:2.3.2")
     implementation("org.jetbrains.kotlin:kotlin-serialization:2.3.0-Beta2")
     implementation("org.jetbrains.kotlin:kotlin-allopen:2.3.0-Beta2")
     implementation("com.google.firebase:firebase-crashlytics-buildtools:3.0.6")
