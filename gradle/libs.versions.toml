@@ -2,7 +2,7 @@
 # ========================================
 # BUILD SYSTEM
 # ========================================
-agp = "9.0.0-alpha11"
+agp = "9.0.0-alpha14"
 benchmarkJunit4 = "1.4.1"
 composeThemeAdapterX = "1.1.1"
 converterMoshi = "3.0.0"
