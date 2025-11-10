@@ -74,7 +74,7 @@ retrofit = "3.0.0"
 retrofitMoshi = "2.9.0"
 okhttp = "5.2.1"
 retrofitKotlinxSerialization = "1.0.0"
-ktor = "3.3.1"
+ktor = "3.3.2"
 
 # ========================================
 # KOTLIN LIBRARIES
