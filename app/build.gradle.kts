@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.application") version "9.0.0-alpha11"
+    id("com.android.application") version "9.0.0-alpha14"
     alias(libs.plugins.ksp)
     alias(libs.plugins.kotlin.compose)
 }
