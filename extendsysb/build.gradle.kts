@@ -77,7 +77,7 @@ dependencies {
         // Explicit androidx versions requested by the user (added alongside existing libs entries)
         implementation("androidx.core:core-ktx:1.17.0")
         implementation("androidx.appcompat:appcompat:1.7.1")
-        implementation(platform("androidx.compose:compose-bom:2025.10.01"))
+        implementation(platform("androidx.compose:compose-bom:2025.11.00"))
         implementation("androidx.activity:activity-compose:1.11.0")
         implementation("androidx.navigation:navigation-compose:2.9.5")
         implementation("androidx.hilt:hilt-navigation-compose:1.3.0")
