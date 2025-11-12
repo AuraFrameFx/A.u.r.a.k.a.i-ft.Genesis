@@ -17,19 +17,18 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
  * This plugin configures:
  * - Android library plugin and extensions
  * - Kotlin Android support
- * - Hilt dependency injection
- * - KSP annotation processing
  * - Jetpack Compose support
- * - Kotlin Serialization
+ * - Kotlin Serialization (from base)
  * - Consistent build configuration across library modules
+ *
+ * NOTE: This plugin does NOT include Hilt or KSP.
+ * For libraries requiring dependency injection, use genesis.android.library.hilt
  *
  * Plugin Application Order:
  * 1. genesis.android.base (inherits JVM/Kotlin settings)
  * 2. com.android.library
  * 3. org.jetbrains.kotlin.android
- * 4. com.google.dagger.hilt.android
- * 5. com.google.devtools.ksp
- * 6. org.jetbrains.kotlin.plugin.compose
+ * 4. org.jetbrains.kotlin.plugin.compose
  *
  * @since Genesis Protocol 1.0
  */
@@ -42,8 +41,6 @@ class GenesisLibraryPlugin : Plugin<Project> {
             // Apply Android library and Kotlin plugins
             apply("com.android.library")
             apply("org.jetbrains.kotlin.android")
-            apply("com.google.dagger.hilt.android")
-            apply("com.google.devtools.ksp")
             apply("org.jetbrains.kotlin.plugin.compose")
         }
 
