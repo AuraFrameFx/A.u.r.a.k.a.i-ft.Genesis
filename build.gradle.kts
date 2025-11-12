@@ -4,6 +4,16 @@ plugins {
     id("com.android.application") version "9.0.0-alpha11"
     id("com.android.library") version "9.0.0-alpha11" apply false
     id("com.google.devtools.ksp") version "2.3.0" apply false
+
+    // Kotlin plugins - centrally registered to prevent duplication in subprojects
+    id("org.jetbrains.kotlin.android") version "2.3.0-Beta2" apply false
+    id("org.jetbrains.kotlin.jvm") version "2.3.0-Beta2" apply false
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.3.0-Beta2" apply false
+    id("org.jetbrains.kotlin.plugin.compose") version "2.3.0-Beta2" apply false
+
+    // Dependency Injection & Google Services
+    id("com.google.dagger.hilt.android") version "2.57.2" apply false
+    id("com.google.gms.google-services") version "4.4.4" apply false
 }
 
 subprojects {
