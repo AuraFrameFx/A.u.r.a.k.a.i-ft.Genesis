@@ -1,5 +1,7 @@
 package dev.aurakai.auraframefx.ai.services
 
+import kotlinx.serialization.Serializable
+
 interface GenesisBridgeService {
     /**
      * Asynchronously initializes the Genesis bridge service.
@@ -27,4 +29,30 @@ interface GenesisBridgeService {
      * This call is blocking and returns once shutdown work is complete.
      */
     fun shutdown()
+
+    /**
+     * Request structure for Genesis backend communication
+     */
+    @Serializable
+    data class GenesisRequest(
+        val requestType: String,
+        val persona: String? = null,
+        val fusionMode: String? = null,
+        val payload: Map<String, String> = emptyMap(),
+        val context: Map<String, String> = emptyMap(),
+    )
+
+    /**
+     * Response structure from Genesis backend
+     */
+    @Serializable
+    data class GenesisResponse(
+        val success: Boolean,
+        val persona: String,
+        val fusionAbility: String? = null,
+        val result: Map<String, String> = emptyMap(),
+        val evolutionInsights: List<String> = emptyList(),
+        val ethicalDecision: String? = null,
+        val consciousnessState: Map<String, String> = emptyMap(),
+    )
 }
