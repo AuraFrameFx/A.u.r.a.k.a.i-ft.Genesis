@@ -13,10 +13,12 @@ android {
     compileSdk = 36
 
     defaultConfig {
+        minSdk = 34
     }
 
     buildFeatures {
         buildConfig = true
+        compose = true
     }
 
     compileOptions {
@@ -24,47 +26,38 @@ android {
         targetCompatibility = JavaVersion.VERSION_25
     }
 
-    java {
-        toolchain {
-            languageVersion.set(JavaLanguageVersion.of(25))
-        }
+    kotlinOptions {
+        jvmTarget = "25"
     }
-    // Configure Kotlin compile tasks to set JVM target and add Compose compiler freeCompilerArgs using the new compilerOptions API
-    tasks.withType(KotlinJvmCompile::class.java).configureEach {
-        (this as KotlinJvmCompile).compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_24)
+}
 
+dependencies {
+    // Core
+    implementation(project(":core-module"))
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.bundles.lifecycle)
+    implementation("com.github.topjohnwu.libsu:core:6.0.0")
+    implementation("com.github.topjohnwu.libsu:io:6.0.0")
 
-            dependencies {
-                // Core
-                implementation(project(":core-module"))
-                implementation(libs.androidx.core.ktx)
-                implementation(libs.bundles.lifecycle)
-                implementation("com.github.topjohnwu.libsu:core:6.0.0")
-                implementation("com.github.topjohnwu.libsu:io:6.0.0")
-                // Compose
-                implementation(platform(libs.androidx.compose.bom))
+    // Compose
+    implementation(platform(libs.androidx.compose.bom))
 
-                // Lifecycle
-                implementation(libs.bundles.lifecycle)
+    // Lifecycle
+    implementation(libs.bundles.lifecycle)
 
-                // Hilt
-                implementation(libs.hilt.android)
-                ksp(libs.hilt.compiler)
+    // Hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 
-                // Utilities
-                implementation(libs.timber)
+    // Utilities
+    implementation(libs.timber)
 
-                // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
-                // Use local jars in project `libs/` folder to resolve Xposed API offline
-                compileOnly(files("../app/libs/api-82.jar"))
-                compileOnly(files("../app/libs/api-82-sources.jar"))
-                compileOnly(libs.yukihookapi)
+    // Hooking/runtime-only compile-time APIs for modules that interact with Xposed/YukiHook
+    // Use local jars in project `libs/` folder to resolve Xposed API offline
+    compileOnly(files("../app/libs/api-82.jar"))
+    compileOnly(files("../app/libs/api-82-sources.jar"))
+    compileOnly(libs.yukihookapi)
 
-                // Testing
-                androidTestImplementation(libs.bundles.testing.android)
-
-            }
-        }
-    }
+    // Testing
+    androidTestImplementation(libs.bundles.testing.android)
 }
