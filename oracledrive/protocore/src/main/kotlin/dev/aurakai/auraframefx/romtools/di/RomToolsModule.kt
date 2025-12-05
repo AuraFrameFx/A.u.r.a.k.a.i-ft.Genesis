@@ -22,6 +22,7 @@ import dev.aurakai.auraframefx.romtools.bootloader.BootloaderManager
 import dev.aurakai.auraframefx.romtools.bootloader.BootloaderManagerImpl
 import dev.aurakai.auraframefx.romtools.retention.AurakaiRetentionManager
 import dev.aurakai.auraframefx.romtools.retention.AurakaiRetentionManagerImpl
+import javax.inject.Qualifier
 import javax.inject.Singleton
 
 /**
@@ -131,23 +132,27 @@ abstract class RomToolsModule {
 }
 
 // Qualifier annotations for ROM tools directories
+@Qualifier
 @Retention(AnnotationRetention.BINARY)
 annotation class RomToolsDataDir
 
 /**
  * Qualifier for the backup directory for the ROM tools.
  */
+@Qualifier
 @Retention(AnnotationRetention.BINARY)
 annotation class RomToolsBackupDir
 
 /**
  * Qualifier for the download directory for the ROM tools.
  */
+@Qualifier
 @Retention(AnnotationRetention.BINARY)
 annotation class RomToolsDownloadDir
 
 /**
  * Qualifier for the temporary directory for the ROM tools.
  */
+@Qualifier
 @Retention(AnnotationRetention.BINARY)
 annotation class RomToolsTempDir

@@ -1,7 +1,10 @@
 plugins {
     id("com.android.application") version "9.0.0-alpha11"
-    alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.google.services)
 }
 
 android {
@@ -49,6 +52,9 @@ android {
         isCoreLibraryDesugaringEnabled = true
     }
 
+    kotlinOptions {
+        jvmTarget = "25"
+    }
 
     ndkVersion = "29.0.14206865"
 }

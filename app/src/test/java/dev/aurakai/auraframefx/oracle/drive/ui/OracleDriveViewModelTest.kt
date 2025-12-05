@@ -13,6 +13,7 @@ import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
 import java.io.IOException
 import java.time.Instant
 import kotlin.time.Duration.Companion.seconds
