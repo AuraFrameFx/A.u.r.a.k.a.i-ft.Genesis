@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.application") version "9.0.0-alpha11"
+    id("com.android.application") version "9.0.0-beta03"
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.hilt)

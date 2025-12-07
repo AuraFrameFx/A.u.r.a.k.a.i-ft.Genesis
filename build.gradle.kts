@@ -1,8 +1,8 @@
 val buildToolsVersion by extra("36.1.0 rc1")
 // ===== FORCE MODERN ANNOTATIONS & EXCLUDE OLD ONES =====
 plugins {
-    id("com.android.application") version "9.0.0-alpha11"
-    id("com.android.library") version "9.0.0-alpha11" apply false
+    id("com.android.application") version "9.0.0-beta03"
+    id("com.android.library") version "9.0.0-beta03" apply false
     id("com.google.devtools.ksp") version "2.3.0" apply false
 
     // Kotlin plugins - centrally registered to prevent duplication in subprojects
