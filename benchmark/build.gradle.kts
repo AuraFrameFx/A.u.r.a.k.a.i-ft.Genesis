@@ -49,7 +49,7 @@ android {
 
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "2.3.0-beta1"
+        kotlinCompilerExtensionVersion = "2.3.0-Beta1"
     }
 
     java {
