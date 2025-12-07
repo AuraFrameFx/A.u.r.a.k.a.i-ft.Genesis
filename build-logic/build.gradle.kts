@@ -20,7 +20,7 @@ dependencies {
 
     // Dependencies for Hilt, KSP, Serialization, etc., needed for your plugin logic.
     implementation("com.google.dagger:hilt-android-gradle-plugin:2.57.2") // Updated for compatibility
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:2.3.0-Beta2") // Explicitly add Kotlin Gradle Plugin
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:2.3.0-RC2") // Explicitly add Kotlin Gradle Plugin
 
     // Other plugin dependencies
     implementation("com.google.gms:google-services:4.4.4")
