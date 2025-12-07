@@ -3,7 +3,7 @@ val buildToolsVersion by extra("36.1.0 rc1")
 plugins {
     id("com.android.application") version "9.0.0-beta03"
     id("com.android.library") version "9.0.0-beta03" apply false
-    id("com.google.devtools.ksp") version "2.3.0" apply false
+    id("com.google.devtools.ksp") version "2.3.3" apply false
 
     // Kotlin plugins - centrally registered to prevent duplication in subprojects
     id("org.jetbrains.kotlin.android") version "2.3.0-Beta2" apply false

@@ -1,6 +1,6 @@
 plugins {
     id("com.android.library") version "9.0.0-beta03"
-    id("com.google.devtools.ksp") version "2.3.0"
+    id("com.google.devtools.ksp") version "2.3.3"
 }
 
 android {
