@@ -9,7 +9,7 @@
 agp = "9.0.0-alpha12"  # Using stable version for better compatibility
 gradle = "9.2.0"  #stable 10/29/25
 kotlin = "2.3.0-beta2"  # Stable
-ksp = "2.3.0"  # KSP version
+ksp = "2.3.3"  # KSP version
 composeCompiler = "1.5.15"  # Compose compiler for Kotlin
 ktlint = "13.1.0"
 toolchainsFoojayResolver = "1.0.0"
