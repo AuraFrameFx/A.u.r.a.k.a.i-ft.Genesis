@@ -16,7 +16,7 @@ plugins {
     id("com.google.dagger.hilt.android") version "2.57.2" apply false
 
     // KSP - using version from version catalog
-    id("com.google.devtools.ksp") version "2.3.0" apply false
+    id("com.google.devtools.ksp") version "2.3.3" apply false
 
     // Tooling
     alias(libs.plugins.foojay.resolver) apply false
