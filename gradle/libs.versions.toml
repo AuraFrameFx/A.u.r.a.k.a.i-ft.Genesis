@@ -57,7 +57,7 @@ kotlinxSerialization = "1.9.0"
 
 # -------------------- Networking --------------------
 ktor = "3.3.3"
-okhttp = "5.2.1"
+okhttp = "5.3.2"
 okhttp2 = "2.7.5"
 retrofit = "3.0.0"
 retrofitKotlinxSerialization = "1.0.0"
