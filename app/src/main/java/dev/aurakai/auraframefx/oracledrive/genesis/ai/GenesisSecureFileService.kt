@@ -62,7 +62,7 @@ class GenesisSecureFileService @Inject constructor(
             }
 
             // Store metadata in secure storage
-            val metadata = FileMetadata(
+            val metadata = SecureFileMetadata(
                 fileName = fileName,
                 mimeType = guessMimeType(fileName),
                 size = data.size.toLong(),
@@ -219,7 +219,7 @@ class GenesisSecureFileService @Inject constructor(
 /**
  * Represents file metadata for secure storage
  */
-data class FileMetadata(
+data class SecureFileMetadata(
     val fileName: String,
     val mimeType: String,
     val size: Long,
